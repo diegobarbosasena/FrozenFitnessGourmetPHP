@@ -1,0 +1,47 @@
+<div class="cadas">Consulta Objetivos</div>
+<table class="tbl_consulta">
+    <tr class="linha_consulta">
+        <td class="col_consulta">
+            Nome
+        </td>
+        <td class="col_consulta">
+            Imagem
+        </td>
+        <td class="col_consulta">
+           Descrição
+        </td>
+        <td class="col_consulta">
+            Opções
+        </td>
+    </tr>
+    <tr class="linha_consulta">
+        <td class="col_consulta">
+            Emagrecimento
+            
+        </td>
+        <td class="col_consulta">
+           
+        </td>
+        <td class="descricao">
+          As gorduras localizadas no nosso corpo não apareceram ali do dia para noite, mas são resultados de meses ou anos de uma alimentação não equilibrada.
+        </td>
+        <td class="col_consulta" >
+            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a>
+        </td>
+    </tr>
+    <tr class="linha_consulta">
+        <td class="col_consulta">
+            
+        </td>
+        <td class="col_consulta">
+           
+        </td>
+        <td class="col_consulta">
+          
+        </td>
+        <td class="col_consulta" >
+            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a>
+        </td>
+    </tr>
+
+</table>

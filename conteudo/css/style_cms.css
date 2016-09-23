@@ -1,0 +1,382 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color:#F0F0F0;
+	/* width: 175px; */
+	/* height: 102px; */
+}
+.area_cms{
+	width: 960px;
+	height: auto;
+	border: solid 1px #CCC;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	background-color:#FFFFFF;
+    border-radius:10px;
+	/*!  */
+}
+
+.cabecalho_cms{
+	width: 960px;
+	height: 175px;
+	border-bottom: solid 1px #CCC;
+	background-color:#FFFFFF;
+    border-radius:10px 10px 0px 0px;
+}
+
+.logo{
+	width: 300px;
+	height: 150px;
+	background-color:#FFFFFF;
+	background-image:url(../imagem/logo_cms.png);
+	margin-top: 12px;
+	float: left;
+	margin-left: 7%;
+}
+.tempo{	
+	width: 270px;	
+	height: 89px;	
+	float: left;	
+	margin: 54px 0px 0px 15px;	
+	text-align: center;
+	background-color: #FFF;
+}
+.data_cms{
+	width: 127px;
+	height: 28px;
+	l, Helvetica, sans-serif;
+	font-size: 21px;
+	color: #666666;
+	font-family: Arial, Verdana, sans-serif;
+	margin: auto auto 10px;
+	background-color: #FFF;
+}
+
+
+select {
+    border-radius: 10px;
+    width: 160px;
+    height: 30px;
+    border: 1px solid #666;
+    font-size: 18px;
+    color: #CCC;
+}
+
+.hora_cms{
+	width: 70px;
+	height: 35px;
+	margin-left: 126px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	color: #666;
+	margin: auto auto 6px;
+	background-color: #FFF;
+}
+
+
+.bemvindo_cms{
+	width: 215px;
+	height: 100px;
+	background-color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #666;
+	float: right;
+	margin: 35px 3% 0px 0px;
+}
+.bemvindo_cms p{
+	background-color: #FFF;
+}
+
+.FrmBemVindo{
+	width: 204px;
+    height: 37px;
+	margin:0;
+	background-color: #FFF;
+}
+p a.sair{
+	width: 65px;
+	height: 32px;
+	float: left;
+	text-align: center;
+	text-decoration: none;
+	line-height: 2.3;
+	border-radius: 10px;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 65px;
+	border: solid 1px #CCC;
+	color: #696969;
+}
+a.sair:hover{
+	cursor:pointer;
+	border: solid 2px #E08A2C;
+	color:#FF6600;
+    transition-property: border-color;
+    transition-duration: 2s;
+}
+
+.conteudo_crescer{
+    
+float: left;
+    
+width: 960px;
+    
+min-height: 500px;
+    
+height: auto;
+/*!  */
+background-color: #FFF;
+}
+.menu_cms{
+	width: 270px;
+	min-height: 648px;
+	height: auto;
+	background-color: #FFFFFF;
+	float: left;
+    
+}
+
+.menu_cms_link{
+	list-style: none;
+	background-color: #FFFFFF;
+	width: 220px;
+	height: auto;
+	margin-top: 6px;
+  
+}
+
+.menu_cms_link  li{
+	width: 210px;
+	height: 550px;
+	float: left;
+	display: inline;
+	height: 34px;
+	border: solid 0px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	color: #FFF;
+	margin-left: -12px;
+    margin-top: 21px;
+	border-radius: 10px;
+	padding-top: 6px;
+    background-color:#F0F0F0;
+}
+
+
+.menu_cms_link li:hover{
+	color:#E08A2C;
+	cursor:pointer;	
+}
+
+.link{
+	text-decoration:none;
+	color:#A9A9A9;
+}
+
+.link:hover{
+	color:#E08A2C;
+	cursor:pointer;
+
+}
+
+.conteudo_cms{
+    width: 675px;
+	height: auto;
+    float: left;
+    background-color:#FFFFFF;
+    border-left: solid #CCC 1px;
+    margin-left: 10px;
+}
+
+.frm{
+	/*! height:400px; */
+	margin-top:25px;
+	background-color:#FFFFFF;
+}
+
+.campo_frm{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: #FFFFFF;
+    padding-left: 50px;
+    color: #666;
+
+}
+
+.caixa_frm{
+	width: 300px;
+	height: 30px;
+	border: solid 1px #666;
+    background-color:#FFFFFF;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding-left: 5px;
+
+}
+.campo_desc{
+    background-color:#FFFFFF;
+	border: solid 1px #666;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.cadas{
+    width: 200px;
+    height: 20px;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+	color: #666;
+    margin-top: 25px;
+    
+}
+input.btnSalvar{
+    width: 65px;
+	height: 40px;
+	float: right;
+	text-align: center;
+	text-decoration: none;
+	line-height: 2.3;
+	border-radius: 10px;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 20px;
+	border: solid 1px #CCC;
+	color: #696969;
+    margin-bottom: 15px;
+    margin-left: 100px;
+    
+}
+input.btnSalvar:hover{
+	cursor:pointer;
+	border: solid 2px #E08A2C;
+	color:#FF6600;
+    transition-property: border-color;
+    transition-duration: 2s;
+}
+
+input.btnConsulta{
+        width: 130px;
+    height: 40px;
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    line-height: 2.3;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: solid 1px #CCC;
+    color: #696969;
+    margin-top: -27px;
+    margin-right: 20px;
+    
+}
+input.btnConsulta:hover{
+	cursor:pointer;
+	border: solid 2px #E08A2C;
+	color:#FF6600;
+    transition-property: border-color;
+    transition-duration: 2s;
+}
+
+.tbl_consulta{
+    width: 600px;
+    min-height: 150px;
+    height: auto; 
+    border: solid 0px #CCC;
+    color: #696969;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.linha_consulta{
+    height: 20px; 
+}
+
+.col_consulta{
+    width: 90px;
+    border: solid 1px #CCC;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.descricao{
+    width: 50px;
+    border: solid 1px #CCC;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    overflow:auto;
+}
+
+.tbl_consulta_dtl{
+    width: 600px;
+    min-height: 150px;
+    height: auto; 
+    border: solid 0px #CCC;
+    color: #696969;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-bottom: 25px;
+}
+
+.linha_consulta_dtl{
+    height: 40px; 
+}
+
+.col_consulta_dtl{
+    width: 90px;
+    border: solid 1px #CCC;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
