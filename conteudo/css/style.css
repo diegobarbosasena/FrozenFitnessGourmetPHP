@@ -1,6 +1,6 @@
-@charset "utf-8";
+F@charset "utf-8";
 /* CSS Document */
-body{
+*{
 	margin:0px;
 	background-color:#F0F0F0;
 }
@@ -73,7 +73,7 @@ nav#menu_{
 	margin-top: 35px;
 }
 input.pesquisar{
-	width: 30%;
+	width: 44%;
 	height: 30px;
 	float: right;
 	border: 1px solid #CCC;
@@ -749,7 +749,6 @@ input.btn_comprar:hover{
 	font-family:"Microsoft YaHei";
     font-size: 17px;
     color:#999999;
-  
     text-align: center;
 }
 .imagemsobre{
@@ -789,15 +788,6 @@ input.btn_comprar:hover{
 }
 .imagem_sobre4{
 	background-image:url(../imagem/sobre3.png);
-}
-
-.monte_ja{
-   width: 100%;
-   height: 250px; 
-   background-image:url(../imagem/monteja.fw.png);
-   margin-top: 50px;
-    
-    
 }
 .contatos{
 	font-family: Verdana,Arial,Helvetica,sans-serif;
@@ -847,68 +837,6 @@ input.btn_comprar:hover{
     background-size: contain;
     float: left;
 }
-.imagem_parceiro{
-    width: 100%;
-    height: 260px;
-    background-image: url(../imagem/parceiro.png);
-    background-color: #F0F0F0;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    float: left;
-}
-
-.parceiro{
-    width: 30%;
-    height:auto;
-    float: left;
-    margin-left:25px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    
-}
-
-.img_parceiro{
-    width: 80%;
-    height: 219px;
-    margin: auto;
-    border-radius: 60%;
-    border: solid 1px;
-    background-image: url(../imagem/smart.png);
-   /* background-repeat: no-repeat;*/
-    
-}
-.nome_parceiro{
-    width: 80%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    color: #FE7101;
-    text-align: center;
-    margin-top: 5px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.tel_parceiro{
-    width: 80%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    color: #333;
-    text-align: center;
-    margin-top: 5px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.desc_parceiro{
-    width: 80%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    color: #666;
-    text-align: center;
-    margin-top: 5px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 #formulario{
 	width: 80%;
     height: auto;

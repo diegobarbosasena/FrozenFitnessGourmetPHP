@@ -52,8 +52,15 @@
             
             $loginUsuario = new Usuario();
             
-            if($loginUsuario->Login($this->usuario,$this->senha)){
-                require_once("views/home/index.php");            
+            $loginCliente = $loginUsuario->loginCliente($this->usuario,$this->senha);
+            $loginFunc = $loginUsuario->loginFunc($this->usuario,$this->senha);
+                        
+            if($loginCliente){
+                require_once("");   
+               // echo("Achou Cliente");
+            }elseif($loginFunc){
+                require_once("");     
+                //echo("Achou Funcionario");
             }else{
                 echo"<script type='text/javascript'>";
                     echo "alert('Usuario ou senha incorretos');";

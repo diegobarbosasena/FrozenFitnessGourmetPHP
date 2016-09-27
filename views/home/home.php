@@ -121,10 +121,6 @@
     
     <div class="clear"> </div>
     
-    <div class="monte_ja"> </div> <!-- monte seu prato-->
-    
-    <div class="clear"> </div>
-    
     <div class="dica">
         <p class="titulo_dica_exercicio"> Dica Frozen Fitness</p>
         <div class="icone1">
