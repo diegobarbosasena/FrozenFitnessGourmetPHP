@@ -1,9 +1,5 @@
-<?php
-	echo "teste";
-?>
 
 <?php 
-	
 	
 	$controller = "";
 	$metodo = "";
