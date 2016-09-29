@@ -49,6 +49,10 @@
             
            require_once('views/cms/adm_sobre.php');
         }
+         public function AdmCategoria(){
+            
+           require_once('views/cms/adm_categoria.php');
+        }
         
          public function ConsultaEstoque(){
             
@@ -93,6 +97,10 @@
           public function ConsultaUsuario(){
             
            require_once('views/cms/consulta_usuario.php');
+        }
+         public function ConsultaCategoria(){
+            
+           require_once('views/cms/consulta_categoria.php');
         }
          public function DetalheParceiro(){
             

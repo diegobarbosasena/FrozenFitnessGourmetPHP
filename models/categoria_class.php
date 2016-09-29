@@ -2,11 +2,9 @@
 <?php
 	
 	class Usuario {
-		
-		public $tipoUsuario;
-		public $usuario;
-		public $senha;
-		public $codTipoUsuario;
+
+		public $nomeCategoria;
+		public $codCategoria;
         
         
         public function __construct(){
@@ -21,7 +19,7 @@
 		
 		public function selectAll (){
             
-			$sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente, tu.codTipoUsuario, tu.nomeTipoUsuario from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente as c on (c.codCliente = uc.codCliente) inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario);";
+			$sql = "select c.codCategoriaMateria, c.nomeCategoriaMateria from  as tblcategoriamateria;";
             
             $select = mysql_query($sql);
             

@@ -14,6 +14,7 @@
                     <li><a href="../home/index" class="link">Home</a></li>
                     <li><a href="../home/produtos" class="link">Produtos</a></li>
                     <li><a href="../home/sobre" class="link">Sobre a Loja</a></li>
+                    <li><a href="../home/parceiros" class="link">Parceiros</a></li>
                     <li><a href="../home/contatos" class="link">Contato</a></li>
                 </ul>
             </nav>
@@ -70,7 +71,7 @@
             </div>
             <div class="row2">
                 <div class="contatos">
-                        Parceiros   •    Contato    •   Pratos prontos   •   Nossas transportadoras
+                    <a href="../home/parceiros" class="link_rodape2" > Parceiros </a>  •    Contato    •   Pratos prontos   •   Nossas transportadoras
                 </div>
                 <div class="redes_sociais">
                     <div class="facebook">

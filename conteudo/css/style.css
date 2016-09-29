@@ -1,6 +1,6 @@
-F@charset "utf-8";
+@charset "utf-8";
 /* CSS Document */
-*{
+body{
 	margin:0px;
 	background-color:#F0F0F0;
 }
@@ -73,7 +73,7 @@ nav#menu_{
 	margin-top: 35px;
 }
 input.pesquisar{
-	width: 44%;
+	width: 30%;
 	height: 30px;
 	float: right;
 	border: 1px solid #CCC;
@@ -553,7 +553,7 @@ figure {
 	height:38px;
 	float:left;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-size:22px;
+	font-size:18px;
 	color:#333333;
 	text-align:center;
 	background-color:#FFFFFF;
@@ -646,10 +646,11 @@ input.btn_comprar:hover{
     height: 40px;
     background-color: #00B348;
     font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 28px;
+    font-size: 23px;
     color: #FFF;
     text-align: center;
     border-radius: 28px;
+    padding-top: 5px;
 }
 .icone1{
 	width: 100px;
@@ -699,7 +700,7 @@ input.btn_comprar:hover{
 .assunto_dica{
     width: 260px;
     font-family: Verdana,Arial,Helvetica,sans-serif;
-    font-size: 28px;
+    font-size: 23px;
     color: #666;
     text-align: center;
     background-color: #FFF;
@@ -720,7 +721,7 @@ input.btn_comprar:hover{
 .assunto_exercicio{
     width: 245px;
     font-family: Verdana,Arial,Helvetica,sans-serif;
-    font-size: 28px;
+    font-size: 23px;
     color: #666;
     text-align: center;
     background-color: #FFF;
@@ -749,6 +750,7 @@ input.btn_comprar:hover{
 	font-family:"Microsoft YaHei";
     font-size: 17px;
     color:#999999;
+  
     text-align: center;
 }
 .imagemsobre{
@@ -788,6 +790,78 @@ input.btn_comprar:hover{
 }
 .imagem_sobre4{
 	background-image:url(../imagem/sobre3.png);
+}
+
+.monte_ja{
+   width: 100%;
+   height: 250px; 
+   background-image:url(../imagem/monteja.png);
+   margin-top: 50px;
+      
+}
+
+input.btn_monteja{
+    width: 25%;
+    height: 37px;
+    background-color: #FE7101;
+    float: right;
+    margin-top: 176px;
+    margin-right: -240px;
+    border:0px;
+    color: #FFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size:18px; 
+    cursor: pointer;
+
+    
+}
+
+.text_personalizado{
+    width: 25%;
+    color: #666;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size:18px;
+    text-align: center;
+    float: right;
+    margin-top: 80px;
+    margin-right: 110px;
+    
+}
+
+
+.monte{
+    width: 50%;
+    color: #666;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin-left: 224px;
+   
+}
+
+.escolher_monte{
+    width: 48%;
+    height: 115px;
+    float: left;
+    margin: 8px;
+
+}
+.montar{
+    width: 51%;
+    height: 60px;
+    margin-top: 45px;
+    color: #666; 
+    padding-left: 5px;
+}
+.categoria_monte{
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 19px;
+    text-align: center;
+    float: left;
+    margin-top: 65px;
+    color: #666;
+    padding-right: 12px;
+    
 }
 .contatos{
 	font-family: Verdana,Arial,Helvetica,sans-serif;
@@ -837,6 +911,68 @@ input.btn_comprar:hover{
     background-size: contain;
     float: left;
 }
+.imagem_parceiro{
+    width: 100%;
+    height: 260px;
+    background-image: url(../imagem/parceiro.png);
+    background-color: #F0F0F0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    float: left;
+}
+
+.parceiro{
+    width: 30%;
+    height:auto;
+    float: left;
+    margin-left:25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+}
+
+.img_parceiro{
+    width: 80%;
+    height: 219px;
+    margin: auto;
+    border-radius: 60%;
+    border: solid 1px;
+    background-image: url(../imagem/smart.png);
+   /* background-repeat: no-repeat;*/
+    
+}
+.nome_parceiro{
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #FE7101;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tel_parceiro{
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.desc_parceiro{
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #formulario{
 	width: 80%;
     height: auto;
@@ -1214,6 +1350,14 @@ table td{
 }
 .link_rodape:hover{
 	color:#A9A9A9;
+}
+
+.link_rodape2{
+	text-decoration:none;
+	color:#FFF;
+}
+.link_rodape2:hover{
+	color:#666;
 }
 .redes_sociais{
 	width: 200px;

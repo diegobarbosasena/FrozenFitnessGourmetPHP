@@ -121,6 +121,15 @@
     
     <div class="clear"> </div>
     
+    <div class="monte_ja"> 
+        <form method="post" action="../home/personalizado">
+            <p class="text_personalizado"> A verdadeira gastronomia está no que você ainda vai criar!</p>    
+           <input class="btn_monteja" type="submit" value="Experimente"> 
+        </form>
+    </div> <!-- monte seu prato-->
+    
+    <div class="clear"> </div>
+    
     <div class="dica">
         <p class="titulo_dica_exercicio"> Dica Frozen Fitness</p>
         <div class="icone1">

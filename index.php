@@ -1,8 +1,7 @@
 
+
 <?php 
 	
-	
-	//arquivo alterado
 	
 	$controller = "";
 	$metodo = "";

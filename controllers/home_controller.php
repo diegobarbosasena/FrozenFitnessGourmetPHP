@@ -41,6 +41,15 @@
             
             require_once('views/home/detalhesProduto.php');
         }
+         public function parceiros(){
+            
+            require_once('views/home/parceiros.php');
+        }
+        
+        public function personalizado(){
+            require_once('views/home/personalizado.php');
+        }
+       
     }
 
 ?>
