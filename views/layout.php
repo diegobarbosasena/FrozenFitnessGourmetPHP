@@ -16,6 +16,7 @@
                     <li><a href="../home/sobre" class="link">Sobre a Loja</a></li>
                     <li><a href="../home/parceiros" class="link">Parceiros</a></li>
                     <li><a href="../home/contatos" class="link">Contato</a></li>
+                    <li><a href="../home/contatos" class="link">oieeeee</a></li>
                 </ul>
             </nav>
             <div class="botoes">
