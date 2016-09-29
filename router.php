@@ -36,6 +36,14 @@
           case 'usuarios':
                $controller = new usuarios_controller();
               break;
+			  
+		 case 'categoria':			
+			$controller = new categoria_controller();
+				
+			
+				
+					
+			break;
 
       }
 

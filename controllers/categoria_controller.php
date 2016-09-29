@@ -1,9 +1,9 @@
 
 <?php
 	
-	class usuarios_controller {
+	class categoria_controller {
 		
-		public $nomeCategoria;
+		public $nomeCategoriaMateria;
 	
         
         
@@ -14,43 +14,49 @@
     
             if($_SERVER['REQUEST_METHOD']=='POST')
             {
-                $this->nomeCategoria=$_POST['txtCategoria'];
-              
-               
-                $this->inserir();
+                $this->nomeCategoriaMateria=$_POST['txtCategoria'];
             }
         }
-        		
 		
 		public function listarTodos (){
 			 
-			  
+			$listar = new Categoria();
+			return $listar->selectAll();
 		
 		}
 		
 		public function buscar($codCategoria){
 			
-		
+			$buscar = new Categoria();
+			$buscar->selectById();
+			
 		}
 		
 		public function atualizar($codCategoria) {
 		
+			$atualizar = new Categoria();
+			$atualizar->update();
 		
 		}
 		
-		public function deletar($codCategoria) {
-		
-		
+		public function deletar() {
+			
+			$codCategoria = $_GET['id'];
+			
+			$deletar = new Categoria();
+			if($deletar->delete($codCategoria)){
+				header("location: ../../cms/ConsultaCategoria");
+			}	
 		}
 		
 		public function inserir() {
               
-		
-		
+			$categoria = new Categoria();
+			$categoria->nomeCategoriaMateria = $this->nomeCategoriaMateria;
+			
+			$categoria::insert($categoria);
 		}
-  
-         
-        }
+
 	}
 
 ?>

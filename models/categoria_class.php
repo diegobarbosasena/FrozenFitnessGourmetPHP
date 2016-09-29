@@ -1,10 +1,10 @@
 
 <?php
 	
-	class Usuario {
+	class Categoria {
 
-		public $nomeCategoria;
-		public $codCategoria;
+		public $nomeCategoriaMateria;
+		public $codCategoriaMateria;
         
         
         public function __construct(){
@@ -16,85 +16,79 @@
             $conexao->conectar();
         }
         		
+				
+		public function insert($categoria) {
+		
+			$sql = "insert into tblcategoriaMateria (nomeCategoriaMateria) values('".$categoria->nomeCategoriaMateria."')";
+				
+			if(mysql_query($sql))
+				header("location: ../cms/AdmCategoria");
+			
+			
+		}		
 		
 		public function selectAll (){
             
-			$sql = "select c.codCategoriaMateria, c.nomeCategoriaMateria from  as tblcategoriamateria;";
-            
-            $select = mysql_query($sql);
-            
-            $cont=0;
-            while($rs=mysql_fetch_array($select))
-            {
-                $listaUsuarios[] = new Usuario();
-
-                $listaUsuarios[$cont]->codTipoUsuario = $rs['codTipoUsuario'];
-                $listaUsuarios[$cont]->usuario = $rs['usuario'];
-                $listaUsuarios[$cont]->senha = $rs['senha'];
-                $listaUsuarios[$cont]->tipoUsuario = $rs['tipoUsuario'];
-                
-                $cont = $cont + 1;
-            }
-		
-            return $listaUsuarios;
-		}
-		
-		public function selectById($codUsuario){
+			$sql = "select * from tblcategoriaMateria";
 			
-		 
-			$sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente, tu.codTipoUsuario, tu.nomeTipoUsuario from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente as c on (c.codCliente = uc.codCliente) inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario) where codUsuario =".$codUsuario;
-            
-            $select = mysql_query($sql);
-            
-            $cont=0;
-            while($rs=mysql_fetch_array($select))
-            {
-                $user[] = new Usuario();
-
-                $user[$cont]->codTipoUsuario = $rs['codTipoUsuario'];
-                $user[$cont]->usuario = $rs['usuario'];
-                $user[$cont]->senha = $rs['senha'];
-                $user[$cont]->tipoUsuario = $rs['tipoUsuario'];
-                
-                $cont = $cont + 1;
-            }
-		
-            return $user;
+			$select = mysql_query($sql);
+			
+			$cont=0;
+			while($rs = mysql_fetch_array($select)){
+				
+				$listaCategoria[] = new Categoria();
+				  
+				$listaCategoria[$cont]->codCategoriaMateria = $rs['codCategoriaMateria'];
+                $listaCategoria[$cont]->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
+				
+				$cont++;							
+			}
+			
+			return $listaCategoria;
+			
+			
 		}
 		
-		public function update($codUsuario) {
-		
-		
+		public function selectById($codCategoriaMateria){
+			
+			$sql = "select * from tblcategoriaMateria where codCategoriaMateria=".$codCategoriaMateria;
+			
+			$select = mysql_query($sql);
+			
+			if($rs = mysql_fetch_array($select)){
+				
+				$listaCategoria[] = new Categoria();
+				  
+				$listaCategoria[$cont]->codCategoriaMateria = $rs['codCategoriaMateria'];
+                $listaCategoria[$cont]->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
+											
+			}
+			
+			return $listaCategoria;
 		}
 		
-		public function delete($codUsuario) {
+		public function update($categoria) {
 		
+			$sql = "update tblcategoriaMateria set nomeCategoriaMateria=".$categoria->nomeCategoriaMateria;
 		
+			$update = mysql_query($sql);
 		}
 		
-		public function insert() {
+		public function delete($codCategoriaMateria) {
 		
-		
+			$sql = "delete from tblcategoriaMateria where codCategoriaMateria=".$codCategoriaMateria;
+			
+			//echo($sql);
+			if(mysql_query($sql))
+				return true;
+			else
+				return false;
+				
+			
 		}
-        
-        public function login($usuario, $senha){
-            
-            $sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente,tu.codTipoUsuario, tu.nomeTipoUsuario from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente as c on (c.codCliente = uc.codCliente) inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario);";
-            
-            $select = mysql_query($sql);
-            
-            $cont=0;
-            while($rs=mysql_fetch_array($select))
-            {
-                if($rs['usuario'] == $usuario && $rs['senha'] == $senha){
-                   return 1; 
-                }else{
-                    return 0;
-                }                               
-            }
-    
-        }
-	
+		
+		
+      
 	
 	}
 

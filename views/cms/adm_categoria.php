@@ -5,7 +5,7 @@
         
     </form>
 
-        <form class="frm" name="frmcategoria" method="post" action="">
+        <form class="frm" name="frmcategoria" method="post" action="../categoria/inserir">
             
             <table>
                   
