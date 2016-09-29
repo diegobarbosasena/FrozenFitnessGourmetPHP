@@ -79,7 +79,7 @@
 		
 		}
         
-        public function login($usuario, $senha){
+        public function loginCliente($usuario, $senha){
             
             $sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente,tu.codTipoUsuario, tu.nomeTipoUsuario from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente as c on (c.codCliente = uc.codCliente) inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario);";
             
@@ -96,6 +96,29 @@
             }
     
         }
+        
+         
+        public function loginFunc($usuario, $senha){
+            
+            $sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario, u.senha, c.codFuncionarioLoja, c.nomeFuncionarioLoja,
+                    tu.codTipoUsuario, tu.nomeTipoUsuario from tblusuarioFuncionarioLoja as uc inner join tblusuario as u on 
+                    (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja) 
+                    inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario);";
+            
+            $select = mysql_query($sql);
+            
+            $cont=0;
+            while($rs=mysql_fetch_array($select))
+            {
+                if($rs['usuario'] == $usuario && $rs['senha'] == $senha){
+                   return 1; 
+                }else{
+                    return 0;
+                }                               
+            }
+    
+        }
+	
 	
 	
 	}
