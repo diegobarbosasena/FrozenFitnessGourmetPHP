@@ -857,7 +857,6 @@ input.btn_monteja{
 .escolher_monte{
     width: 48%;
     height: 115px;
-    float: left;
     margin: 8px;
 
 }
@@ -876,6 +875,7 @@ input.btn_monteja{
     margin-top: 65px;
     color: #666;
     padding-right: 12px;
+	width:25%;
     
 }
 .contatos{
