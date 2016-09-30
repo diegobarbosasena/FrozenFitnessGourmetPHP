@@ -1,4 +1,8 @@
 
+<form  name="frmconsulta" method="post" action="../cms/AdmCategoria">
+        <input class="btnVoltar" name="btnconsulta" type="submit" value="Voltar" />
+        
+</form>
 <div class="cadas">Consulta Categoria</div>
 <table class="tbl_consulta">
     <tr class="linha_consulta">
