@@ -23,19 +23,24 @@
 			$listar = new Categoria();
 			return $listar->selectAll();
 		
+		
 		}
 		
 		public function buscar($codCategoria){
 			
 			$buscar = new Categoria();
-			$buscar->selectById();
+			return $buscar->selectById($codCategoria);
 			
 		}
 		
-		public function atualizar($codCategoria) {
+		public function atualizar() {
 		
 			$atualizar = new Categoria();
-			$atualizar->update();
+			$atualizar->nomeCategoriaMateria = $this->nomeCategoriaMateria;
+			$atualizar->codCategoriaMateria = $_GET['id'];
+			$atualizar::update($atualizar);
+			
+			require_once('views/cms/adm_categoria.php');
 		
 		}
 		
@@ -55,6 +60,8 @@
 			$categoria->nomeCategoriaMateria = $this->nomeCategoriaMateria;
 			
 			$categoria::insert($categoria);
+			
+			require_once('views/cms/adm_categoria.php');
 		}
 
 	}
