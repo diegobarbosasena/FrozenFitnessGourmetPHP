@@ -33,7 +33,7 @@
                         <li><a href="../cms/AdmPratoPronto" class="link">Adm. Prato Pronto</a></li>
                         <li><a href="../cms/AdmObjetivo" class="link">Adm. Objetivo</a></li>
                          <li><a href="../cms/AdmCategoria" class="link">Adm. Categoria</a></li>
-                        <li><a href="../cms/AdmIgrediente" class="link">Adm. Ingredientes</a></li>
+                        <li><a href="../cms/AdmIngrediente" class="link">Adm. Ingredientes</a></li>
                         <li><a href="../cms/AdmProduto" class="link">Adm. Produtos</a></li>
                         <li><a href="../cms/AdmUsuario" class="link">Adm. Usuários</a></li>
                         <li><a href="../cms/AdmPromocao" class="link">Adm. Promoção</a></li>

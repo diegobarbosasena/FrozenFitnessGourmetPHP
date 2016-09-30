@@ -2,7 +2,7 @@
 <div class="cadas">Cadastrar Objetivos </div>
 
     <form  name="frmconsulta" method="post" action="../cms/ConsultaObjetivo">
-        <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
+        <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar " />
         
     </form>
 

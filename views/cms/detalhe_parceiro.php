@@ -1,3 +1,7 @@
+<form  name="frmconsulta" method="post" action="../cms/ConsultaParceiro">
+        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
+        
+</form>
 <div class="cadas">Detalhes</div>
 <table class="tbl_consulta_dtl">
     <tr class="linha_consulta_dtl">

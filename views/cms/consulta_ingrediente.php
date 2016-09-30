@@ -1,4 +1,13 @@
+<form  name="frmconsulta" method="post" action="../cms/AdmIngrediente">
+        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
+        
+</form>
 <div class="cadas">Consultar Igredientes</div>
+<form name="FrmPesquisa" method="post" action="home.php">
+    
+    <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
+    <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
+</form> 
 <table class="tbl_consulta">
     <tr class="linha_consulta">
         <td class="col_consulta">
