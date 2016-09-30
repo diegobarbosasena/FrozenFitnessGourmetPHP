@@ -30,7 +30,7 @@
            <?php echo($rs[$cont]->nomeCategoriaMateria); ?>
         </td>
         <td class="col_consulta" >
-            <a href="../categoria/atualizar" class="link"> Editar </a>| <a href="../categoria/deletar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link">Excluir </a> 
+            <a href="../categoria/atualizar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link"> Editar </a>| <a href="../categoria/deletar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link">Excluir </a> 
         </td>
 		
 		<?php 

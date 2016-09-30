@@ -21,9 +21,7 @@
 		public function listarTodos (){
 			 
 			$listar = new Categoria();
-			return $listar->selectAll();
-		
-		
+			return $listar->selectAll();	
 		}
 		
 		public function buscar($codCategoria){
@@ -38,10 +36,12 @@
 			$atualizar = new Categoria();
 			$atualizar->nomeCategoriaMateria = $this->nomeCategoriaMateria;
 			$atualizar->codCategoriaMateria = $_GET['id'];
-			$atualizar::update($atualizar);
-			
-			require_once('views/cms/adm_categoria.php');
-		
+			$_SESSION['metodo'] = 'atualizar';	
+						
+			if($atualizar::update($atualizar)){	
+				
+				header("location: ../../cms/AdmCategoria");
+			}
 		}
 		
 		public function deletar() {
@@ -58,10 +58,11 @@
               
 			$categoria = new Categoria();
 			$categoria->nomeCategoriaMateria = $this->nomeCategoriaMateria;
-			
-			$categoria::insert($categoria);
-			
-			require_once('views/cms/adm_categoria.php');
+			$_SESSION['metodo'] = 'inserir';
+			if($categoria::insert($categoria)){
+				
+				header("location: ../cms/AdmCategoria");
+			}
 		}
 
 	}

@@ -21,12 +21,11 @@
 		
 			$sql = "insert into tblcategoriaMateria (nomeCategoriaMateria) values('".$categoria->nomeCategoriaMateria."')";
 			
-			$insert = mysql_query($sql);
-			
-			//if(mysql_query($sql))
-				//header("location: ../cms/AdmCategoria");
-			
-			
+			if(mysql_query($sql))
+				return true;
+			else
+				return false;
+							
 		}		
 		
 		public function selectAll (){
@@ -47,8 +46,7 @@
 			}
 			
 			return $listaCategoria;
-			
-			
+				
 		}
 		
 		public function selectById($codCategoriaMateria){
@@ -57,24 +55,29 @@
 			
 			$select = mysql_query($sql);
 			
+			echo($sql);
+			
 			if($rs = mysql_fetch_array($select)){
 				
-				$listaCategoria[] = new Categoria();
+				$listaCat[] = new Categoria();
 				  
-				$listaCategoria[$cont]->codCategoriaMateria = $rs['codCategoriaMateria'];
-                $listaCategoria[$cont]->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
+				$listaCat[$cont]->codCategoriaMateria = $rs['codCategoriaMateria'];
+                $listaCat[$cont]->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
 											
 			}
 			
-			return $listaCategoria;
+			return $listaCat;
 		}
 		
 		public function update($categoria) {
 		
 			$sql = "update tblcategoriaMateria set nomeCategoriaMateria='".$categoria->nomeCategoriaMateria."' where codCategoriaMateria=".$categoria->codCategoriaMateria;     
-		
-			$update = mysql_query($sql);
+			//echo($sql.'  CHEGOU');
 				
+			if(mysql_query($sql))
+				return true;
+			else
+				return false;				
 		}
 		
 		public function delete($codCategoriaMateria) {
@@ -85,11 +88,7 @@
 				return true;
 			else
 				return false;							
-		}
-		
-		
-      
-	
+		}	
 	}
 
 ?>

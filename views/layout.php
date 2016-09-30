@@ -1,6 +1,7 @@
 
 <?php
     $usuario = "Teste Nome De Usuário";
+	
 ?>
 <!DOCTYPE html>
 <html>
