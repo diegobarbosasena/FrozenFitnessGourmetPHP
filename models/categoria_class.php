@@ -20,9 +20,11 @@
 		public function insert($categoria) {
 		
 			$sql = "insert into tblcategoriaMateria (nomeCategoriaMateria) values('".$categoria->nomeCategoriaMateria."')";
-				
-			if(mysql_query($sql))
-				header("location: ../cms/AdmCategoria");
+			
+			$insert = mysql_query($sql);
+			
+			//if(mysql_query($sql))
+				//header("location: ../cms/AdmCategoria");
 			
 			
 		}		
@@ -69,22 +71,20 @@
 		
 		public function update($categoria) {
 		
-			$sql = "update tblcategoriaMateria set nomeCategoriaMateria=".$categoria->nomeCategoriaMateria;
+			$sql = "update tblcategoriaMateria set nomeCategoriaMateria='".$categoria->nomeCategoriaMateria."' where codCategoriaMateria=".$categoria->codCategoriaMateria;     
 		
 			$update = mysql_query($sql);
+				
 		}
 		
 		public function delete($codCategoriaMateria) {
 		
 			$sql = "delete from tblcategoriaMateria where codCategoriaMateria=".$codCategoriaMateria;
-			
-			//echo($sql);
+
 			if(mysql_query($sql))
 				return true;
 			else
-				return false;
-				
-			
+				return false;							
 		}
 		
 		
