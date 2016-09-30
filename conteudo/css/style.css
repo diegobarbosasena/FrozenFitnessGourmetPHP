@@ -67,10 +67,25 @@ nav#menu_{
 	cursor:pointer;
 }
 .botoes{
-	width: 38%;
-	height: 50px;
-	float: left;
-	margin-top: 35px;
+    width: 24%;
+    height: 50px;
+    float: left;
+    margin-top: 35px;
+}
+.nomeusuario{
+    border: solid 1px #E08A2C;
+    width: 14%;
+    height: 45px;
+    float: left;
+    margin-top: 26px;
+    border-radius: 10px;
+}
+.nomeusuario p{
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#666;
+    font-size:15px;
+    text-align: center;
+    padding-top: 3px;
 }
 input.pesquisar{
 	width: 30%;

@@ -1,3 +1,7 @@
+
+<?php
+    $usuario = "Teste Nome De Usuário";
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,6 +13,7 @@
         <div class="menu">
             <div id="logo">
             </div>
+            
             <nav>  
                 <ul id="menu">
                     <li><a href="../home/index" class="link">Home</a></li>
@@ -19,6 +24,12 @@
                     <li><a href="../home/contatos" class="link">oieeeee</a></li>
                 </ul>
             </nav>
+            
+            <div class="nomeusuario"> 
+                <p>Bem Vindo!</p>
+                <p> <?php echo $usuario; ?> </p>
+            </div>
+            
             <div class="botoes">
 
                 <div class="login">
