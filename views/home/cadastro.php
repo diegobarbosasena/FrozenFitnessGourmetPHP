@@ -8,15 +8,15 @@
                     
                     <legend> Dados Pessoais</legend>
                     <div class="altura"> </div>
-                    <label>Nome:</label> <input class="campo_nome" type="text">
-                    <br> <label>Email:</label> <input class="campo_nome" type="text">
-                    <br> <label>CPF:</label> <input class="campo_cpf" type="text">
-                    <br> <label>Data de Nascimento:</label> <input class="campo_data" type="text">
-                    <br> <label>Peso:</label> <input class="campo_nome" type="text">
-                    <br> <label>Altura:</label> <input class="campo_altura" type="text">
-                    <br> <label>Celular:</label> <input class="campo_celular" type="text">
-                    <br> <label>Telefone:</label> <input class="campo_telefone" type="text">
-                    <br> <label>Email:</label> <input class="campo_email" type="text">
+                         <label>Nome:</label> <input class="campo_nome" type="text" placeholder="Digite seu nome">
+                    <br> <label>Email:</label> <input class="campo_nome" type="text" placeholder="nome@nome.com">
+                    <br> <label>CPF:</label> <input class="campo_cpf" type="text" placeholder="111 111 111 11">
+                    <br> <label>Data de Nascimento:</label> <input class="campo_data" type="text" placeholder="00/00/0000">
+                    <br> <label>Peso:</label> <input class="campo_nome" type="text" placeholder="00">
+                    <br> <label>Altura:</label> <input class="campo_altura" type="text" placeholder="0.00">
+                    <br> <label>Celular:</label> <input class="campo_celular" type="text" placeholder="00 9 9999 9999">
+                    <br> <label>Telefone:</label> <input class="campo_telefone" type="text" placeholder="00 1111 2222" >
+                    <br> <label>Email:</label> <input class="campo_email" type="text" >
                     <br>
                    
                 <INPUT TYPE="radio" NAME="FEMININO" VALUE="op1"> Feminino
@@ -28,11 +28,11 @@
                 <fieldset>
                     <legend> Endereco</legend>
                     <div class="altura"> </div>
-                    <br> <label>Logradouro</label> <input class="campo_logradouro" type="text">
-                    <br> <label>Rua:</label> <input class="campo_rua" type="text">
-                    <br> <label>Numero:</label> <input class="campo_numero" type="text">
-                    <br> <label>Bairro:</label> <input class="campo_bairro" type="text">
-                    <br> <label>CEP:</label> <input class="campo_cep" type="text">
+                    <br> <label>Logradouro</label> <input class="campo_logradouro" type="text" placeholder="Rua, Av ">
+                    <br> <label>Rua:</label> <input class="campo_rua" type="text" placeholder="Nome da rua">
+                    <br> <label>Numero:</label> <input class="campo_numero" type="text" placeholder="00">
+                    <br> <label>Bairro:</label> <input class="campo_bairro" type="text" placeholder="Nome do Bairro">
+                    <br> <label>CEP:</label> <input class="campo_cep" type="text" placeholder="00000 000">
                     <br> <label>Estado:</label>
                         <select size="1" name="D1">
 
@@ -60,9 +60,9 @@
                     <legend> Login</legend>
                          <div class="altura"> </div>
                         
-                            <br> <label>Usuario:</label> <input class="campo_usuario" type="text">
-                            <br> <label>Senha:</label> <input class="campo_senha" type="text">
-                            <br> <label>Confirmar Senha:</label> <input class="campo_confirmar_senha" type="text">
+                            <br> <label>Usuario:</label> <input class="campo_usuario" type="text" placeholder="Digite um nome para seu Login">
+                            <br> <label>Senha:</label> <input class="campo_senha" type="text" placeholder="Digite sua senha">
+                            <br> <label>Confirmar Senha:</label> <input class="campo_confirmar_senha" type="text" placeholder="Digite sua senha novamente">
                            
                             <br>
 
