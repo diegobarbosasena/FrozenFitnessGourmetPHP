@@ -1,28 +1,6 @@
 <?php 
 	
-	if($_GET['acao'] == 'AdmCategoria'){
-		$acao = "inserir";
-		
-		$botao = 'Salvar';
-	}else{
-		$acao = $_GET['acao']; 
-	}
-	
-	$nome= "";
-	
-	if($acao == 'atualizar'){
-		
-		require_once('controllers/categoria_controller.php');
-		
-		$controllerCategoria = new categoria_controller();
-				
-		$categoria = $controllerCategoria->Buscar($_GET['id']);
-		
-		$nome = $categoria->nomeCategoriaMateria;
-		
-		$botao = 'Editar';
-	}
-
+	$nome = "";
 ?>
 
 <div class="cadas">Cadastrar Categoria</div>
