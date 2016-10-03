@@ -1,5 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
+input{
+outline:none;
+}
 body{
 	margin:0px;
 	background-color:#F0F0F0;
@@ -843,25 +846,28 @@ input.btn_monteja{
     
 }
 
+.montar_prato{
+	width: 49%;
+	float:left;
+}
 
 .monte{
-    width: 50%;
+    width: 100%;
     color: #666;
     font-family: Verdana,Arial,Helvetica,sans-serif;
     font-size: 25px;
     text-align: center;
-    margin-left: 224px;
    
 }
 
 .escolher_monte{
-    width: 48%;
+    width: 100%;
     height: 115px;
     margin: 8px;
 
 }
 .montar{
-    width: 51%;
+    width: 41%;
     height: 60px;
     margin-top: 45px;
     color: #666; 
@@ -875,8 +881,133 @@ input.btn_monteja{
     margin-top: 65px;
     color: #666;
     padding-right: 12px;
-	width:25%;
+	width:20%;
     
+}
+
+input.btn_mais{
+    width: 7%;
+    float: right;
+    margin-right: 138px;
+    height: 38px;
+    border-radius: 7px;
+    border:0px;
+    margin-top: -50px;
+	background-image:url(../imagem/btn_mais.png);
+	background-color:#F0F0F0;
+	cursor:pointer;
+}
+input.btn_menos{
+    width: 8%;
+    float: right;
+    margin-right: 79px;
+    height: 38px;
+    border-radius: 7px;
+    border: 0px;
+    margin-top: -50px;
+    background-image: url(../imagem/btn_menos.png);
+    background-color: #F0F0F0;
+    cursor: pointer;
+}
+
+.adicionados{
+	width: 31%;
+    height: auto;
+    float: left;
+    margin-top: 68px;
+    margin-left: 48px;
+    border: solid 1px #ccc;
+    border-radius: 10px;
+    padding-bottom: 22px;
+	background-color:#FFFFFF;
+}
+
+.itens_adc{
+	width:100%;
+	height:auto;
+	text-align:center;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	color: #333;
+	font-size:18px;
+	padding-top:10px;
+	border-bottom: solid 1px #EAEAEA;
+	
+}
+
+.qnt_adc{
+	width:100%;
+	height:auto;
+	text-align:center;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	color: #666;
+	font-size:18px;
+	padding-top:20px;
+	padding-bottom:5px;
+
+}
+
+.lst_itens_adc{
+	width:50%;
+	list-style-image:url(../imagem/flexa.png);
+	text-align:center;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	color: #333;
+	padding-top:10px;
+	margin-left:50px;
+}
+
+.item_lst_adc{
+	padding-top:10px;
+
+}
+
+input.btn_dlt_item{
+	width: 13%;
+    height: 21px;
+    border: 0px;
+    background-color: #FFF;
+    cursor: pointer;
+	background-image:url(../imagem/xis.png);
+    float: right;
+    margin-top: -19px;
+    margin-right: -62px;
+
+}
+
+input.btn_adquirir {
+    width: 88%;
+    height: 40px;
+    border: solid 1px #00B348;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    border-radius: 15px;
+    color: #FFF;
+    background-color: #00B348;
+    margin-bottom: 9px;
+    margin-top: 27px;
+    margin-left: 15px;
+	cursor:pointer;
+}
+
+input.btn_adquirir:hover{
+	border:solid 1px #00B348;
+	background-color:#FFF;
+	color:#00B348;
+	
+
+}
+.quantidade{
+    width: 5%;
+    height: 23px;
+    border: solid 1px #ccc;
+    float: right;
+    margin-right: 112px;
+    margin-top: -47px;
+    text-align: center;
+    padding-top: 6px;
+    background-color: #FFF;
+    border-radius: 5px;
+	
 }
 .contatos{
 	font-family: Verdana,Arial,Helvetica,sans-serif;

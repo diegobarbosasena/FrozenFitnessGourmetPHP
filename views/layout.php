@@ -21,8 +21,9 @@
                     <li><a href="../home/produtos" class="link">Produtos</a></li>
                     <li><a href="../home/sobre" class="link">Sobre a Loja</a></li>
                     <li><a href="../home/parceiros" class="link">Parceiros</a></li>
+                     <li><a href="../home/personalizado" class="link">Personalize</a></li>
                     <li><a href="../home/contatos" class="link">Contato</a></li>
-                    <li><a href="../home/contatos" class="link">oieeeee</a></li>
+                   
                 </ul>
             </nav>
             

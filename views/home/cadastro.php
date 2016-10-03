@@ -16,7 +16,7 @@
                     <br> <label>Altura:</label> <input class="campo_altura" type="text" placeholder="0.00">
                     <br> <label>Celular:</label> <input class="campo_celular" type="text" placeholder="00 9 9999 9999">
                     <br> <label>Telefone:</label> <input class="campo_telefone" type="text" placeholder="00 1111 2222" >
-                    <br> <label>Email:</label> <input class="campo_email" type="text" >
+                   
                     <br>
                    
                 <INPUT TYPE="radio" NAME="FEMININO" VALUE="op1"> Feminino
