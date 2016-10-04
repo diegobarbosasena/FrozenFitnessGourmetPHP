@@ -6,29 +6,29 @@
         
     </form>
 
-        <form class="frm" name="frmprodutos" method="post" action="">
+        <form class="frm" name="frmprodutos" method="post" action="../funcionario/inserir">
             
             <table>
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" type="text"   value=""    /></td>
+                    <td><input class="caixa_frm" type="text"   name="txtNome" value=""    /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">CPF:</td>
-                    <td><input class="caixa_frm"  name="txtcarboidrato" type="text"  value=""  /></td>
+                    <td><input class="caixa_frm"  name="txtCpf" type="text"  value=""  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Usuário:</td>
-                    <td><input class="caixa_frm" name="txtcalorias"  type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtUsuario"  type="text" value="" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Senha:</td>
-                    <td><input class="caixa_frm" name="txtevlrenergetico" type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtSenha" type="text" value="" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Confirmar senha:</td>
-                    <td><input class="caixa_frm" name="txtproteina" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtConfirmaSenha" type="text" value=""  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Tipo:</td>

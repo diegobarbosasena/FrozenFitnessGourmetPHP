@@ -71,11 +71,23 @@
 		
 		public function delete($codUsuario) {
 		
+			$sql = "delete from tblusuario where codUsuario=".$codUsuario;
+
+			if(mysql_query($sql))
+				return true;
+			else
+				return false;
 		
 		}
 		
-		public function insert() {
-		
+		public function insert($novousuario) {
+			
+			$sql = "insert into tblusuario (usuario, senha) values('".$novousuario->usuario."','".$novousuario->senha."')";
+			
+			if(mysql_query($sql))
+				return true;
+			else
+				return false;
 		
 		}
         

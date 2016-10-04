@@ -64,7 +64,6 @@
 				header("location: ../cms/AdmCategoria");
 			}
 		}
-
 	}
 
 ?>

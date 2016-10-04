@@ -38,13 +38,12 @@
               break;
 			  
 		 case 'categoria':			
-			$controller = new categoria_controller();
-				
-			
-				
-					
+			$controller = new categoria_controller();			
 			break;
 
+		case 'funcionario':
+			$controller = new funcionario_controller();
+			break;
       }
 
       // call the action

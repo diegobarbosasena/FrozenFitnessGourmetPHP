@@ -45,8 +45,11 @@
 				$cont++;							
 			}
 			
-			return $listaCategoria;
-				
+			if($listaCategoria != ""){
+				return 	$listaCategoria;
+			}else{
+				return "";
+			}
 		}
 		
 		public function selectById($codCategoriaMateria){
@@ -72,7 +75,6 @@
 		public function update($categoria) {
 		
 			$sql = "update tblcategoriaMateria set nomeCategoriaMateria='".$categoria->nomeCategoriaMateria."' where codCategoriaMateria=".$categoria->codCategoriaMateria;     
-			//echo($sql.'  CHEGOU');
 				
 			if(mysql_query($sql))
 				return true;

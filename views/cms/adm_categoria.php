@@ -1,5 +1,5 @@
 <?php 
-	
+	//<?php echo($acao)
 	$nome = "";
 ?>
 
@@ -10,7 +10,7 @@
         
     </form>
 
-        <form class="frm" name="frmcategoria" method="post" action="../categoria/<?php echo($acao)?>">
+        <form class="frm" name="frmcategoria" method="post" action="../categoria/inserir">
             
             <table>
                   

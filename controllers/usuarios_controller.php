@@ -45,17 +45,17 @@
 		public function deletar($codUsuario) {
             $DeletarUsuario = new Usuario();
 
-            $DeletarUsuario->Delete($cod);
-		
+            $DeletarUsuario->Delete($cod);	
 		}
 		
 		public function inserir() {
 		
             $novoUsuario = new Usuario();
             
-            $novoUsuario->Nomeusuario = this->
-            
-		
+            $novoUsuario->usuario = this->usuario;
+			$novoUsuario->senha = this->senha;
+            	
+			$novoUsuario::insert($novousuario);
 		}
         
         public function entrar(){
