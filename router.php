@@ -38,7 +38,15 @@
               break;
 			  
 		 case 'categoria':			
+<<<<<<< HEAD
 			$controller = new categoria_controller();			
+=======
+			$controller = new categoria_controller();		
+			break;
+			
+		case 'objetivo':			
+			$controller = new objetivo_controller();		
+>>>>>>> ec7ad4f31b1c0b57e0382f77aa2c261e7fd63a8d
 			break;
 
 		case 'funcionario':

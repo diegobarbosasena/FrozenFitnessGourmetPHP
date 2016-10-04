@@ -1,3 +1,8 @@
+
+<?php $_POST['txtNomeObjetivo'] ="";
+	  $_POST['txtDescricaoObjetivo'] ="";
+?>
+
 <form  name="frmconsulta" method="post" action="../cms/AdmObjetivo">
         <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
         
@@ -23,34 +28,37 @@
             Opções
         </td>
     </tr>
+    <?php
+		require_once('controllers/objetivo_controller.php');
+		
+		$controllerObjetivo = new objetivo_controller();
+				
+		$rs=$controllerObjetivo->listarTodos();
+		
+		$cont=0;
+		
+		while ($cont < count($rs)){
+	
+	?>
     <tr class="linha_consulta">
         <td class="col_consulta">
-            Emagrecimento
+           <?php echo($rs[$cont]->nomeCategoriaPrato); ?>
             
         </td>
         <td class="col_consulta">
            
         </td>
         <td class="descricao">
-          As gorduras localizadas no nosso corpo não apareceram ali do dia para noite, mas são resultados de meses ou anos de uma alimentação não equilibrada.
+         <?php echo($rs[$cont]->descricaoCategoria); ?>
         </td>
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a>
+           <a href="../objetivo/atualizar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link"> Editar </a>| <a href="../objetivo/deletar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link">Excluir </a>
         </td>
-    </tr>
-    <tr class="linha_consulta">
-        <td class="col_consulta">
-            
-        </td>
-        <td class="col_consulta">
-           
-        </td>
-        <td class="col_consulta">
-          
-        </td>
-        <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a>
-        </td>
-    </tr>
+   
+    <?php 
+		
+		$cont++;
+		}
+	?>
 
 </table>

@@ -4,10 +4,10 @@
 
 		public $nomeCategoriaPrato;
 		public $codCategoriaPrato;
-		public $imagemCategoria;
 		public $descricaoCategoria;
-        
-        
+		public $imagemCategoria;
+
+		
         public function __construct(){
             
             require_once('models/banco_dados.php');
@@ -19,14 +19,17 @@
         		
 				
 		public function insert($categoriaPrato) {
+
 		
-			$sql = "insert into tblcategoriaprato (nomeCategoriaPrato, descicaoCategoria) values('".$categoriaPrato->nomeCategoriaPrato."','".$categoriaPrato->descricaoCategoria."')";
+				$sql = "insert into tblcategoriaprato (nomeCategoriaPrato, descricaoCategoria, imagemCategoria) values('".$categoriaPrato->nomeCategoriaPrato."','".$categoriaPrato->descricaoCategoria."',
+					'".$categoriaPrato->imagemCategoria."')";
 			
-			if(mysql_query($sql))
-				return true;
-			else
-				return false;
-							
+				if(mysql_query($sql))
+					return true;
+				else
+					return false;
+					//echo($sql);
+	
 		}		
 		
 		public function selectAll (){
@@ -38,11 +41,10 @@
 			$cont=0;
 			while($rs = mysql_fetch_array($select)){
 				
-				$listaCategoria[] = new Objetivo();
-				  
+				$listaCategoriaPrato[] = new Objetivo(); 
 				$listaCategoriaPrato[$cont]->codCategoriaPrato = $rs['codCategoriaPrato'];
                 $listaCategoriaPrato[$cont]->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
-				 $listaCategoriaPrato[$cont]->descricaoCategoria = $rs['descricaoCategoria'];
+				$listaCategoriaPrato[$cont]->descricaoCategoria = $rs['descricaoCategoria'];
 				
 				
 				$cont++;							
@@ -83,9 +85,9 @@
 				return false;				
 		}
 		
-		public function delete($codCategoriaMateria) {
+		public function delete($codCategoriaPrato) {
 		
-			$sql = "delete from tblcategoriaprato where codCategoriaMateria=".$tblcategoriaprato;
+			$sql = "delete from tblcategoriaprato where codCategoriaPrato=".$codCategoriaPrato;
 
 			if(mysql_query($sql))
 				return true;
