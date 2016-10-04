@@ -58,6 +58,8 @@
 			 $usuario->senha = $this->senhaFuncionario;
 			 
 			 $usuario::insert($usuario);
+			 
+			 
 				
 			header("location: ../cms/AdmUsuario");
 			 
