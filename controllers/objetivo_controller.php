@@ -4,8 +4,7 @@
 	class objetivo_controller {
 		
 		public $nomeCategoriaPrato;
-	
-        
+		public $descricaoCategoria;
         
         public function __construct(){
             
@@ -14,7 +13,10 @@
     
             if($_SERVER['REQUEST_METHOD']=='POST')
             {
-                $this->nomeCategoriaMateria=$_POST['txtNomeObjetivo'];
+                $this->nomeCategoriaPrato=$_POST['txtNomeObjetivo'];
+				$this->descricaoCategoria=$_POST['txtDescricaoObjetivo'];
+				
+				
             }
         }
 		
@@ -57,7 +59,12 @@
 		public function inserir() {
               
 			$objetivo = new Objetivo();
-			$objetivo->nomeCategoriaObjetivo = $this->nomeCategoriaObjetivo;
+			$objetivo->nomeCategoriaPrato = $this->nomeCategoriaPrato;
+			$objetivo->descricaoCategoria = $this->descricaoCategoria;
+			
+			
+			
+				 
 			$_SESSION['metodo'] = 'inserir';
 			if($objetivo::insert($objetivo)){
 				

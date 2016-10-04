@@ -38,11 +38,11 @@
               break;
 			  
 		 case 'categoria':			
-			$controller = new categoria_controller();
-				
+			$controller = new categoria_controller();		
+			break;
 			
-				
-					
+		case 'objetivo':			
+			$controller = new objetivo_controller();		
 			break;
 
       }
