@@ -28,6 +28,8 @@
 							
 		}		
 		
+		
+		
 		public function selectAll (){
             
 			$sql = "select * from tblcategoriaMateria";
@@ -58,23 +60,23 @@
 			
 			$select = mysql_query($sql);
 			
-			echo($sql);
+			//echo($sql);
 			
 			if($rs = mysql_fetch_array($select)){
 				
-				$listaCat[] = new Categoria();
+				$Cat= new Categoria();
 				  
-				$listaCat[$cont]->codCategoriaMateria = $rs['codCategoriaMateria'];
-                $listaCat[$cont]->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
+				$Cat->codCategoriaMateria = $rs['codCategoriaMateria'];
+                $Cat->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
 											
 			}
 			
-			return $listaCat;
+			return $Cat;
 		}
 		
-		public function update($categoria) {
+		public function update() {
 		
-			$sql = "update tblcategoriaMateria set nomeCategoriaMateria='".$categoria->nomeCategoriaMateria."' where codCategoriaMateria=".$categoria->codCategoriaMateria;     
+			$sql = "update tblcategoriaMateria set nomeCategoriaMateria='".$this->nomeCategoriaMateria."' where codCategoriaMateria=".$this->codCategoriaMateria;     
 				
 			if(mysql_query($sql))
 				return true;

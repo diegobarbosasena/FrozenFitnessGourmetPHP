@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../conteudo/css/style.css">
+        <link rel="stylesheet" type="text/css" href="<?php  echo PROJECTDIR; ?>conteudo/css/style.css">
         <title>Frozen Fitness Gourmet</title>
     </head>
     <body>

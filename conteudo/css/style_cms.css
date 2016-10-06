@@ -283,6 +283,7 @@ input.btnConsulta{
     margin-right: 20px;
     
 }
+
 input.btnConsulta:hover{
 	cursor:pointer;
 	border: solid 2px #E08A2C;

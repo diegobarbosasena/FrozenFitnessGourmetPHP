@@ -25,6 +25,7 @@
                 break;
               
           case 'cms':
+			  require_once('models/categoria_class.php');
               $controller = new cms_controller();
               break;
               
@@ -38,7 +39,7 @@
               break;
 			  
 		 case 'categoria':			
-
+	
 			$controller = new categoria_controller();			
 	
 			break;

@@ -1,13 +1,17 @@
 
 <?php
-	$_POST['txtCategoria'] = "";
+	
+	$_GET ['txtCategoria'] = "";
+	
 ?>
 
-<form  name="frmconsulta" method="post" action="../cms/AdmCategoria">
-        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
-        
-</form>
+
 <div class="cadas">Consulta Categoria</div>
+
+ <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>categoria/cadastrar">
+        <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
+        
+ </form>
 
 <form name="FrmPesquisa" method="post" action="home.php">
     
@@ -46,7 +50,7 @@
 			?>
         </td>
         <td class="col_consulta" >
-            <a href="../categoria/atualizar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link"> Editar </a>| <a href="../categoria/deletar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link">Excluir </a> 
+            <a href="../categoria/cadastrar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link"> Editar </a>| <a href="../categoria/deletar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link">Excluir </a> 
         </td>
 		
 		<?php 

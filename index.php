@@ -1,7 +1,7 @@
 
 
 <?php 
-	
+	require_once('config.php');
 	
 	$controller = "";
 	$metodo = "";
@@ -28,9 +28,10 @@
 	//Se a variável controller estiver vazia redireciona a pagina para index(conteudo inicial)
 	if($controller=="")
 		 header( 'Location: home/index');
-	
+		
+	$lstCtrlCMS = array('cms', 'categoria');
 
-	if ($controller == "cms"){
+	if (in_array($controller, $lstCtrlCMS)){
         require_once('views/layoutCms.php');
     }else{
         //Inclusão do arquivo principal do site

@@ -49,10 +49,7 @@
             
            require_once('views/cms/adm_sobre.php');
         }
-         public function AdmCategoria(){
-            
-           require_once('views/cms/adm_categoria.php');
-        }
+         
         
          public function ConsultaEstoque(){
             
