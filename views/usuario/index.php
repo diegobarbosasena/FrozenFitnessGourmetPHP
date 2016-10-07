@@ -1,13 +1,15 @@
-<form  name="frmconsulta" method="post" action="../cms/AdmUsuario">
-        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
-        
-    </form>
+
 <div class="cadas">Consulta de Usuarios</div>
-<form name="FrmPesquisa" method="post" action="home.php">
+
     
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>usuarios/cadastrar">
+        <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
+</form>
+<form>
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
-</form> 
+</form>
+<form name="FrmUsuario" method="post" action="">
 <table class="tbl_consulta">
     <tr class="linha_consulta">
         <td class="col_consulta">

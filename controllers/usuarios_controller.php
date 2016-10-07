@@ -10,15 +10,53 @@
         public function __construct(){
             
             require_once('models/usuario_class.php');
-            
-    
-            if($_SERVER['REQUEST_METHOD']=='POST')
+     
+            if($_SERVER['REQUEST_METHOD']==='POST')
             {
-                $this->usuario=$_POST['txtusuario'];
-                $this->senha=$_POST['txtsenha'];
-                $this->entrar();
+				if(isset($_POST['txtusuario']) && isset($_POST['codUsuario'])){
+                    
+                    $this->usuario=$_POST['txtusuario'];
+                    $this->senha=$_POST['txtsenha'];
+                    //$this->entrar();
+				}
             }
         }
+        
+        
+        
+        public function index(){
+            
+			$atualizacao = 'inserir';
+			$usuario=new Usuario();
+			if(isset($_GET['id']) && $_GET['id'] != ""){
+				
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
+				
+				$c = new Usuario();
+				$usuario=$c->selectById($id);
+			}
+			
+           require_once('views/usuario/index.php');
+        }
+        
+        
+		public function cadastrar(){
+			
+			$atualizacao = 'inserir';
+			$usuario=new Usuario();
+            //echo('CHEGOU');
+            
+			if(isset($_GET['id']) && $_GET['id'] != ""){
+				
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
+				
+				$c = new Usuario();
+				$usuario=$c->selectById($id);
+			}
+            require_once('views/usuarios/cadastrar.php');
+		}
         		
 		
 		public function listarTodos (){
@@ -67,10 +105,10 @@
                         
             if($loginCliente){
                 require_once('controllers/home_controller.php');
-                 header("location: ../home/index");
+                header("location: ../home/index");
             }elseif($loginFunc){
                 require_once('controllers/cms_controller.php');
-                header("location: ../cms/AdmProduto");
+                header("location: ../objetivo/index");
             }else{
                 echo"<script type='text/javascript'>";
                     echo "alert('Usuario ou senha incorretos');";

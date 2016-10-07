@@ -35,7 +35,7 @@
                          <li><a href="<?php  echo PROJECTDIR; ?>categoria/index" class="link">Adm. Categoria</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>ingrediente/index" class="link">Adm. Ingredientes</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>produtocms/index" class="link">Adm. Produtos</a></li>
-                        <li><a href="<?php  echo PROJECTDIR; ?>usuario/index" class="link">Adm. Usuários</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>usuarios/index" class="link">Adm. Usuários</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>promocao/index" class="link">Adm. Promoção</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>estoque/index" class="link">Adm. Estoque</a></li>
                          <li><a href="<?php  echo PROJECTDIR; ?>sobre/index" class="link">Sobre a Loja</a></li>
