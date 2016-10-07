@@ -35,21 +35,20 @@
 			$sql = "select * from tblcategoriaMateria";
 			
 			$select = mysql_query($sql);
-			
-			$cont=0;
+						
             
-            $listaCategoria[] = new Categoria();
+            $listaCategoria = array();
             
 			while($rs = mysql_fetch_array($select)){
                 	  
-				$listaCategoria[$cont]->codCategoriaMateria = $rs['codCategoriaMateria'];
-                echo("Teste".$listaCategoria[$cont]->codCategoriaMateria );
-                $listaCategoria[$cont]->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
-				
-				$cont++;							
+                $categoria = new Categoria();
+                $categoria->codCategoriaMateria = $rs['codCategoriaMateria'];
+                $categoria->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
+                
+				$listaCategoria[] = $categoria;                              							
 			}
 			
-                return $listaCategoria;           
+            return $listaCategoria;           
 		}
 		
 		public function selectById($codCategoriaMateria){

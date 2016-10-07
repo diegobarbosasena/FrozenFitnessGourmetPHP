@@ -52,8 +52,8 @@
 		
             $novoUsuario = new Usuario();
             
-            $novoUsuario->usuario = this->usuario;
-			$novoUsuario->senha = this->senha;
+            $novoUsuario->usuario = $this->usuario;
+			$novoUsuario->senha = $this->senha;
             	
 			$novoUsuario::insert($novousuario);
 		}
