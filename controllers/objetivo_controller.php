@@ -9,16 +9,53 @@
         public function __construct(){
             
             require_once('models/objetivo_class.php');
-            
+
     
-            if($_SERVER['REQUEST_METHOD']=='POST')
+            if($_SERVER['REQUEST_METHOD']==='POST')
             {
-                $this->nomeCategoriaPrato=$_POST['txtNomeObjetivo'];
+				if(isset($_POST['txtNomeObjetivo']) && isset($_POST['codCategoriaPratos'])){
+					 $this->nomeCategoriaPrato=$_POST['txtNomeObjetivo'];
 				$this->descricaoCategoria=$_POST['txtDescricaoObjetivo'];
-				
-				
+				}
             }
+            
+        
         }
+        
+        public function index(){
+            
+			$atualizacao = 'inserir';
+			$objetivo=new Objetivo();
+			if(isset($_GET['id']) && $_GET['id'] != ""){
+				
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
+				
+				$c = new Objetivo();
+				$objetivo=$c->selectById($id);
+			}
+			
+           require_once('views/objetivo/index.php');
+        }
+		
+		public function cadastrar(){
+			
+			$atualizacao = 'inserir';
+			$objetivo=new Objetivo();
+			if(isset($_GET['id']) && $_GET['id'] != ""){
+				
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
+				
+				$c = new Objetivo();
+				$objetivo=$c->selectById($id);
+			}
+			
+			
+			require_once('views/categoria/cadastrar.php');
+		}
+        
+ 
 		
 		public function listarTodos (){
 			 
@@ -42,17 +79,17 @@
 						
 			if($atualizar::update($atualizar)){	
 				
-				header("location: ../../cms/AdmObjetivo");
+				header("location: ../objetivo/AdmObjetivo".$this->codCategoriaPrato);
 			}
 		}
-		
+        
 		public function deletar() {
 			
 			$codCategoriaPrato = $_GET['id'];
 			
 			$deletar = new Objetivo();
 			if($deletar->delete($codCategoriaPrato)){
-				header("location: ../../cms/ConsultaObjetivo");
+				header("location: ../../objetivo/index");
 			}	
 		}
 		
