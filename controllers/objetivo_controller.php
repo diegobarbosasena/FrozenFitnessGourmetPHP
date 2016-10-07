@@ -52,7 +52,7 @@
 			}
 			
 			
-			require_once('views/categoria/cadastrar.php');
+			require_once('views/objetivo/cadastrar.php');
 		}
         
  
@@ -79,7 +79,7 @@
 						
 			if($atualizar::update($atualizar)){	
 				
-				header("location: ../objetivo/AdmObjetivo".$this->codCategoriaPrato);
+				header("location: ../objetivo/index".$this->codCategoriaPrato);
 			}
 		}
         

@@ -30,17 +30,17 @@
             <div class="menu_cms">
                     <ul class="menu_cms_link">
 
-                        <li><a href="../cms/AdmPratoPronto" class="link">Adm. Prato Pronto</a></li>
-                        <li><a href="../cms/AdmObjetivo" class="link">Adm. Objetivo</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>prato/index" class="link">Adm. Prato Pronto</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>objetivo/index" class="link">Adm. Objetivo</a></li>
                          <li><a href="<?php  echo PROJECTDIR; ?>categoria/index" class="link">Adm. Categoria</a></li>
-                        <li><a href="../cms/AdmIngrediente" class="link">Adm. Ingredientes</a></li>
-                        <li><a href="../cms/AdmProduto" class="link">Adm. Produtos</a></li>
-                        <li><a href="../cms/AdmUsuario" class="link">Adm. Usuários</a></li>
-                        <li><a href="../cms/AdmPromocao" class="link">Adm. Promoção</a></li>
-                        <li><a href="../cms/AdmEstoque" class="link">Adm. Estoque</a></li>
-                         <li><a href="../cms/AdmSobre" class="link">Sobre a Loja</a></li>
-                        <li><a href="../cms/AdmMarketing" class="link">Marketing</a></li>
-                        <li><a href="../cms/AdmParceiro" class="link">Parceiros</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>ingrediente/index" class="link">Adm. Ingredientes</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>produtocms/index" class="link">Adm. Produtos</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>usuario/index" class="link">Adm. Usuários</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>promocao/index" class="link">Adm. Promoção</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>estoque/index" class="link">Adm. Estoque</a></li>
+                         <li><a href="<?php  echo PROJECTDIR; ?>sobre/index" class="link">Sobre a Loja</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>markting/index" class="link">Marketing</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>parceiro/index" class="link">Parceiros</a></li>
                        
 
                     </ul>

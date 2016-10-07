@@ -15,7 +15,7 @@
         
         public function AdmObjetivo(){
             
-           require_once('views/cms/adm_objetivo.php');
+           require_once('views/objetivo/index.php');
         }
         
         public function AdmIngrediente(){
