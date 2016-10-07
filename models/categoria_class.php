@@ -37,21 +37,19 @@
 			$select = mysql_query($sql);
 			
 			$cont=0;
+            
+            $listaCategoria[] = new Categoria();
+            
 			while($rs = mysql_fetch_array($select)){
-				
-				$listaCategoria[] = new Categoria();
-				  
+                	  
 				$listaCategoria[$cont]->codCategoriaMateria = $rs['codCategoriaMateria'];
+                echo("Teste".$listaCategoria[$cont]->codCategoriaMateria );
                 $listaCategoria[$cont]->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
 				
 				$cont++;							
 			}
 			
-			if($listaCategoria != ""){
-				return 	$listaCategoria;
-			}else{
-				return "";
-			}
+                return $listaCategoria;           
 		}
 		
 		public function selectById($codCategoriaMateria){
@@ -59,8 +57,6 @@
 			$sql = "select * from tblcategoriaMateria where codCategoriaMateria=".$codCategoriaMateria;
 			
 			$select = mysql_query($sql);
-			
-			//echo($sql);
 			
 			if($rs = mysql_fetch_array($select)){
 				

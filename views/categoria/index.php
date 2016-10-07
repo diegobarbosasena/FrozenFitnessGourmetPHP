@@ -18,6 +18,7 @@
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form> 
+    
 <table class="tbl_consulta">
     <tr class="linha_consulta">
         <td class="col_consulta">
@@ -27,7 +28,6 @@
         <td class="col_consulta">
             Opção 
         </td>
-		
 		
     <?php
 		require_once('controllers/categoria_controller.php');
@@ -39,9 +39,10 @@
 		$cont=0;
 		
 		while ($cont < count($rs)){
-	
-	?>
-    
+            
+            if($rs[$cont]->nomeCategoriaMateria != ""){   
+	?>    
+        
     <tr class="linha_consulta">
         
         <td class="col_consulta">
@@ -49,12 +50,19 @@
 					echo($rs[$cont]->nomeCategoriaMateria);
 			?>
         </td>
-        <td class="col_consulta" >
-            <a href="../categoria/cadastrar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link"> Editar </a>| <a href="../categoria/deletar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link">Excluir </a> 
+        
+        <td class="col_consulta">
+            <a href="<?php echo(PROJECTDIR)?>categoria/cadastrar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link"> Editar</a> | 
+            <a href="<?php echo(PROJECTDIR)?>categoria/deletar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link">Excluir </a> 
         </td>
 		
 		<?php 
-		
+            }else{
+                ?>
+        
+                <div class="cadas"> Vazio </div>
+        <?php
+            }
 			$cont++;
 		}
 		
