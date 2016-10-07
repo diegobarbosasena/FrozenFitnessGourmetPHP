@@ -17,6 +17,24 @@
             $conexao->conectar();
         }
         		
+        
+        public function getImg($nome_arq){
+            
+            if(strstr($nome_arq, '.jpg') || strstr($nome_arq, '.png')){
+                if(move_uploaded_file($_FILES["livro_file"]["tmp_name"],$file)){
+                    if($operacao=="Cadastrar"){
+                    $sql="insert into tbllivro(titulolivro, descricaolivro, fotolivro, preco, codcat, codsubcat)
+                    values('".$nome."','".$descricao."','".$file."','".$preco."','".$categoria."','".$subcategoria."')";
+                    }elseif($operacao=="Editar"){
+                    $sql="update tbllivro set titulolivro='".$nome."', descricaolivro='".$descricao."', fotolivro='".$file."', preco='".$preco."', codcat='".$categoria."', codsubcat='".$subcategoria."' where codlivro='".$_SESSION["cod"]."'";
+                    }
+                    mysql_query($sql);
+                    header("location:adm_all_livro_mes.php");
+                }
+                }else{
+                            echo'<script> alert ("Extensão Inválida."); </script>';
+                        }
+        }
 				
 		public function insert($categoriaPrato) {
 
@@ -37,20 +55,20 @@
 			$sql = "select * from tblcategoriaprato";
 			
 			$select = mysql_query($sql);
+            
+            $listaObjetivo = array(); 
 			
-			$cont=0;
 			while($rs = mysql_fetch_array($select)){
 				
-				$listaCategoriaPrato[] = new Objetivo(); 
-				$listaCategoriaPrato[$cont]->codCategoriaPrato = $rs['codCategoriaPrato'];
-                $listaCategoriaPrato[$cont]->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
-				$listaCategoriaPrato[$cont]->descricaoCategoria = $rs['descricaoCategoria'];
+                $objetivo = new Objetivo();
+				$$objetivo->codCategoriaPrato = $rs['codCategoriaPrato'];
+                $objetivo->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
+				$objetivo->descricaoCategoria = $rs['descricaoCategoria'];
 				
-				
-				$cont++;							
+				$listaObjetivo[] = $objetivo;						
 			}
 			
-			return $listaCategoriaPrato;
+			return $listaObjetivo;
 				
 		}
 		
