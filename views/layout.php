@@ -98,7 +98,7 @@
                     </div>
                 </div>
                 <div class="clear"></div>
-                <p class="direitos"> FROZEN FITNESS GOURMET © TODOS OS DITEITOS RESERVADOS - 2015 </p>
+                <p class="direitos"> FROZEN FITNESS GOURMET © TODOS OS DITEITOS RESERVADOS - 2016 </p>
             </div>
 
         </footer>
