@@ -51,6 +51,10 @@
 			$controller = new tipoUsuario_controller();
 			break;
 			
+		case 'parceiro':
+			$controller = new parceiro_controller();
+			break;
+			
       }
 
       // call the action

@@ -76,7 +76,7 @@
 						
 			if($atualizar->update()){	
 				
-				header("location: ../tipoUsuario/index/".$this->codCategoriaMateria);
+				header("location: ../nivelUsuario/index/".$this->codCategoriaMateria);
 			}
 		}
 		
@@ -92,7 +92,7 @@
 		
 		public function inserir() {
               
-			$tipoUsuario = new Categoria();
+			$tipoUsuario = new TipoUsuario();
 			$TipoUsuario->nomeTipoUsuario = $this->nomeTipoUsuario;
 			$_SESSION['metodo'] = 'inserir';
 			if($tipoUsuario::insert($tipoUsuario)){
