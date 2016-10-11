@@ -43,13 +43,13 @@
             
         </td>
         <td class="col_consulta">
-           
+            <?php echo($rs[$cont]->imagemCategoria); ?>
         </td>
         <td class="descricao">
          <?php echo($rs[$cont]->descricaoCategoria); ?>
         </td>
         <td class="col_consulta" >
-           <a href="../objetivo/atualizar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link"> Editar </a>| <a href="../objetivo/deletar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link">Excluir </a>
+           <a href="<?php echo(PROJECTDIR)?>objetivo/cadastrar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>objetivo/deletar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link">Excluir </a>
         </td>
    
     <?php 

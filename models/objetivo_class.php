@@ -17,37 +17,18 @@
             $conexao->conectar();
         }
         		
-        
-        public function getImg($nome_arq){
-            
-            if(strstr($nome_arq, '.jpg') || strstr($nome_arq, '.png')){
-                if(move_uploaded_file($_FILES["livro_file"]["tmp_name"],$file)){
-                    if($operacao=="Cadastrar"){
-                    $sql="insert into tbllivro(titulolivro, descricaolivro, fotolivro, preco, codcat, codsubcat)
-                    values('".$nome."','".$descricao."','".$file."','".$preco."','".$categoria."','".$subcategoria."')";
-                    }elseif($operacao=="Editar"){
-                    $sql="update tbllivro set titulolivro='".$nome."', descricaolivro='".$descricao."', fotolivro='".$file."', preco='".$preco."', codcat='".$categoria."', codsubcat='".$subcategoria."' where codlivro='".$_SESSION["cod"]."'";
-                    }
-                    mysql_query($sql);
-                    header("location:adm_all_livro_mes.php");
-                }
-                }else{
-                            echo'<script> alert ("Extensão Inválida."); </script>';
-                        }
-        }
 				
 		public function insert($categoriaPrato) {
-
 		
 				$sql = "insert into tblcategoriaprato (nomeCategoriaPrato, descricaoCategoria, imagemCategoria) values('".$categoriaPrato->nomeCategoriaPrato."','".$categoriaPrato->descricaoCategoria."',
 					'".$categoriaPrato->imagemCategoria."')";
 			
-				if(mysql_query($sql))
+				if(mysql_query($sql)){
+					echo($sql);
 					return true;
-				else
-					return false;
-					//echo($sql);
-	
+				}else{
+					return false;	
+				}
 		}		
 		
 		public function selectAll (){
@@ -61,9 +42,10 @@
 			while($rs = mysql_fetch_array($select)){
 				
                 $objetivo = new Objetivo();
-				$$objetivo->codCategoriaPrato = $rs['codCategoriaPrato'];
+				$objetivo->codCategoriaPrato = $rs['codCategoriaPrato'];
                 $objetivo->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
 				$objetivo->descricaoCategoria = $rs['descricaoCategoria'];
+				$objetivo->imagemCategoria = $rs['imagemCategoria'];
 				
 				$listaObjetivo[] = $objetivo;						
 			}
@@ -72,35 +54,36 @@
 				
 		}
 		
-		public function selectById($codCategoriaMateria){
+		public function selectById($codCategoriaPrato){
 			
 			$sql = "select * from tblcategoriaprato where codCategoriaPrato=".$codCategoriaPrato;
 			
 			$select = mysql_query($sql);
 			
-			echo($sql);
+			//echo($sql);
 			
 			if($rs = mysql_fetch_array($select)){
 				
-				$listaCatPrato[] = new Objetivo();
+				$objetivo = new Objetivo();
 				  
-				$listaCatPrato[$cont]->codCategoriaPrato = $rs['codCategoriaPrato'];
-                $listaCatPrato[$cont]->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
-											
+				$objetivo->codCategoriaPrato = $rs['codCategoriaPrato'];
+                $objetivo->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
+				$objetivo->imagemCategoria = $rs['imagemCategoria'];							
 			}
 			
-			return $listaCatPrato;
+			return $objetivo;
 		}
 		
-		public function update($categoriaPrato) {
+		public function update() {
 		
-			$sql = "update tblcategoriaprato set nomeCategoriaPrato='".$categoriaPrato->nomeCategoriaPrato."' where codCategoriaPrato=".$categoriaPrato->codCategoriaPrato;     
-			//echo($sql.'  CHEGOU');
-				
-			if(mysql_query($sql))
-				return true;
-			else
-				return false;				
+			$sql = "update tblcategoriaprato set nomeCategoriaPrato='".$this->nomeCategoriaPrato."', set descricaoCategoria='".$this->descricaoCategoria."'  where codCategoriaPrato=".$this->codCategoriaPrato;     
+			echo($sql);
+			
+			//if(mysql_query($sql)){				
+			//	return true;
+			//}else{
+			//	return false;
+			//}
 		}
 		
 		public function delete($codCategoriaPrato) {
