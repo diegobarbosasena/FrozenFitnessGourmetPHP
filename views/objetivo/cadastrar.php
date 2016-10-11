@@ -5,21 +5,21 @@
         <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
         
 </form>
-        <form class="frm" name="frmprodutos" method="post" action="../objetivo/inserir">
-            
+        <form class="frm" name="frmprodutos" enctype="multipart/form-data" method="post" action="<?php echo(PROJECTDIR)?>objetivo/<?php echo($atualizacao) ?>">
+            <input type="hidden" value="<?php echo($objetivo->codCategoriaPrato)?>" name="codCategoriaPrato"/>
             <table>
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" name="txtNomeObjetivo" type="text"/></td>
+                    <td><input class="caixa_frm" name="txtNomeObjetivo" value="<?php echo($objetivo->nomeCategoriaPrato)?>"  type="text"/></td>
                 </tr>
                   <tr>
                     <td class="campo_frm">Imagem Produto:</td>
-                    <td><input  name="objetivoFile" type="file" value=""  /></td>
+                    <td><input  name="objetivoFile" type="file"  value="<?php echo($objetivo->imagemCategoria)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Descrição:</td>
-                    <td><textarea class="campo_desc" name="txtDescricaoObjetivo"   cols="35" rows="8" ></textarea></td> 
+                    <td><textarea class="campo_desc" name="txtDescricaoObjetivo"   cols="35" rows="8" ><?php echo($objetivo->descricaoCategoria)?></textarea></td> 
                   </tr>  
 
                   <tr>
@@ -32,3 +32,5 @@
                 </table>
             
             </form>
+			
+			
