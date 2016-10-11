@@ -30,7 +30,7 @@
        
         public function AdmUsuario(){
             
-           require_once('views/usuarios/index.php');
+           require_once('views/usuario/index.php');
         }
         
         public function AdmEstoque(){

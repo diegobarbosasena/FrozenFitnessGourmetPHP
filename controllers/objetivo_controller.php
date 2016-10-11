@@ -5,8 +5,6 @@
 		
 		public $nomeCategoriaPrato;
 		public $descricaoCategoria;
-		public $imagemCategoria;
-		public $codCategoriaPrato;
         
         public function __construct(){
             
@@ -15,28 +13,13 @@
     
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
-				if(isset($_POST['txtNomeObjetivo']) && isset($_POST['codCategoriaPrato'])){
-					 $this->codCategoriaPrato = $_POST['codCategoriaPrato'];
+				if(isset($_POST['txtNomeObjetivo']) && isset($_POST['codCategoriaPratos'])){
 					 $this->nomeCategoriaPrato=$_POST['txtNomeObjetivo'];
-					 $this->descricaoCategoria=$_POST['txtDescricaoObjetivo'];
-					 $this->imagemCategoria = basename($_FILES["objetivoFile"]["name"]);					
+				$this->descricaoCategoria=$_POST['txtDescricaoObjetivo'];
 				}
-            }       
-        }
-		
-		public function getImg(){
-			
-			$dir="conteudo/imagem/";
-			
-			$file= $dir . $this->imagemCategoria;
-			
-            if(strstr($this->imagemCategoria, '.jpg') || strstr($this->imagemCategoria, '.png')){
-                if(move_uploaded_file($_FILES["objetivoFile"]["tmp_name"],$file)){
-					return $file;
-                }else{
-					return null;
-				}
-			}
+            }
+            
+        
         }
         
         public function index(){
@@ -71,7 +54,9 @@
 			
 			require_once('views/objetivo/cadastrar.php');
 		}
-        	
+        
+ 
+		
 		public function listarTodos (){
 			 
 			$listar = new Objetivo();
@@ -89,16 +74,13 @@
 		
 			$atualizar = new Objetivo();
 			$atualizar->nomeCategoriaPrato = $this->nomeCategoriaPrato;
-			$atualizar->codCategoriaPrato = $this->codCategoriaPrato;
-			$atualizar->imagemCategoria = $this->imagemCategoria;
-					
-			//echo('TESTE'.$atualizar->nomeCategoriaPrato);
-			//echo('TESTE'.$atualizar->codCategoriaPrato);
-			
-			$atualizar->update();
-			//if($atualizar->update()){					
-				//header("location: ../objetivo/index");
-			//}
+			$atualizar->codCategoriaPrato = $_GET['id'];
+			$_SESSION['metodo'] = 'atualizar';	
+						
+			if($atualizar::update($atualizar)){	
+				
+				header("location: ../objetivo/index".$this->codCategoriaPrato);
+			}
 		}
         
 		public function deletar() {
@@ -116,11 +98,14 @@
 			$objetivo = new Objetivo();
 			$objetivo->nomeCategoriaPrato = $this->nomeCategoriaPrato;
 			$objetivo->descricaoCategoria = $this->descricaoCategoria;
-			$objetivo->imagemCategoria = $this->getImg();
 			
+			
+			
+				 
+			$_SESSION['metodo'] = 'inserir';
 			if($objetivo::insert($objetivo)){
-				 //echo("TESTE".$this->imgCategoria);
-				header("location: ../objetivo/index");
+				
+				header("location: ../cms/AdmObjetivo");
 			}
 		}
 

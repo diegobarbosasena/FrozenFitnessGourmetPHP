@@ -38,9 +38,10 @@
                         <li><a href="<?php  echo PROJECTDIR; ?>usuarios/index" class="link">Adm. Usuários</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>promocao/index" class="link">Adm. Promoção</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>estoque/index" class="link">Adm. Estoque</a></li>
-                         <li><a href="<?php  echo PROJECTDIR; ?>sobre/index" class="link">Sobre a Loja</a></li>
-                        <li><a href="<?php  echo PROJECTDIR; ?>markting/index" class="link">Marketing</a></li>
-                        <li><a href="<?php  echo PROJECTDIR; ?>parceiro/index" class="link">Parceiros</a></li>
+                         <li><a href="<?php  echo PROJECTDIR; ?>sobre/index" class="link">Adm. Sobre a Loja</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>markting/index" class="link">Adm. Marketing</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>parceiro/index" class="link">Adm. Parceiros</a></li>
+                         <li><a href="<?php  echo PROJECTDIR; ?>tipoUsuario/index" class="link">Adm. Tipo Usuario</a></li>
                        
 
                     </ul>

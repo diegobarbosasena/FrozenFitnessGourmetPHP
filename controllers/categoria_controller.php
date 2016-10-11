@@ -94,7 +94,7 @@
               
 			$categoria = new Categoria();
 			$categoria->nomeCategoriaMateria = $this->nomeCategoriaMateria;
-			
+			$_SESSION['metodo'] = 'inserir';
 			if($categoria::insert($categoria)){
 				
 				header("location: ../categoria/index");

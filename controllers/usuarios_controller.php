@@ -55,7 +55,7 @@
 				$c = new Usuario();
 				$usuario=$c->selectById($id);
 			}
-            require_once('views/usuarios/cadastrar.php');
+            require_once('views/usuario/cadastrar.php');
 		}
         		
 		

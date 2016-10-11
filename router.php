@@ -46,6 +46,11 @@
 		case 'funcionario':
 			$controller = new funcionario_controller();
 			break;
+			
+		case 'tipoUsuario':
+			$controller = new tipoUsuario_controller();
+			break;
+			
       }
 
       // call the action
