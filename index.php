@@ -29,7 +29,11 @@
 	if($controller=="")
 		 header( 'Location: home/index');
 		
+<<<<<<< HEAD
 	$lstCtrlCMS = array('cms', 'categoria', 'objetivo','usuarios','tipoUsuario','parceiro');
+=======
+	$lstCtrlCMS = array('cms', 'categoria', 'objetivo','usuarios','prato');
+>>>>>>> 83f75bee7a5ef38310a843de07b8bd9811f8ed0a
 
 	if (in_array($controller, $lstCtrlCMS)){
         require_once('views/layoutCms.php');

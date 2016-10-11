@@ -51,9 +51,14 @@
 			$controller = new tipoUsuario_controller();
 			break;
 			
+<<<<<<< HEAD
 		case 'parceiro':
 			$controller = new parceiro_controller();
 			break;
+=======
+		case 'prato':
+			$controller = new prato_controller();
+>>>>>>> 83f75bee7a5ef38310a843de07b8bd9811f8ed0a
 			
       }
 
@@ -61,7 +66,7 @@
       $controller->{ $action }();
     }
 	
-	//Função que determina qual o controller e os metodos utilizado 
+	//Função que determina quais são os controllers e os metodos utilizado 
 	call($controller, $metodo);
 		
 

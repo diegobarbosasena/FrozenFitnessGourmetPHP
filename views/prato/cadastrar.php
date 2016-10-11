@@ -1,8 +1,9 @@
 
 <div class="cadas">Cadastrar Pratos </div>
 
-    <form  name="frmconsulta" method="post" action="../cms/ConsultaPratoPronto">
-        <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
+    <form  name="frmconsulta" method="post" action="../prato/index">
+	 <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
+        
         
     </form>
 
