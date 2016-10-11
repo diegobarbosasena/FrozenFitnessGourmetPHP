@@ -19,7 +19,11 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Descrição:</td>
-                    <td><textarea class="campo_desc" name="txtDescricaoObjetivo"   cols="35" rows="8" ><?php echo($objetivo->descricaoCategoria)?></textarea></td> 
+                    <td>
+						<div>
+							<textarea class="campo_desc" name="txtDescricaoObjetivo"   cols="35" rows="8" ><?php echo($objetivo->descricaoCategoria);?></textarea>
+						</div>
+					</td> 
                   </tr>  
 
                   <tr>

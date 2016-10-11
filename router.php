@@ -51,13 +51,16 @@
 			$controller = new tipoUsuario_controller();
 			break;
 			
+		case 'prato':
+			$controller = new prato_controller();
+			
       }
 
       // call the action
       $controller->{ $action }();
     }
 	
-	//Função que determina qual o controller e os metodos utilizado 
+	//Função que determina quais são os controllers e os metodos utilizado 
 	call($controller, $metodo);
 		
 

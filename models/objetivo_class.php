@@ -60,15 +60,14 @@
 			
 			$select = mysql_query($sql);
 			
-			//echo($sql);
-			
 			if($rs = mysql_fetch_array($select)){
 				
 				$objetivo = new Objetivo();
 				  
 				$objetivo->codCategoriaPrato = $rs['codCategoriaPrato'];
                 $objetivo->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
-				$objetivo->imagemCategoria = $rs['imagemCategoria'];							
+				$objetivo->imagemCategoria = $rs['imagemCategoria'];	
+				$objetivo->descricaoCategoria = $rs['descricaoCategoria'];				
 			}
 			
 			return $objetivo;
@@ -76,14 +75,13 @@
 		
 		public function update() {
 		
-			$sql = "update tblcategoriaprato set nomeCategoriaPrato='".$this->nomeCategoriaPrato."', set descricaoCategoria='".$this->descricaoCategoria."'  where codCategoriaPrato=".$this->codCategoriaPrato;     
-			echo($sql);
+			$sql = "update tblcategoriaprato set nomeCategoriaPrato='".$this->nomeCategoriaPrato."', descricaoCategoria='".$this->descricaoCategoria."'  where codCategoriaPrato=".$this->codCategoriaPrato;     
 			
-			//if(mysql_query($sql)){				
-			//	return true;
-			//}else{
-			//	return false;
-			//}
+			if(mysql_query($sql)){				
+				return true;
+			}else{
+				return false;
+			}
 		}
 		
 		public function delete($codCategoriaPrato) {

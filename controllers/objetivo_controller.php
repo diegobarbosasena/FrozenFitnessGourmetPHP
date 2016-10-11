@@ -90,15 +90,12 @@
 			$atualizar = new Objetivo();
 			$atualizar->nomeCategoriaPrato = $this->nomeCategoriaPrato;
 			$atualizar->codCategoriaPrato = $this->codCategoriaPrato;
+			$atualizar->descricaoCategoria = $this->descricaoCategoria;
 			$atualizar->imagemCategoria = $this->imagemCategoria;
 					
-			//echo('TESTE'.$atualizar->nomeCategoriaPrato);
-			//echo('TESTE'.$atualizar->codCategoriaPrato);
-			
-			$atualizar->update();
-			//if($atualizar->update()){					
-				//header("location: ../objetivo/index");
-			//}
+			if($atualizar->update()){					
+				header("location: ../objetivo/index".$this->codCategoriaPrato);
+			}
 		}
         
 		public function deletar() {
@@ -119,7 +116,6 @@
 			$objetivo->imagemCategoria = $this->getImg();
 			
 			if($objetivo::insert($objetivo)){
-				 //echo("TESTE".$this->imgCategoria);
 				header("location: ../objetivo/index");
 			}
 		}
