@@ -13,13 +13,7 @@
 <table class="tbl_consulta">
     <tr class="linha_consulta">
         <td class="col_consulta">
-            Nome
-        </td>
-        <td class="col_consulta">
-            Imagem
-        </td>
-        <td class="col_consulta">
-           Descrição
+            Objetivo
         </td>
         <td class="col_consulta">
             Opções

@@ -10,22 +10,10 @@
             <table>
                   
                   <tr>
-                    <td class="campo_frm">Nome:</td>
+                    <td class="campo_frm">Objetivo:</td>
                     <td><input class="caixa_frm" name="txtNomeObjetivo" value="<?php echo($objetivo->nomeCategoriaPrato)?>"  type="text"/></td>
                 </tr>
-                  <tr>
-                    <td class="campo_frm">Imagem Produto:</td>
-                    <td><input  name="objetivoFile" type="file"  value="<?php echo($objetivo->imagemCategoria)?>" /></td>
-                  </tr>
-                  <tr>
-                    <td class="campo_frm">Descrição:</td>
-                    <td>
-						<div>
-							<textarea class="campo_desc" name="txtDescricaoObjetivo"   cols="35" rows="8" ><?php echo($objetivo->descricaoCategoria);?></textarea>
-						</div>
-					</td> 
-                  </tr>  
-
+                  
                   <tr>
                       
                     <td></td>
