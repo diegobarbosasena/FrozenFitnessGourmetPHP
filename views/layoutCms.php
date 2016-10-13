@@ -43,7 +43,7 @@
                         <li><a href="<?php  echo PROJECTDIR; ?>marketing/index" class="link">Adm. Marketing</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>parceiro/index" class="link">Adm. Parceiros</a></li>
                          <li><a href="<?php  echo PROJECTDIR; ?>tipoUsuario/index" class="link">Adm. Tipo Usuario</a></li>
-                       
+                       <li><a href="<?php  echo PROJECTDIR; ?>clientes/index" class="link">Clientes</a></li>
 
                     </ul>
 

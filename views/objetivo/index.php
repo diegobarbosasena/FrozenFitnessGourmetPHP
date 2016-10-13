@@ -16,6 +16,9 @@
             Objetivo
         </td>
         <td class="col_consulta">
+            Descricao
+        </td>
+        <td class="col_consulta">
             Opções
         </td>
     </tr>

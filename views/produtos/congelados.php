@@ -13,7 +13,7 @@
             </p>
             <p class="kcal_produtos"> Calorias: 500kcal.</p>
             <p class="preco_produtos">R$45,00.</p>
-            <input class="btn_detalhes" type="submit" value="Detalhes"> 
+            <input  class="btn_detalhes" type="submit" value="Detalhes"> 
             <input class="btn_comprar" type="submit" value="Comprar"> 
         </div>
 

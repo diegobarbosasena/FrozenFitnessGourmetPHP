@@ -1,6 +1,6 @@
 <?php
 	
-	$_GET ['txtCategoria'] = "";
+	$_GET ['Categoria'] = "";
 	
 ?>
 
