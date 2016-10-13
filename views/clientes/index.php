@@ -1,5 +1,5 @@
 
-<div class="cadas">Consulta de Usuarios</div>
+<div class="cadas">Consulta de Clientes</div>
 
     
 <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>usuarios/cadastrar">
@@ -47,8 +47,14 @@
         <td class="col_consulta">
             Administrador
         </td>
+         <td class="col_consulta">
+           janna_fer@gmail
+        </td>
+         <td class="col_consulta">
+           Emagrecimento
+        </td>
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> 
+            <a href="" class="link"> Editar </a> <a href="" class="link">Excluir </a> 
         </td>
         
     </tr>
@@ -61,6 +67,12 @@
         </td>
         <td class="col_consulta">
             
+        </td>
+        <td class="col_consulta">
+           
+        </td>
+        <td class="col_consulta">
+           
         </td>
         <td class="col_consulta">
            

@@ -12,8 +12,8 @@
                   
                   <tr>
                     <td class="campo_frm">Escolha:</td>
-                    <td><input  type="radio"   value=""    /> Produto 
-                      <input  type="radio"   value=""    />Ingrediente</td>
+                    <td><input name="escolhaEstoque" type="radio"   value=""    /> Produto 
+                      <input name="escolhaEstoque" type="radio"   value=""    />Ingrediente</td>
                   </tr>
                 
                 <tr>
