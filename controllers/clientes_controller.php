@@ -1,7 +1,7 @@
 
 <?php
 	
-	class objetivo_controller {
+	class clientes_controller {
 		
 		public $nomeObjetivo;
 		public $descricaoObjetivo;
@@ -26,7 +26,7 @@
 	
         public function index(){
             
-			$atualizacao = 'inserir';
+			/*$atualizacao = 'inserir';
 			$objetivo=new Objetivo();
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
@@ -35,9 +35,9 @@
 				
 				$c = new Objetivo();
 				$objetivo=$c->selectById($id);
-			}
+			}*/
 			
-           require_once('views/objetivo/index.php');
+           require_once('views/clientes/index.php');
         }
 		
 		public function cadastrar(){
