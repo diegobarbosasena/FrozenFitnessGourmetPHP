@@ -12,19 +12,19 @@
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" type="text"   name="txtNome" value=""    /></td>
+                    <td><input class="caixa_frm" type="text"   name="txtNomeUsuario" value=""    /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">CPF:</td>
-                    <td><input class="caixa_frm"  name="txtCpf" type="text"  value=""  /></td>
+                    <td><input class="caixa_frm"  name="txtCpfUsuario" type="text"  value=""  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Usuário:</td>
-                    <td><input class="caixa_frm" name="txtUsuario"  type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtUsuarioUsuario"  type="text" value="" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Senha:</td>
-                    <td><input class="caixa_frm" name="txtSenha" type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtSenhaUsuario" type="text" value="" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Confirmar senha:</td>
@@ -32,7 +32,7 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Tipo:</td>
-                    <td >  <select size="1" name="D1">
+                    <td >  <select size="1" name="slecioneTipoUsuario">
 
                             <option selected value="Selecione">Selecione:</option>
 

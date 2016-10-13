@@ -86,6 +86,9 @@
 		case 'sobre':
 			$controller = new sobre_controller();
 			break;
+		case 'clientes':
+			$controller = new clientes_controller();
+			break;
 			
 			
 			

@@ -10,7 +10,7 @@
         
         public function __construct(){
             
-            require_once('models/objetivo_class.php');
+            require_once('models/categoriaPrato_class.php');
 
     
             if($_SERVER['REQUEST_METHOD']==='POST')
@@ -42,15 +42,15 @@
         public function index(){
             
 			$atualizacao = 'inserir';
-			//$categoriaPrato=new CategoriaPrato();
-			//if(isset($_GET['id']) && $_GET['id'] != ""){
+			$categoriaPrato = new categoriaPrato();
+			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
-				//$id = $_GET['id'];
-				//$atualizacao = 'atualizar';
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
 				
-				//$c = new Categoria_prato();
-				//$categoriaPrato=$c->selectById($id);
-			//}
+				$c = new Categoria_prato();
+				$categoriaPrato=$c->selectById($id);
+			}
 			
            require_once('views/categoriaPrato/index.php');
         }
@@ -58,14 +58,14 @@
 		public function cadastrar(){
 			
 			$atualizacao = 'inserir';
-			//$objetivo=new Objetivo();
+			$categoriaPrato=new categoriaPrato();
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
 				$c = new Objetivo();
-				$objetivo=$c->selectById($id);
+				$categoriaPrato=$c->selectById($id);
 			}
 			
 			
@@ -74,27 +74,27 @@
         	
 		public function listarTodos (){
 			 
-			$listar = new Objetivo();
+			$listar = new categoriaPrato();
 			return $listar->selectAll();	
 		}
 		
 		public function buscar($codCategoriaPrato){
 			
-			$buscar = new Objetivo();
+			$buscar = new categoriaPrato();
 			return $buscar->selectById($codCategoriaPrato);
 			
 		}
 		
 		public function atualizar() {
 		
-			$atualizar = new Objetivo();
+			$atualizar = new categoriaPrato();
 			$atualizar->nomeCategoriaPrato = $this->nomeCategoriaPrato;
 			$atualizar->codCategoriaPrato = $this->codCategoriaPrato;
 			$atualizar->descricaoCategoria = $this->descricaoCategoria;
 			$atualizar->imagemCategoria = $this->imagemCategoria;
 					
 			if($atualizar->update()){					
-				header("location: ../objetivo/index".$this->codCategoriaPrato);
+				header("location: ../categoriaPrato/index".$this->codCategoriaPrato);
 			}
 		}
         
@@ -102,21 +102,21 @@
 			
 			$codCategoriaPrato = $_GET['id'];
 			
-			$deletar = new Objetivo();
+			$deletar = new categoriaPrato();
 			if($deletar->delete($codCategoriaPrato)){
-				header("location: ../../objetivo/index");
+				header("location: ../../categoriaPrato/index");
 			}	
 		}
 		
 		public function inserir() {
               
-			$objetivo = new Objetivo();
-			$objetivo->nomeCategoriaPrato = $this->nomeCategoriaPrato;
-			$objetivo->descricaoCategoria = $this->descricaoCategoria;
-			$objetivo->imagemCategoria = $this->getImg();
+			$categoriaPrato = new categoriaPrato();
+			$categoriaPrato->nomeCategoriaPrato = $this->nomeCategoriaPrato;
+			$categoriaPrato->descricaoCategoria = $this->descricaoCategoria;
+			$categoriaPrato->imagemCategoria = $this->getImg();
 			
-			if($objetivo::insert($objetivo)){
-				header("location: ../objetivo/index");
+			if($categoriaPrato::insert($categoriaPrato)){
+				header("location: ../categoriaPrato/index");
 			}
 		}
 

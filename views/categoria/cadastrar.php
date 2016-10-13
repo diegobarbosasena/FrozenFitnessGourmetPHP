@@ -17,7 +17,7 @@
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" type="text" name="txtCategoria"  value="<?php echo($categoria->nomeCategoriaMateria)?>"    /></td>
+                    <td><input class="caixa_frm" type="text" name="txtCategoriaMateria"  value="<?php echo($categoria->nomeCategoriaMateria)?>"    /></td>
                   </tr>
               
                   

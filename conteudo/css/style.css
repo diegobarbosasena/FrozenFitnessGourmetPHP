@@ -1353,6 +1353,13 @@ input.btn_contato{
     background-color: #FFFFFF;
     margin-left: 132px;
 }
+.escolhaObjetivo{
+	margin-bottom:10px;
+}
+.opcaoObjetivo{
+	color:#333;
+	
+}
 fieldset{
     margin-bottom: 10px;
     text-align: center;
@@ -1366,6 +1373,7 @@ select{
     border: 1px solid #FE7101;
     font-size: 18px;
     color: #CCC;
+	margin-bottom: 10px;
 }
 input.btn_contato:hover{
 	background-color: #FE7101;

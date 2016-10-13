@@ -22,7 +22,23 @@
                 <INPUT TYPE="radio" NAME="FEMININO" VALUE="op1"> Feminino
                 <INPUT TYPE="radio" NAME="MASCULINO" VALUE="op2"> Masculino
                 <br>
-                <div class="altura"> </div>     
+                <div class="altura"> </div> 
+                <tr>
+                    <td class="campo_frm">Objetivo:</td>
+                    <td >  <select size="1" name="D1">
+
+                            <option selected value="Selecione">Selecione:</option>
+
+                            <option class="opcaoObjetivo" value="">Emagrecimento</option>
+							<option class="opcaoObjetivo" value="">Resistência </option>
+                            <option class="opcaoObjetivo" value="">Força </option>
+                            <option class="opcaoObjetivo" value="">Ganho de massa </option>
+                            <option class="opcaoObjetivo" value="">Outro </option>
+
+                        </select>
+                    </td>
+                  </tr>  
+                  <p>  </p>
 
                 </fieldset>     
                 <fieldset>

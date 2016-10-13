@@ -12,7 +12,11 @@
                   <tr>
                     <td class="campo_frm">Objetivo:</td>
                     <td><input class="caixa_frm" name="txtNomeObjetivo" value="<?php echo($objetivo->nomeCategoriaPrato)?>"  type="text"/></td>
-                </tr>
+                  </tr>
+                   <tr>
+                    <td class="campo_frm">Descricao:</td>
+                    <td><input class="caixa_frm" name="txtDescricaoObjetivo" value="<?php echo($objetivo->nomeCategoriaPrato)?>"  type="text"/></td>
+                  </tr>
                   
                   <tr>
                       

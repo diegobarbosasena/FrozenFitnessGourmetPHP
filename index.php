@@ -29,7 +29,7 @@
 	if($controller=="")
 		 header( 'Location: home/index');
 		
-	$lstCtrlCMS = array('cms', 'categoria', 'objetivo','usuarios','tipoUsuario','parceiro','prato','categoriaPrato','ingrediente','produtocms','promocao','marketing','estoque','sobre');
+	$lstCtrlCMS = array('cms', 'categoria', 'objetivo','usuarios','tipoUsuario','parceiro','prato','categoriaPrato','ingrediente','produtocms','promocao','marketing','estoque','sobre','clientes');
 
 
 
