@@ -65,8 +65,8 @@
 		case 'tipoUsuario':
 			$controller = new prato_controller();
 			break;
-		case 'categoria_prato':
-			$controller = new categoria_prato_controller();
+		case 'categoriaPrato':
+			$controller = new categoriaPrato_controller();
 			break;
 			
       }

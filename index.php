@@ -30,9 +30,8 @@
 		 header( 'Location: home/index');
 		
 
-	$lstCtrlCMS = array('cms', 'categoria', 'objetivo','usuarios','tipoUsuario','parceiro');
+	$lstCtrlCMS = array('cms', 'categoria', 'objetivo','usuarios','tipoUsuario','parceiro','prato','categoriaPrato');
 
-	$lstCtrlCMS = array('cms', 'categoria', 'objetivo','usuarios','prato');
 
 
 	if (in_array($controller, $lstCtrlCMS)){

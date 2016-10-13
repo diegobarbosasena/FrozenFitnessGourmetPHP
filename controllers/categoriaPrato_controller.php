@@ -1,7 +1,7 @@
 
 <?php
 	
-	class categoria_prato_controller {
+	class categoriaPrato_controller {
 		
 		public $nomeCategoriaPrato;
 		public $descricaoCategoria;
@@ -42,23 +42,23 @@
         public function index(){
             
 			$atualizacao = 'inserir';
-			$categoria_prato=new Categoria_prato();
-			if(isset($_GET['id']) && $_GET['id'] != ""){
+			//$categoriaPrato=new CategoriaPrato();
+			//if(isset($_GET['id']) && $_GET['id'] != ""){
 				
-				$id = $_GET['id'];
-				$atualizacao = 'atualizar';
+				//$id = $_GET['id'];
+				//$atualizacao = 'atualizar';
 				
-				$c = new Categoria_prato();
-				$categoria_prato=$c->selectById($id);
-			}
+				//$c = new Categoria_prato();
+				//$categoriaPrato=$c->selectById($id);
+			//}
 			
-           require_once('views/categoria_prato/index.php');
+           require_once('views/categoriaPrato/index.php');
         }
 		
 		public function cadastrar(){
 			
 			$atualizacao = 'inserir';
-			$objetivo=new Objetivo();
+			//$objetivo=new Objetivo();
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
@@ -69,7 +69,7 @@
 			}
 			
 			
-			require_once('views/objetivo/cadastrar.php');
+			require_once('views/categoriaPrato/cadastrar.php');
 		}
         	
 		public function listarTodos (){
