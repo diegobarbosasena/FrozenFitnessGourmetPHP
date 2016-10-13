@@ -81,7 +81,7 @@
 		
 		public function delete($codCategoriaMateria) {
 		
-			$sql = "delete from tblcategoriaMateria where codCategoriaMateria=".$codCategoriaMateria;
+			$sql = "delete from tblprato where codPrato=".$codCategoriaMateria;
 
 			if(mysql_query($sql))
 				return true;

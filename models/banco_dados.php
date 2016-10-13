@@ -19,7 +19,7 @@ class mysql_db{
 		if($this->conexao=mysql_connect($this->server, $this->user, $this->password))
 		{
 			
-			mysql_select_db("dbfrozenfitness");
+			mysql_select_db("dbsmartgourmet");
 		}else{
 			
 			echo("Erro na conexao com o BD.". mysql_error());

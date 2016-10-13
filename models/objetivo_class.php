@@ -17,9 +17,9 @@
         }
         		
 				
-		public function insert($categoriaPrato) {
+		public function insert($objetivo) {
 		
-				$sql = "";
+				$sql = "insert into tblobjetivo (nomeObjetivo, descricaoObjetivo) values ('".$objetivo->nomeObjetivo."', '".$objetivo->descricaoObjetivo."');";
 			
 				if(mysql_query($sql)){
 					echo($sql);
@@ -31,7 +31,7 @@
 		
 		public function selectAll (){
             
-			$sql = "select * from tblcategoriaprato";
+			$sql = "select * from tblobjetivo";
 			
 			$select = mysql_query($sql);
             
@@ -51,9 +51,9 @@
 				
 		}
 		
-		public function selectById($codCategoriaPrato){
+		public function selectById($codObjetivo){
 			
-			$sql = "";
+			$sql = "select * from tblobjetivo where codObjetivo=".$codObjetivo;
 			
 			$select = mysql_query($sql);
 			
@@ -70,7 +70,7 @@
 		
 		public function update() {
 		
-			$sql = "";     
+			$sql = "update tblobjetivo set nomeObjetivo = '".$this->nomeObjetivo."', descricaoObjetivo = '".$this->descricaoObjetivo."' where codObjetivo=".$this->codObjetivo;     
 			
 			if(mysql_query($sql)){				
 				return true;
@@ -79,9 +79,9 @@
 			}
 		}
 		
-		public function delete($codCategoriaPrato) {
+		public function delete($codObjetivo) {
 		
-			$sql = "";
+			$sql = "delete from tblobjetivo where codObjetivo=".$codObjetivo;
 
 			if(mysql_query($sql))
 				return true;
