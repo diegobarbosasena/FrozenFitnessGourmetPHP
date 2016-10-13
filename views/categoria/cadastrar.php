@@ -1,5 +1,5 @@
 
-<div class="cadas">Cadastrar Categoria</div>
+<div class="cadas">Cadastrar Categoria Materia</div>
 
 <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>categoria/index">
         <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />

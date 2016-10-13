@@ -6,7 +6,7 @@
 ?>
 
 
-<div class="cadas">Consulta Categoria</div>
+<div class="cadas">Consulta Categoria Materia</div>
 
  <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>categoria/cadastrar">
         <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
