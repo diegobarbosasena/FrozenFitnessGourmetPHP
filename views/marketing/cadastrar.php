@@ -12,12 +12,12 @@
                   
                   <tr>
                     <td class="campo_frm">Titulo:</td>
-                    <td><input class="caixa_frm" type="text"   value=""    /></td>
+                    <td><input name="txtTituloMarketing" class="caixa_frm" type="text"   value=""    /></td>
                   </tr>
                  
                  <tr>
                     <td class="campo_frm">Imagem Produto:</td>
-                    <td><input  name="txtdtvalidade" type="file" value=""  /></td>
+                    <td><input name="imgMarketing" type="file" value=""  /></td>
                   </tr>
                      
                 

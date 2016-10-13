@@ -2,10 +2,9 @@
 	
 	class Objetivo {
 
-		public $nomeCategoriaPrato;
-		public $codCategoriaPrato;
-		public $descricaoCategoria;
-		public $imagemCategoria;
+		public $codObjetivo;
+		public $nomeObjetivo;
+		public $descricaoObjetivo;
 
 		
         public function __construct(){
@@ -20,8 +19,7 @@
 				
 		public function insert($categoriaPrato) {
 		
-				$sql = "insert into tblcategoriaprato (nomeCategoriaPrato, descricaoCategoria, imagemCategoria) values('".$categoriaPrato->nomeCategoriaPrato."','".$categoriaPrato->descricaoCategoria."',
-					'".$categoriaPrato->imagemCategoria."')";
+				$sql = "";
 			
 				if(mysql_query($sql)){
 					echo($sql);
@@ -42,10 +40,9 @@
 			while($rs = mysql_fetch_array($select)){
 				
                 $objetivo = new Objetivo();
-				$objetivo->codCategoriaPrato = $rs['codCategoriaPrato'];
-                $objetivo->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
-				$objetivo->descricaoCategoria = $rs['descricaoCategoria'];
-				$objetivo->imagemCategoria = $rs['imagemCategoria'];
+				$objetivo->codObjetivo = $rs['codObjetivo'];
+                $objetivo->nomeObjetivo = $rs['nomeObjetivo'];
+				$objetivo->descricaoObjetivo = $rs['descricaoObjetivo'];
 				
 				$listaObjetivo[] = $objetivo;						
 			}
@@ -56,18 +53,16 @@
 		
 		public function selectById($codCategoriaPrato){
 			
-			$sql = "select * from tblcategoriaprato where codCategoriaPrato=".$codCategoriaPrato;
+			$sql = "";
 			
 			$select = mysql_query($sql);
 			
 			if($rs = mysql_fetch_array($select)){
 				
 				$objetivo = new Objetivo();
-				  
-				$objetivo->codCategoriaPrato = $rs['codCategoriaPrato'];
-                $objetivo->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
-				$objetivo->imagemCategoria = $rs['imagemCategoria'];	
-				$objetivo->descricaoCategoria = $rs['descricaoCategoria'];				
+				$objetivo->codObjetivo = $rs['codObjetivo'];
+                $objetivo->nomeObjetivo = $rs['nomeObjetivo'];
+				$objetivo->descricaoObjetivo = $rs['descricaoObjetivo'];	
 			}
 			
 			return $objetivo;
@@ -75,7 +70,7 @@
 		
 		public function update() {
 		
-			$sql = "update tblcategoriaprato set nomeCategoriaPrato='".$this->nomeCategoriaPrato."', descricaoCategoria='".$this->descricaoCategoria."'  where codCategoriaPrato=".$this->codCategoriaPrato;     
+			$sql = "";     
 			
 			if(mysql_query($sql)){				
 				return true;
@@ -86,7 +81,7 @@
 		
 		public function delete($codCategoriaPrato) {
 		
-			$sql = "delete from tblcategoriaprato where codCategoriaPrato=".$codCategoriaPrato;
+			$sql = "";
 
 			if(mysql_query($sql))
 				return true;

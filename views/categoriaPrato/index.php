@@ -1,4 +1,3 @@
-
 <?php
 	
 	$_GET ['txtCategoria'] = "";
@@ -6,12 +5,14 @@
 ?>
 
 
-<div class="cadas">Consulta Categoria Materia</div>
+<div class="cadas">Consultar Categoria Prato</div>
 
- <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>categoria/cadastrar">
+ 
+  <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>categoriaPrato/cadastrar">
         <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
         
  </form>
+
 
 <form name="FrmPesquisa" method="post" action="home.php">
     
@@ -24,6 +25,13 @@
         <td class="col_consulta">
             Nome 
         </td>
+        <td class="col_consulta">
+           	Imagem
+        </td>
+        <td class="col_consulta">
+            Descrição 
+        </td>
+       
       
         <td class="col_consulta">
             Opção 
