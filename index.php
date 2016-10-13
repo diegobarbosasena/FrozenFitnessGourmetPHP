@@ -30,7 +30,7 @@
 		 header( 'Location: home/index');
 		
 
-	$lstCtrlCMS = array('cms', 'categoria', 'objetivo','usuarios','tipoUsuario','parceiro','prato','categoriaPrato');
+	$lstCtrlCMS = array('cms', 'categoria', 'objetivo','usuarios','tipoUsuario','parceiro','prato','categoriaPrato','ingrediente','produtocms','promocao','marketing','estoque','sobre');
 
 
 

@@ -1,7 +1,7 @@
 
 <?php
 	
-	class maketing_controller {
+	class marketing_controller {
 		
 		public $tituloMakting;
 		public $descricaoCategoria;
@@ -41,18 +41,18 @@
         
         public function index(){
             
-			$atualizacao = 'inserir';
-			$objetivo=new Objetivo();
-			if(isset($_GET['id']) && $_GET['id'] != ""){
+			//$atualizacao = 'inserir';
+			//$objetivo=new Objetivo();
+			//if(isset($_GET['id']) && $_GET['id'] != ""){
 				
-				$id = $_GET['id'];
-				$atualizacao = 'atualizar';
+				//$id = $_GET['id'];
+				//$atualizacao = 'atualizar';
 				
-				$c = new Objetivo();
-				$objetivo=$c->selectById($id);
-			}
+				//$c = new Objetivo();
+				//$objetivo=$c->selectById($id);
+			//}
 			
-           require_once('views/objetivo/index.php');
+           require_once('views/marketing/index.php');
         }
 		
 		public function cadastrar(){

@@ -60,14 +60,34 @@
 			$controller = new prato_controller();
 			break;
 		case 'parceiro':
-			$controller = new prato_controller();
+			$controller = new parceiro_controller();
 			break;
 		case 'tipoUsuario':
-			$controller = new prato_controller();
+			$controller = new tipoUsuario_controller();
 			break;
 		case 'categoriaPrato':
 			$controller = new categoriaPrato_controller();
 			break;
+		case 'ingrediente':
+			$controller = new ingrediente_controller();
+			break;
+		case 'produtocms':
+			$controller = new produtocms_controller();
+			break;
+		case 'promocao':
+			$controller = new promocao_controller();
+			break;
+		case 'marketing':
+			$controller = new marketing_controller();
+			break;
+		case 'estoque':
+			$controller = new estoque_controller();
+			break;
+		case 'sobre':
+			$controller = new sobre_controller();
+			break;
+			
+			
 			
       }
 
