@@ -6,9 +6,9 @@
 ?>
 
 
-<div class="cadas">Consulta Categoria</div>
+<div class="cadas">Consulta Tipo Usuario</div>
 
- <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>nivelUsuario/cadastrar">
+ <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>tipoUsuario/cadastrar">
         <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
         
  </form>
@@ -30,9 +30,9 @@
         </td>
 		
     <?php
-		require_once('controllers/tipoUsuario.php');
+		require_once('controllers/tipoUsuario_controller.php');
 		
-		$controllerTipoUsuario = new TipoUsuario_controller();
+		$controllerTipoUsuario = new tipoUsuario_controller();
 				
 		$rs=$controllerTipoUsuario->listarTodos();
 
@@ -52,8 +52,8 @@
         </td>
         
         <td class="col_consulta">
-            <a href="<?php echo(PROJECTDIR)?>categoria/cadastrar/<?php echo($rs[$cont]->codTipoUsuario) ?>" class="link"> Editar</a> | 
-            <a href="<?php echo(PROJECTDIR)?>categoria/deletar/<?php echo($rs[$cont]->codTipoUsuario) ?>" class="link">Excluir </a> 
+            <a href="<?php echo(PROJECTDIR)?>tipoUsuario/cadastrar/<?php echo($rs[$cont]->codTipoUsuario) ?>" class="link"> Editar</a> | 
+            <a href="<?php echo(PROJECTDIR)?>tipoUsuario/deletar/<?php echo($rs[$cont]->codTipoUsuario) ?>" class="link">Excluir </a> 
         </td>
 		
 		<?php 

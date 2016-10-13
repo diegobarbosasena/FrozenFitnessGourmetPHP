@@ -51,6 +51,11 @@
 			$controller = new tipoUsuario_controller();
 			break;
 			
+
+		case 'parceiro':
+			$controller = new parceiro_controller();
+			break;
+
 		case 'prato':
 			$controller = new prato_controller();
 			

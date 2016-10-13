@@ -1,4 +1,4 @@
-<form  name="frmconsulta" method="post" action="../cms/AdmParceiro">
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>parceiro/cadastrar">
         <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
         
     </form>

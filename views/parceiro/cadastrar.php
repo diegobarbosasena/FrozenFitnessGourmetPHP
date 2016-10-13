@@ -1,7 +1,7 @@
 
 <div class="cadas">Cadastrar Parceiro</div>
 
-    <form  name="frmconsulta" method="post" action="../cms/ConsultaParceiro">
+    <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>parceiro/index">
         <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
         
     </form>
