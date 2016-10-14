@@ -14,8 +14,8 @@
     
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
-				if(isset($_POST['txtCategoria']) && isset($_POST['codCategoriaMateria'])){
-					$this->nomeCategoriaMateria=$_POST['txtCategoria'];
+				if(isset($_POST['txtCategoriaMateria']) && isset($_POST['codCategoriaMateria'])){
+					$this->nomeCategoriaMateria=$_POST['txtCategoriaMateria'];
 					$this->codCategoriaMateria= $_POST['codCategoriaMateria'];
 				}
             }
@@ -85,18 +85,19 @@
 			$codCategoria = $_GET['id'];
 			
 			$deletar = new Categoria();
+            //echo("teste".$codCategoria);
+            $deletar->delete($codCategoria);
 			if($deletar->delete($codCategoria)){
 				header("location: ../../categoria/index");
-			}	
+			}
 		}
 		
 		public function inserir() {
               
 			$categoria = new Categoria();
 			$categoria->nomeCategoriaMateria = $this->nomeCategoriaMateria;
-			$_SESSION['metodo'] = 'inserir';
+			
 			if($categoria::insert($categoria)){
-				
 				header("location: ../categoria/index");
 			}
 		}

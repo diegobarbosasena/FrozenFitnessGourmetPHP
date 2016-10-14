@@ -20,7 +20,7 @@
 		public function insert($categoria) {
 		
 			$sql = "insert into tblcategoriaMateria (nomeCategoriaMateria) values('".$categoria->nomeCategoriaMateria."')";
-			
+			echo("teste".$sql);
 			if(mysql_query($sql))
 				return true;
 			else
@@ -81,12 +81,12 @@
 		
 		public function delete($codCategoriaMateria) {
 		
-			$sql = "delete from tblprato where codPrato=".$codCategoriaMateria;
-
-			if(mysql_query($sql))
+			$sql = "delete from tblprato where codCategoriaMateria=".$codCategoriaMateria;
+            echo($sql);
+			/*if(mysql_query($sql))
 				return true;
 			else
-				return false;							
+				return false;	*/						
 		}	
 	}
 

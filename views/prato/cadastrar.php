@@ -54,13 +54,30 @@
                    <tr>
                     <td class="campo_frm">Categoria:</td>
                     <td >  <select size="1" name="D1">
+                        
+                    <option selected value="Selecione">Selecione:</option>
+                         <?php
+                            require_once('controllers/categoria_controller.php');
 
-                            <option selected value="Selecione">Selecione:</option>
+                            $controllerCategoria = new categoria_controller();
 
-                            <option value="2000">2000</option>
+                            $rs=$controllerCategoria->listarTodos();
 
-                            <option value="2001">2001</option>
+                            $cont=0;
 
+                            while ($cont < count($rs)){
+        
+                        ?>  
+
+                            <option value="<?php echo($rs[$cont]->codCategoriaMateria); ?>"><?php echo($rs[$cont]->nomeCategoriaMateria);?></option>
+                        <?php
+                            
+                            $cont++;
+                        }
+
+
+                        ?>
+        
                         </select>
                     </td>
                   </tr>
