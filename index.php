@@ -12,7 +12,7 @@
 		
 		$controller = "home";
 		
-	}else{
+	}else{ 
 		$controller = $_GET['controller'];
 		
 	}

@@ -3,9 +3,16 @@
 	
 	class clientes_controller {
 		
-		public $nomeObjetivo;
-		public $descricaoObjetivo;
-		public $codObjetivo;
+        public $codCliente;
+        public $nomeCliente;
+        public $cpfCliente;
+        public $dtNascCliente;
+        public $peso;
+        public $altura;
+        public $telefoneCliente;
+        public $celularCliente;
+        public $emailCliente;  
+        
         
         public function __construct(){
             
@@ -14,11 +21,16 @@
     
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
-				if(isset($_POST['txtNomeObjetivo']) && isset($_POST['codObjetivo'])){
-					 $this->codObjetivo = $_POST['codObjetivo'];
-					 $this->nomeObjetivo=$_POST['txtNomeObjetivo'];
-					 $this->descricaoObjetivo=$_POST['txtDescricaoObjetivo'];
-				
+				if(isset($_POST['txtnomeCliente']) && isset($_POST['codCliente'])){
+					 $this->codCliente = $_POST['codCliente'];
+					 $this->nomeCliente=$_POST['txtnomeCliente'];
+					 $this->cpfCliente=$_POST['txtcpfCliente'];
+					 $this->dtNascCliente = $_POST['txtdtNascCliente'];
+					 $this->peso=$_POST['txtpeso'];
+					 $this->altura=$_POST['txtaltura'];
+					 $this->telefoneCliente = $_POST['txttelefoneCliente'];	
+					 $this->celularCliente=$_POST['txtcelularCliente'];
+					 $this->emailCliente=$_POST['txtemailCliente'];				
 				}
             }       
         }
@@ -26,16 +38,16 @@
 	
         public function index(){
             
-			/*$atualizacao = 'inserir';
-			$objetivo=new Objetivo();
+			$atualizacao = 'inserir';
+			$cliente = new Cliente();
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Objetivo();
-				$objetivo=$c->selectById($id);
-			}*/
+				$c = new Cliente();
+				$cliente=$c->selectById($id);
+			}
 			
            require_once('views/clientes/index.php');
         }
@@ -43,65 +55,75 @@
 		public function cadastrar(){
 			
 			$atualizacao = 'inserir';
-			$objetivo=new Objetivo();
+			$cliente = new Cliente();
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Objetivo();
-				$objetivo=$c->selectById($id);
+				$c = new Cliente();
+				$cliente=$c->selectById($id);
 			}
 			
-			
-			require_once('views/objetivo/cadastrar.php');
+           require_once('views/clientes/cadastrar.php');
 		}
         	
 		public function listarTodos (){
 			 
-			$listar = new Objetivo();
+			$listar = new Cliente();
 			return $listar->selectAll();	
 		}
 		
-		public function buscar($codCategoriaPrato){
+		public function buscar($codCliente){
 			
-			$buscar = new Objetivo();
-			return $buscar->selectById($codCategoriaPrato);
+			$buscar = new Cliente();
+			return $buscar->selectById($codCliente);
 			
 		}
 		
 		public function atualizar() {
 		
-			$atualizar = new Objetivo();
-			$atualizar->nomeObjetivo = $this->nomeObjetivo;
-			$atualizar->codObjetivo = $this->codObjetivo;
-			$atualizar->descricaoObjetivo = $this->descricaoObjetivo;
+			$atualizar = new Cliente();
+			$atualizar->nomeCliente = $this->nomeCliente;
+			$atualizar->cpfCliente = $this->cpfCliente;
+			$atualizar->dtNascCliente = $this->dtNascCliente;
+			$atualizar->peso = $this->peso;
+			$atualizar->altura = $this->altura;
+			$atualizar->telefoneCliente = $this->telefoneCliente;
+			$atualizar->celularCliente = $this->celularCliente;
+			$atualizar->emailCliente = $this->emailCliente;
 			
-					
+			
 			if($atualizar->update()){					
-				header("location: ../objetivo/index".$this->codObjetivo);
+				header("location: ../clientes/index".$this->codCliente);
 			}
 		}
         
 		public function deletar() {
 			
-			$codObjetivo = $_GET['id'];
+			$codCliente = $_GET['id'];
 			
-			$deletar = new Objetivo();
-			if($deletar->delete($codObjetivo)){
-				header("location: ../../objetivo/index");
+			$deletar = new Cliente();
+			if($deletar->delete($codCliente)){
+				header("location: ../../clientes/index");
 			}	
 		}
 		
 		public function inserir() {
               
-			$objetivo = new Objetivo();
-			$objetivo->nomeObjetivo = $this->nomeObjetivo;
-			$objetivo->descricaoObjetivo = $this->descricaoObjetivo;
+			$cliente = new Cliente();
+			$cliente->nomeCliente = $this->nomeCliente;
+			$cliente->cpfCliente = $this->cpfCliente;
+			$cliente->dtNascCliente = $this->dtNascCliente;
+			$cliente->peso = $this->peso;
+			$cliente->altura = $this->altura;
+			$cliente->telefoneCliente = $this->telefoneCliente;
+			$cliente->celularCliente = $this->celularCliente;
+			$cliente->emailCliente = $this->emailCliente;
 			
 			
-			if($objetivo::insert($objetivo)){
-				header("location: ../objetivo/index");
+			if($cliente::insert($cliente)){
+				header("location: ../clientes/index");
 			}
 		}
 
