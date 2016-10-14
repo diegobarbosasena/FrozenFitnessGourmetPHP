@@ -8,14 +8,20 @@
         
         
         public function __construct(){
+            
             require_once('models/parceiro_class.php');
-            require_once('models/banco_dados.php');
-		
-            $conexao = new mysql_db();
 
-            $conexao->conectar();
+    
+            if($_SERVER['REQUEST_METHOD']==='POST')
+            {
+				if(isset($_POST['txtnomeParceiro']) && isset($_POST['codParceiro'])){
+					 $this->codParceiro = $_POST['codParceiro'];
+					 $this->nomeParceiro=$_POST['txtnomeParceiro'];
+				}
+            }       
         }
 		
+	
 		
 		public function index(){
             
@@ -51,77 +57,52 @@
 		}
         		
 				
-		public function insert($tipoUsuario) {
+		public function listarTodos (){
+			 
+			$listar = new Parceiro();
+			return $listar->selectAll();	
+		}
 		
-			$sql = "insert into tblParceiro (nomeParceiro) values('".$nomeParceiro->nomeParceiro."')";
+		public function buscar($codParceiro){
 			
-			if(mysql_query($sql))
-				return true;
-			else
-				return false;
-							
-		}		
-		
-		
-		
-		public function selectAll (){
-            
-			$sql = "select * from tblParceiro";
+			$buscar = new Parceiro();
+			return $buscar->selectById($codParceiro);
 			
-			$select = mysql_query($sql);
-						
-            
-            $listaParceiro = array();
-            
-			while($rs = mysql_fetch_array($select)){
-                	  
-                $parceiro = new Parceiro();
-                $parceiro->codParceiro = $rs['codParceiro'];
-                $parceiro->nomeParceiro = $rs['nomeParceiro'];
-                
-				$listaParceiro[] = $parceiro;                              							
+		}
+		
+		public function atualizar() {
+		
+			$atualizar = new Parceiro();
+			$atualizar->codParceiro = $this->codParceiro;
+			$atualizar->nomeParceiro = $this->nomeParceiro;
+			
+			
+			if($atualizar->update()){					
+				header("location: ../parceiro/index".$this->codCliente);
 			}
+		}
+        
+		public function deletar() {
 			
-            return $listaParceiro;           
+			$codParceiro = $_GET['id'];
+			
+			$deletar = new Parceiro();
+			if($deletar->delete($codParceiro)){
+				header("location: ../../parceiro/index");
+			}	
 		}
 		
-		public function selectById($codParceiro){
+		public function inserir() {
+              
+			$parceiro = new Parceiro();
+			$parceiro->codParceiro = $this->codParceiro;
+			$parceiro->nomeParceiro = $this->nomeParceiro;
 			
-			$sql = "select * from tblParceiro where codParceiro=".$codParceiro;
-			
-			$select = mysql_query($sql);
-			
-			if($rs = mysql_fetch_array($select)){
-				
-				$Parceiro= new Parceiro();
-				  
-				$Parceiro->codParceiro = $rs['codParceiro'];
-                $Parceiro->nomeParceiro = $rs['nomeParceiro'];
-											
+			if($cliente::insert($cliente)){
+				header("location: ../parceiro/index");
 			}
-			
-			return $Parceiro;
 		}
-		
-		public function update() {
-		
-			$sql = "update tblParceiro set codParceiro='".$this->nomeParceiro."' where codParceiro=".$this->codParceiro;     
-				
-			if(mysql_query($sql))
-				return true;
-			else
-				return false;				
-		}
-		
-		public function delete($codTipoUsuario) {
-		
-			$sql = "delete from tblTipoUsuarioParceiro where codParceiro=".$codParceiro;
 
-			if(mysql_query($sql))
-				return true;
-			else
-				return false;							
-		}	
 	}
 
 ?>

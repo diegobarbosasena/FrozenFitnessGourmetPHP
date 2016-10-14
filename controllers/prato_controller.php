@@ -46,6 +46,12 @@
            require_once('views/prato/cadastrar.php');
 			
 		}
+        
+        public function detalhe(){
+            
+             require_once('views/prato/detalhe_prato_pronto.php');
+            
+        }
         	
 		public function listarTodos (){
 			 

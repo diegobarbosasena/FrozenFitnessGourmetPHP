@@ -9,7 +9,7 @@
         
         public function __construct(){
             
-            require_once('models/categoria_class.php');
+            require_once('models/sobreLoja_class.php');
             
     
             if($_SERVER['REQUEST_METHOD']==='POST')

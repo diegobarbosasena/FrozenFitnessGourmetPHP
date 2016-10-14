@@ -9,7 +9,7 @@
         
         public function __construct(){
             
-            require_once('models/usuario_class.php');
+            require_once('models/produto_class.php');
      
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
@@ -26,16 +26,16 @@
         
         public function index(){
             
-			//$atualizacao = 'inserir';
-			//$usuario=new Usuario();
-			//if(isset($_GET['id']) && $_GET['id'] != ""){
+			$atualizacao = 'inserir';
+			$produto=new Produto();
+			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
-			//	$id = $_GET['id'];
-			//	$atualizacao = 'atualizar';
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
 				
-				//$c = new Usuario();
-				//$usuario=$c->selectById($id);
-			//}
+				$c = new Produto();
+				$produto=$c->selectById($id);
+			}
 			
            require_once('views/produtocms/index.php');
         }
@@ -57,7 +57,12 @@
 			}
             require_once('views/produtocms/cadastrar.php');
 		}
-        		
+        
+        public function detalhe(){
+            
+             require_once('views/produtocms/detalhe_produto.php');
+            
+        }
 		
 		public function listarTodos (){
 			 

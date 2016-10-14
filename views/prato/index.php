@@ -57,7 +57,7 @@
            
         </td>
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> <a href="../cms/DetalhePratoPronto" class="link">Detalhes </a>
+            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> <a href="../prato/detalhe" class="link">Detalhes </a>
         </td>
         
     </tr>

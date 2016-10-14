@@ -34,7 +34,7 @@
 			$select = mysql_query($sql);
 						
             
-            $listaLoja array();
+            $listaLoja = array();
             
 			while($rs = mysql_fetch_array($select)){
                 	  

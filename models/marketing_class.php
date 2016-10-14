@@ -31,7 +31,7 @@
 			$select = mysql_query($sql);
 						
             
-            $listaSlider array();
+            $listaSlider = array();
             
 			while($rs = mysql_fetch_array($select)){
                 	  
