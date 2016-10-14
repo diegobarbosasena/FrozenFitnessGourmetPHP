@@ -51,7 +51,7 @@
 			}
 			
 			
-			require_once('views/categoria/cadastrar.php');
+			require_once('views/sobre/cadastrar.php');
 		}
 		
 		public function listarTodos (){

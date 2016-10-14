@@ -69,7 +69,7 @@
 			}
 			
 			
-			require_once('views/objetivo/cadastrar.php');
+			require_once('views/marketing/cadastrar.php');
 		}
         	
 		public function listarTodos (){
@@ -94,7 +94,7 @@
 			$atualizar->imagemCategoria = $this->imagemCategoria;
 					
 			if($atualizar->update()){					
-				header("location: ../objetivo/index".$this->codCategoriaPrato);
+				header("location: ../marketing/index".$this->codCategoriaPrato);
 			}
 		}
         
@@ -104,7 +104,7 @@
 			
 			$deletar = new Objetivo();
 			if($deletar->delete($codCategoriaPrato)){
-				header("location: ../../objetivo/index");
+				header("location: ../../marketing/index");
 			}	
 		}
 		
