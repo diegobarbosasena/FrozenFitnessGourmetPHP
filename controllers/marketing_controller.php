@@ -10,7 +10,7 @@
         
         public function __construct(){
             
-            require_once('models/objetivo_class.php');
+            require_once('models/marketing_class.php');
 
     
             if($_SERVER['REQUEST_METHOD']==='POST')
