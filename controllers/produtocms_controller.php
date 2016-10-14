@@ -57,7 +57,12 @@
 			}
             require_once('views/usuario/cadastrar.php');
 		}
-        		
+        
+        public function detalhe(){
+            
+             require_once('views/produtocms/detalhe_produto.php');
+            
+        }
 		
 		public function listarTodos (){
 			 
