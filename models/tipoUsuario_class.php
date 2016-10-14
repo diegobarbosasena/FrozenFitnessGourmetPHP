@@ -14,12 +14,7 @@
             $conexao = new mysql_db();
 
             $conexao->conectar();
-<<<<<<< HEAD
-        }			
-=======
-        }
-        		
->>>>>>> 8c914e53b96e10501c5858ffb61d16e60c4857e1
+
 				
 		public function insert($tipoUsuario) {
 		

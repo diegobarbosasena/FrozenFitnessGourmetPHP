@@ -1,10 +1,11 @@
 
 <div class="cadas">Cadastrar Igrediente</div>
 
-    <form  name="frmconsulta" method="post" action="../cms/ConsultaIngrediente">
-        <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
+   <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>ingrediente/index">
+        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
         
-    </form>
+</form>
+
 
         <form class="frm" name="frmprodutos" method="post" action="">
             

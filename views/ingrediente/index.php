@@ -1,5 +1,5 @@
 <form  name="frmconsulta" method="post" action="../cms/AdmIngrediente">
-        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
+        
         
 </form>
 <div class="cadas">Consultar Igredientes</div>
@@ -8,6 +8,11 @@
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form> 
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>ingrediente/cadastrar">
+        <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
+        
+ </form>
+
 <table class="tbl_consulta">
     <tr class="linha_consulta">
         <td class="col_consulta">

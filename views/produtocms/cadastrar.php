@@ -1,11 +1,11 @@
 
 <div class="cadas">Cadastrar Produto</div>
 
-    <form  name="frmconsulta" method="post" action="../cms/ConsultaProduto">
+    <form  name="frmconsulta" method="post" action="../produtocms/index">
         <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
         
     </form>
-        <form class="frm" name="frmprodutos" method="post" action="">
+        <form class="frm" name="frmprodutos" method="post" action="../produtocms/cadastrar">
             
             <table>
                   

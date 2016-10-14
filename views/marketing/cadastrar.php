@@ -1,10 +1,13 @@
 
+
+
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>marketing/index">
+        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
+        
+</form>
 <div class="cadas"> Slider</div>
 
-    <form  name="frmconsulta" method="post" action="../cms/ConsultaMarketing">
-        <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
-        
-    </form>
+   
 
         <form class="frm" name="frmprodutos" method="post" action="">
             

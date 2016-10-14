@@ -1,9 +1,9 @@
-
-<form  name="frmconsulta" method="post" action="../cms/AdmSobre">
-        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
-        
-</form>
 <div class="cadas">Sobre a Loja</div>
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>sobre/cadastrar">
+        <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
+        
+ </form>
+
 <form name="FrmPesquisa" method="post" action="home.php">
     
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
