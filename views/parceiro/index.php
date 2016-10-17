@@ -1,7 +1,6 @@
 <div class="cadas">Consulta de Parceiros</div>
 <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>parceiro/cadastrar">
-        <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
-        
+    <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
 </form>
 
 <form name="FrmPesquisa" method="post" action="home.php">

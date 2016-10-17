@@ -1,11 +1,10 @@
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>produtocms/index">
+   <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
+</form>
 
 <div class="cadas">Cadastrar Produto</div>
 
-    <form  name="frmconsulta" method="post" action="../produtocms/index">
-        <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
-        
-    </form>
-        <form class="frm" name="frmprodutos" method="post" action="../produtocms/cadastrar">
+        <form class="frm" name="frmprodutos" method="post" action="">
             
             <table>
                   

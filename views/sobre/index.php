@@ -1,8 +1,8 @@
 <div class="cadas">Sobre a Loja</div>
 <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>sobre/cadastrar">
-        <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
-        
- </form>
+    <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
+</form>
+
 
 <form name="FrmPesquisa" method="post" action="home.php">
     

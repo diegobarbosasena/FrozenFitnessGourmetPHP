@@ -1,10 +1,7 @@
-
-
-
-   <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>categoria/index">
-        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
-        
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>estoque/index">
+   <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
 </form>
+
 <div class="cadas">Estoque</div>
 
         <form class="frm" name="frmprodutos" method="post" action="">

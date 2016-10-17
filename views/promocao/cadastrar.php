@@ -2,10 +2,11 @@
 
 
     <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>promocao/index">
-        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
-        
+   <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
 </form>
+
 <div class="cadas">Cadastrar Promoção</div>
+
         <form class="frm" name="frmprodutos" method="post" action="">
             
             <table>

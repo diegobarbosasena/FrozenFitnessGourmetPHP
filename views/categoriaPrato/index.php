@@ -5,7 +5,7 @@
 ?>
 
 
-<div class="cadas">Consultar Categorias de Prato</div>
+<div class="cadas">Consultar Categoria Prato</div>
 
  
   <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>categoriaPrato/cadastrar">

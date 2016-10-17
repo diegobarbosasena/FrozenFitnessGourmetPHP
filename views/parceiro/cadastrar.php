@@ -1,11 +1,9 @@
-
-
-
-   <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>parceiro/index">
-        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
-        
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>parceiro/index">
+   <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
 </form>
+
 <div class="cadas">Cadastrar Parceiro</div>
+
 
         <form class="frm" name="frmprodutos" method="post" action="">
             

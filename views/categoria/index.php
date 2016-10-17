@@ -40,7 +40,6 @@
 		
 		while ($cont < count($rs)){
             
-            if($rs[$cont]->nomeCategoriaMateria != ""){   
 	?>    
         
     <tr class="linha_consulta">
@@ -56,13 +55,8 @@
             <a href="<?php echo(PROJECTDIR)?>categoria/deletar/<?php echo($rs[$cont]->codCategoriaMateria)?>" class="link">Excluir </a> 
         </td>
 		
-		<?php 
-            }else{
-                ?>
-        
-                <div class="cadas"> Vazio </div>
         <?php
-            }
+            
 			$cont++;
 		}
 		
