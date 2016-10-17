@@ -1,9 +1,8 @@
-<div class="cadas">Conteúdo do Slider</div>
-<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>marketing/cadastrar">
-        <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
+<form  name="frmconsulta" method="post" action="../cms/AdmMarketing">
+        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
         
- </form>
-
+</form>
+<div class="cadas">Conteúdo do Slider</div>
 <form name="FrmPesquisa" method="post" action="home.php">
     
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">

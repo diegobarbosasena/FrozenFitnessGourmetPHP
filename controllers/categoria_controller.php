@@ -23,7 +23,7 @@
 		
 		public function index(){
             
-			/*$atualizacao = 'inserir';
+			$atualizacao = 'inserir';
 			$categoria=new Categoria();
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
@@ -32,7 +32,7 @@
 				
 				$c = new Categoria();
 				$categoria=$c->selectById($id);
-			}*/
+			}
 			
            require_once('views/categoria/index.php');
         }
@@ -86,7 +86,6 @@
 			
 			$deletar = new Categoria();
             //echo("teste".$codCategoria);
-            $deletar->delete($codCategoria);
 			if($deletar->delete($codCategoria)){
 				header("location: ../../categoria/index");
 			}

@@ -7,13 +7,14 @@
         
     </form>
 
-        <form class="frm" name="frmprodutos" method="post" action="">
+        <form class="frm" name="frmprodutos" method="post" enctype="multipart/form-data" action="<?php echo(PROJECTDIR)?>prato/<?php echo($atualizacao) ?>">
             
+           <input type="hidden" value="<?php echo($prato->codPrato)?>" name="codPrato"/>
             <table>
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" type="text"   value=""    /></td>
+                    <td><input class="caixa_frm" type="text"   name="txtnomePrato"  value=""    /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Carboidrato:</td>
@@ -21,11 +22,11 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Calorias:</td>
-                    <td><input class="caixa_frm" name="txtcalorias"  type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtcaloria"  type="text" value="" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Valor Energético:</td>
-                    <td><input class="caixa_frm" name="txtevlrenergetico" type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtvalorEnergetico" type="text" value="" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Proteina:</td>
@@ -37,19 +38,19 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Gordura:</td>
-                    <td><input class="caixa_frm" name="txtgordura" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtgorduras" type="text" value=""  /></td>
                   </tr>    
                   <tr>
                     <td class="campo_frm">Data de Fabricação:</td>
-                    <td><input class="caixa_frm" name="txtdtfabricacao" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtdtFabricacao" type="text" value=""  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Data de Validade:</td>
-                    <td><input class="caixa_frm" name="txtdtvalidade" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtdtValidade" type="text" value=""  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Preço:</td>
-                    <td><input class="caixa_frm"  name="txtcarboidrato" type="text"  value=""  /></td>
+                    <td><input class="caixa_frm"  name="txtprecoPrato" type="text"  value=""  /></td>
                   </tr>
                    <tr>
                     <td class="campo_frm">Categoria:</td>
@@ -57,9 +58,9 @@
                         
                     <option selected value="Selecione">Selecione:</option>
                          <?php
-                            require_once('controllers/categoria_controller.php');
+                            require_once('controllers/categoriaPrato_controller.php');
 
-                            $controllerCategoria = new categoria_controller();
+                            $controllerCategoria = new categoriaPrato_controller();
 
                             $rs=$controllerCategoria->listarTodos();
 
@@ -69,7 +70,7 @@
         
                         ?>  
 
-                            <option value="<?php echo($rs[$cont]->codCategoriaMateria); ?>"><?php echo($rs[$cont]->nomeCategoriaMateria);?></option>
+                            <option value="<?php echo($rs[$cont]->codCategoriaPrato); ?>"><?php echo($rs[$cont]->nomeCategoriaPrato);?></option>
                         <?php
                             
                             $cont++;
@@ -82,12 +83,12 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="campo_frm">Imagem Produto:</td>
-                    <td><input  name="txtdtvalidade" type="file" value=""  /></td>
+                    <td class="campo_frm">Imagem Prato:</td>
+                    <td><input  name="imagemPrato" type="file" value=""  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Descrição:</td>
-                    <td><textarea class="campo_desc" cols="35" rows="8" ></textarea></td> 
+                    <td><textarea class="campo_desc" name= "txtdescricaoPrato" cols="35" rows="8" ></textarea></td> 
                   </tr>  
 
                   <tr>

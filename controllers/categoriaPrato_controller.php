@@ -41,7 +41,7 @@
         
         public function index(){
             
-			/*$atualizacao = 'inserir';
+			$atualizacao = 'inserir';
 			$categoriaPrato = new categoriaPrato();
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
@@ -50,7 +50,7 @@
 				
 				$c = new Categoria_prato();
 				$categoriaPrato=$c->selectById($id);
-			}*/
+			}
 			
            require_once('views/categoriaPrato/index.php');
         }

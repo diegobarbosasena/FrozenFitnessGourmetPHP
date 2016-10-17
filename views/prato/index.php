@@ -39,19 +39,19 @@
 			
 			$cont=0;
 		
-			//while ($cont < count($rs)){
+			while ($cont < count($rs)){
 		?>
         
    
     <tr class="linha_consulta">
         <td class="col_consulta">
-            <?php //echo ($rs[$cont]->nomePrato);?>
+            <?php echo ($rs[$cont]->nomePrato);?>
         </td>
         <td class="col_consulta">
-            <?php //echo ($rs[$cont]->preco);?>
+            <?php echo ($rs[$cont]->preco);?>
         </td>
         <td class="col_consulta">
-            <?php //echo ($rs[$cont]->);?>
+            <?php //echo ($rs[$cont]->descricao);?>
         </td>
         <td class="col_consulta">
            
@@ -61,5 +61,5 @@
         </td>
         
     </tr>
-			<?php //}?>
+			<?php }?>
 </table>
