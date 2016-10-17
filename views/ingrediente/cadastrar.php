@@ -1,5 +1,6 @@
 
 
+<<<<<<< HEAD
 
 <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>ingrediente/index">
    <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
@@ -7,6 +8,12 @@
 
 <div class="cadas">Cadastrar Igrediente</div>
 
+=======
+    <form  name="frmconsulta" method="post" action="../cms/ConsultaIngrediente">
+        <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
+        
+    </form>
+>>>>>>> 130e20beb7ff2a73ea122c4a849946caac6f1a0b
 
         <form class="frm" name="frmprodutos" method="post" action="">
             

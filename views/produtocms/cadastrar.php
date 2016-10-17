@@ -4,6 +4,13 @@
 
 <div class="cadas">Cadastrar Produto</div>
 
+<<<<<<< HEAD
+=======
+    <form  name="frmconsulta" method="post" action="../cms/ConsultaProduto">
+        <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
+        
+    </form>
+>>>>>>> 130e20beb7ff2a73ea122c4a849946caac6f1a0b
         <form class="frm" name="frmprodutos" method="post" action="">
             
             <table>

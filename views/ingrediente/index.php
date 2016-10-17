@@ -1,13 +1,23 @@
+<<<<<<< HEAD
 
+=======
+<form  name="frmconsulta" method="post" action="../cms/AdmIngrediente">
+        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
+        
+</form>
+>>>>>>> 130e20beb7ff2a73ea122c4a849946caac6f1a0b
 <div class="cadas">Consultar Igredientes</div>
 <form name="FrmPesquisa" method="post" action="home.php">
     
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form> 
+<<<<<<< HEAD
 <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>ingrediente/cadastrar">
     <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
 </form>
+=======
+>>>>>>> 130e20beb7ff2a73ea122c4a849946caac6f1a0b
 <table class="tbl_consulta">
     <tr class="linha_consulta">
         <td class="col_consulta">

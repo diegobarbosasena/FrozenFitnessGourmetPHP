@@ -1,11 +1,19 @@
 
+<div class="cadas">Cadastrar Promoção</div>
 
+<<<<<<< HEAD
 
     <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>promocao/index">
    <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
 </form>
 
 <div class="cadas">Cadastrar Promoção</div>
+=======
+    <form  name="frmconsulta" method="post" action="../cms/ConsultaPromocao">
+        <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
+        
+    </form>
+>>>>>>> 130e20beb7ff2a73ea122c4a849946caac6f1a0b
 
         <form class="frm" name="frmprodutos" method="post" action="">
             
