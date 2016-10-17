@@ -4,8 +4,8 @@
 	class categoriaPrato_controller {
 		
 		public $nomeCategoriaPrato;
-		public $descricaoCategoria;
-		public $imagemCategoria;
+		public $descricaoCategoriaPrato;
+		public $imagemCategoriaPrato;
 		public $codCategoriaPrato;
         
         public function __construct(){
@@ -13,25 +13,29 @@
             require_once('models/categoriaPrato_class.php');
 
     
+        }
+		
+		public function iniciaAtributo(){
+		
+			
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
-				if(isset($_POST['txtNomeObjetivo']) && isset($_POST['codCategoriaPrato'])){
 					 $this->codCategoriaPrato = $_POST['codCategoriaPrato'];
-					 $this->nomeCategoriaPrato=$_POST['txtNomeObjetivo'];
-					 $this->descricaoCategoria=$_POST['txtDescricaoObjetivo'];
-					 $this->imagemCategoria = basename($_FILES["objetivoFile"]["name"]);					
-				}
+					 $this->nomeCategoriaPrato=$_POST['txtNomeCategoriaPrato'];
+					 $this->descricaoCategoriaPrato=$_POST['txtDescricaoCategoriaPrato'];
+					 $this->imagemCategoriaPrato = basename($_FILES["CategoriaPratoFile"]["name"]);					
+				
             }       
-        }
+		}
 		
 		public function getImg(){
 			
 			$dir="conteudo/imagem/";
 			
-			$file= $dir . $this->imagemCategoria;
+			$file= $dir . $this->imagemCategoriaPrato;
 			
-            if(strstr($this->imagemCategoria, '.jpg') || strstr($this->imagemCategoria, '.png')){
-                if(move_uploaded_file($_FILES["objetivoFile"]["tmp_name"],$file)){
+            if(strstr($this->imagemCategoriaPrato, '.jpg') || strstr($this->imagemCategoriaPrato, '.png')){
+                if(move_uploaded_file($_FILES["CategoriaPratoFile"]["tmp_name"],$file)){
 					return $file;
                 }else{
 					return null;
@@ -48,7 +52,7 @@
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Categoria_prato();
+				$c = new categoriaPrato();
 				$categoriaPrato=$c->selectById($id);
 			}
 			
@@ -86,12 +90,12 @@
 		}
 		
 		public function atualizar() {
-		
+			$this->iniciaAtributo();  
 			$atualizar = new categoriaPrato();
 			$atualizar->nomeCategoriaPrato = $this->nomeCategoriaPrato;
 			$atualizar->codCategoriaPrato = $this->codCategoriaPrato;
-			$atualizar->descricaoCategoria = $this->descricaoCategoria;
-			$atualizar->imagemCategoria = $this->imagemCategoria;
+			$atualizar->descricaoCategoriaPrato = $this->descricaoCategoriaPrato;
+			$atualizar->imagemCategoriaPrato = $this->imagemCategoriaPrato;
 					
 			if($atualizar->update()){					
 				header("location: ../categoriaPrato/index".$this->codCategoriaPrato);
@@ -110,14 +114,18 @@
 		
 		public function inserir() {
               
+			$this->iniciaAtributo();  
 			$categoriaPrato = new categoriaPrato();
 			$categoriaPrato->nomeCategoriaPrato = $this->nomeCategoriaPrato;
-			$categoriaPrato->descricaoCategoria = $this->descricaoCategoria;
-			$categoriaPrato->imagemCategoria = $this->getImg();
+			$categoriaPrato->descricaoCategoriaPrato = $this->descricaoCategoriaPrato;
+			$categoriaPrato->imagemCategoriaPrato = $this->getImg();
 			
 			if($categoriaPrato::insert($categoriaPrato)){
 				header("location: ../categoriaPrato/index");
+				
+				
 			}
+			
 		}
 
 	}

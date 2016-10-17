@@ -7,7 +7,11 @@
         
     </form>
 
+<<<<<<< HEAD
         <form class="frm" name="frmprodutos" method="post" enctype="multipart/form-data" action="<?php echo(PROJECTDIR)?>prato/<?php echo($atualizacao) ?>">
+=======
+        <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>prato/<?php echo($atualizacao) ?>">
+>>>>>>> a834044b210e87945cc9fcb987fb8f7e78a364f2
             
            <input type="hidden" value="<?php echo($prato->codPrato)?>" name="codPrato"/>
             <table>
@@ -84,7 +88,11 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Imagem Prato:</td>
+<<<<<<< HEAD
                     <td><input  name="imagemPrato" type="file" value=""  /></td>
+=======
+                    <td><input  name="imgPrato" type="file" value=""  /></td>
+>>>>>>> a834044b210e87945cc9fcb987fb8f7e78a364f2
                   </tr>
                   <tr>
                     <td class="campo_frm">Descrição:</td>

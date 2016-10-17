@@ -1,8 +1,22 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<div class="cadas">Conteúdo do Slider</div>
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>marketing/cadastrar">
+    <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
+</form>
+
+=======
+>>>>>>> a834044b210e87945cc9fcb987fb8f7e78a364f2
 <form  name="frmconsulta" method="post" action="../cms/AdmMarketing">
         <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
         
 </form>
 <div class="cadas">Conteúdo do Slider</div>
+<<<<<<< HEAD
+=======
+>>>>>>> 130e20beb7ff2a73ea122c4a849946caac6f1a0b
+>>>>>>> a834044b210e87945cc9fcb987fb8f7e78a364f2
 <form name="FrmPesquisa" method="post" action="home.php">
     
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">

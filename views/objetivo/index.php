@@ -36,17 +36,15 @@
 	?>
     <tr class="linha_consulta">
         <td class="col_consulta">
-           <?php echo($rs[$cont]->nomeCategoriaPrato); ?>
+           <?php echo($rs[$cont]->nomeObjetivo); ?>
             
         </td>
-        <td class="col_consulta">
-            <?php echo($rs[$cont]->imagemCategoria); ?>
-        </td>
+       
         <td class="descricao">
-         <?php echo($rs[$cont]->descricaoCategoria); ?>
+         <?php echo($rs[$cont]->descricaoObjetivo); ?>
         </td>
         <td class="col_consulta" >
-           <a href="<?php echo(PROJECTDIR)?>objetivo/cadastrar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>objetivo/deletar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link">Excluir </a>
+           <a href="<?php echo(PROJECTDIR)?>objetivo/cadastrar/<?php echo($rs[$cont]->codObjetivo) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>objetivo/deletar/<?php echo($rs[$cont]->codObjetivo) ?>" class="link">Excluir </a>
         </td>
    
     <?php 

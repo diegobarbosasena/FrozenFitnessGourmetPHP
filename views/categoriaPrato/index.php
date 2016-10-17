@@ -14,7 +14,7 @@
  </form>
 
 
-<form name="FrmPesquisa" method="post" action="home.php">
+<form name="FrmPesquisa" method="post" action="">
     
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
@@ -38,9 +38,9 @@
         </td>
 		
     <?php
-		require_once('controllers/categoria_controller.php');
+		require_once('controllers/categoriaPrato_controller.php');
 		
-		$controllerCategoria = new categoria_controller();
+		$controllerCategoria = new categoriaPrato_controller();
 				
 		$rs=$controllerCategoria->listarTodos();
 
@@ -48,27 +48,27 @@
 		
 		while ($cont < count($rs)){
             
-            if($rs[$cont]->nomeCategoriaMateria != ""){   
+            if($rs[$cont]->nomeCategoriaPrato != ""){   
 	?>    
         
     <tr class="linha_consulta">
         
         <td class="col_consulta">
            <?php 
-					echo($rs[$cont]->nomeCategoriaMateria);
+					echo($rs[$cont]->nomeCategoriaPrato);
 			?>
         </td>
         
         <td class="col_consulta">
-            <a href="<?php echo(PROJECTDIR)?>categoria/cadastrar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link"> Editar</a> | 
-            <a href="<?php echo(PROJECTDIR)?>categoria/deletar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link">Excluir </a> 
+            <a href="<?php echo(PROJECTDIR)?>categoriaPrato/cadastrar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link"> Editar</a> | 
+            <a href="<?php echo(PROJECTDIR)?>categoriaPrato/deletar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link">Excluir </a> 
         </td>
 		
 		<?php 
             }else{
                 ?>
         
-                <div class="cadas"> Vazio </div>
+                
         <?php
             }
 			$cont++;

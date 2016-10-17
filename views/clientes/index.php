@@ -1,10 +1,8 @@
+  
 
 <div class="cadas">Consulta de Clientes</div>
 
-    
-<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>usuarios/cadastrar">
-        <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
-</form>
+  
 <form>
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>

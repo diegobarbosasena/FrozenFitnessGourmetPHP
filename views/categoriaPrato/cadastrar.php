@@ -7,23 +7,25 @@
  </form>
 
         <form class="frm" name="frmprodutos" enctype="multipart/form-data" method="post" action="<?php echo(PROJECTDIR)?>categoriaPrato/<?php echo($atualizacao) ?>">
-            <input type="hidden" value="<?php echo($objetivo->codCategoriaPrato)?>" name="codCategoriaPrato"/>
+            <input type="hidden" value="<?php echo($categoriaPrato->codCategoriaPrato)?>" name="codCategoriaPrato"/>
             <table>
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" name="txtNomeCategoriaPrato" value="<?php echo($objetivo->nomeCategoriaPrato)?>"  type="text"/></td>
+                    <td><input class="caixa_frm" name="txtNomeCategoriaPrato" value="<?php echo($categoriaPrato->nomeCategoriaPrato)?>"  type="text"/></td>
                 </tr>
                   <tr>
                     <td class="campo_frm">Imagem Produto:</td>
-                    <td><input  name="CategoriaPratoFile" type="file"  value="<?php echo($objetivo->imagemCategoria)?>" /></td>
+                    <td><input  name="CategoriaPratoFile" type="file"  value="<?php echo($categoriaPrato->imagemCategoriaPrato)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Descrição:</td>
                     <td>
 						<div>
-							<textarea class="campo_desc" name="txtDescricaoCategoriaPrato"   cols="35" rows="8" ><?php echo($objetivo->descricaoCategoria);?></textarea>
+							<textarea class="campo_desc" name="txtDescricaoCategoriaPrato"   cols="35" rows="8" ><?php echo($categoriaPrato->descricaoCategoriaPrato);?></textarea>
 						</div>
+                        
+          
 					</td> 
                   </tr>  
 

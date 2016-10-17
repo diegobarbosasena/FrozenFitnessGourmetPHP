@@ -42,7 +42,7 @@
 		public function cadastrar(){
 			
 			$atualizacao = 'inserir';
-			$usuario=new Usuario();
+			//$usuario=new Usuario();
             //echo('CHEGOU');
             
 			if(isset($_GET['id']) && $_GET['id'] != ""){

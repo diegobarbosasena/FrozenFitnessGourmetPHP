@@ -1,9 +1,23 @@
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>sobre/index">
+   <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
+</form>
+        <div class="cadas"> Loja</div>
+=======
+>>>>>>> a834044b210e87945cc9fcb987fb8f7e78a364f2
 <div class="cadas"> Loja</div>
     <form  name="frmconsulta" method="post" action="../cms/ConsultaSobre">
         <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
         
     </form>
+<<<<<<< HEAD
+=======
+>>>>>>> 130e20beb7ff2a73ea122c4a849946caac6f1a0b
+>>>>>>> a834044b210e87945cc9fcb987fb8f7e78a364f2
 
         <form class="frm" name="frmprodutos" method="post" action="">
             
