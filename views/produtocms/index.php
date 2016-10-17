@@ -3,7 +3,7 @@
 <div class="cadas">Consulta de Produtos</div>
 
 <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>produtocms/cadastrar">
-    <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" /
+    <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
         
 
 </form>

@@ -88,11 +88,11 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Imagem Prato:</td>
-<<<<<<< HEAD
+
                     <td><input  name="imagemPrato" type="file" value=""  /></td>
-=======
-                    <td><input  name="imgPrato" type="file" value=""  /></td>
->>>>>>> a834044b210e87945cc9fcb987fb8f7e78a364f2
+
+                   
+
                   </tr>
                   <tr>
                     <td class="campo_frm">Descrição:</td>

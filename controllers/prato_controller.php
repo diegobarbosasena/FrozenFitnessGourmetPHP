@@ -31,14 +31,11 @@
 			
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
-<<<<<<< HEAD
                                   
-=======
-                
-                
+
                 //if(isset($_POST['txtnomePrato']) && isset($_POST['$codPrato'])){
                     
->>>>>>> a834044b210e87945cc9fcb987fb8f7e78a364f2
+
                     $this->codPrato=$_POST['codPrato'];
 					$this->nomePrato= $_POST['txtnomePrato'];
                     $this->precoPrato=$_POST['txtprecoPrato'];
@@ -51,7 +48,7 @@
 					$this->gorduras= $_POST['txtgorduras'];
                     $this->dtFabricacao= $_POST['txtdtFabricacao'];
                     $this->dtValidade=$_POST['txtdtValidade'];
-<<<<<<< HEAD
+
                     $this->imagemPrato = basename($_FILES["imagemPrato"]["name"]);
 			}     
 			
@@ -70,30 +67,10 @@
                 }else{
 					return null;
 				}
-			}
-=======
-                    $this->imagemPrato = basename($_FILES["imgPrato"]["name"]);
-                    echo("Aqui".$this->imagemPrato);
-              // }
             }       
->>>>>>> a834044b210e87945cc9fcb987fb8f7e78a364f2
         }
         
-        
-		public function getImg(){
-			
-			$dir="conteudo/imagem/";
-			
-			$file= $dir . $this->imagemPrato;
-			
-            if(strstr($this->imagemPrato, '.jpg') || strstr($this->imagemPrato, '.png')){
-                if(move_uploaded_file($_FILES["imgPrato"]["tmp_name"],$file)){
-					return $file;
-                }else{
-					return null;
-				}
-			}
-        }
+     
 
 		 public function index(){
             
@@ -151,13 +128,13 @@
 		
 		public function atualizar() {
 		
-<<<<<<< HEAD
+
 			$this->iniciaAtributos();
 			
 			$prato = new Prato();
-=======
+
 		  $prato = new Prato();
->>>>>>> a834044b210e87945cc9fcb987fb8f7e78a364f2
+
             
             $prato->codPrato=$this->codPrato;
             $prato->nomePrato= $this->nomePrato;
@@ -189,11 +166,9 @@
 		
 		public function inserir() {
 		
-<<<<<<< HEAD
+
 			$this->iniciaAtributos();
 		
-=======
->>>>>>> a834044b210e87945cc9fcb987fb8f7e78a364f2
             $prato = new Prato();
             
             $prato->codPrato=$this->codPrato;
@@ -210,7 +185,7 @@
             $prato->dtValidade= $this->dtValidade;
             $prato->imagemPrato= $this->getImg();
            
-<<<<<<< HEAD
+
             //echo("Imagem  ".$prato->imagemPrato);
             //$prato::insert($prato);
             
@@ -220,17 +195,9 @@
                 header("location: ../prato/index");
             }else{
                 header("location: ../prato/cadastrar");
-=======
-            //echo("teste2  ".$prato->nomePrato);
-            //$prato::insert($prato);
-            
-                
-			if($prato::insert($prato)){
-               // header("location: ../prato/index");
->>>>>>> a834044b210e87945cc9fcb987fb8f7e78a364f2
-            }
-		}
-        
+                       
+			}
+        }
 		
 	}
 	
