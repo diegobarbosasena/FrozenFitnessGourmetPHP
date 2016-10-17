@@ -6,16 +6,16 @@
         
 </form>
         <form class="frm" name="frmprodutos" enctype="multipart/form-data" method="post" action="<?php echo(PROJECTDIR)?>objetivo/<?php echo($atualizacao) ?>">
-            <input type="hidden" value="<?php echo($objetivo->codCategoriaPrato)?>" name="codCategoriaPrato"/>
+            <input type="hidden" value="<?php echo($objetivo->codObjetivo)?>" name="codObjetivo"/>
             <table>
                   
                   <tr>
                     <td class="campo_frm">Objetivo:</td>
-                    <td><input class="caixa_frm" name="txtNomeObjetivo" value="<?php echo($objetivo->nomeCategoriaPrato)?>"  type="text"/></td>
+                    <td><input class="caixa_frm" name="txtNomeObjetivo" value="<?php echo($objetivo->nomeObjetivo)?>"  type="text"/></td>
                   </tr>
                    <tr>
                     <td class="campo_frm">Descricao:</td>
-                    <td><input class="caixa_frm" name="txtDescricaoObjetivo" value="<?php echo($objetivo->nomeCategoriaPrato)?>"  type="text"/></td>
+                    <td><input class="caixa_frm" name="txtDescricaoObjetivo" value="<?php echo($objetivo->descricaoObjetivo)?>"  type="text"/></td>
                   </tr>
                   
                   <tr>

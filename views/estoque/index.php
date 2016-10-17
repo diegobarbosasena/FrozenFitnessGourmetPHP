@@ -1,9 +1,9 @@
-<div class="cadas">Consulta de Estoque</div>
-<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>estoque/cadastrar">
-        <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
-        
- </form>
 
+<form  name="frmconsulta" method="post" action="../cms/AdmEstoque">
+        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
+        
+    </form>
+<div class="cadas">Consulta de Estoque</div>
 <form name="FrmPesquisa" method="post" action="home.php">
     
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">

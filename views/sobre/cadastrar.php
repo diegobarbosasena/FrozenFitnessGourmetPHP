@@ -1,10 +1,10 @@
 
-
-   <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>sobre/index">
-        <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
+<div class="cadas"> Loja</div>
+    <form  name="frmconsulta" method="post" action="../cms/ConsultaSobre">
+        <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
         
-</form>
-        <div class="cadas"> Loja</div>
+    </form>
+
         <form class="frm" name="frmprodutos" method="post" action="">
             
             <table>

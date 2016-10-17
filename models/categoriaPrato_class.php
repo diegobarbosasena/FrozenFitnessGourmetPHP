@@ -5,8 +5,8 @@
 
 		public $nomeCategoriaPrato;
 		public $codCategoriaPrato;
-		public $descricaoCategoria;
-		public $imagemCategoria;
+		public $descricaoCategoriaPrato;
+		public $imagemCategoriaPrato;
 
 		
         public function __construct(){
@@ -21,8 +21,9 @@
 				
 		public function insert($categoriaPrato) {
 		
-				$sql = "insert into tblcategoriaprato (nomeCategoriaPrato, descricaoCategoria, imagemCategoria) values('".$categoriaPrato->nomeCategoriaPrato."','".$categoriaPrato->descricaoCategoria."',
-					'".$categoriaPrato->imagemCategoria."')";
+				$sql = "insert into tblcategoriaprato (nomeCategoriaPrato, descricaoCategoriaPrato, imagemCategoriaPrato) values('".$categoriaPrato->nomeCategoriaPrato."','".$categoriaPrato->descricaoCategoriaPrato."',
+					'".$categoriaPrato->imagemCategoriaPrato."')";
+
 			
 				if(mysql_query($sql)){
 					echo($sql);
@@ -38,20 +39,20 @@
 			
 			$select = mysql_query($sql);
             
-            $listaObjetivo = array(); 
+            $listaCategoriaPrato = array(); 
 			
 			while($rs = mysql_fetch_array($select)){
 				
-                $objetivo = new Objetivo();
-				$objetivo->codCategoriaPrato = $rs['codCategoriaPrato'];
-                $objetivo->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
-				$objetivo->descricaoCategoria = $rs['descricaoCategoria'];
-				$objetivo->imagemCategoria = $rs['imagemCategoria'];
+                $categoriaPrato = new categoriaPrato();
+				$categoriaPrato->codCategoriaPrato = $rs['codCategoriaPrato'];
+                $categoriaPrato->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
+				$categoriaPrato->descricaoCategoria = $rs['descricaoCategoriaPrato'];
+				$categoriaPrato->imagemCategoria = $rs['imagemCategoriaPrato'];
 				
-				$listaObjetivo[] = $objetivo;						
+				$listaCategoriaPrato[] = $categoriaPrato;						
 			}
 			
-			return $listaObjetivo;
+			return $listaCategoriaPrato;
 				
 		}
 		
@@ -63,12 +64,12 @@
 			
 			if($rs = mysql_fetch_array($select)){
 				
-				$objetivo = new Objetivo();
+				$categoriaPrato = new categoriaPrato();
 				  
-				$objetivo->codCategoriaPrato = $rs['codCategoriaPrato'];
-                $objetivo->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
-				$objetivo->imagemCategoria = $rs['imagemCategoria'];	
-				$objetivo->descricaoCategoria = $rs['descricaoCategoria'];				
+				$categoriaPrato->codCategoriaPrato = $rs['codCategoriaPrato'];
+                $categoriaPrato->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
+				$categoriaPrato->imagemCategoria = $rs['imagemCategoriaPrato'];	
+				$categoriaPrato->descricaoCategoria = $rs['descricaoCategoriaPrato'];				
 			}
 			
 			return $objetivo;
@@ -76,7 +77,7 @@
 		
 		public function update() {
 		
-			$sql = "update tblcategoriaprato set nomeCategoriaPrato='".$this->nomeCategoriaPrato."', descricaoCategoria='".$this->descricaoCategoria."'  where codCategoriaPrato=".$this->codCategoriaPrato;     
+			$sql = "update tblcategoriaprato set nomeCategoriaPrato='".$this->nomeCategoriaPrato."', descricaoCategoriaPrato='".$this->descricaoCategoriaPrato."'  where codCategoriaPrato=".$this->codCategoriaPrato;     
 			
 			if(mysql_query($sql)){				
 				return true;
