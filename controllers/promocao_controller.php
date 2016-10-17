@@ -3,8 +3,10 @@
 	
 	class promocao_controller {
 		
-		public $usuario;
-		public $senha;
+		public $nomePromocao;
+		public $dtInicial;
+		public $dtFinal;
+		public $valorDesconto;
         
         
         public function __construct(){
@@ -13,11 +15,13 @@
      
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
-				if(isset($_POST['txtusuario']) && isset($_POST['codUsuario'])){
+				if(isset($_POST['txtNomePromocao']) && isset($_POST['codPromocao'])){
                     
-                    $this->usuario=$_POST['txtusuario'];
-                    $this->senha=$_POST['txtsenha'];
-                    //$this->entrar();
+                    $this->nomePromocao=$_POST['txtNomePromocao'];
+                    $this->dtInicial=$_POST['txtDtInicial'];
+					$this->dtFinal=$_POST['txtDtFinal'];
+					 $this->valorDesconto=$_POST['txtDesconto'];
+                    
 				}
             }
         }
@@ -26,16 +30,16 @@
         
         public function index(){
             
-			//$atualizacao = 'inserir';
-			//$usuario=new Usuario();
-			//if(isset($_GET['id']) && $_GET['id'] != ""){
+			$atualizacao = 'inserir';
+			$promocao=new Promocao();
+			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
-			//	$id = $_GET['id'];
-			//	$atualizacao = 'atualizar';
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
 				
-				//$c = new Usuario();
-				//$usuario=$c->selectById($id);
-			//}
+				$c = new Promocao();
+				$promocao=$c->selectById($id);
+			}
 			
            require_once('views/promocao/index.php');
         }
@@ -44,7 +48,7 @@
 		public function cadastrar(){
 			
 			$atualizacao = 'inserir';
-			$usuario=new Usuario();
+			$promocao=new Promocao();
             //echo('CHEGOU');
             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
@@ -53,69 +57,49 @@
 				$atualizacao = 'atualizar';
 				
 				$c = new Usuario();
-				$usuario=$c->selectById($id);
+				$promocao=$c->selectById($id);
 			}
-            require_once('views/usuario/cadastrar.php');
+            require_once('views/promocao/cadastrar.php');
 		}
         		
 		
 		public function listarTodos (){
 			 
-            $listarUsuarios = new Usuario();
+            $listarPromocao = new Promocao();
             
-            return $listarUsuarios->selectAll();
+            return $listarPromocao->selectAll();
 			  
 		}
 		
-		public function buscar($codUsuario){
+		public function buscar($codPromocao){
             
-            $buscarUsuario = new Usuario();
+            $buscarPromocao = new Promocao();
             
-            return $buscarUsuario->selectById();
+            return $buscarPromocao->selectById();
 		  
 		}
 		
-		public function atualizar($codUsuario) {
+		public function atualizar($codPromocao) {
 		
 		
 		}
 		
-		public function deletar($codUsuario) {
-            $DeletarUsuario = new Usuario();
+		public function deletar($codPromocao) {
+            $DeletarPromocao = new Promocao();
 
-            $DeletarUsuario->Delete($cod);	
+            $DeletarPromocao->Delete($cod);	
 		}
 		
 		public function inserir() {
 		
-            $novoUsuario = new Usuario();
+            $novoPromocao = new Promocao();
             
-            $novoUsuario->usuario = $this->usuario;
-			$novoUsuario->senha = $this->senha;
+            $novoPromocao->usuario = $this->usuario;
+			$novoPromocao->senha = $this->senha;
             	
-			$novoUsuario::insert($novousuario);
+			$novoPromocao::insert($novoPromocao);
 		}
-        
-        public function entrar(){
-            
-            $loginUsuario = new Usuario();
-            
-            $loginCliente = $loginUsuario->loginCliente($this->usuario,$this->senha);
-            $loginFunc = $loginUsuario->loginFunc($this->usuario,$this->senha);
-                        
-            if($loginCliente){
-                require_once('controllers/home_controller.php');
-                header("location: ../home/index");
-            }elseif($loginFunc){
-                require_once('controllers/cms_controller.php');
-                header("location: ../objetivo/index");
-            }else{
-                echo"<script type='text/javascript'>";
-                    echo "alert('Usuario ou senha incorretos');";
-                echo "</script>";  
-                //header("location: ../home/index");
-            }
-        }
+  
 	}
 
 ?>

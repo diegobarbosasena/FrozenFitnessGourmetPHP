@@ -109,7 +109,7 @@
         }
          public function DetalheProduto(){
             
-           require_once('views/cms/detalhe_produto.php');
+           require_once('views/produtocms/detalhe_produto.php');
         }
          
 

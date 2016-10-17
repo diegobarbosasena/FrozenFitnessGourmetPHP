@@ -53,7 +53,7 @@
 				$c = new Usuario();
 				$usuario=$c->selectById($id);
 			}
-            require_once('views/usuario/cadastrar.php');
+            require_once('views/produtocms/cadastrar.php');
 		}
         
         public function detalhe(){

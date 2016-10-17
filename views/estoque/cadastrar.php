@@ -33,14 +33,16 @@
                 
                  <tr>
                     <td class="campo_frm">Quantidade:</td>
-                    <td><input class="caixa_frm" name="txtdtfabricacao" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtquantidade" type="text" value=""  /></td>
+                </tr>
+                <tr>
+                    <td class="campo_frm">Quantidade Limite:</td>
+                    <td><input class="caixa_frm" name="txtquantidadeLimite" type="text" value=""  /></td>
                 </tr>
                  <tr>
                     <td class="campo_frm">Data de Validade:</td>
-                    <td><input class="caixa_frm" name="txtdtfabricacao" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtdtValidade" type="text" value=""  /></td>
                 </tr>
-                 
-                
 
                   <tr>
                       

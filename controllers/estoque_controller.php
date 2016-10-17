@@ -3,8 +3,9 @@
 	
 	class estoque_controller {
 		
-		public $usuario;
-		public $senha;
+		public $dtValidade;
+		public $quantidade;
+		public $quantidadeLimite;
         
         
         public function __construct(){
@@ -15,8 +16,9 @@
             {
 				if(isset($_POST['txtusuario']) && isset($_POST['codUsuario'])){
                     
-                    $this->usuario=$_POST['txtusuario'];
-                    $this->senha=$_POST['txtsenha'];
+                    $this->dtValidade=$_POST['txtdtValidade'];
+                    $this->quantidade=$_POST['txtquantidade'];
+					$this->quantidadeLimite=$_POST['txtquantidadeLimite'];
                     //$this->entrar();
 				}
             }
@@ -26,16 +28,16 @@
         
         public function index(){
             
-			//$atualizacao = 'inserir';
-			//$usuario=new Usuario();
-			//if(isset($_GET['id']) && $_GET['id'] != ""){
+			$atualizacao = 'inserir';
+			$estoque =new Estoque();
+			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
-			//	$id = $_GET['id'];
-			//	$atualizacao = 'atualizar';
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
 				
-				//$c = new Usuario();
-				//$usuario=$c->selectById($id);
-			//}
+				$c = new Estoque();
+				$estoque=$c->selectById($id);
+		}
 			
            require_once('views/estoque/index.php');
         }
@@ -44,7 +46,7 @@
 		public function cadastrar(){
 			
 			$atualizacao = 'inserir';
-			$usuario=new Usuario();
+			$estoque=new Estoque();
             //echo('CHEGOU');
             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
@@ -52,70 +54,53 @@
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Usuario();
-				$usuario=$c->selectById($id);
+				$c = new Estoque();
+				$estoque=$c->selectById($id);
 			}
-            require_once('views/usuario/cadastrar.php');
+            require_once('views/estoque/cadastrar.php');
 		}
         		
 		
 		public function listarTodos (){
 			 
-            $listarUsuarios = new Usuario();
+            $listarEstoque = new Estoque();
             
-            return $listarUsuarios->selectAll();
+            return $listarEstoque->selectAll();
 			  
 		}
 		
-		public function buscar($codUsuario){
+		public function buscar($codEstoque){
             
-            $buscarUsuario = new Usuario();
+            $buscarEstoque = new Estoque();
             
-            return $buscarUsuario->selectById();
+            return $buscarEstoque->selectById();
 		  
 		}
 		
-		public function atualizar($codUsuario) {
+		public function atualizar($codEstoque) {
 		
 		
 		}
 		
-		public function deletar($codUsuario) {
-            $DeletarUsuario = new Usuario();
+		public function deletar($codEstoque) {
+            $DeletarEstoque = new Estoque();
 
-            $DeletarUsuario->Delete($cod);	
+            $DeletarEstoque->Delete($cod);	
 		}
 		
 		public function inserir() {
 		
-            $novoUsuario = new Usuario();
+            $novoEstoque = new Estoque();
             
-            $novoUsuario->usuario = $this->usuario;
-			$novoUsuario->senha = $this->senha;
+            $novoEstoque->dtValidade = $this->dtValidade;
+			$novoEstoque->quantidade = $this->quantidade;
+			$novoEstoque->quantidadeLimite = $this->quantidadeLimite;
+			
             	
-			$novoUsuario::insert($novousuario);
+			$novoEstoque::insert($novoEstoque);
 		}
         
-        public function entrar(){
-            
-            $loginUsuario = new Usuario();
-            
-            $loginCliente = $loginUsuario->loginCliente($this->usuario,$this->senha);
-            $loginFunc = $loginUsuario->loginFunc($this->usuario,$this->senha);
-                        
-            if($loginCliente){
-                require_once('controllers/home_controller.php');
-                header("location: ../home/index");
-            }elseif($loginFunc){
-                require_once('controllers/cms_controller.php');
-                header("location: ../objetivo/index");
-            }else{
-                echo"<script type='text/javascript'>";
-                    echo "alert('Usuario ou senha incorretos');";
-                echo "</script>";  
-                //header("location: ../home/index");
-            }
-        }
+       
 	}
 
 ?>
