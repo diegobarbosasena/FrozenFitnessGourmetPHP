@@ -18,7 +18,7 @@
 				
 		public function insert($tipoUsuario) {
 		
-			$sql = "insert into tblTipoUsuario (nomeTipoUsuario) values('".$nomeTipoUsuario->nomeTipoUsuario."')";
+			$sql = "insert into tblTipoUsuario (nomeTipoUsuario) values('".$tipoUsuario->nomeTipoUsuario."')";
 			
 			if(mysql_query($sql))
 				return true;
@@ -40,7 +40,7 @@
             
 			while($rs = mysql_fetch_array($select)){
                 	  
-                $tipoUsuario = new Categoria();
+                $tipoUsuario = new TipoUsuario();
                 $tipoUsuario->codTipoUsuario = $rs['codTipoUsuario'];
                 $tipoUsuario->nomeTipoUsuario = $rs['nomeTipoUsuario'];
                 
@@ -58,7 +58,7 @@
 			
 			if($rs = mysql_fetch_array($select)){
 				
-				$Cat= new Categoria();
+				$Cat= new TipoUsuario();
 				  
 				$Cat->codTipoUsuario = $rs['codTipoUsuario'];
                 $Cat->nomeTipoUsuario = $rs['nomeTipoUsuario'];

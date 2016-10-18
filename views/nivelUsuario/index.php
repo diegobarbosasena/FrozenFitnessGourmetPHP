@@ -13,7 +13,7 @@
         
  </form>
 
-<form name="FrmPesquisa" method="post" action="home.php">
+<form name="FrmPesquisa" method="post" action="">
     
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
@@ -60,7 +60,7 @@
             }else{
                 ?>
         
-                <div class="cadas"> Vazio </div>
+                
         <?php
             }
 			$cont++;

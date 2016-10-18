@@ -12,11 +12,11 @@
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" type="text"   value=""    /></td>
+                    <td><input name="txtNome" class="caixa_frm" type="text"   value=""    /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">CNPJ:</td>
-                    <td><input class="caixa_frm"  name="txtcarboidrato" type="text"  value=""  /></td>
+                    <td><input class="caixa_frm"  name="txtCnpj" type="text"  value=""  /></td>
                   </tr>
                  <tr>
                     <td class="campo_frm">Imagem:</td>
@@ -26,31 +26,31 @@
                   
                   <tr>
                     <td class="campo_frm">Site:</td>
-                    <td><input class="caixa_frm" name="txtcalorias"  type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtsite"  type="text" value="" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Telefone:</td>
-                    <td><input class="caixa_frm" name="txtevlrenergetico" type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txttelefone" type="text" value="" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Email:</td>
-                    <td><input class="caixa_frm" name="txtproteina" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtemail" type="text" value=""  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Logradouro:</td>
-                    <td><input class="caixa_frm" name="txtsodio" type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtlogradouro" type="text" value="" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">CEP:</td>
-                    <td><input class="caixa_frm" name="txtgordura" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtcep" type="text" value=""  /></td>
                   </tr>    
                   <tr>
                     <td class="campo_frm">Numero:</td>
-                    <td><input class="caixa_frm" name="txtdtfabricacao" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtnumero" type="text" value=""  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Bairro:</td>
-                    <td><input class="caixa_frm" name="txtdtvalidade" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtbairro" type="text" value=""  /></td>
                   </tr>
                   
                 
@@ -69,6 +69,19 @@
                   </tr>
                 <tr>
                     <td class="campo_frm">Cidade:</td>
+                    <td >  <select size="1" name="D1">
+
+                            <option selected value="Selecione">Selecione:</option>
+
+                            <option value="2000">2000</option>
+
+                            <option value="2001">2001</option>
+
+                        </select>
+                    </td>
+                  </tr>
+                    <tr>
+                    <td class="campo_frm">Empresa:</td>
                     <td >  <select size="1" name="D1">
 
                             <option selected value="Selecione">Selecione:</option>

@@ -5,22 +5,35 @@
 
 		public $nomeParceiro;
 		public $codParceiro;
-        
+		public $cnpjParceiro;
+		public $imgParceiro;
+		public $siteParceiro;
+		public $telefoneParceiro;
+		public $emailParceiro;
+        public $codEmpresa;
         
         public function __construct(){
             
             require_once('models/parceiro_class.php');
-
-    
-            if($_SERVER['REQUEST_METHOD']==='POST')
-            {
-				if(isset($_POST['txtnomeParceiro']) && isset($_POST['codParceiro'])){
-					 $this->codParceiro = $_POST['codParceiro'];
-					 $this->nomeParceiro=$_POST['txtnomeParceiro'];
-				}
-            }       
+   
         }
 		
+		public function iniciaAtributo(){
+		
+			
+            if($_SERVER['REQUEST_METHOD']==='POST')
+            {
+					
+					 $this->nomeParceiro=$_POST['txtNome'];
+					 $this->cnpjParceiro=$_POST['txtCnpj'];
+					 $this->siteParceiro=$_POST['txtsite'];
+					 $this->telefoneParceiro=$_POST['txtelefone'];
+					 $this->emailParceiro=$_POST['txtemail'];
+					 $this->imgParceiro = basename($_FILES["imgParceiro"]["name"]);	
+					 						
+				
+            }     
+		}
 	
 		
 		public function index(){
@@ -34,6 +47,7 @@
 				
 				$parceiro = new Pareiro();
 				$parceiro=$c->selectById($id);
+				
 			}
 			
            require_once('views/parceiro/index.php');
@@ -55,13 +69,23 @@
 			
 			require_once('views/parceiro/cadastrar.php');
 		}
-        		
-				
+		
+        public function detalhe(){
+            
+             require_once('views/parceiro/detalhe_parceiro.php');
+            
+        }
+		
 		public function listarTodos (){
 			 
-			$listar = new Parceiro();
-			return $listar->selectAll();	
-		}
+            $listarParceiro = new Parceiro();
+            
+            return $listarParceiro->selectAll();
+			
+			  
+		}	
+				
+		
 		
 		public function buscar($codParceiro){
 			
@@ -75,10 +99,17 @@
 			$atualizar = new Parceiro();
 			$atualizar->codParceiro = $this->codParceiro;
 			$atualizar->nomeParceiro = $this->nomeParceiro;
+			$atualizar->siteParceiro = $this->siteParceiro;
+			$atualizar->telefoneParceiro = $this->telefoneParceiro;
+			$atualizar->emailParceiro = $this->emailParceiro;
+			$atualizar->imgParceiro = $this->getImg();
+			
+			
+					
 			
 			
 			if($atualizar->update()){					
-				header("location: ../parceiro/index".$this->codCliente);
+				header("location: ../parceiro/index".$this->codParceiro);
 			}
 		}
         
@@ -93,13 +124,18 @@
 		}
 		
 		public function inserir() {
-              
+              $this->iniciaAtributo();
 			$parceiro = new Parceiro();
-			$parceiro->codParceiro = $this->codParceiro;
-			$parceiro->nomeParceiro = $this->nomeParceiro;
+			$atualizar->codParceiro = $this->codParceiro;
+			$atualizar->nomeParceiro = $this->nomeParceiro;
+			$atualizar->siteParceiro = $this->siteParceiro;
+			$atualizar->telefoneParceiro = $this->telefoneParceiro;
+			$atualizar->emailParceiro = $this->emailParceiro;
+			$atualizar->imgParceiro = $this->getImg();
 			
-			if($cliente::insert($cliente)){
+			if($parceiro::insert($parceiro)){
 				header("location: ../parceiro/index");
+				
 			}
 		}
 

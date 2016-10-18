@@ -3,8 +3,8 @@
 	
 	class tipoUsuario_controller {
 		
-		public $nometipoUsuario;
-		public $codtipoUsuario;
+		public $nomeTipoUsuario;
+		public $codTipoUsuario;
         
         
         public function __construct(){
@@ -12,15 +12,19 @@
             require_once('models/tipoUsuario_class.php');
             
     
-            if($_SERVER['REQUEST_METHOD']==='POST')
-            {
-				if(isset($_POST['txtTipoUsuario']) && isset($_POST['codTipoUsuario'])){
-					$this->nomeTipoUsuario=$_POST['txtTipoUsuario'];
-					$this->codTipoUsuario= $_POST['codTipoUsuario'];
-				}
-            }
+           
         }
 		
+		public function iniciaAtributo(){
+		
+			 if($_SERVER['REQUEST_METHOD']==='POST')
+            {
+			
+					$this->nomeTipoUsuario=$_POST['txtTipoUsuario'];
+					$this->codTipoUsuario= $_POST['codTipoUsuario'];
+				
+            }
+		}
 		public function index(){
             
 			$atualizacao = 'inserir';
@@ -47,7 +51,7 @@
 				$atualizacao = 'atualizar';
 				
 				$t = new TipoUsuario();
-				$TipoUsuario=$c->selectById($id);
+				$tipoUsuario=$t->selectById($id);
 			}
 			
 			
@@ -68,33 +72,33 @@
 		}
 		
 		public function atualizar() {
-		
-			$atualizar = new Categoria();
+			$this->iniciaAtributo();
+			$atualizar = new TipoUsuario();
 			$atualizar->nomeTipoUsuario = $this->nomeTipoUsuario;
 			$atualizar->codTipoUsuario=  $this->codTipoUsuario;
 			
 						
 			if($atualizar->update()){	
 				
-				header("location: ../nivelUsuario/index/".$this->codCategoriaMateria);
+				header("location: ../nivelUsuario/index/".$this->codTipoUsuario);
 			}
 		}
 		
 		public function deletar() {
 			
-			$codCategoria = $_GET['id'];
+			$codTipoUsuario = $_GET['id'];
 			
 			$deletar = new TipoUsuario();
-			if($deletar->delete($codtipoUsuario)){
+			if($deletar->delete($codTipoUsuario)){
 				header("location: ../../tipoUsuario/index");
 			}	
 		}
 		
 		public function inserir() {
-              
+             $this->iniciaAtributo();
 			$tipoUsuario = new TipoUsuario();
-			$TipoUsuario->nomeTipoUsuario = $this->nomeTipoUsuario;
-			$_SESSION['metodo'] = 'inserir';
+			$tipoUsuario->nomeTipoUsuario = $this->nomeTipoUsuario;
+			
 			if($tipoUsuario::insert($tipoUsuario)){
 				
 				header("location: ../tipoUsuario/index");

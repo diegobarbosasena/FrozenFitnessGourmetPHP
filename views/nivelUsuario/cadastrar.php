@@ -8,11 +8,11 @@
 
 	
 	
-        <form class="frm" name="frmcategoria" method="post" action="<?php echo(PROJECTDIR)?>categoria/<?php echo($atualizacao) ?>">
+        <form class="frm" name="frmcategoria" method="post" action="<?php echo(PROJECTDIR)?>tipoUsuario/<?php echo($atualizacao) ?>">
 	
             
 			
-			<input type="hidden" value="<?php echo($tipoUsuario->codTipoUsuario)?>" name="codCategoriaMateria"/>
+			<input type="hidden" value="<?php echo($tipoUsuario->codTipoUsuario)?>" name="codTipoUsuario"/>
             <table>
                   
                   <tr>

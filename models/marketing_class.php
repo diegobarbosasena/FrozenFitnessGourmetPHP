@@ -15,7 +15,7 @@
         }
         		
 				
-		public function insert($categoriaPrato) {
+		public function insert($slider) {
 
 			$sql = "";
 			
@@ -47,9 +47,9 @@
 							
 		}
 		
-		public function selectById($codPrato){
+		public function selectById($codSlider){
 			
-			$sql = "=".$codPrato;
+			$sql = "=".$codSlider;
 			
 			$select = mysql_query($sql);
 			
@@ -76,7 +76,7 @@
 				return false;		
 		}
 		
-		public function delete($codCategoriaPrato) {
+		public function delete($codSlider) {
 		
 			$sql = "";
 
