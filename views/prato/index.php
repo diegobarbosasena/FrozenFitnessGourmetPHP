@@ -57,7 +57,7 @@
             <?php echo ($rs[$cont]->dtValidade);?>
         </td>
         <td class="col_consulta" >
-            <a href="../prato/cadastrar/<?php echo($rs[$cont]->codPrato) ?>" class="link"> Editar </a>| <a href="../prato/deletar/<?php echo($rs[$cont]->codPrato) ?>" class="link">Excluir </a> <a href="../prato/detalhe/<?php echo($rs[$cont]->codPrato) ?>" class="link">Detalhes </a>
+            <a href="<?php echo(PROJECTDIR)?>prato/cadastrar/<?php echo($rs[$cont]->codPrato) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>prato/deletar/<?php echo($rs[$cont]->codPrato) ?>" class="link">Excluir </a> <a href="<?php echo(PROJECTDIR)?>prato/detalhe/<?php echo($rs[$cont]->codPrato) ?>" class="link">Detalhes </a>
         </td>
         
     </tr>

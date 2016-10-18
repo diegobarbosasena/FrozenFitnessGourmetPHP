@@ -146,7 +146,7 @@
            
 			if($prato->update()){	
 				
-				header("location: ../prato/index/".$this->codPrato);
+				header("location: ../../prato/index/".$this->codPrato);
 			}
 		}
 		

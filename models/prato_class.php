@@ -34,13 +34,12 @@
 			$sql = "insert into tblprato (nomePrato, precoPrato, descricaoPrato, caloria, valorEnergetico, carboidrato, proteina, sodio, gorduras, dtFabricacao, dtValidade, imagemPrato) 
 					values ('".$prato->nomePrato."', '".$prato->precoPrato."', '".$prato->descricaoPrato."', '".$prato->caloria."', '".$prato->valorEnergetico."', '".$prato->carboidrato."', '".$prato->proteina."', '".$prato->sodio."', '".$prato->gorduras."', '".$prato->dtFabricacao."', '".$prato->dtValidade."', '".$prato->imagemPrato."')";
             
-            echo("teste ".$sql);
+            //echo("teste ".$sql);
 			
 			if(mysql_query($sql))
 				return true;
 			else
-				return false;
-			
+				return false;			
 		}		
 		
 		public function selectAll (){
