@@ -119,6 +119,8 @@
 			$categoriaPrato->nomeCategoriaPrato = $this->nomeCategoriaPrato;
 			$categoriaPrato->descricaoCategoriaPrato = $this->descricaoCategoriaPrato;
 			$categoriaPrato->imagemCategoriaPrato = $this->getImg();
+		
+			
 			
 			if($categoriaPrato::insert($categoriaPrato)){
 				header("location: ../categoriaPrato/index");

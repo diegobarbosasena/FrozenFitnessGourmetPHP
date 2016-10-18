@@ -24,9 +24,9 @@
 				$sql = "insert into tblcategoriaprato (nomeCategoriaPrato, descricaoCategoriaPrato, imagemCategoriaPrato) values('".$categoriaPrato->nomeCategoriaPrato."','".$categoriaPrato->descricaoCategoriaPrato."',
 					'".$categoriaPrato->imagemCategoriaPrato."')";
 
-			
+				
 				if(mysql_query($sql)){
-					echo($sql);
+				
 					return true;
 				}else{
 					return false;	

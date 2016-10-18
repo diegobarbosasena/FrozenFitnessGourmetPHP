@@ -11,7 +11,7 @@
 			
 			$controllerPrato = new prato_controller();
 			
-			$rs=$controllerPrato->buscar($_POST['id']);
+			$rs=$controllerPrato->buscar($_GET['id']);
 
 		?>
         

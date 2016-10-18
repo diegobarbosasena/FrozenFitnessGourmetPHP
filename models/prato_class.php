@@ -34,7 +34,7 @@
 			$sql = "insert into tblprato (nomePrato, precoPrato, descricaoPrato, caloria, valorEnergetico, carboidrato, proteina, sodio, gorduras, dtFabricacao, dtValidade, imagemPrato) 
 					values ('".$prato->nomePrato."', '".$prato->precoPrato."', '".$prato->descricaoPrato."', '".$prato->caloria."', '".$prato->valorEnergetico."', '".$prato->carboidrato."', '".$prato->proteina."', '".$prato->sodio."', '".$prato->gorduras."', '".$prato->dtFabricacao."', '".$prato->dtValidade."', '".$prato->imagemPrato."')";
             
-            //echo("teste ".$sql);
+            echo("teste ".$sql);
 			
 			if(mysql_query($sql))
 				return true;
@@ -87,13 +87,15 @@
 		
 		public function selectById($codPrato){
 			
-			$sql = "select p.codPrato, p.nomePrato, p.precoPrato, p.descricaoPrato, p.caloria, p.valorEnergetico, p.carboidrato, p.proteina, p.sodio, p.gorduras, p.dtFabricacao, p.dtValidade, p.imagemPrato,
+			/*$sql = "select p.codPrato, p.nomePrato, p.precoPrato, p.descricaoPrato, p.caloria, p.valorEnergetico, p.carboidrato, p.proteina, p.sodio, p.gorduras, p.dtFabricacao, p.dtValidade, p.imagemPrato,
 					cp.nomeCategoriaPrato
 					from tblprato as p
 					inner join tblcatprato as cat
 					on (p.codPrato = cat.codPrato)
 					inner join tblcategoriaprato as cp
-					on(cat.codCategoriaPrato = cp.codCategoriaPrato) where codPrato=".$codPrato;
+					on(cat.codCategoriaPrato = cp.codCategoriaPrato) where codPrato=".$codPrato;*/
+			
+			$sql = "select * from tblprato where codPrato=".$codPrato;
 			
 			$select = mysql_query($sql);
 			
@@ -115,7 +117,7 @@
                 $prato->dtValidade = $rs['dtValidade'];
 				$prato->visitas = $rs['visitas'];
 				$prato->imagemPrato = $rs['imagemPrato'];
-				$prato->codcategoriaPrato = $rs['codcategoriaPrato'];
+				//$prato->codcategoriaPrato = $rs['codcategoriaPrato'];
 											
 			}
 			

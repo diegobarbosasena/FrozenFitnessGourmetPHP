@@ -32,9 +32,6 @@
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
                                   
-
-            
-
                     $this->codPrato=$_POST['codPrato'];
 					$this->nomePrato= $_POST['txtnomePrato'];
                     $this->precoPrato=$_POST['txtprecoPrato'];
@@ -121,20 +118,16 @@
             
             $prato = new Prato();
             
-            return $prato->selectById();
+            return $prato->selectById($codPrato);
 		  
 		}
 		
 		public function atualizar() {
-		
 
 			$this->iniciaAtributos();
 			
 			$prato = new Prato();
-
-		  $prato = new Prato();
-
-            
+           
             $prato->codPrato=$this->codPrato;
             $prato->nomePrato= $this->nomePrato;
             $prato->precoPrato=$this->precoPrato;
@@ -147,20 +140,23 @@
             $prato->gorduras= $this->gorduras;
             $prato->dtFabricacao= $this->dtFabricacao;
             $prato->dtValidade= $this->dtValidade;
-            $prato->codcategoriaPrato= $this->codcategoriaPrato;
+            //$prato->codcategoriaPrato= $this->codcategoriaPrato;
             $prato->imagemPrato= $this->getImg();
             
-            
-			if($prato::update()){
-                header("location: ../prato/index");
-            }
-
+           
+			if($prato->update()){	
+				
+				header("location: ../prato/index/".$this->codPrato);
+			}
 		}
 		
-		public function deletar($codPrato) {
-            $prato = new Usuario();
-
-            $prato->Delete($cod);	
+		public function deletar() {
+            $prato = new Prato();
+			$codPrato = $_GET['id'];
+			
+			if($prato->delete($codPrato)){
+                header("location: ../../prato/index");
+            }
 		}
 		
 		public function inserir() {
@@ -187,14 +183,11 @@
 
             //echo("Imagem  ".$prato->imagemPrato);
             //$prato::insert($prato);
-            
-            
-            
+                      
 			if($prato::insert($prato)){
                 header("location: ../prato/index");
             }else{
-                header("location: ../prato/cadastrar");
-                       
+                header("location: ../prato/cadastrar");                      
 			}
         }
 		
