@@ -33,8 +33,7 @@
             {
                                   
 
-                //if(isset($_POST['txtnomePrato']) && isset($_POST['$codPrato'])){
-                    
+            
 
                     $this->codPrato=$_POST['codPrato'];
 					$this->nomePrato= $_POST['txtnomePrato'];

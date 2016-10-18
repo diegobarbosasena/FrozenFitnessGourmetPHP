@@ -48,18 +48,24 @@
             <?php echo ($rs[$cont]->nomePrato);?>
         </td>
         <td class="col_consulta">
-            <?php echo ($rs[$cont]->preco);?>
+            <?php echo ($rs[$cont]->precoPrato);?>
         </td>
         <td class="col_consulta">
-            <?php //echo ($rs[$cont]->descricao);?>
+            <?php echo ($rs[$cont]->dtFabricacao);?>
         </td>
         <td class="col_consulta">
-           
+            <?php echo ($rs[$cont]->dtValidade);?>
         </td>
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> <a href="../prato/detalhe" class="link">Detalhes </a>
+            <a href="../prato/atualizar/<?php echo($rs[$cont]->codPrato) ?>" class="link"> Editar </a>| <a href="../prato/deletar/<?php echo($rs[$cont]->codPrato) ?>" class="link">Excluir </a> <a href="../prato/detalhe/<?php echo($rs[$cont]->codPrato) ?>" class="link">Detalhes </a>
         </td>
         
     </tr>
-			<?php }?>
+			<?php 
+                
+            $cont++; 
+            
+            
+            }
+    ?>
 </table>
