@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-@media screen and (min-width: 320px){
+@media screen and (min-width: 640px){
 
 input{
 outline:none;
@@ -1582,7 +1582,7 @@ footer{
 }
 
 }
-@media screen and (max-width: 320px){
+@media(min-device-width: 320px) and (max-device-width:640px){
 body{
 	margin:0px;
 	background-color:#F0F0F0;
@@ -1593,18 +1593,19 @@ img{
 	height:100%;
 }
 nav{
-    width: 35px;
-    height: 35px;
+    width: 80px;
+    height: 80px;
     float: left;
 	background-image:url(../imagem/menu_celular.png);
-	margin-left:10px;
+	margin-left:40px;
 	margin-top:-60px;
 }
 #logo{
     width: 100%;
-    height: 85px;
-    background-image: url(../imagem/logo_celular.png);
+    height: 200px;
+    background-image:url(../imagem/logoo.png);
     background-position:center;
+	background-repeat:no-repeat;
 	
     
 }
@@ -1662,42 +1663,40 @@ nav#menu_{
 	margin-right:20px;
 }
 .nomeusuario{
-    border: solid 1px #E08A2C;
-    width: 90%;
-    height: 45px;
+    border: solid 0px #E08A2C;
+    width: 100%;
+    height: 90px;
     float: left;
-    margin-top: 50px;
     border-radius: 10px;
-	margin-left:20px;
 	margin-bottom:5px;
+	margin-top:70px;
 }
 .nomeusuario p{
     font-family:Verdana, Arial, Helvetica, sans-serif;
 	color:#666;
-    font-size:13px;
+    font-size:28px;
     text-align: center;
     padding-top: 3px;
 }
 input.pesquisar{
-	width: 260px;
-	height: 30px;
+	width: 560px;
+	height: 70px;
 	float: left;
 	border: 1px solid #CCC;
 	background-color:#FFFFFF;
 	cursor: pointer;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	color:#666;
-	font-size:15px;
+	font-size:28px;
 	border-radius: 5px;
 	padding:4px 20px 4px 9px;
-	margin-left:-240px;
-	margin-top:20px;
+	margin-top:-50px;
+	margin-left:-620px;
 	background-position:center;
-	position:absolute;
 }
 input.button_pesquisa{
-	width: 44px;
-	height: 44px;
+	width: 500px;
+	height: 60px;
 	border-radius: 180px;
 	border: 0px none;
 	background-color: #00B348;
@@ -1717,14 +1716,14 @@ input.button_pesquisa{
 	display:none;
 }
 .login{
-	width: 50px;
-	height: 50px;
+	width: 80px;
+	height: 80px;
 	float:right;
-	background-image:url(../imagem/login.png);
+	background-image:url(../imagem/login_celular.png);
 	cursor:pointer;
 	display:block;
 	position:absolute;
-	margin-top:-30px;
+	margin-top:-100px;
 	
 }
 .entrar{
@@ -1739,8 +1738,8 @@ input.button_pesquisa{
 }
 .login:hover>.entrar {
 	display:block;
-	width: 290px;
-	height: 250px;
+	width: 390px;
+	height: 350px;
 	position: absolute;
 	z-index: 100;
 	margin-left: -265px;
@@ -1773,7 +1772,7 @@ input.button_pesquisa{
     margin: 0 0 15px;
     padding: 15px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 25px;
 }
 .form .button_login {
     font-family: "Roboto", sans-serif;
@@ -1782,9 +1781,9 @@ input.button_pesquisa{
     background: #4CAF50;
     width: 100%;
     border: 0;
-    padding: 15px;
+    padding: 20px;
     color: #FFFFFF;
-    font-size: 14px;
+    font-size: 26px;
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
@@ -1795,7 +1794,7 @@ input.button_pesquisa{
 .form .message {
     margin: 15px 0 0;
     color: #b3b3b3;
-    font-size: 12px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .form .message a {
@@ -1849,6 +1848,7 @@ input.button_pesquisa{
     width: 100%;
 	height:67px;
     background-color: #CCCCCC;
+	display:none;
 }
 
 /* slide*/
@@ -1927,7 +1927,7 @@ span {
     background-color: #000;
 }
 #conteudo{
-	width: 320px;
+	width: 640px;
     height: auto;
     margin: auto auto 5px;
     margin-top: 10px;
@@ -1936,10 +1936,9 @@ span {
 	width: 320px;
 	height: 300px;
 	margin: auto auto 0;
-	background-color:#000000;
 }
 .categoria{
-	width: 318px;
+	width: 640px;
     float: left;
     margin-bottom: 10px;
     padding-bottom: 10px;
@@ -1948,24 +1947,24 @@ span {
 	margin: 34px;
 }
 .categoria1{
-	width: 150px;
-	height: 150px;
+	width: 450px;
+	height: 450px;
 	background-image:url(../imagem/alimentacao.png);
 	float: left;
 	border-radius: 60%;
 	margin-left:90px;
 }
 .categoria2{
-	width: 150px;
-	height: 150px;
+	width: 450px;
+	height: 450px;
 	background-image:url(../imagem/alimentacao3.png);
 	float: left;
 	border-radius: 60%;
 	margin-left:90px;
 }
 .categoria3{
-	width: 150px;
-	height: 150px;
+	width: 450px;
+	height: 450px;
 	background-image:url(../imagem/alimentacao2.png);
 	float: left;
 	border-radius: 60%;
@@ -1978,110 +1977,123 @@ span {
 }
 .titulo_categoria1{
 	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-size:18px;
+	font-size:35px;
 	color:#333333;
 }
 .descricao_categoria1{
-	width: 275px;
+	width: 475px;
 	font-family:Geneva, Arial, Helvetica, sans-serif;
-	font-size:12px;
+	font-size:23px;
 	color:#666666;
 	text-align:center;
 	margin: auto auto 0;
 }
 .titulo_categoria2{
 	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-size:18px;
+	font-size:35px;
 	color:#333333;
 }
 .descricao_categoria2{
-	width: 275px;
+	width: 475px;
 	font-family:Geneva, Arial, Helvetica, sans-serif;
-	font-size:12px;
+	font-size:23px;
 	color:#666666;
 	text-align:center;
 	margin: auto auto 0;
 }
 .titulo_categoria3{
 	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-size:18px;
+	font-size:35px;
 	color:#333333;
 }
 .descricao_categoria3{
-	width: 275px;
+	width: 475px;
 	font-family:Geneva, Arial, Helvetica, sans-serif;
-	font-size:12px;
+	font-size:23px;
 	color:#666666;
 	text-align:center;
 	margin: auto auto 0;
 }
 
 .vendidos{
-	width: 320px;
+	width: 640px;
     float: left;
     margin-top: 45px;
+	
 }
 .mais{
-    width: 301px;
+    width: 640px;
     height: 172px;
     margin: 5px;
+	
 }
-.icone3{
-    width: 60px;
-    height: 60px;
+.icone3 {
+    width: 100px;
+    height: 100px;
     background-color: #00B348;
     border-radius: 180px;
-    background-image: url(../imagem/mais_celular.png);
-    margin-top: -17px;
+    background-image: url(../imagem/mais.png);
+    margin-top: -30px;
     position: absolute;
+	margin-left:-60px;
 }
 .mais_vendidos{
-    width: 280px;
-    height: 25px;
+    width: 640px;
+    height: 55px;
     background-color: #00B348;
     font-family: Verdana,Arial,Helvetica,sans-serif;
-    font-size: 18px;
+    font-size: 40px;
     color: #FFF;
     text-align: center;
     border-radius: 20px;
     position: absolute;
 	padding-left:40px;
-	padding-top:5px;
+	padding-top:10px;
+	
 }
 .area_mais_vendidos{
-	width: 960px;
+	width: 655px;
     height: auto;
-    background-color: #FFFFFF;
     float: left;
     margin-top: 16px;
+	background-color:#FFF;
 }
 .pratos_mais_vendidos{
-    width: 308px;
+    width: 640px;
     float: left;
     background-color: #FFFFFF;
     margin: 28px 5px 0px 5px;
 }
 .imagem_mais_vendidos1{
+	width: 640px;
+    height: 320px;
 	float:left;
-	background-image:url(../imagem/prato1.png);
+	background-image:url(../imagem/prato_celular1.png);
 	background-repeat: no-repeat;
 	background-position: center;
+	
 }
 .imagem_mais_vendidos2{
+	width: 640px;
+    height: 320px;
 	float:left;
-	background-image:url(../imagem/prato2.png);
+	background-image:url(../imagem/prato_celular1.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
 .imagem_mais_vendidos3{
+	width: 640px;
+    height: 320px;
 	float:left;
-	background-image:url(../imagem/prato3.png);
+	background-image:url(../imagem/prato_celular1.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
 .imagem_mais_vendidos4{
+	width: 640px;
+    height: 320px;
 	float:left;
-	background-image:url(../imagem/prato1.png);
+	background-image:url(../imagem/prato_celular1.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -2090,43 +2102,336 @@ span {
     height: 45px;
     float: left;
     font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 40px;
     color: #333333;
     text-align: center;
     background-color: #FFFFFF;
 }
 .descricao_mais_vendido{
-	width: 90%;
-    height: 90px;
+	width: 80%;
+    height: 120px;
     float: left;
     font-family: Geneva, Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 35px;
     color: #666666;
     text-align: center;
     background-color: #FFFFFF;
-    margin-left: 20px;
+    margin-left: 80px;
+	margin-top:10px;
 }
 .kcal_mais_vendido{
 	width: 100%;
     height: 25px;
     float: left;
     font-family: Geneva, Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 32px;
     color: #333333;
     text-align: center;
     background-color: #FFFFFF;
+	margin-top:30px;
 }
 .preco_mais_vendido{
     width: 100%;
     height: 25px;
     float: left;
     font-family: Geneva, Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 30px;
     color: #666666;
     text-align: center;
     margin-top: 2px;
     background-color: #FFFFFF;
+	margin-top:30px;
+	margin-bottom:50px;
 }
 
+input.btn_detalhes{
+	width: 200px;
+    height: 80px;
+    border: 2px solid #00B348;
+    margin-right: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    margin-top: 10px;
+    border-radius: 15px;
+    color: #00B348;
+    background-color: #FFFFFF;
+    margin-left: 110px;
+}
+input.btn_comprar{
+	width: 200px;
+    height: 80px;
+	border: solid 2px #00B348;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:32px;
+	border-radius:15px;
+	color:#00B348;
+	background-color:#FFFFFF;
+	margin-bottom: 10px;
+}
+input.btn_detalhes:hover{
+	background-color:#00B348;
+	cursor:pointer;
+	color:#FFFFFF;
+}
+input.btn_comprar:hover{
+	background-color:#00B348;
+	cursor:pointer;
+	color:#FFFFFF;
+}
+.monte_ja{
+   width: 650px;
+   height: 550px; 
+   background-image:url(../imagem/monteja_celular.png);
+   margin-top: 50px;
+   display:none;
+      
+}
 
+input.btn_monteja{
+    width: 50%;
+    height: 60px;
+    background-color: #FE7101;
+    float: right;
+    margin-top: 300px;
+    margin-right: -340px;
+    border:0px;
+    color: #FFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size:30px; 
+    cursor: pointer;
+
+    
+}
+
+.text_personalizado{
+    width: 50%;
+    color: #666;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size:35px;
+    text-align: center;
+    float: right;
+    margin-top: 100px;
+    margin-right: 50px;
+    
+}
+.dica{
+    width: 650px;
+    height: auto;
+    float: left;
+    background-color: #FFF;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    border-radius: 0 20px 0 0;
+}
+.exercicio{
+	width: 650px;
+    height: auto;
+	background-color: #FFF;
+	border-radius: 10px 20px 0px 0px;
+	margin-top: 60px;
+	margin-bottom: 15px;
+}
+.titulo_dica_exercicio{
+	width: 640;
+    height: 55px;
+    background-color: #00B348;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color: #FFF;
+    text-align: center;
+    border-radius: 28px;
+    padding-top: 10px;
+}
+.icone1{
+	width: 100px;
+    height: 100px;
+    background-color: #00B348;
+    margin-top: -80px;
+    border-radius: 180px;
+	margin-left:-30px;
+    background-image: url(../imagem/lampada.png);
+}
+.icone2{
+	width: 100px;
+	height: 100px;
+	background-color: #00B348;
+	margin-top: -80px;
+	border-radius: 180px;
+	margin-left: -30px;
+	background-image:url(../imagem/exercicio.png);
+
+}
+.icone3{
+    width: 100px;
+    height: 100px;
+    background-color: #00B348;
+    border-radius: 180px;
+    background-image: url(../imagem/mais.png);
+    margin-top: -30px;
+    position: absolute;
+}
+.imagem_dica{
+	width: 290px;
+    height: 290px;
+    border-radius: 180%;
+    border: solid 2px #FE7101;
+    background-image: url(../imagem/dica.png);
+    float: left;
+    margin: 10px;
+}
+.imagem_exercicio{
+    width: 290px;
+    height: 290px;
+    border-radius: 180%;
+    border: solid 2px #FE7101;
+    background-image: url(../imagem/exer.png);
+    float: left;
+    margin: 10px;
+}
+.assunto_dica{
+    width: 260px;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 40px;
+    color: #666;
+    text-align: center;
+    background-color: #FFF;
+    float: left;
+    margin-top: 55px;
+}
+.descricao_dica{
+	width: 95%;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    color:#B2B2B2;
+    text-align: center;
+    background-color: #FFF;
+    margin: auto auto 0;
+    clear: both;
+    margin-top: 10px;
+    margin-bottom: 20px;
+	font-size:30px;
+}
+.assunto_exercicio{
+    width: 245px;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 40px;
+    color: #666;
+    text-align: center;
+    background-color: #FFF;
+    float: left;
+    margin-top: 55px;
+}
+.descricao_exercicio{
+	width: 95%;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    color:#B2B2B2;
+    text-align: center;
+    background-color: #FFF;
+    margin: auto auto 0;
+    clear: both;
+    margin-top: 10px;
+    margin-bottom: 20px;
+	font-size:30px;
+}
+.rodape{
+	list-style: outside none none;
+	float: left;
+	text-align: center;
+	width: 188px;
+	margin: 10px;
+}
+.rodape  li{
+    height: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #FFF;
+	margin-top:10px;
+	padding:10px;
+}
+.links{
+    margin: auto auto 0px;
+    width: 420px;
+    height: 100px;
+}
+.link_rodape{
+	text-decoration:none;
+	color:#666;
+	
+}
+.link_rodape:hover{
+	text-decoration:none;
+	color:#A9A9A9;
+}
+
+.link_rodape2{
+	text-decoration:none;
+	color:#FFF;
+}
+.link_rodape2:hover{
+	color:#666;
+}
+.redes_sociais{
+	width: 200px;
+    height: 36px;
+    margin: auto auto 20px;
+}
+.facebook{
+	width: 50px;
+	height: 36px;
+	background-color:#FE7101;
+	background-image:url(../imagem/face.png);
+	float:left;
+	cursor:pointer;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+}
+.youtube{
+    width: 50px;
+    height: 36px;
+    background-color: #FE7101;
+    background-image: url(../imagem/youtube.png);
+    float: left;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+}
+.twiter{
+	width: 50px;
+	height: 36px;
+	background-color:#FE7101;
+	background-image:url(../imagem/twiter.png);
+	float:left;
+	cursor:pointer;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+}
+.insta{
+	width: 50px;
+	height: 36px;
+	background-color:#FE7101;
+	background-image:url(../imagem/insta.png);
+	float:left;
+	cursor:pointer;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+}
+.direitos{
+    background-color: #FE7101;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #FFF;
+    width: 50%;
+    margin: auto auto 10px;  
+}
+footer{
+	width:100%;
+	height: 240px;
+    background-color: #F0F0F0;
+    border-top: solid 6px #00B348;
+}
 }
