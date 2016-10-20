@@ -76,13 +76,12 @@
 		
 		public function funcionarioUsuario(){
 			
-			$sql = "insert into tblusuariofuncionarioloja (codFuncionarioLoja, codUsuario) values ('".$codFuncionarioLoja."', '".$codUsuario."')";
+			$sql = "insert into tblusuariofuncionarioloja (codFuncionarioLoja, codUsuario) values ('".$ ."', '".$codUsuario."')";
 			
 			if(mysql_query($sql))
 				return true;
 			else
-				return false;
-			
+				return false;			
 		}
 }		
 

@@ -93,30 +93,44 @@
         
         public function loginCliente($usuario, $senha){
             
-            $sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente,tu.codTipoUsuario, tu.nomeTipoUsuario from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente as c on (c.codCliente = uc.codCliente) inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario);";
-            
+            /*$sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente,tu.codTipoUsuario,
+			tu.nomeTipoUsuario from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente 
+			as c on (c.codCliente = uc.codCliente) inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario);";*/
+			
+			$sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente
+			from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente 
+			as c on (c.codCliente = uc.codCliente);";
+           // echo($sql);
             $select = mysql_query($sql);
             
             $cont=0;
             while($rs=mysql_fetch_array($select))
             {
+				//echo($rs['usuario']);
+				//echo($usuario);
                 if($rs['usuario'] == $usuario && $rs['senha'] == $senha){
                    return 1; 
-                }else{
-                    return 0;
-                }                               
+                }  
+			
+				$cont++;
             }
+			
+			return 0;
     
         }
         
          
         public function loginFunc($usuario, $senha){
             
-            $sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario, u.senha, c.codFuncionarioLoja, c.nomeFuncionarioLoja,
+            /*$sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario, u.senha, c.codFuncionarioLoja, c.nomeFuncionarioLoja,
                     tu.codTipoUsuario, tu.nomeTipoUsuario from tblusuarioFuncionarioLoja as uc inner join tblusuario as u on 
                     (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja) 
-                    inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario);";
-            
+                    inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario);"*/
+					
+			$sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario, u.senha, c.codFuncionarioLoja, c.nomeFuncionarioLoja
+                     from tblusuarioFuncionarioLoja as uc inner join tblusuario as u on 
+                    (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja)";
+            //echo($sql);
             $select = mysql_query($sql);
             
             $cont=0;
@@ -124,10 +138,12 @@
             {
                 if($rs['usuario'] == $usuario && $rs['senha'] == $senha){
                    return 1; 
-                }else{
-                    return 0;
-                }                               
+                }
+				
+				$cont++;
             }
+			
+			return 0;
     
         }
 	

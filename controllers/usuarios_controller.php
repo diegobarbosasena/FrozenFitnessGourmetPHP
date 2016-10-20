@@ -13,12 +13,9 @@
      
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
-				if(isset($_POST['txtusuario']) && isset($_POST['codUsuario'])){
                     
                     $this->usuario=$_POST['txtusuario'];
                     $this->senha=$_POST['txtsenha'];
-                    //$this->entrar();
-				}
             }
         }
         
@@ -102,17 +99,18 @@
             
             $loginCliente = $loginUsuario->loginCliente($this->usuario,$this->senha);
             $loginFunc = $loginUsuario->loginFunc($this->usuario,$this->senha);
-                        
+            //echo('Chegou');            
             if($loginCliente){
-                require_once('controllers/home_controller.php');
-                header("location: ../home/index");
+				echo('Cliente');
+                //require_once('controllers/home_controller.php');
+				
+                //header("location: ../home/index");
             }elseif($loginFunc){
-                require_once('controllers/cms_controller.php');
-                header("location: ../objetivo/index");
+				echo('Funcionario');
+                //require_once('controllers/prato_controller.php');
+               // header("location: ../objetivo/index");
             }else{
-                echo"<script type='text/javascript'>";
-                    echo "alert('Usuario ou senha incorretos');";
-                echo "</script>";  
+                echo('Erro');
                 //header("location: ../home/index");
             }
         }
