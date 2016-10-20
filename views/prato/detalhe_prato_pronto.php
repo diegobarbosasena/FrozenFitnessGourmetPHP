@@ -83,28 +83,22 @@
      </tr>
     <tr class="linha_consulta_dtl">
         <td class="col_consulta_dtl">
-            Data Frabricação: 
-        </td>
-        <td class="col_consulta_dtl">
-          <?php echo ($rs->dtFabricacao);?>    
-        </td>
-     </tr>
-    <tr class="linha_consulta_dtl">
-        <td class="col_consulta_dtl">
-            Data Validade:
-        </td>
-        <td class="col_consulta_dtl">
-          <?php echo ($rs->dtValidade);?>    
-        </td>
-     </tr>
-    <tr class="linha_consulta_dtl">
-        <td class="col_consulta_dtl">
             Imagem: 
         </td>
         <td class="col_consulta_dtl">
           <?php echo ($rs->imagemPrato);?>    
         </td>
      </tr>
+	 
+	  <tr class="linha_consulta_dtl">
+        <td class="col_consulta_dtl">
+            Categoria: 
+        </td>
+        <td class="col_consulta_dtl">
+          <?php echo ($rs->nomeCategoriaPrato);?>    
+        </td>
+     </tr>
+	 
     <tr class="linha_consulta_dtl">
         <td class="col_consulta_dtl">
             Caloria:

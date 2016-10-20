@@ -13,10 +13,9 @@
 		public $proteina;
 		public $sodio;
 		public $gorduras;
-		public $dtFabricacao;
-		public $dtValidade;
 		public $visitas;
 		public $codcategoriaPrato;
+		public $nomeCategoriaPrato;
         public $imagemPrato;
 		
         public function __construct(){
@@ -31,31 +30,34 @@
 				
 		public function insert($prato) {
 
-			$sql = "insert into tblprato (nomePrato, precoPrato, descricaoPrato, caloria, valorEnergetico, carboidrato, proteina, sodio, gorduras, dtFabricacao, dtValidade, imagemPrato) 
-					values ('".$prato->nomePrato."', '".$prato->precoPrato."', '".$prato->descricaoPrato."', '".$prato->caloria."', '".$prato->valorEnergetico."', '".$prato->carboidrato."', '".$prato->proteina."', '".$prato->sodio."', '".$prato->gorduras."', '".$prato->dtFabricacao."', '".$prato->dtValidade."', '".$prato->imagemPrato."')";
-            
-            //echo("teste ".$sql);
+			$sql = "insert into tblprato (nomePrato, precoPrato, descricaoPrato, caloria, valorEnergetico, carboidrato, proteina, sodio, gorduras, imagemPrato) 
+					values ('".$prato->nomePrato."', '".$prato->precoPrato."', '".$prato->descricaoPrato."', '".$prato->caloria."', '".$prato->valorEnergetico."', '".$prato->carboidrato."', '".$prato->proteina."', '".$prato->sodio."', '".$prato->gorduras."', '".$prato->imagemPrato."')";
+           
+		   mysql_query($sql);
 			
-			if(mysql_query($sql))
+			echo($sql);
+			
+			$sql2 = "insert into tblcatprato (codprato,codcategoriaPrato) values (LAST_INSERT_ID(),'".$prato->codcategoriaPrato."')";
+			
+			if(mysql_query($sql2))
 				return true;
 			else
-				return false;			
+				return false;		
 		}		
 		
 		public function selectAll (){
 			
-			/*$sql = "select p.nomePrato, p.precoPrato, p.descricaoPrato, p.caloria, p.valorEnergetico, p.carboidrato, p.proteina, p.sodio, p.gorduras, p.dtFabricacao, p.dtValidade, p.imagemPrato,
-					cp.nomeCategoriaPrato
+			$sql = "select p.codPrato,p.nomePrato, p.precoPrato, p.descricaoPrato, p.caloria, p.valorEnergetico, p.carboidrato, p.proteina, p.sodio, p.gorduras, p.imagemPrato,
+					cp.nomeCategoriaPrato, cp.codcategoriaPrato
 					from tblprato as p
 					inner join tblcatprato as cat
 					on (p.codPrato = cat.codPrato)
 					inner join tblcategoriaprato as cp
-					on(cat.codCategoriaPrato = cp.codCategoriaPrato);";*/
-            $sql = "select * from tblprato";
+					on(cat.codCategoriaPrato = cp.codCategoriaPrato);";
+            //$sql = "select * from tblprato";
             
 			$select = mysql_query($sql);
 						
-            
             $listaPrato = array();
             
 			while($rs = mysql_fetch_array($select)){
@@ -71,11 +73,10 @@
                 $prato->proteina = $rs['proteina'];
 				$prato->sodio = $rs['sodio'];
                 $prato->gorduras = $rs['gorduras'];
-				$prato->dtFabricacao = $rs['dtFabricacao'];
-                $prato->dtValidade = $rs['dtValidade'];
-				$prato->visitas = $rs['visitas'];
+				//$prato->visitas = $rs['visitas'];
 				$prato->imagemPrato = $rs['imagemPrato'];
-				//$prato->codcategoriaPrato = $rs['codcategoriaPrato'];
+				$prato->codcategoriaPrato = $rs['codcategoriaPrato'];
+				$prato->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
             
 				$listaPrato[] = $prato;                              							
 			}
@@ -86,15 +87,15 @@
 		
 		public function selectById($codPrato){
 			
-			/*$sql = "select p.codPrato, p.nomePrato, p.precoPrato, p.descricaoPrato, p.caloria, p.valorEnergetico, p.carboidrato, p.proteina, p.sodio, p.gorduras, p.dtFabricacao, p.dtValidade, p.imagemPrato,
-					cp.nomeCategoriaPrato
+			$sql = "select p.codPrato,p.nomePrato, p.precoPrato, p.descricaoPrato, p.caloria, p.valorEnergetico, p.carboidrato, p.proteina, p.sodio, p.gorduras, p.imagemPrato,
+					cp.nomeCategoriaPrato, cp.codcategoriaPrato
 					from tblprato as p
 					inner join tblcatprato as cat
 					on (p.codPrato = cat.codPrato)
 					inner join tblcategoriaprato as cp
-					on(cat.codCategoriaPrato = cp.codCategoriaPrato) where codPrato=".$codPrato;*/
+					on(cat.codCategoriaPrato = cp.codCategoriaPrato) where p.codPrato=".$codPrato;
 			
-			$sql = "select * from tblprato where codPrato=".$codPrato;
+			//$sql = "select * from tblprato where codPrato=".$codPrato;
 			
 			$select = mysql_query($sql);
 			
@@ -112,11 +113,10 @@
                 $prato->proteina = $rs['proteina'];
 				$prato->sodio = $rs['sodio'];
                 $prato->gorduras = $rs['gorduras'];
-				$prato->dtFabricacao = $rs['dtFabricacao'];
-                $prato->dtValidade = $rs['dtValidade'];
-				$prato->visitas = $rs['visitas'];
+				//$prato->visitas = $rs['visitas'];
 				$prato->imagemPrato = $rs['imagemPrato'];
-				//$prato->codcategoriaPrato = $rs['codcategoriaPrato'];
+				$prato->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
+				$prato->codcategoriaPrato = $rs['codcategoriaPrato'];
 											
 			}
 			
@@ -127,7 +127,7 @@
 					
 			$sql = "update tblprato set nomePrato = '".$this->nomePrato."', precoPrato = '".$this->precoPrato."', descricaoPrato = '".$this->descricaoPrato."', 
 					caloria = '".$this->caloria."', valorEnergetico = '".$this->valorEnergetico."', carboidrato = '".$this->carboidrato."', proteina = '".$this->proteina."', sodio = '".$this->sodio."', gorduras = '".$this->gorduras."',
-					dtFabricacao = '".$this->dtFabricacao."', dtValidade = '".$this->dtValidade."', imagemPrato = '".$this->imagemPrato."' where codPrato=".$this->codPrato;     
+					imagemPrato = '".$this->imagemPrato."' where codPrato=".$this->codPrato;     
 				
 			if(mysql_query($sql))
 				return true;

@@ -13,11 +13,9 @@
 		public $proteina;
 		public $sodio;
 		public $gorduras;
-		public $dtFabricacao;
-		public $dtValidade;
 		public $visitas;
         public $imagemPrato;
-		
+		public $codcategoriaPrato;
 		
 		public function __construct(){
             
@@ -42,9 +40,7 @@
 					$this->proteina= $_POST['txtproteina'];
                     $this->sodio=$_POST['txtsodio'];
 					$this->gorduras= $_POST['txtgorduras'];
-                    $this->dtFabricacao= $_POST['txtdtFabricacao'];
-                    $this->dtValidade=$_POST['txtdtValidade'];
-
+					$this->codcategoriaPrato = $_POST['txtcategoriaPrato'];
                     $this->imagemPrato = basename($_FILES["imagemPrato"]["name"]);
 			}     
 			
@@ -138,15 +134,14 @@
             $prato->proteina= $this->proteina;
             $prato->sodio= $this->sodio;
             $prato->gorduras= $this->gorduras;
-            $prato->dtFabricacao= $this->dtFabricacao;
-            $prato->dtValidade= $this->dtValidade;
-            //$prato->codcategoriaPrato= $this->codcategoriaPrato;
+            $prato->codcategoriaPrato= $this->codcategoriaPrato;
             $prato->imagemPrato= $this->getImg();
+			$prato->codcategoriaPrato= $this->codcategoriaPrato;
             
            
 			if($prato->update()){	
 				
-				header("location: ../../prato/index/".$this->codPrato);
+				header("location: ../prato/index/".$this->codPrato);
 			}
 		}
 		
@@ -176,11 +171,10 @@
             $prato->proteina= $this->proteina;
             $prato->sodio= $this->sodio;
             $prato->gorduras= $this->gorduras;
-            $prato->dtFabricacao= $this->dtFabricacao;
-            $prato->dtValidade= $this->dtValidade;
             $prato->imagemPrato= $this->getImg();
+			$prato->codcategoriaPrato= $this->codcategoriaPrato;
            
-
+			
             //echo("Imagem  ".$prato->imagemPrato);
             //$prato::insert($prato);
                       

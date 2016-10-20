@@ -20,12 +20,7 @@
         <td class="col_consulta">
             Preço
         </td>
-        <td class="col_consulta">
-            Dt. Fabricação 
-        </td>
-        <td class="col_consulta">
-            Dt. Validade 
-        </td>
+     
         <td class="col_consulta">
             Opção 
         </td>
@@ -50,14 +45,9 @@
         <td class="col_consulta">
             <?php echo ($rs[$cont]->precoPrato);?>
         </td>
-        <td class="col_consulta">
-            <?php echo ($rs[$cont]->dtFabricacao);?>
-        </td>
-        <td class="col_consulta">
-            <?php echo ($rs[$cont]->dtValidade);?>
-        </td>
+
         <td class="col_consulta" >
-            <a href="<?php echo(PROJECTDIR)?>prato/cadastrar/<?php echo($rs[$cont]->codPrato) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>prato/deletar/<?php echo($rs[$cont]->codPrato) ?>" class="link">Excluir </a> <a href="<?php echo(PROJECTDIR)?>prato/detalhe/<?php echo($rs[$cont]->codPrato) ?>" class="link">Detalhes </a>
+            <a href="<?php echo(PROJECTDIR)?>prato/cadastrar/<?php echo($rs[$cont]->codPrato) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>prato/deletar/<?php echo($rs[$cont]->codPrato) ?>" class="link">Excluir </a> | <a href="<?php echo(PROJECTDIR)?>prato/detalhe/<?php echo($rs[$cont]->codPrato) ?>" class="link">Detalhes </a>
         </td>
         
     </tr>

@@ -68,7 +68,7 @@
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Objetivo();
+				$c = new categoriaPrato();
 				$categoriaPrato=$c->selectById($id);
 			}
 			
@@ -121,11 +121,9 @@
 			$categoriaPrato->imagemCategoriaPrato = $this->getImg();
 		
 			
-			
+			//$categoriaPrato::insert($categoriaPrato);
 			if($categoriaPrato::insert($categoriaPrato)){
-				header("location: ../categoriaPrato/index");
-				
-				
+				header("location: ../categoriaPrato/index");				
 			}
 			
 		}

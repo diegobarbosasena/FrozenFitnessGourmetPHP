@@ -24,7 +24,7 @@
 				$sql = "insert into tblcategoriaprato (nomeCategoriaPrato, descricaoCategoriaPrato, imagemCategoriaPrato) values('".$categoriaPrato->nomeCategoriaPrato."','".$categoriaPrato->descricaoCategoriaPrato."',
 					'".$categoriaPrato->imagemCategoriaPrato."')";
 
-				
+				//echo($sql);
 				if(mysql_query($sql)){
 				
 					return true;
@@ -46,8 +46,8 @@
                 $categoriaPrato = new categoriaPrato();
 				$categoriaPrato->codCategoriaPrato = $rs['codCategoriaPrato'];
                 $categoriaPrato->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
-				$categoriaPrato->descricaoCategoria = $rs['descricaoCategoriaPrato'];
-				$categoriaPrato->imagemCategoria = $rs['imagemCategoriaPrato'];
+				$categoriaPrato->descricaoCategoriaPrato = $rs['descricaoCategoriaPrato'];
+				$categoriaPrato->imagemCategoriaPrato = $rs['imagemCategoriaPrato'];
 				
 				$listaCategoriaPrato[] = $categoriaPrato;						
 			}
@@ -68,11 +68,11 @@
 				  
 				$categoriaPrato->codCategoriaPrato = $rs['codCategoriaPrato'];
                 $categoriaPrato->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
-				$categoriaPrato->imagemCategoria = $rs['imagemCategoriaPrato'];	
-				$categoriaPrato->descricaoCategoria = $rs['descricaoCategoriaPrato'];				
+				$categoriaPrato->imagemCategoriaPrato = $rs['imagemCategoriaPrato'];	
+				$categoriaPrato->descricaoCategoriaPrato = $rs['descricaoCategoriaPrato'];				
 			}
 			
-			return $objetivo;
+			return $categoriaPrato;
 		}
 		
 		public function update() {

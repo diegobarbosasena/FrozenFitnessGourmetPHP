@@ -48,7 +48,7 @@
 		
 		while ($cont < count($rs)){
             
-            if($rs[$cont]->nomeCategoriaPrato != ""){   
+      
 	?>    
         
     <tr class="linha_consulta">
@@ -58,19 +58,26 @@
 					echo($rs[$cont]->nomeCategoriaPrato);
 			?>
         </td>
+		
+		  <td class="col_consulta">
+           <?php 
+					echo($rs[$cont]->imagemCategoriaPrato);
+			?>
+        </td>
+		
+		 <td class="col_consulta">
+           <?php 
+					echo($rs[$cont]->descricaoCategoriaPrato);
+			?>
+        </td>
         
         <td class="col_consulta">
             <a href="<?php echo(PROJECTDIR)?>categoriaPrato/cadastrar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link"> Editar</a> | 
             <a href="<?php echo(PROJECTDIR)?>categoriaPrato/deletar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link">Excluir </a> 
         </td>
-		
-		<?php 
-            }else{
-                ?>
-        
-                
+		                
         <?php
-            }
+            
 			$cont++;
 		}
 		

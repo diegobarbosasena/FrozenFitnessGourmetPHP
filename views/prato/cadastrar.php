@@ -42,21 +42,14 @@
                     <td class="campo_frm">Gordura:</td>
                     <td><input class="caixa_frm" name="txtgorduras" type="text" value="<?php echo($prato->gorduras)?>"  /></td>
                   </tr>    
-                  <tr>
-                    <td class="campo_frm">Data de Fabricação:</td>
-                    <td><input class="caixa_frm" name="txtdtFabricacao" type="text" value="<?php echo($prato->dtFabricacao)?>"  /></td>
-                  </tr>
-                  <tr>
-                    <td class="campo_frm">Data de Validade:</td>
-                    <td><input class="caixa_frm" name="txtdtValidade" type="text" value="<?php echo($prato->dtValidade)?>"  /></td>
-                  </tr>
+                  
                   <tr>
                     <td class="campo_frm">Preço:</td>
                     <td><input class="caixa_frm"  name="txtprecoPrato" type="text"  value="<?php echo($prato->precoPrato)?>"  /></td>
                   </tr>
                    <tr>
                     <td class="campo_frm">Categoria:</td>
-                    <td >  <select size="1" name="D1">
+                    <td >  <select  size="1" name="txtcategoriaPrato">
                         
                     <option selected value="Selecione">Selecione:</option>
                          <?php
