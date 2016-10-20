@@ -10,6 +10,21 @@
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form> 
+
+	<div class="clear"> </div>
+
+	<form  name="frmEscolha" method="post" action="<?php echo(PROJECTDIR)?>estoque/cadastrar">
+    <input class="btnescolha" name="btnescolha" type="submit" value="Ingredientes" />
+	</form>
+
+	<form  name="frmEscolha" method="post" action="<?php echo(PROJECTDIR)?>estoque/cadastrar">
+  	  <input class="btnescolha" name="btnescolha" type="submit" value="Produto" />
+	</form>
+
+	<form  name="frmEscolha" method="post" action="<?php echo(PROJECTDIR)?>estoque/cadastrar">
+ 	   <input class="btnescolha" name="btnescolha" type="submit" value="Prato Pronto" />
+	</form>
+
 <table class="tbl_consulta">
     <tr class="linha_consulta">
         <td class="col_consulta">
