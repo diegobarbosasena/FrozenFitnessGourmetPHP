@@ -59,7 +59,7 @@
 			 
 			 $usuario::insert($usuario);
 				
-			//header("location: ../cms/AdmUsuario");
+			header("location: ../usuarios/index");
 			 
 		}	
 	}

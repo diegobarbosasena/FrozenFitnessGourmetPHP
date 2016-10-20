@@ -11,17 +11,21 @@
             
             require_once('models/usuario_class.php');
      
-            if($_SERVER['REQUEST_METHOD']==='POST')
-            {
-                    
-                    $this->usuario=$_POST['txtusuario'];
-                    $this->senha=$_POST['txtsenha'];
-            }
         }
         
         
         
-        public function index(){
+       public function iniciaAtributo(){
+		
+			 if($_SERVER['REQUEST_METHOD']==='POST')
+            {
+			
+					$this->nomeTipoUsuario=$_POST['txtTipoUsuario'];
+					$this->codTipoUsuario= $_POST['codTipoUsuario'];
+				
+            }
+		}
+		public function index(){
             
 			$atualizacao = 'inserir';
 			$usuario=new Usuario();
@@ -36,55 +40,62 @@
 			
            require_once('views/usuario/index.php');
         }
-        
-        
+		
 		public function cadastrar(){
 			
 			$atualizacao = 'inserir';
 			$usuario=new Usuario();
-            //echo('CHEGOU');
-            
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Usuario();
-				$usuario=$c->selectById($id);
+				$t = new TipoUsuario();
+				$usuario=$t->selectById($id);
 			}
-            require_once('views/usuario/cadastrar.php');
+			
+			
+			require_once('views/usuario/cadastrar.php');
 		}
-        		
 		
 		public function listarTodos (){
 			 
-            $listarUsuarios = new Usuario();
-            
-            return $listarUsuarios->selectAll();
-			  
+			$listar = new Usuario();
+			return $listar->selectAll();	
 		}
 		
-		public function buscar($codUsuario){
-            
-            $buscarUsuario = new Usuario();
-            
-            return $buscarUsuario->selectById();
-		  
+		public function buscar($codusuario){
+			
+			$buscar = new Usuario();
+			return $buscar->selectById($codusuario);
+			
 		}
 		
-		public function atualizar($codUsuario) {
-		
-		
+		public function atualizar() {
+			$this->iniciaAtributo();
+			$atualizar = new Usuario();
+			$atualizar->usuario = $this->usuario;
+			$atualizar->codUsuario=  $this->codUsuario;
+			$atualizar->senha=  $this->senha;
+						
+			if($atualizar->update()){	
+				
+				header("location: ../usuario/index/".$this->codUsuario);
+			}
 		}
 		
-		public function deletar($codUsuario) {
-            $DeletarUsuario = new Usuario();
-
-            $DeletarUsuario->Delete($cod);	
+		public function deletar() {
+			
+			$codUsuario = $_GET['id'];
+			
+			$deletar = new Usuario();
+			if($deletar->delete($codUsuario)){
+				header("location: ../../usuario/index");
+			}	
 		}
 		
 		public function inserir() {
-		
+		    $this->iniciaAtributo();
             $novoUsuario = new Usuario();
             
             $novoUsuario->usuario = $this->usuario;
