@@ -89,6 +89,12 @@
 		case 'clientes':
 			$controller = new clientes_controller();
 			break;
+		case 'exercicios':
+			$controller = new exercicios_controller();
+			break;
+		case 'dicas':
+			$controller = new dicas_controller();
+			break;
 			
 			
 			

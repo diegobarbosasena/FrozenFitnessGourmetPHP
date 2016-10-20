@@ -31,7 +31,7 @@
                     <ul class="menu_cms_link">
 
 						<li><a href="<?php  echo PROJECTDIR; ?>prato/index" class="link">Adm. Prato Pronto</a></li>
-                         <li><a href="<?php  echo PROJECTDIR; ?>categoriaPrato/index" class="link">Adm. Categoria Prato</a></li>
+                         <li><a href="<?php  echo PROJECTDIR; ?>categoriaPrato/index" class="link">Adm. Categoria Prato</a></li> 
                          <li><a href="<?php  echo PROJECTDIR; ?>categoria/index" class="link">Adm. Categoria Matéria</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>ingrediente/index" class="link">Adm. Ingredientes</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>produtocms/index" class="link">Adm. Produtos</a></li>
