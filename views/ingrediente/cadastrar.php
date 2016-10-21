@@ -15,10 +15,11 @@
                     <td class="campo_frm">Nome:</td>
                     <td><input name="txtIgrediente" class="caixa_frm" type="text"   value=""    /></td>
                   </tr>
-                 <tr>
-                    <td class="campo_frm">Quantidade:</td>
-                    <td><input name="quantIgrediente" class="caixa_frm"  type="text" value=""  /></td>
-                </tr>
+				   <tr>
+                    <td class="campo_frm">Preço:</td>
+                    <td><input name="txtPrecoMateria" class="caixa_frm" type="text"   value=""    /></td>
+                  </tr>
+                
                 <tr>
                     <td class="campo_frm">Categoria:</td>
                     <td >  <select size="1" name="categoriaIgrediente">

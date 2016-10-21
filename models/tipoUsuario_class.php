@@ -58,24 +58,25 @@
 			
 			if($rs = mysql_fetch_array($select)){
 				
-				$Cat= new TipoUsuario();
+				$tipoUsuario= new TipoUsuario();
 				  
-				$Cat->codTipoUsuario = $rs['codTipoUsuario'];
-                $Cat->nomeTipoUsuario = $rs['nomeTipoUsuario'];
+				$tipoUsuario->codTipoUsuario = $rs['codTipoUsuario'];
+                $tipoUsuario->nomeTipoUsuario = $rs['nomeTipoUsuario'];
 											
 			}
 			
-			return $Cat;
+			return $tipoUsuario;
 		}
 		
 		public function update() {
 		
-			$sql = "update tblTipoUsuario set codTipoUsuario='".$this->nomeTipoUsuario."' where codTipoUsuario=".$this->codTipoUsuario;     
-				
+			$sql = "update tblTipoUsuario set nomeTipoUsuario='".$this->nomeTipoUsuario."' where codTipoUsuario=".$this->codTipoUsuario;     
+				echo($sql);
 			if(mysql_query($sql))
 				return true;
 			else
-				return false;				
+				return false;
+						
 		}
 		
 		public function delete($codTipoUsuario) {

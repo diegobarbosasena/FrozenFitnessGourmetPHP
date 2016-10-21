@@ -36,7 +36,7 @@
             
         </td>
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> | <a href="" class="link">Detalhes </a> 
+            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> 
         </td>
         
     </tr>
@@ -51,7 +51,7 @@
             
         </td>
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> | <a href="" class="link">Detalhes </a> 
+            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> 
         </td>
         
     </tr>

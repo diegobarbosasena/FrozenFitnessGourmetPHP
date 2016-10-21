@@ -7,24 +7,28 @@
 		public $nomeMateria;
 		public $precoMateria;
 		public $descricaoMateria;
-		public $porcaoMateria;
+		
         
         
         public function __construct(){
             
             require_once('models/materiaPrima_class.php');
      
-            if($_SERVER['REQUEST_METHOD']==='POST')
-            {
-				if(isset($_POST['txtIngrediente']) && isset($_POST['codUsuario'])){
-                    
-                    $this->nomeMateria=$_POST['txtusuario'];
-                    $this->descricaoMateria=$_POST['txtsenha'];
-                    //$this->entrar();
-				}
-            }
+           
         }
         
+		public function iniciaAtributo(){
+		
+			 if($_SERVER['REQUEST_METHOD']==='POST')
+            {
+			
+					 $this->nomeMateria=$_POST['txtIgrediente'];
+                    $this->descricaoMateria=$_POST['descricaoIgrediente'];
+					$this->precoMateria=$_POST['txtPrecoMateria'];
+                    //$this->entrar();
+				
+            }
+		}
         
         
         public function index(){
@@ -79,6 +83,7 @@
 		}
 		
 		public function atualizar($codMateria) {
+			$this->iniciaAtributo();
 		
 		
 		}
@@ -90,11 +95,12 @@
 		}
 		
 		public function inserir() {
-		
+			$this->iniciaAtributo();
             $novoMateria = new MateriaPrima();
             
             $novoMateria->nomeMateria = $this->nomeMateria;
-			$novoUsuario->descricaoMateria = $this->descricaoMateria;
+			$novoMateria->descricaoMateria = $this->descricaoMateria;
+			$novoMateria->precoMateria = $this->precoMateria;
             	
 			$novoMateria::insert($novoMateria);
 		}

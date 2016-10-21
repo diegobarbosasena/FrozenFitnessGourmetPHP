@@ -34,8 +34,8 @@
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new TipoUsuario();
-				$tipoUsuario=$c->selectById($id);
+				$t = new TipoUsuario();
+				$tipoUsuario=$t->selectById($id);
 			}
 			
            require_once('views/nivelUsuario/index.php');
@@ -80,7 +80,7 @@
 						
 			if($atualizar->update()){	
 				
-				header("location: ../nivelUsuario/index/".$this->codTipoUsuario);
+				header("location: ../tipoUsuario/index/".$this->codTipoUsuario);
 			}
 		}
 		

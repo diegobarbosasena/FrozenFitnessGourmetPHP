@@ -6,7 +6,7 @@
 	public $nomeMateria;
 	public $precoMateria;
 	public $descricaoMateria;
-	public $porcaoMateria;
+	
 		
 	 public function __construct(){
             
@@ -43,7 +43,7 @@
                 $materiaPrima->nomeMateria = $rs['nomeMateria'];
 				$materiaPrima->precoMateria = $rs['precoMateria'];
                 $materiaPrima->descricaoMateria = $rs['descricaoMateria'];
-				$materiaPrima->porcaoMateria = $rs['porcaoMateria'];
+				
                 
                 
 				$listaMateria[] = $materiaPrima;                              							
@@ -66,7 +66,7 @@
                 $materiaPrima->nomeMateria = $rs['nomeMateria'];
 				$materiaPrima->precoMateria = $rs['precoMateria'];
                 $materiaPrima->descricaoMateria = $rs['descricaoMateria'];
-				$materiaPrima->porcaoMateria = $rs['porcaoMateria'];
+
 											
 			}
 			

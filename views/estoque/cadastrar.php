@@ -19,7 +19,7 @@
                   </tr>
                 
                 <tr>
-                    <td class="campo_frm">Produto/ Ingrediente:</td>
+                    <td class="campo_frm">Nome:</td>
                     <td >  <select size="1" name="D1">
 
                             <option selected value="Selecione">Selecione:</option>
@@ -33,17 +33,22 @@
                   </tr>
                 
                  <tr>
-                    <td class="campo_frm">Quantidade:</td>
+                    <td class="campo_frm">Quantidade Inserida:</td>
                     <td><input class="caixa_frm" name="txtquantidade" type="text" value=""  /></td>
                 </tr>
                 <tr>
-                    <td class="campo_frm">Quantidade Limite:</td>
+                    <td class="campo_frm">Quantidade Minima:</td>
                     <td><input class="caixa_frm" name="txtquantidadeLimite" type="text" value=""  /></td>
                 </tr>
                  <tr>
+                    <td class="campo_frm">Data de Fabricação:</td>
+                    <td><input class="caixa_frm" name="txtdtValidade" type="text" value=""  /></td>
+                </tr>
+				<tr>
                     <td class="campo_frm">Data de Validade:</td>
                     <td><input class="caixa_frm" name="txtdtValidade" type="text" value=""  /></td>
                 </tr>
+				
 
                   <tr>
                       

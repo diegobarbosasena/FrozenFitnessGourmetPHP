@@ -8,7 +8,7 @@
 
 	
 	
-        <form class="frm" name="frmcategoria" method="post" action="<?php echo(PROJECTDIR)?>tipoUsuario/<?php echo($atualizacao) ?>">
+        <form class="frm" name="frmtipoUsuario" method="post" action="<?php echo(PROJECTDIR)?>tipoUsuario/<?php echo($atualizacao) ?>">
 	
             
 			
