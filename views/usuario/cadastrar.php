@@ -6,25 +6,25 @@
         
 </form>
 
-        <form class="frm" name="frmprodutos" method="post" action="../funcionario/inserir">
+        <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>funcionario/<?php echo($atualizacao) ?>">
             
             <table>
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" type="text"   name="txtNomeUsuario" value=""    /></td>
+                    <td><input class="caixa_frm" type="text"   name="txtNome" value=""    /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">CPF:</td>
-                    <td><input class="caixa_frm"  name="txtCpfUsuario" type="text"  value=""  /></td>
+                    <td><input class="caixa_frm"  name="txtCpf" type="text"  value=""  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Usuário:</td>
-                    <td><input class="caixa_frm" name="txtUsuarioUsuario"  type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtUsuario"  type="text" value="" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Senha:</td>
-                    <td><input class="caixa_frm" name="txtSenhaUsuario" type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtSenha" type="text" value="" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Confirmar senha:</td>

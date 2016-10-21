@@ -15,15 +15,23 @@
 		  require_once('models/funcionario_class.php');
 		  require_once('models/usuario_class.php');
                
-            if($_SERVER['REQUEST_METHOD']=='POST')
-            {
-                $this->nomeFuncionarioLoja=$_POST['txtNome'];
-				$this->cpfFuncionarioLoja=$_POST['txtCpf'];
-				$this->usuarioFuncionario=$_POST['txtUsuario'];
-				$this->senhaFuncionario=$_POST['txtSenha'];
-				$this->confirmacaoSenha=$_POST['txtConfirmaSenha'];
-            }
+     
 		 }
+		 
+		 public function iniciaAtributo(){
+			if($_SERVER['REQUEST_METHOD']=='POST')
+				{
+					$this->nomeFuncionarioLoja=$_POST['txtNome'];
+					$this->cpfFuncionarioLoja=$_POST['txtCpf'];
+					$this->usuarioFuncionario=$_POST['txtUsuario'];
+					$this->senhaFuncionario=$_POST['txtSenha'];
+					$this->confirmacaoSenha=$_POST['txtConfirmaSenha'];
+				}
+		 }
+		 			
+			require_once('views/usuarios/cadastrar.php');
+		}
+		
 		 
 		 public function listarTodos (){
 			 
@@ -46,21 +54,16 @@
 		}
 		
 		public function inserir() {
-              
+             $this->iniciaAtributo();
 			 $funcionario = new Funcionario();
 			 $funcionario->nomeFuncionarioLoja = $this->nomeFuncionarioLoja;
 			 $funcionario->cpfFuncionarioLoja = $this->cpfFuncionarioLoja;
+			 $funcionario->usuarioFuncionario = $this->usuarioFuncionario;
+			 $funcionario->senhaFuncionario = $this->senhaFuncionario;
 			 
-			 $funcionario::insertFuncionario($funcionario);
-			 
-			 $usuario = new Usuario();
-			 $usuario->usuario = $this->usuarioFuncionario;
-			 $usuario->senha = $this->senhaFuncionario;
-			 
-			 $usuario::insert($usuario);
-				
-			header("location: ../usuarios/index");
-			 
+			 if($funcionario::insertFuncionario($funcionario)){
+				 header("location: ../usuarios/index");
+			 }			 
 		}	
 	}
 	

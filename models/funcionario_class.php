@@ -5,6 +5,9 @@
 		public $nomeFuncionario;
 		public $cpfFuncionarioLoja;
 		public $codFuncionarioLoja;
+		public $usuarioFuncionario;
+		public $senhaFuncionario;
+		public $confirmacaoSenha;
 		
 		public function __construct(){
             
@@ -28,17 +31,14 @@
 				  
 				$listaFuncionario[$cont]->codFuncionarioLoja = $rs['codFuncionarioLoja'];
                 $listaFuncionario[$cont]->nomeFuncionarioLoja = $rs['nomeFuncionarioLoja'];
-				$listaFuncionario[$cont]->cpfFuncionarioLoja = $rs['nomeFuncionarioLoja'];
-
+				$listaFuncionario[$cont]->cpfFuncionarioLoja = $rs['cpfFuncionarioLoja'];
+				$listaFuncionario[$cont]->senhaFuncionario = $rs['senhaFuncionario'];
+				$listaFuncionario[$cont]->usuarioFuncionario = $rs['usuarioFuncionario'];
 				
 				$cont++;							
 			}
 			
-			if($listaFuncionario != ""){
-				return 	$listaFuncionario;
-			}else{
-				return "";
-			}
+			return $listaFuncionario;
 			
 		}
 		
@@ -66,23 +66,18 @@
 		public function insertFuncionario($novofuncionario) {
 			
 			$sql = "insert into tblfuncionarioLoja (nomeFuncionarioLoja,cpfFuncionarioLoja) values ('".$novofuncionario->nomeFuncionarioLoja."', '".$novofuncionario->cpfFuncionarioLoja."')";
+			$sql2 ="insert into tblusuario (usuario, senha) values('".$novofuncionario->usuarioFuncionario."','".$novofuncionario->senhaFuncionario."')";
+			$sql3 = "insert into tblusuariofuncionarioloja (codUsuario, codFuncionarioLoja) values (LAST_INSERT_ID(),LAST_INSERT_ID())";
+
+			mysql_query($sql);
+			mysql_query($sql2);
 			
-			if(mysql_query($sql))
+			if(mysql_query($sql3))
 				return true;
 			else
 				return false;
 		
 		}   
-		
-		public function funcionarioUsuario(){
-			
-			$sql = "insert into tblusuariofuncionarioloja (codFuncionarioLoja, codUsuario) values ('".$codFuncionarioLoja ."', '".$codUsuario."')";
-			
-			if(mysql_query($sql))
-				return true;
-			else
-				return false;			
-		}
 }		
 
 ?>

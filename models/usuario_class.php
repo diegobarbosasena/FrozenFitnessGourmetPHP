@@ -83,11 +83,11 @@
 		public function insert($novousuario) {
 			
 			$sql = "insert into tblusuario (usuario, senha) values('".$novousuario->usuario."','".$novousuario->senha."')";
-			
-			if(mysql_query($sql))
+			echo($sql);
+			/*if(mysql_query($sql))
 				return true;
 			else
-				return false;
+				return false;*/
 		
 		}
         
