@@ -1598,7 +1598,7 @@ nav{
     float: left;
 	background-image:url(../imagem/menu_celular.png);
 	margin-left:40px;
-	margin-top:-60px;
+	margin-top:-120px;
 }
 #logo{
     width: 100%;
@@ -1637,7 +1637,7 @@ nav#menu_{
     height: 34px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 30px;
     margin-right: 7%;
 }
 #menu li:hover{
@@ -1670,6 +1670,7 @@ nav#menu_{
     border-radius: 10px;
 	margin-bottom:5px;
 	margin-top:70px;
+	display:none;
 }
 .nomeusuario p{
     font-family:Verdana, Arial, Helvetica, sans-serif;
@@ -1677,6 +1678,7 @@ nav#menu_{
     font-size:28px;
     text-align: center;
     padding-top: 3px;
+	display:none;
 }
 input.pesquisar{
 	width: 560px;
@@ -1690,9 +1692,10 @@ input.pesquisar{
 	font-size:28px;
 	border-radius: 5px;
 	padding:4px 20px 4px 9px;
-	margin-top:-50px;
+	margin-top:130px;
 	margin-left:-620px;
 	background-position:center;
+	display:none;
 }
 input.button_pesquisa{
 	width: 500px;
@@ -1724,6 +1727,7 @@ input.button_pesquisa{
 	display:block;
 	position:absolute;
 	margin-top:-100px;
+	display:none;
 	
 }
 .entrar{
@@ -2145,17 +2149,16 @@ span {
 }
 
 input.btn_detalhes{
-	width: 200px;
+	width: 600px;
     height: 80px;
     border: 2px solid #00B348;
-    margin-right: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 32px;
-    margin-top: 10px;
     border-radius: 15px;
     color: #00B348;
     background-color: #FFFFFF;
-    margin-left: 110px;
+	background-position:center;
+    margin-left: 30px;
 }
 input.btn_comprar{
 	width: 200px;
@@ -2167,6 +2170,7 @@ input.btn_comprar{
 	color:#00B348;
 	background-color:#FFFFFF;
 	margin-bottom: 10px;
+	display:none;
 }
 input.btn_detalhes:hover{
 	background-color:#00B348;
@@ -2331,6 +2335,242 @@ input.btn_monteja{
     margin-top: 10px;
     margin-bottom: 20px;
 	font-size:30px;
+}
+.area_produtos{
+	width: 655px;
+    height: auto;
+    float: left;
+    margin-top: 16px;
+	background-color:#FFF;
+}
+.produtos{
+	width: 640px;
+    float: left;
+    background-color: #FFFFFF;
+    margin: 28px 5px 0px 5px;
+}
+.imagem_produtos1{
+    width: 630px;
+    height: 320px;
+	float:left;
+	background-image:url(../imagem/prato_celular1.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.imagem_produtos2{
+    width: 630px;
+    height: 320px;
+	float:left;
+	background-image:url(../imagem/prato_celular1.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.imagem_produtos3{
+    width: 630px;
+    height: 320px;
+	float:left;
+	background-image:url(../imagem/prato_celular1.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.imagem_produtos4{
+    width: 630px;
+    height: 320px;
+	float:left;
+	background-image:url(../imagem/prato_celular1.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.titulo_produtos{
+	width: 100%;
+    height: 45px;
+    float: left;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: #333333;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+.descricao_produto{
+	width: 80%;
+    height: 120px;
+    float: left;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+    margin-left: 80px;
+    margin-top:10px;
+}
+.kcal_produtos{
+	width: 100%;
+    height: 25px;
+    float: left;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    color: #333333;
+    text-align: center;
+    background-color: #FFFFFF;
+	margin-top:30px;
+}
+.preco_produtos{
+	width: 100%;
+    height: 25px;
+    float: left;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #666666;
+    text-align: center;
+    margin-top: 2px;
+    background-color: #FFFFFF;
+	margin-top:30px;
+	margin-bottom:50px;
+}
+
+.titulo_sobre{
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: #666666;
+    margin-top: 70px;
+    text-align: center;
+}
+.subtitulo_sobre{
+	font-family:"Microsoft YaHei";
+    font-size: 22px;
+    color:#999999;
+    text-align: center;
+}
+.imagemsobre{
+	float: left;
+	width: 299px;
+	height: 288px;
+	margin: 20px 10px 20px 10px;
+	background-repeat: no-repeat;
+	border-radius: 215px;
+	background-position: center;
+}
+.imagem_sobre{
+	width: 100%;
+	height: 360px;
+	background-image: url(../imagem/sobre.png);
+	background-color: #F0F0F0;
+	left: 0;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.descricao_sobre{
+	width: 646px;
+	font-family: "Microsoft YaHei";
+	font-size: 30px;
+	color: #999999;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 25px;
+}
+.imagem_sobre2{
+	background-image:url(../imagem/sobre2.png);
+}
+.imagem_sobre3{
+	background-image:url(../imagem/sobre1.png);
+}
+.imagem_sobre4{
+	background-image:url(../imagem/sobre3.png);
+	display:none;
+}
+
+.imagem_parceiro{
+    width: 100%;
+    height: 260px;
+    background-image: url(../imagem/parceiro.png);
+    background-color: #F0F0F0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    float: left;
+	display:none;
+}
+
+.parceiro{
+    width:200px;
+    height:auto;
+    float: left;
+    margin-left:25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+	background-color:#000;
+    
+}
+
+.img_parceiro{
+    width: 300px;
+    height: 300px;
+    margin-left:50px;
+    border-radius: 60%;
+    border: solid 1px;
+	background-color:#000;
+   /* background-image: url(../imagem/smart.png);
+    background-repeat: no-repeat;*/
+    
+}
+.nome_parceiro{
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #FE7101;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tel_parceiro{
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.desc_parceiro{
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.area_contato{
+    width: 100%;
+    height: auto;
+    color: #666666;
+    float: left;
+    margin-top: 20px;
+	background-color:#000;
+}
+.titulo_area_contato{
+	font-family:"Chaparral Pro Light";
+    font-size: 33px;
+    color: #666666;
+    margin-top: 50px;
+    text-align: left;
+}
+.imagem_contato{
+    width: 100%;
+    height: 260px;
+    background-image: url(../imagem/contato.png);
+    background-color: #F0F0F0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    float: left;
+	display:none;
 }
 .rodape{
 	list-style: outside none none;
