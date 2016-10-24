@@ -97,7 +97,9 @@
             Descrição:
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+          <div class="overflow" >
+          jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj 
+          </div> 
         </td>
      </tr>
 

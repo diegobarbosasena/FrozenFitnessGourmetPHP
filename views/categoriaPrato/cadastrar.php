@@ -21,7 +21,8 @@
                   <tr>
                     <td class="campo_frm">Descrição:</td>
                     <td>
-						<div>
+						<div class="overflow" >
+                        
 							<textarea class="campo_desc" name="txtDescricaoCategoriaPrato"   cols="35" rows="8" ><?php echo($categoriaPrato->descricaoCategoriaPrato);?></textarea>
 						</div>
                         

@@ -7,11 +7,11 @@
     
      
 		<?php
-			require_once('controllers/prato_controller.php');
+			require_once('controllers/clientes_controller.php');
 			
-			$controllerPrato = new prato_controller();
+			$controllerClientes = new clientes_controller();
 			
-			$rs=$controllerPrato->buscar($_GET['id']);
+			$rs=$controllerClientes->buscar($_GET['id']);
 
 		?>
         
@@ -22,93 +22,82 @@
           Nome:
         </td>
         <td class="col_consulta_dtl">
-           <?php echo ($rs->nomePrato);?>  
+           <?php echo ($rs->nomeCliente);?>  
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
         <td class="col_consulta_dtl">
-            Preço: 
+            CPF: 
         </td>
         <td class="col_consulta_dtl">
-           <?php echo ($rs->precoPrato);?>  
+           <?php echo ($rs->cpfCliente);?>  
+        </td>
+     </tr>
+      <tr class="linha_consulta_dtl">
+        <td class="col_consulta_dtl">
+            Data de Nascimento: 
+        </td>
+        <td class="col_consulta_dtl">
+       
+           <?php echo ($rs->dtNascCliente);?>  
+        
+        </td>
+     </tr>
+      <tr class="linha_consulta_dtl">
+        <td class="col_consulta_dtl">
+            Peso: 
+        </td>
+        <td class="col_consulta_dtl">
+       
+           <?php echo ($rs->peso);?>  
+        
+        </td>
+     </tr>
+      <tr class="linha_consulta_dtl">
+        <td class="col_consulta_dtl">
+            Altura: 
+        </td>
+        <td class="col_consulta_dtl">
+       
+           <?php echo ($rs->altura);?>  
+        
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
         <td class="col_consulta_dtl">
-            Descrição: 
+            Telefone: 
         </td>
         <td class="col_consulta_dtl">
-       	<div class="overflow" >
-           <?php echo ($rs->descricaoPrato);?>  
-        </div>
+       
+           <?php echo ($rs->telefoneCliente);?>  
+        
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
         <td class="col_consulta_dtl">
-            Valor Energético: 
+            Celular: 
         </td>
         <td class="col_consulta_dtl">
-           <?php echo ($rs->valorEnergetico);?>    
+           <?php echo ($rs->celularCliente);?>    
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
         <td class="col_consulta_dtl">
-            Carboidrato: 
+            Email: 
         </td>
         <td class="col_consulta_dtl">
-          <?php echo ($rs->carboidrato);?>    
+          <?php echo ($rs->emailCliente);?>    
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
         <td class="col_consulta_dtl">
-            Proteina: 
+            Objetivo: 
         </td>
         <td class="col_consulta_dtl">
-          <?php echo ($rs->proteina);?>    
+          <?php echo ($rs->nomeObjetovo);?>    
         </td>
      </tr>
-    <tr class="linha_consulta_dtl">
-        <td class="col_consulta_dtl">
-            Sódio: 
-        </td>
-        <td class="col_consulta_dtl">
-          <?php echo ($rs->sodio);?>    
-        </td>
-     </tr>
-    <tr class="linha_consulta_dtl">
-        <td class="col_consulta_dtl">
-            Gorduras: 
-        </td>
-        <td class="col_consulta_dtl">
-          <?php echo ($rs->gorduras);?>    
-        </td>
-     </tr>
-    <tr class="linha_consulta_dtl">
-        <td class="col_consulta_dtl">
-            Imagem: 
-        </td>
-        <td class="col_consulta_dtl">
-          <?php echo ($rs->imagemPrato);?>    
-        </td>
-     </tr>
-	 
-	  <tr class="linha_consulta_dtl">
-        <td class="col_consulta_dtl">
-            Categoria: 
-        </td>
-        <td class="col_consulta_dtl">
-          <?php echo ($rs->nomeCategoriaPrato);?>    
-        </td>
-     </tr>
-	 
-    <tr class="linha_consulta_dtl">
-        <td class="col_consulta_dtl">
-            Caloria:
-        </td>
-        <td class="col_consulta_dtl">
-          <?php echo ($rs->caloria);?>    
-        </td>
-     </tr>
+
 		<?php 
                 
            

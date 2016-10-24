@@ -41,7 +41,9 @@
         </td>
        
         <td class="descricao">
+        <div class="overflow" >
          <?php echo($rs[$cont]->descricaoObjetivo); ?>
+        </div>
         </td>
         <td class="col_consulta" >
            <a href="<?php echo(PROJECTDIR)?>objetivo/cadastrar/<?php echo($rs[$cont]->codObjetivo) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>objetivo/deletar/<?php echo($rs[$cont]->codObjetivo) ?>" class="link">Excluir </a>
@@ -52,5 +54,5 @@
 		$cont++;
 		}
 	?>
-
+	</tr>
 </table>

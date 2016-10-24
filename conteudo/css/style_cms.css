@@ -310,7 +310,7 @@ input.btnescolha{
     border: solid 1px #CCC;
     color: #696969;
     margin-top: 20px;
-	margin-left: 72px;
+	margin-left: 132px;
 	margin-bottom:20px;
 
 }
@@ -377,9 +377,16 @@ input.btnVoltar:hover{
 .col_consulta{
     width: 90px;
     border: solid 1px #CCC;
+	height:60px;
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+}
+
+.overflow{
+	overflow:auto;
+	height:100px;
+
 }
 
 .descricao{

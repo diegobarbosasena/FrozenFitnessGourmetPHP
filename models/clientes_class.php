@@ -21,9 +21,9 @@
         }
         		
 				
-		public function insert($prato) {
+		public function insert($cliente) {
 
-			$sql = "";
+			$sql = "insert into tblcliente (nomeCliente) values('".$cliente->nomeCliente."')";
 			if(mysql_query($sql))
 				return true;
 			else
@@ -33,7 +33,7 @@
 		
 		public function selectAll (){
 			
-			$sql = "";
+			$sql = "select * from tblcliente";
             
 			$select = mysql_query($sql);
 						

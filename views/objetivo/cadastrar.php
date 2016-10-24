@@ -15,7 +15,8 @@
                   </tr>
                    <tr>
                     <td class="campo_frm">Descricao:</td>
-                    <td><input class="caixa_frm" name="txtDescricaoObjetivo" value="<?php echo($objetivo->descricaoObjetivo)?>"  type="text"/></td>
+                    <td> <textarea name="txtDescricaoObjetivo" class="campo_desc" cols="35" rows="8" >  <?php echo($objetivo->descricaoObjetivo)?>  </textarea></td>
+                   
                   </tr>
                   
                   <tr>

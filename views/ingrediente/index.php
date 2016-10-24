@@ -42,7 +42,9 @@
            5000 kcal
         </td>
         <td class="col_consulta">
+        <div class="overflow" >
           As gorduras localizadas no nosso corpo não apareceram
+        </div>
         </td>
 		 <td class="col_consulta">
 			R$ 12,00

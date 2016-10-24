@@ -3,12 +3,12 @@
         <div class="clear"></div>
         
         <div class="area_contato">
-            <form id="formulario"> 
+            <form id="formulario" method="post" action="<?php echo(PROJECTDIR)?>clientes/<?php echo($atualizacao) ?>"> 
                 <fieldset>
                     
                     <legend> Dados Pessoais</legend>
                     <div class="altura"> </div>
-                         <label>Nome:</label> <input class="campo_nome" type="text" placeholder="Digite seu nome">
+                        <label>Nome:</label> <input name="nomeCliente" class="campo_nome" type="text" placeholder="Digite seu nome" value="">
                     <br> <label>Email:</label> <input class="campo_nome" type="text" placeholder="nome@nome.com">
                     <br> <label>CPF:</label> <input class="campo_cpf" type="text" placeholder="111 111 111 11">
                     <br> <label>Data de Nascimento:</label> <input class="campo_data" type="text" placeholder="00/00/0000">

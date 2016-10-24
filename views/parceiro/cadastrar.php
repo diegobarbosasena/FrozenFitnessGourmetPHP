@@ -95,7 +95,10 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Complemento:</td>
-                    <td><textarea class="campo_desc" cols="35" rows="8" ></textarea></td> 
+                    <td>
+                    <input class="caixa_frm" name="txtcomplemento" type="text" value=""  /></td>
+                    
+                    </td> 
                   </tr>  
                 
 

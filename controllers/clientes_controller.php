@@ -65,9 +65,14 @@
 				$cliente=$c->selectById($id);
 			}
 			
-           require_once('views/clientes/cadastrar.php');
+           require_once('views/home/cadastro.php');
 		}
-        	
+        
+		 public function detalhe(){
+            
+             require_once('views/clientes/detalhe_clientes.php');
+            
+        }
 		public function listarTodos (){
 			 
 			$listar = new Cliente();
@@ -120,11 +125,11 @@
 			$cliente->telefoneCliente = $this->telefoneCliente;
 			$cliente->celularCliente = $this->celularCliente;
 			$cliente->emailCliente = $this->emailCliente;
-			
-			
-			if($cliente::insert($cliente)){
-				header("location: ../clientes/index");
-			}
+			$cliente::insert($cliente);
+			header("location: ../home/cadastro.php");
+			/*if($cliente::insert($cliente)){
+				header("location: ../home/cadastro.php");
+			}*/
 		}
 
 	}

@@ -64,9 +64,11 @@
 			?>
         </td>
         <td class="col_consulta">
+        <div class="overflow" >
            <?php 
 					echo($rs[$cont]->descricaoExercicio);
 			?>
+        </div>
         </td>
         
         <td class="col_consulta">
