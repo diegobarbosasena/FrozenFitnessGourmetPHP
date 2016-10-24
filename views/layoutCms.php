@@ -43,7 +43,7 @@
                         <li><a href="<?php  echo PROJECTDIR; ?>objetivo/index" class="link">Adm. Objetivo</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>dicas/index" class="link">Adm. Dicas</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>exercicios/index" class="link">Adm. Exercicios</a></li>
-                        <li><a href="<?php  echo PROJECTDIR; ?>usuarios/index" class="link">Adm. Usuários</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>funcionario/index" class="link">Adm. Usuários</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>tipoUsuario/index" class="link">Adm. Tipo Usuario</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>clientes/index" class="link">Clientes</a></li>
                         

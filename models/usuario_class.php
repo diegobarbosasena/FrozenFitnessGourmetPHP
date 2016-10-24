@@ -127,7 +127,7 @@
                     (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja) 
                     inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario);"*/
 					
-			$sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario, u.senha, c.codFuncionarioLoja, c.nomeFuncionarioLoja
+			$sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario, u.senha, c.codFuncionarioLoja, c.nomeFuncionarioLoja, cpfFuncionarioLoja
                      from tblusuarioFuncionarioLoja as uc inner join tblusuario as u on 
                     (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja)";
             //echo($sql);

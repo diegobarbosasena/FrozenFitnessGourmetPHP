@@ -25,38 +25,7 @@
 				
             }
 		}
-		public function index(){
-            
-			$atualizacao = 'inserir';
-			$usuario=new Usuario();
-			if(isset($_GET['id']) && $_GET['id'] != ""){
-				
-				$id = $_GET['id'];
-				$atualizacao = 'atualizar';
-				
-				$c = new Usuario();
-				$usuario=$c->selectById($id);
-			}
-			
-           require_once('views/usuario/index.php');
-        }
 		
-		public function cadastrar(){
-			
-			$atualizacao = 'inserir';
-			$usuario=new Usuario();
-			if(isset($_GET['id']) && $_GET['id'] != ""){
-				
-				$id = $_GET['id'];
-				$atualizacao = 'atualizar';
-				
-				$t = new TipoUsuario();
-				$usuario=$t->selectById($id);
-			}
-			
-			
-			require_once('views/usuario/cadastrar.php');
-		}
 		
 		public function listarTodos (){
 			 

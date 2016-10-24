@@ -2,7 +2,7 @@
 <div class="cadas">Consulta de Usuarios</div>
 
     
-<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>usuarios/cadastrar">
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>funcionario/cadastrar">
         <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
 </form>
 <form>
@@ -27,41 +27,56 @@
         <td class="col_consulta">
             Opção 
         </td>
+		
+		
+		<?php
+			
+			require_once('controllers/funcionario_controller.php');
+			
+			$controllerFuncionario = new funcionario_controller();
+					
+			$rs=$controllerFuncionario->listarTodos();
+
+			$cont=0;
+			
+			while ($cont < count($rs)){
+            
+			
+		?>
         
     <tr class="linha_consulta">
+	
         <td class="col_consulta">
-            Janaina Ferreira
+             <?php 
+					echo($rs[$cont]->nomeFuncionarioLoja);
+			?>
         </td>
         <td class="col_consulta">
-            4785236952
+            <?php 
+					echo($rs[$cont]->cpfFuncionarioLoja);
+			?>
         </td>
         <td class="col_consulta">
-           janna_fer
+            <?php 
+					echo($rs[$cont]->usuarioFuncionario);
+			?>
         </td>
         <td class="col_consulta">
-            Administrador
+             <?php 
+					echo($rs[$cont]->senhaFuncionario);
+			?>
         </td>
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> 
+            <a href="<?php echo(PROJECTDIR)?>funcionario/cadastrar/<?php echo($rs[$cont]->codFuncionarioLoja);?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>funcionario/deletar/<?php echo($rs[$cont]->codFuncionarioLoja);?>" class="link">Excluir </a> 
         </td>
-        
-    </tr>
-    <tr class="linha_consulta">
-        <td class="col_consulta">
+		
+		<?php
             
-        </td>
-        <td class="col_consulta">
-            
-        </td>
-        <td class="col_consulta">
-            
-        </td>
-        <td class="col_consulta">
-           
-        </td>
-        <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> 
-        </td>
+				$cont++;
+			}
+			
+		
+		?>
         
     </tr>
 

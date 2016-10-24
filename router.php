@@ -18,11 +18,6 @@
               $controller = new produtos_controller();
                 break;
               
-          case 'cms':
-			  require_once('models/categoria_class.php');
-              $controller = new cms_controller();
-              break;
-              
           case 'contatos':
                $controller = new contatos_controller();
               break;
@@ -96,7 +91,9 @@
 			$controller = new dicas_controller();
 			break;
 			
-			
+		case 'funcionario':
+			$controller = new funcionario_controller();
+			break;
 			
       }
 
