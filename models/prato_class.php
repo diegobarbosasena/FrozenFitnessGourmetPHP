@@ -137,7 +137,7 @@
 		
 		public function delete($codPrato){
 		
-			$sql = "delete from tblprato where codPrato=".$codPrato;
+			$sql = "delete from tblcatprato where codPrato=".$codPrato;
 
 			if(mysql_query($sql))
 				return true;

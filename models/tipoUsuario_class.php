@@ -43,7 +43,6 @@
                 $tipoUsuario = new TipoUsuario();
                 $tipoUsuario->codTipoUsuario = $rs['codTipoUsuario'];
                 $tipoUsuario->nomeTipoUsuario = $rs['nomeTipoUsuario'];
-                
 				$listaTipoUsuario[] = $tipoUsuario;                              							
 			}
 			

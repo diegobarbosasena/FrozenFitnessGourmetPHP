@@ -2,7 +2,7 @@
 <?php
 	class Funcionario{
 		
-		public $nomeFuncionario;
+		public $nomeFuncionarioLoja;
 		public $cpfFuncionarioLoja;
 		public $codFuncionarioLoja;
 		public $usuarioFuncionario;
@@ -88,8 +88,18 @@
 		public function insertFuncionario($novofuncionario) {
 			
 			$sql = "insert into tblfuncionarioLoja (nomeFuncionarioLoja,cpfFuncionarioLoja) values ('".$novofuncionario->nomeFuncionarioLoja."', '".$novofuncionario->cpfFuncionarioLoja."')";
+			$last_id = "select LAST_INSERT_ID()";
 			$sql2 ="insert into tblusuario (usuario, senha) values('".$novofuncionario->usuarioFuncionario."','".$novofuncionario->senhaFuncionario."')";
-			$sql3 = "insert into tblusuariofuncionarioloja (codUsuario, codFuncionarioLoja) values (LAST_INSERT_ID(),LAST_INSERT_ID())";
+			$sql3 = "insert into tblusuariofuncionarioloja (codUsuario, codFuncionarioLoja) values ('".$last_id."',LAST_INSERT_ID())";
+			
+			"insert into tblfuncionarioLoja (nomeFuncionarioLoja,cpfFuncionarioLoja) values ('funcio', '123456');
+
+				set @id = LAST_INSERT_ID();
+
+				insert into tblusuario (usuario, senha) values('usuario ','senha');
+
+				insert into tblusuariofuncionarioloja (codFuncionarioLoja, codUsuario) values (@id, LAST_INSERT_ID());"
+				
 			echo($sql);	
 			echo($sql2);	
 			echo($sql3);	

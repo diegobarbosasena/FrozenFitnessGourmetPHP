@@ -34,15 +34,34 @@
                   <tr>
                     <td class="campo_frm">Tipo:</td>
                     <td >  <select size="1" name="slecioneTipoUsuario">
+				     
+                    <option selected value="Selecione">Selecione:</option>
+                         <?php
+                            require_once('controllers/tipoUsuario_controller.php');
 
-                            <option selected value="Selecione">Selecione:</option>
+                            $controllerTipo = new tipoUsuario_controller();
 
-                            <option value="">Administrador</option>
+                            $rs=$controllerTipo->listarTodos();
 
-                            <option value="">Cataloguista</option>
+                            $cont=0;
 
+                            while ($cont < count($rs)){
+        
+                        ?>  
+
+                            <option value="<?php echo($rs[$cont]->codTipoUsuario); ?>"><?php echo($rs[$cont]->nomeTipoUsuario);?></option>
+                        <?php
+                            
+                            $cont++;
+                        }
+
+
+                        ?>
+        
                         </select>
-                    </td>
+						
+					</td>
+					
                   </tr>
 
                   <tr>
