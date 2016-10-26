@@ -7,6 +7,7 @@
 		public $codFuncionarioLoja;
 		public $usuarioFuncionario;
 		public $senhaFuncionario;
+        public $codTipoUsuario;
 		public $confirmacaoSenha;
 		
 		public function __construct(){
@@ -20,9 +21,13 @@
 		
 		public function selectAll (){
             
-			$sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario, u.senha, c.codFuncionarioLoja, c.nomeFuncionarioLoja, cpfFuncionarioLoja
+			/*$sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario, u.senha, c.codFuncionarioLoja, c.nomeFuncionarioLoja, cpfFuncionarioLoja
                      from tblusuarioFuncionarioLoja as uc inner join tblusuario as u on 
-                    (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja)";
+                    (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja)";*/
+            $sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario, c.codFuncionarioLoja, c.nomeFuncionarioLoja, c.cpfFuncionarioLoja,
+                    tu.codTipoUsuario, tu.nomeTipoUsuario from tblusuarioFuncionarioLoja as uc inner join tblusuario as u on 
+                    (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja) 
+                    inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario);";
 			
 			$select = mysql_query($sql);
 			
@@ -34,7 +39,7 @@
 				$listaFuncionario[$cont]->codFuncionarioLoja = $rs['codFuncionarioLoja'];
                 $listaFuncionario[$cont]->nomeFuncionarioLoja = $rs['nomeFuncionarioLoja'];
 				$listaFuncionario[$cont]->cpfFuncionarioLoja = $rs['cpfFuncionarioLoja'];
-				$listaFuncionario[$cont]->senhaFuncionario = $rs['senha'];
+				$listaFuncionario[$cont]->nomeTipoUsuario = $rs['nomeTipoUsuario'];
 				$listaFuncionario[$cont]->usuarioFuncionario = $rs['usuario'];
 				
 				$cont++;							
@@ -71,7 +76,18 @@
 		}
 		
 		public function update($codFuncionarioLoja) {
-		
+			$sql = "update tblfuncionarioLoja set nomeFuncionarioLoja = '".$novofuncionario->nomeFuncionarioLoja."' , cpfFuncionarioLoja = '".$novofuncionario->cpfFuncionarioLoja."')";
+			$last_id = "set @id = LAST_INSERT_ID()";
+			$sql2 ="insert into tblusuario (usuario, senha, codTipoUsuario) values('".$novofuncionario->usuarioFuncionario."','".$novofuncionario->senhaFuncionario."','".$novofuncionario->codTipoUsuario."')";
+			$sql3 = "insert into tblusuariofuncionarioloja (codFuncionarioLoja, codUsuario) values (@id, LAST_INSERT_ID())";
+					
+			mysql_query($sql);
+            mysql_query($last_id);
+			mysql_query($sql2);
+			if(mysql_query($sql3))
+				return true;
+			else
+				return false;
 		
 		}
 		
@@ -88,28 +104,17 @@
 		public function insertFuncionario($novofuncionario) {
 			
 			$sql = "insert into tblfuncionarioLoja (nomeFuncionarioLoja,cpfFuncionarioLoja) values ('".$novofuncionario->nomeFuncionarioLoja."', '".$novofuncionario->cpfFuncionarioLoja."')";
-			$last_id = "select LAST_INSERT_ID()";
-			$sql2 ="insert into tblusuario (usuario, senha) values('".$novofuncionario->usuarioFuncionario."','".$novofuncionario->senhaFuncionario."')";
-			$sql3 = "insert into tblusuariofuncionarioloja (codUsuario, codFuncionarioLoja) values ('".$last_id."',LAST_INSERT_ID())";
-			
-			"insert into tblfuncionarioLoja (nomeFuncionarioLoja,cpfFuncionarioLoja) values ('funcio', '123456');
-
-				set @id = LAST_INSERT_ID();
-
-				insert into tblusuario (usuario, senha) values('usuario ','senha');
-
-				insert into tblusuariofuncionarioloja (codFuncionarioLoja, codUsuario) values (@id, LAST_INSERT_ID());"
-				
-			echo($sql);	
-			echo($sql2);	
-			echo($sql3);	
-			//mysql_query($sql);
-			//mysql_query($sql2);
-			//mysql_query($sql3);
-			/*if(mysql_query($sql3))
+			$last_id = "set @id = LAST_INSERT_ID()";
+			$sql2 ="insert into tblusuario (usuario, senha, codTipoUsuario) values('".$novofuncionario->usuarioFuncionario."','".$novofuncionario->senhaFuncionario."','".$novofuncionario->codTipoUsuario."')";
+			$sql3 = "insert into tblusuariofuncionarioloja (codFuncionarioLoja, codUsuario) values (@id, LAST_INSERT_ID())";
+					
+			mysql_query($sql);
+            mysql_query($last_id);
+			mysql_query($sql2);
+			if(mysql_query($sql3))
 				return true;
 			else
-				return false;*/
+				return false;
 		
 		}   
 }		

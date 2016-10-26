@@ -62,8 +62,8 @@
 			?>
         </td>
         <td class="col_consulta">
-             <?php 
-					echo($rs[$cont]->senhaFuncionario);
+            <?php 
+					echo($rs[$cont]->nomeTipoUsuario);
 			?>
         </td>
         <td class="col_consulta" >

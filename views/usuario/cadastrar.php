@@ -33,7 +33,7 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Tipo:</td>
-                    <td >  <select size="1" name="slecioneTipoUsuario">
+                    <td >  <select size="1" name="codTipoUsuario">
 				     
                     <option selected value="Selecione">Selecione:</option>
                          <?php

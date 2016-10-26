@@ -9,6 +9,7 @@
 		public $senhaFuncionario;
 		public $confirmacaoSenha;
 		public $codFuncionarioLoja;
+        public $codTipoUsuario;
 		
 		 public function __construct(){
 		
@@ -27,6 +28,8 @@
 					$this->senhaFuncionario=$_POST['txtSenha'];
 					$this->confirmacaoSenha=$_POST['txtConfirmaSenha'];
 					$this->codFuncionarioLoja=$_POST['codFuncionarioLoja'];
+                    $this->codTipoUsuario=$_POST['codTipoUsuario'];
+
 				}
 		 }
 		 
@@ -103,11 +106,12 @@
 			 $funcionario->cpfFuncionarioLoja = $this->cpfFuncionarioLoja;
 			 $funcionario->usuarioFuncionario = $this->usuarioFuncionario;
 			 $funcionario->senhaFuncionario = $this->senhaFuncionario;
-			 $funcionario::insertFuncionario($funcionario);
+             $funcionario->codTipoUsuario = $this->codTipoUsuario;
+			 //$funcionario::insertFuncionario($funcionario);
 			  //header("location: ../funcionario/index");
-			 /*if($funcionario::insertFuncionario($funcionario)){
+			 if($funcionario::insertFuncionario($funcionario)){
 				 header("location: ../funcionario/index");
-			 }	*/		 
+			 }		 
 		}	
 	}
 	
