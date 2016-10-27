@@ -19,7 +19,17 @@ nav{
     height: 76px;
     float: left;
     margin: 10px 0;
+	background-image:url(../imagem/menu_celular.png);
 }
+
+.navprodutos{
+	width: 640px;
+    height: 76px;
+    float: left;
+    margin: 10px 0;
+	text-align:center;
+}
+
 #logo{
     width: 19%;
     height: 85px;
@@ -37,6 +47,9 @@ nav{
 }
 .clear{
     clear: both;
+}
+.menu-cel{
+	display:none;
 }
 nav#menu_{
     width: 100%;
@@ -59,6 +72,50 @@ nav#menu_{
     margin-right: 4%;
 }
 #menu li:hover{
+	color:#E08A2C;
+	cursor:pointer;
+    padding-bottom: 12px;
+	border-bottom: solid 2px #E08A2C;
+}
+
+/* menu produto */
+.menu_produto{
+    width: 100px;
+    height: auto;
+    float: left;
+    border-bottom: solid 6px #00B348;
+	background-color:#003300;
+}
+.clear{
+    clear: both;
+}
+.menu-cel{
+	display:none;
+}
+nav#menu_produto{
+    width: 100%;
+    height: 76px;
+    float: left;
+    text-align: center;
+}
+#menu_produto{
+	list-style: none;
+	float: left;
+	margin-top: 45px;
+	width: 100%;
+	/*background-color:#F1F1F1;*/
+	margin-top:1px;
+}
+#menu_produto li{
+    display: inline;
+    height: 34px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    margin-right: 4%;
+	margin-top:-30px;
+}
+#menu_produto li:hover{
 	color:#E08A2C;
 	cursor:pointer;
     padding-bottom: 12px;
@@ -1596,9 +1653,9 @@ nav{
     width: 80px;
     height: 80px;
     float: left;
-	background-image:url(../imagem/menu_celular.png);
 	margin-left:40px;
 	margin-top:-120px;
+	cursor:pointer;
 }
 #logo{
     width: 100%;
@@ -1609,10 +1666,11 @@ nav{
 	
     
 }
-.menu{
+/*.menu{
     width: 100%;
     height: auto;
     float: left;
+	
 	
 	
 }
@@ -1624,6 +1682,7 @@ nav#menu_{
     height: 76px;
     float: left;
     text-align: center;
+	
 }
 #menu{
 	list-style: none;
@@ -1631,6 +1690,7 @@ nav#menu_{
 	margin-top: 45px;
 	width: 100%;
 	margin-top:-2px;
+	
 }
 #menu li{
     display: inline;
@@ -1639,6 +1699,7 @@ nav#menu_{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     margin-right: 7%;
+	display:none;
 }
 #menu li:hover{
 	color:#E08A2C;
@@ -1653,7 +1714,44 @@ nav#menu_{
 .link:hover{
 	color:#E08A2C;
 	cursor:pointer;
+}*/
+
+/* menu celular */
+
+.sub-menu li{
+	width:150px;
+	height:40px;
+	display:none;
+	background-color:#000;
+	font-size:40px;
+	text-align:center;
+	border-radius: 5px 5px 5px 5px;
+	font-family: Arial,Helvetica,sans-serif;
 }
+
+
+
+.menu-cel{
+	width:35px;
+	height:35px;
+	background-image:url(../imagem/menu_cel.png);
+	border-radius:5px 5px 5px 5px ;
+	margin-top:-50px;
+	margin-left:30px;
+	
+}
+
+.menu-cel:hover > .sub-menu li{
+	display:block;
+}
+
+
+.menu-cel li:hover{
+	color:#E08A2C;
+	cursor:pointer;
+	
+}
+
 
 .botoes{
     width: 15%;
@@ -1953,7 +2051,7 @@ span {
 .categoria1{
 	width: 450px;
 	height: 450px;
-	background-image:url(../imagem/alimentacao.png);
+	background-image:url(../imagem/alimentacao_cel.png);
 	float: left;
 	border-radius: 60%;
 	margin-left:90px;
@@ -1961,7 +2059,7 @@ span {
 .categoria2{
 	width: 450px;
 	height: 450px;
-	background-image:url(../imagem/alimentacao3.png);
+	background-image:url(../imagem/alimentacao3_cel.png);
 	float: left;
 	border-radius: 60%;
 	margin-left:90px;
@@ -1969,7 +2067,7 @@ span {
 .categoria3{
 	width: 450px;
 	height: 450px;
-	background-image:url(../imagem/alimentacao2.png);
+	background-image:url(../imagem/alimentacao2_cel.png);
 	float: left;
 	border-radius: 60%;
 	margin-left:90px;
@@ -2072,7 +2170,7 @@ span {
 	width: 640px;
     height: 320px;
 	float:left;
-	background-image:url(../imagem/prato_celular1.png);
+	background-image:url(../imagem/prato_cel1.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	
@@ -2081,7 +2179,7 @@ span {
 	width: 640px;
     height: 320px;
 	float:left;
-	background-image:url(../imagem/prato_celular1.png);
+	background-image:url(../imagem/prato_cel1.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -2089,7 +2187,7 @@ span {
 	width: 640px;
     height: 320px;
 	float:left;
-	background-image:url(../imagem/prato_celular1.png);
+	background-image:url(../imagem/prato_cel1.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -2097,7 +2195,7 @@ span {
 	width: 640px;
     height: 320px;
 	float:left;
-	background-image:url(../imagem/prato_celular1.png);
+	background-image:url(../imagem/prato_cel1.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -2353,7 +2451,7 @@ input.btn_monteja{
     width: 630px;
     height: 320px;
 	float:left;
-	background-image:url(../imagem/prato_celular1.png);
+	background-image:url(../imagem/prato_cel1.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -2361,7 +2459,7 @@ input.btn_monteja{
     width: 630px;
     height: 320px;
 	float:left;
-	background-image:url(../imagem/prato_celular1.png);
+	background-image:url(../imagem/prato_cel1.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -2369,7 +2467,7 @@ input.btn_monteja{
     width: 630px;
     height: 320px;
 	float:left;
-	background-image:url(../imagem/prato_celular1.png);
+	background-image:url(../imagem/prato_cel1.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -2377,7 +2475,7 @@ input.btn_monteja{
     width: 630px;
     height: 320px;
 	float:left;
-	background-image:url(../imagem/prato_celular1.png);
+	background-image:url(../imagem/prato_cel1.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -2494,31 +2592,27 @@ input.btn_monteja{
 }
 
 .parceiro{
-    width:200px;
+    width:640px;
     height:auto;
     float: left;
     margin-left:25px;
-    margin-top: 50px;
     margin-bottom: 50px;
-	background-color:#000;
     
 }
 
 .img_parceiro{
-    width: 300px;
-    height: 300px;
-    margin-left:50px;
+    width: 350px;
+    height: 350px;
+    margin-left:130px;
     border-radius: 60%;
-    border: solid 1px;
-	background-color:#000;
-   /* background-image: url(../imagem/smart.png);
-    background-repeat: no-repeat;*/
+	background-image:url(../imagem/smart_cel.png);
+	
     
 }
 .nome_parceiro{
     width: 80%;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     color: #FE7101;
     text-align: center;
     margin-top: 5px;
@@ -2528,7 +2622,7 @@ input.btn_monteja{
 .tel_parceiro{
     width: 80%;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 25px;
     color: #333;
     text-align: center;
     margin-top: 5px;
@@ -2538,7 +2632,7 @@ input.btn_monteja{
 .desc_parceiro{
     width: 80%;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 25px;
     color: #666;
     text-align: center;
     margin-top: 5px;
@@ -2547,12 +2641,11 @@ input.btn_monteja{
 }
 
 .area_contato{
-    width: 100%;
+    width: 640px;
     height: auto;
     color: #666666;
     float: left;
     margin-top: 20px;
-	background-color:#000;
 }
 .titulo_area_contato{
 	font-family:"Chaparral Pro Light";
@@ -2560,6 +2653,7 @@ input.btn_monteja{
     color: #666666;
     margin-top: 50px;
     text-align: left;
+	background-color:#006600;
 }
 .imagem_contato{
     width: 100%;
@@ -2572,6 +2666,94 @@ input.btn_monteja{
     float: left;
 	display:none;
 }
+.campo_cel{
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+	color:#333;
+	margin-left:-140px;
+	position:absolute;
+	margin-top:30px;
+	
+}
+.campo_nome{
+    width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_email{
+	width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 60px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+
+.campo_telefone{
+	width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 58px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+
+.campo_msg{
+	width: 450px;
+    background-color: #FFF;
+    margin-left: 60px;
+    margin-bottom: 26px;
+    border-radius: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding: 10px;
+    border: solid 3px #FE7101;
+    resize: none;
+    width: 440px;
+}
+input.btn_contato{
+	width: 450px;
+    height: 70px;
+    border: 3px solid #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:35px;
+    border-radius: 10px;
+    background-color: #FE7101;
+    color: #FFFFFF;
+	margin-left:70px;
+}
+.area_mapa{
+    width: 740px;
+    height: 310px;
+    background-image: url(../imagem/mapa_cel.png);
+    color: #666;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+	margin-bottom:50px;
+	margin-top:50px;
+	margin-left:-50px;
+}
+
 .rodape{
 	list-style: outside none none;
 	float: left;
