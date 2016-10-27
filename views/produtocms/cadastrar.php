@@ -5,34 +5,34 @@
 <div class="cadas">Cadastrar Produto</div>
 
 
-    <form  name="frmconsulta" method="post" action="../cms/ConsultaProduto">
+    <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>produtocms/<?php echo($atualizacao)?>">
         <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
         
     </form>
 
-        <form class="frm" name="frmprodutos" method="post" action="">
-            
+        <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>produtocms/<?php echo($atualizacao)?>">
+            <input type="hidden" value="<?php echo($produto->codProduto)?>" name="codProduto"/>
             <table>
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" name="txtnomeProduto" type="text"   value=""    /></td>
+                    <td><input class="caixa_frm" name="txtnomeProduto" type="text"   value="<?php echo($produto->nomeProduto)?>"    /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Carboidrato:</td>
-                    <td><input class="caixa_frm"  name="txtcarboidratoProduto" type="text"  value=""  /></td>
+                    <td><input class="caixa_frm"  name="txtcarboidratoProduto" type="text"  value="<?php echo($produto->carboidratoProduto)?>"  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Calorias:</td>
-                    <td><input class="caixa_frm" name="txtcaloriasProduto"  type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtcaloriasProduto"  type="text" value="<?php echo($produto->caloriaProduto)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Valor Energético:</td>
-                    <td><input class="caixa_frm" name="txtevlrenergeticoProduto" type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtevlrenergeticoProduto" type="text" value="<?php echo($produto->valorEnergeticoProduto)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Proteina:</td>
-                    <td><input class="caixa_frm" name="txtproteinaProduto" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtproteinaProduto" type="text" value="<?php echo($produto->proteinaProduto)?>"  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Sódio:</td>

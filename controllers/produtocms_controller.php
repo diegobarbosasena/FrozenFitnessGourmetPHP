@@ -3,24 +3,46 @@
 	
 	class produtocms_controller {
 		
-		public $usuario;
-		public $senha;
-        
+		public $codProduto;
+		public $nomeProduto;
+		public $precoProduto;
+		public $descricaoProduto;
+		public $caloriaProduto;
+		public $valorEnergeticoProduto;
+		public $carboidratoProduto;
+		public $proteinaProduto;
+		public $sodioProduto;
+		public $gordurasProduto;
+        public $imagemProduto;
+		public $codcategoriaProduto;
         
         public function __construct(){
             
             require_once('models/produto_class.php');
-     
+    
+        }
+		
+		public function iniciaAtributos(){
+			
+			
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
-				if(isset($_POST['txtusuario']) && isset($_POST['codUsuario'])){
-                    
-                    $this->usuario=$_POST['txtusuario'];
-                    $this->senha=$_POST['txtsenha'];
-                    //$this->entrar();
-				}
-            }
-        }
+                                  
+                    $this->codProduto=$_POST['codPrato'];
+					$this->nomeProduto= $_POST['txtnomePrato'];
+                    $this->precoProduto=$_POST['txtprecoPrato'];
+					$this->descricaoProduto= $_POST['txtdescricaoPrato'];
+                    $this->caloriaProduto=$_POST['txtcaloria'];
+					$this->valorEnergeticoProduto= $_POST['txtvalorEnergetico'];
+                    $this->carboidratoProduto=$_POST['txtcarboidrato'];
+					$this->proteinaProduto= $_POST['txtproteina'];
+                    $this->sodioProduto=$_POST['txtsodio'];
+					$this->gordurasProduto= $_POST['txtgorduras'];
+					$this->codcategoriaProduto = $_POST['txtcategoriaPrato'];
+                    $this->imagemProduto = basename($_FILES["imagemPrato"]["name"]);
+			}     
+			
+		}
         
         public function index(){
             
@@ -42,8 +64,6 @@
 		public function cadastrar(){
 			
 			$atualizacao = 'inserir';
-			//$usuario=new Usuario();
-            //echo('CHEGOU');
             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
@@ -64,61 +84,64 @@
 		
 		public function listarTodos (){
 			 
-            $listarUsuarios = new Usuario();
+            $listarProdutos = new Produto();
             
-            return $listarUsuarios->selectAll();
+            return $listarProdutos->selectAll();
 			  
 		}
 		
-		public function buscar($codUsuario){
+		public function buscar($codProduto){
             
-            $buscarUsuario = new Usuario();
+            $buscarProduto = new Produto();
             
-            return $buscarUsuario->selectById();
+            return $buscarProduto->selectById();
 		  
 		}
 		
-		public function atualizar($codUsuario) {
+		public function atualizar() {
 		
-		
+			$produto = new Produto();
+            
+            $produto->codProduto = $this->codProduto;
+			$produto->nomeProduto = $this->nomeProduto;
+			$produto->descricaoProduto = $this->descricaoProduto;
+			$produto->caloriaProduto = $this->caloriaProduto;
+			$produto->valorEnergeticoProduto = $this->valorEnergeticoProduto;
+			$produto->carboidratoProduto = $this->carboidratoProduto;
+			$produto->proteinaProduto = $this->proteinaProduto;
+			$produto->sodioProduto = $this->sodioProduto;
+			$produto->gordurasProduto = $this->gordurasProduto;
+			$produto->codcategoriaProduto = $this->codcategoriaProduto;
+			$produto->imagemProduto = $this->getImg();
+            	
+			$produto::update();
 		}
 		
-		public function deletar($codUsuario) {
-            $DeletarUsuario = new Usuario();
+		public function deletar($codProduto) {
+            $Deletar = new Produto();
 
-            $DeletarUsuario->Delete($cod);	
+            $Deletar->Delete($codProduto);	
 		}
 		
 		public function inserir() {
 		
-            $novoUsuario = new Usuario();
+            $produto = new Produto();
             
-            $novoUsuario->usuario = $this->usuario;
-			$novoUsuario->senha = $this->senha;
+            $produto->codProduto = $this->codProduto;
+			$produto->nomeProduto = $this->nomeProduto;
+			$produto->descricaoProduto = $this->descricaoProduto;
+			$produto->caloriaProduto = $this->caloriaProduto;
+			$produto->valorEnergeticoProduto = $this->valorEnergeticoProduto;
+			$produto->carboidratoProduto = $this->carboidratoProduto;
+			$produto->proteinaProduto = $this->proteinaProduto;
+			$produto->sodioProduto = $this->sodioProduto;
+			$produto->gordurasProduto = $this->gordurasProduto;
+			$produto->codcategoriaProduto = $this->codcategoriaProduto;
+			$produto->imagemProduto = $this->getImg();
             	
-			$novoUsuario::insert($novousuario);
+			$produto::insert($produto);
 		}
         
-        public function entrar(){
-            
-            $loginUsuario = new Usuario();
-            
-            $loginCliente = $loginUsuario->loginCliente($this->usuario,$this->senha);
-            $loginFunc = $loginUsuario->loginFunc($this->usuario,$this->senha);
-                        
-            if($loginCliente){
-                require_once('controllers/home_controller.php');
-                header("location: ../home/index");
-            }elseif($loginFunc){
-                require_once('controllers/cms_controller.php');
-                header("location: ../objetivo/index");
-            }else{
-                echo"<script type='text/javascript'>";
-                    echo "alert('Usuario ou senha incorretos');";
-                echo "</script>";  
-                //header("location: ../home/index");
-            }
-        }
 	}
 
 ?>
