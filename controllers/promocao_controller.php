@@ -7,24 +7,28 @@
 		public $dtInicial;
 		public $dtFinal;
 		public $valorDesconto;
+		public $codPromocao;
         
         
         public function __construct(){
             
             require_once('models/promocao_class.php');
      
-            if($_SERVER['REQUEST_METHOD']==='POST')
+	         }
+		
+		public function iniciaAtributo(){
+		
+			 if($_SERVER['REQUEST_METHOD']==='POST')
             {
-				if(isset($_POST['txtNomePromocao']) && isset($_POST['codPromocao'])){
-                    
+			
+					$this->codPromocao=$_POST['codPromocao'];
                     $this->nomePromocao=$_POST['txtNomePromocao'];
                     $this->dtInicial=$_POST['txtDtInicial'];
 					$this->dtFinal=$_POST['txtDtFinal'];
-					 $this->valorDesconto=$_POST['txtDesconto'];
-                    
-				}
+					$this->valorDesconto=$_POST['txtDesconto'];
+				
             }
-        }
+		}
         
         
         
@@ -46,7 +50,7 @@
         
         
 		public function cadastrar(){
-			
+			$this->iniciaAtributo();
 			$atualizacao = 'inserir';
 			$promocao=new Promocao();
             //echo('CHEGOU');
@@ -56,8 +60,8 @@
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Usuario();
-				$promocao=$c->selectById($id);
+				$p = new Promocao();
+				$promocao=$p->selectById($id);
 			}
             require_once('views/promocao/cadastrar.php');
 		}
@@ -80,6 +84,7 @@
 		}
 		
 		public function atualizar($codPromocao) {
+		$this->iniciaAtributo();
 		
 		
 		}
@@ -94,8 +99,10 @@
 		
             $novoPromocao = new Promocao();
             
-            $novoPromocao->usuario = $this->usuario;
-			$novoPromocao->senha = $this->senha;
+            $novoPromocao->nomePromocao = $this->nomePromocao;
+			$novoPromocao->dtInicial = $this->dtInicial;
+			$novoPromocao->dtFinal = $this->dtFinal;
+			$novoPromocao->valorDesconto = $this->valorDesconto;
             	
 			$novoPromocao::insert($novoPromocao);
 		}

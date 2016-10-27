@@ -4,6 +4,9 @@
 		
 		public $codSobreLoja;
 		public $imgSobreLoja;
+		public $imgSobreLoja1;
+		public $imgSobreLoja2;
+		public $imgSobreLoja3;
 		public $tituloSobreLoja;
 		public $historiaSobreLoja;
 		public $codEmpresa;
@@ -18,7 +21,7 @@
         }
         		
 				
-		public function insert($categoriaPrato) {
+		public function insert($sobreLoja) {
 
 			$sql = "";
 			
@@ -41,6 +44,9 @@
                 $sobreLoja = new Estoque();
                 $sobreLoja->codSobreLoja = $rs['codSobreLoja'];
                 $sobreLoja->imgSobreLoja = $rs['imgSobreLoja'];
+				$sobreLoja->imgSobreLoja1 = $rs['imgSobreLoja1'];
+				$sobreLoja->imgSobreLoja2 = $rs['imgSobreLoja2'];
+				$sobreLoja->imgSobreLoja3 = $rs['imgSobreLoja3'];
 				$sobreLoja->tituloSobreLoja = $rs['tituloSobreLoja'];
                 $sobreLoja->historiaSobreLoja = $rs['historiaSobreLoja'];
 				$sobreLoja->codEmpresa = $rs['codEmpresa'];
@@ -52,17 +58,20 @@
 							
 		}
 		
-		public function selectById($codPrato){
+		public function selectById($codSobreLoja){
 			
-			$sql = "=".$codPrato;
+			$sql = "=".$codSobreLoja;
 			
 			$select = mysql_query($sql);
 			
 			if($rs = mysql_fetch_array($select)){
 				
-				$sobreLoja = new Estoque();
+				$sobreLoja = new SobreLoja();
                 $sobreLoja->codSobreLoja = $rs['codSobreLoja'];
                 $sobreLoja->imgSobreLoja = $rs['imgSobreLoja'];
+				$sobreLoja->imgSobreLoja1 = $rs['imgSobreLoja1'];
+				$sobreLoja->imgSobreLoja2 = $rs['imgSobreLoja2'];
+				$sobreLoja->imgSobreLoja3 = $rs['imgSobreLoja3'];
 				$sobreLoja->tituloSobreLoja = $rs['tituloSobreLoja'];
                 $sobreLoja->historiaSobreLoja = $rs['historiaSobreLoja'];
 				$sobreLoja->codEmpresa = $rs['codEmpresa'];
@@ -83,7 +92,7 @@
 				return false;		
 		}
 		
-		public function delete($codCategoriaPrato) {
+		public function delete($codSobreLoja) {
 		
 			$sql = "";
 

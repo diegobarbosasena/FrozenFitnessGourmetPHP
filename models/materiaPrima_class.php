@@ -6,6 +6,8 @@
 	public $nomeMateria;
 	public $precoMateria;
 	public $descricaoMateria;
+	public $codCategoriaMateria;
+	public $nomeCategoriaMateria;
 	
 		
 	 public function __construct(){
@@ -18,18 +20,36 @@
         }
         		
 				
-		public function insert($categoriaPrato) {
+		public function insert($materiaPrima) {
 
-			$sql = "";
+			$sql = "insert into tblMateriaPrima (nomeMateria, precoMateria, descricaoMateria) 
+					values ('".$materiaPrima->nomeMateria."', '".$materiaPrima->precoMateria."', '".$materiaPrima->descricaoMateria."')";
 			
-			if(mysql_query($sql))
+			mysql_query($sql);
+			//echo($sql);
+				
+			
+			$sql2 = "insert into tblCatMateria (codMateria,codCategoriaMateria) values (LAST_INSERT_ID(),'".$materiaPrima->codCategoriaMateria."')";
+			//echo($sql2);
+			if(mysql_query($sql2))
 				return true;
 			else
-				return false;
+				return false;	
+				
 			
 		}		
 		
 		public function selectAll (){
+		
+			$sql = "select m.codMateria,m.nomeMateria, m.precoMateria, m.descricaoMateria,
+					c.nomeCategoriaMateria, c.codCategoriaMateria
+					from tblMateriaPrima as m
+					inner join tblCatMateria as cat
+					on (m.codMateria = cat.codMateria)
+					inner join tblCategoriaMateria as c
+					on(cat.codCategoriaMateria = c.codCategoriaMateria);";
+					
+			//echo("foi".$sql);
             
 			$select = mysql_query($sql);
 						
@@ -43,49 +63,67 @@
                 $materiaPrima->nomeMateria = $rs['nomeMateria'];
 				$materiaPrima->precoMateria = $rs['precoMateria'];
                 $materiaPrima->descricaoMateria = $rs['descricaoMateria'];
+				$materiaPrima->codCategoriaMateria = $rs['codCategoriaMateria'];
+				$materiaPrima->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
+				
 				
                 
                 
 				$listaMateria[] = $materiaPrima;                              							
 			}
 			
-            return $listaCategoria;   
+            return $listaMateria;   
 							
 		}
 		
-		public function selectById($codPrato){
+		public function selectById($codMateria){
 			
-			$sql = "=".$codPrato;
-			
+			$sql = "select m.codMateria,m.nomeMateria, m.precoMateria, m.descricaoMateria,
+					c.nomeCategoriaMateria, c.codCategoriaMateria
+					from tblMateriaPrima as m
+					inner join tblCatMateria as cat
+					on (m.codMateria = cat.codMateria)
+					inner join tblCategoriaMateria as c
+					on(cat.codCategoriaMateria = c.codCategoriaMateria);";
+					
+			//echo("foi".$sql);
+            
 			$select = mysql_query($sql);
-			
-			if($rs = mysql_fetch_array($select)){
-				
-				$materiaPrima = new MateriaPrima();
+						
+            
+            $listaMateria = array();
+            
+			while($rs = mysql_fetch_array($select)){
+                	  
+                $materiaPrima = new MateriaPrima();
                 $materiaPrima->codMateria = $rs['codMateria'];
                 $materiaPrima->nomeMateria = $rs['nomeMateria'];
 				$materiaPrima->precoMateria = $rs['precoMateria'];
                 $materiaPrima->descricaoMateria = $rs['descricaoMateria'];
-
-											
+				$materiaPrima->codCategoriaMateria = $rs['codCategoriaMateria'];
+				$materiaPrima->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
+				
 			}
 			
-			return $prato;
+			return $materiaPrima;
 		}
 		
 		public function update() {
-					
-			$sql = "";     
+		
+		
+		$sql = "update tblMateriaPrima set nomeMateria = '".$this->nomeMateria."', precoMateria = '".$this->precoMateria."', descricaoMateria = '".$this->descricaoMateria."' where codMateria=".$this->codMateria;     
 				
 			if(mysql_query($sql))
 				return true;
 			else
 				return false;		
 		}
+					
+			
 		
-		public function delete($codCategoriaPrato) {
+		public function delete($codMateria) {
 		
-			$sql = "";
+			$sql = "delete from tblMateriaPrima where codMateria=".$codMateria;
 
 			if(mysql_query($sql))
 				return true;

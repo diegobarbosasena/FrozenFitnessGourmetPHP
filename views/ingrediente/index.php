@@ -20,7 +20,7 @@
         </td>
         
         <td class="col_consulta">
-           Caloria
+           Categoria
         </td>
         <td class="col_consulta">
            Descrição
@@ -31,45 +31,43 @@
         <td class="col_consulta">
             Opções
         </td>
-    </tr>
-    <tr class="linha_consulta">
-        <td class="col_consulta">
-            Farinha de trigo
-            
-        </td>
+        <?php
+			require_once('controllers/ingrediente_controller.php');
+			
+			$controllerIngrediente = new ingrediente_controller();
+			
+			$rs=$controllerIngrediente->ListarTodos();
+			
+			$cont=0;
+		
+			while ($cont < count($rs)){
+		?>
         
-        <td class="col_consulta">
-           5000 kcal
-        </td>
-        <td class="col_consulta">
-        <div class="overflow" >
-          As gorduras localizadas no nosso corpo não apareceram
-        </div>
-        </td>
-		 <td class="col_consulta">
-			R$ 12,00
-        </td>
-        <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a>
-        </td>
+
     </tr>
     <tr class="linha_consulta">
         <td class="col_consulta">
-            
+            <?php echo ($rs[$cont]->nomeMateria);?>
         </td>
        
         <td class="col_consulta">
-           
+           <?php echo ($rs[$cont]->nomeCategoriaMateria);?>
         </td>
         <td class="col_consulta">
-          
+          <?php echo ($rs[$cont]->descricaoMateria);?>
         </td>
 		 <td class="col_consulta">
-          
+           <?php echo ($rs[$cont]->precoMateria);?>
         </td>
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a>
-        </td>
+             <a href="<?php echo(PROJECTDIR)?>ingrediente/cadastrar/<?php echo($rs[$cont]->codMateria)?>" class="link"> Editar </a>|<a href="<?php echo(PROJECTDIR)?>ingrediente/deletar/<?php echo($rs[$cont]->codMateria)?>" class="link">Excluir </a>        </td>
     </tr>
+    <?php 
+                
+            $cont++; 
+            
+            
+            }
+    ?>
 
 </table>

@@ -6,7 +6,7 @@
 
 
 
-        <form class="frm" name="frmprodutos" method="post" action="">
+        <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>sobre/<?php echo($atualizacao)?>">
             
             <table>
                   
@@ -29,8 +29,8 @@
                   </tr> 
                 
                  <tr>
-                    <td class="campo_frm">Imagem :</td>
-                    <td><input  name="img1" type="file" value=""  /></td>
+                    <td class="campo_frm">Imagem 1 :</td>
+                    <td><input  name="imgSobreLoja1" type="file" value=""  /></td>
                   </tr>
                 
                  <tr>

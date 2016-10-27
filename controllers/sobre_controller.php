@@ -6,9 +6,9 @@
 		public $imgSobreLoja;
 		public $tituloSobreLoja;
 		public $historiaSobreLoja;
-		public $img1;
-		public $img2;
-		public $img3;
+		public $imgSobreLoja1;
+		public $imgSobreLoja2;
+		public $imgSobreLoja3;
 		public $codEmpresa;
 		
         
@@ -26,28 +26,34 @@
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
 					
-					 $this->tituloSobreLoja=$_POST['txtTituloSobreLoja'];
-					 $this->historiaSobreLoja=$_POST['txtHistoria'];
-					 $this->imgSobreLoja = basename($_FILES["imgSobreLoja"]["name"]);	
-					 $this->img1 = basename($_FILES["img1"]["name"]);
-					 $this->img2 = basename($_FILES["img2"]["name"]);	
-					 $this->img3 = basename($_FILES["img3"]["name"]);						
+					 //$this->tituloSobreLoja=$_POST['txtTituloSobreLoja'];
+					// $this->historiaSobreLoja=$_POST['txtHistoria'];
+					 //$this->imgSobreLoja = basename($_FILES["imgSobreLoja"]["name"]);	
+					 $this->imgSobreLoja1 = basename($_FILES["imgSobreLoja1"]["name"]);
+					 echo("AQUI".$this->imgSobreLoja1);
+					 //$this->imgSobreLoja2 = basename($_FILES["imgSobreLoja2"]["name2"]);	
+					 //$this->imgSobreLoja3 = basename($_FILES["imgSobreLoja3"]["name3"]);						
 				
-            }       
+            }      
+			
+		} 
 		
-		/*public function getImg(){
+		public function getImg ($fileimg){
 			
 			$dir="conteudo/imagem/";
 			
-			$file= $dir . $this->imgSobreLoja;
+			$file= $dir . $fileimg;
+			/*$file1= $dir . $this->imgSobreLoja1;
+			$file2= $dir . $this->imgSobreLoja2;
+			$file3= $dir . $this->imgSobreLoja3;*/
 			
-            if(strstr($this->imgSobreLoja, '.jpg') || strstr($this->imgSobreLoja, '.png')){
-                if(move_uploaded_file($_FILES["imgSobreLoja"]["tmp_name"],$file)){
+            if(strstr($fileimg, '.jpg') || strstr($fileimg, '.png')){
+                if(move_uploaded_file($_FILES["imgSobreLoja1"]["tmp_name"],$file)  ){
 					return $file;
                 }else{
 					return null;
 				}
-			}*/
+			}
         }
         
 		public function index(){
@@ -70,14 +76,14 @@
 			
 			$atualizacao = 'inserir';
 			$sobreLoja=new SobreLoja();
-			if(isset($_GET['id']) && $_GET['id'] != ""){
+			/*if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
 				$c = new SobreLoja();
 				$sobreLoja=$c->selectById($id);
-			}
+			}*/
 			
 			
 			require_once('views/sobre/cadastrar.php');
@@ -127,17 +133,16 @@
 		public function inserir() {
              $this->iniciaAtributo();
 			$sobreLoja = new SobreLoja();
-			$sobreLoja->tituloSobreLoja = $this->tituloSobreLoja;
+			/*$sobreLoja->tituloSobreLoja = $this->tituloSobreLoja;
 			$sobreLoja->historiaSobreLoja = $this->historiaSobreLoja;
-			$sobreLoja->imgSobreLoja = $this->imgSobreLoja;
-			$sobreLoja->img1 = $this->img1;
-			$sobreLoja->img2 = $this->img2;
-			$sobreLoja->img3 = $this->img3;
-			$_SESSION['metodo'] = 'inserir';
-			if($sobreLoja::insert($sobreLoja)){
+			$sobreLoja->imgSobreLoja = $this->imgSobreLoja;*/
+			$sobreLoja->imgSobreLoja1 = $this->getImg($this->imgSobreLoja1);
+			echo($sobreLoja->imgSobreLoja1);
+			
+			/*if($sobreLoja::insert($sobreLoja)){
 				
 				header("location: ../sobre/index");
-			}
+			}*/
 		}
 	}
 

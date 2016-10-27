@@ -6,36 +6,55 @@
 
 <div class="cadas">Cadastrar Igrediente</div>
 
+		
 
-        <form class="frm" name="frmprodutos" method="post" action="">
-            
+        <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>ingrediente/<?php echo($atualizacao) ?>">
+            <input type="hidden" value="<?php echo($materiaPrima->codMateria)?>" name="codMateria"/>
             <table>
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input name="txtIgrediente" class="caixa_frm" type="text"   value=""    /></td>
+                    <td><input name="txtIgrediente" class="caixa_frm" type="text"   value="<?php echo($materiaPrima->nomeMateria)?>"/></td>
                   </tr>
 				   <tr>
                     <td class="campo_frm">Preço:</td>
-                    <td><input name="txtPrecoMateria" class="caixa_frm" type="text"   value=""    /></td>
+                    <td><input name="txtPrecoMateria" class="caixa_frm" type="text"   value="<?php echo ($materiaPrima->precoMateria);?>"/>
+                    </td>
                   </tr>
                 
                 <tr>
                     <td class="campo_frm">Categoria:</td>
-                    <td >  <select size="1" name="categoriaIgrediente">
+                    <td >  <select size="1" name="categoriaIngrediente">
+						<option selected value="Selecione">Selecione:</option>
+                          <?php
+                            require_once('controllers/categoria_controller.php');
 
-                            <option selected value="Selecione">Selecione:</option>
+                            $controllerCategoria = new categoria_controller();
 
-                            <option value="2000">2000</option>
+                            $rs=$controllerCategoria->listarTodos();
 
-                            <option value="2001">2001</option>
+                            $cont=0;
+
+                            while ($cont < count($rs)){
+        
+                        ?>  
+
+                            <option value="<?php echo($rs[$cont]->codCategoriaMateria); ?>"><?php echo($rs[$cont]->nomeCategoriaMateria);?></option>
+                        
+       					 <?php
+                            
+                            $cont++;
+                        }
+
+
+                        ?>
 
                         </select>
                     </td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Descrição:</td>
-                    <td><textarea  name="descricaoIgrediente"class="campo_desc" cols="35" rows="8" ></textarea></td> 
+                    <td><textarea  name="descricaoIgrediente"class="campo_desc" cols="35" rows="8" > <?php echo($materiaPrima->descricaoMateria)?></textarea></td> 
                   </tr>  
                 
 

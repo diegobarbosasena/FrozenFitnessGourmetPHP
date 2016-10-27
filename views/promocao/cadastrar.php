@@ -9,25 +9,25 @@
 
 
 
-        <form class="frm" name="frmprodutos" method="post" action="">
-            
+        <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>promocao/<?php echo($atualizacao) ?>">
+             <input type="hidden" value="<?php echo($promocao->codPromocao)?>" name="codPrato"/>
             <table>
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" name="txtNomePromocao"type="text"   value=""    /></td>
+                    <td><input class="caixa_frm" name="txtNomePromocao"type="text"   value="<?php echo($promocao->nomePromocao)?>"    /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Data Inicial:</td>
-                    <td><input class="caixa_frm"  name="txtDtInicial" type="text"  value=""  /></td>
+                    <td><input class="caixa_frm"  name="txtDtInicial" type="text"  value="<?php echo($promocao->dtInicial)?>"  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Data Final:</td>
-                    <td><input class="caixa_frm" name="txtDtFinal"  type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtDtFinal"  type="text" value="<?php echo($promocao->dtFinal)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Valor desconto %:</td>
-                    <td><input class="caixa_frm" name="txtDesconto" type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtDesconto" type="text" value="<?php echo($promocao->valorDesconto)?>" /></td>
                   </tr>
                
 

@@ -18,9 +18,10 @@
         }
         		
 				
-		public function insert($categoriaPrato) {
+		public function insert($promocao) {
 
-			$sql = "";
+			$sql = "insert into tblPromocao (nomePromocao, dtInicial, dtFinal,valorDesconto) values('".$promocao->nomePromocao."','".$promocao->dtInicial."',
+					'".$promocao->dtFinal."','".$promocao->valorDesconto."')";
 			
 			if(mysql_query($sql))
 				return true;

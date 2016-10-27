@@ -3,10 +3,12 @@
 	
 	class ingrediente_controller {
 		
-		
+		public $codMateria;
 		public $nomeMateria;
 		public $precoMateria;
 		public $descricaoMateria;
+		public $codCategoriaMateria;
+		
 		
         
         
@@ -21,12 +23,12 @@
 		
 			 if($_SERVER['REQUEST_METHOD']==='POST')
             {
-			
-					 $this->nomeMateria=$_POST['txtIgrediente'];
+					$this->codMateria=$_POST['codMateria'];
+					$this->nomeMateria=$_POST['txtIgrediente'];
                     $this->descricaoMateria=$_POST['descricaoIgrediente'];
 					$this->precoMateria=$_POST['txtPrecoMateria'];
-                    //$this->entrar();
-				
+					$this->codCategoriaMateria=$_POST['categoriaIngrediente'];
+	
             }
 		}
         
@@ -40,8 +42,8 @@
 				$id = $_GET['id'];
 					$atualizacao = 'atualizar';
 					
-				$c = new MateriaPrima();
-					$materiaPrima=$c->selectById($id);
+				$m = new MateriaPrima();
+					$materiaPrima=$m->selectById($id);
 			}
 			
            require_once('views/ingrediente/index.php');
@@ -52,15 +54,15 @@
 			
 			$atualizacao = 'inserir';
 			$materiaPrima=new MateriaPrima();
-            //echo('CHEGOU');
+           // echo('CHEGOU');
             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new MateriaPrima();
-				$materiaPrima=$c->selectById($id);
+				$m = new MateriaPrima();
+				$materiaPrima=$m->selectById($id);
 			}
             require_once('views/ingrediente/cadastrar.php');
 		}
@@ -82,16 +84,34 @@
 		  
 		}
 		
-		public function atualizar($codMateria) {
+		public function atualizar() {
 			$this->iniciaAtributo();
+			
+			$materiaPrima = new MateriaPrima();
+           
+            $materiaPrima->codMateria=$this->codMateria;
+            $materiaPrima->nomeMateria= $this->nomeMateria;
+            $materiaPrima->precoMateria=$this->precoMateria;
+            $materiaPrima->descricaoMateria= $this->descricaoMateria;
+            $materiaPrima->codCategoriaMateria= $this->codCategoriaMateria;
+            
+           
+			if($materiaPrima->update()){	
+				
+				header("location: ../ingrediente/index/".$this->codMateria);
+			}
 		
 		
 		}
 		
 		public function deletar($codMateria) {
-            $DeletarMateria = new MateriaPrima();
-
-            $DeletarMaria->MateriaPrima($cod);	
+			
+			$materiaPrima = new MateriaPrima();
+			$codMateria = $_GET['id'];
+			
+			if($materiaPrima->delete($codMateria)){
+                header("location: ../../ingrediente/index");
+            }
 		}
 		
 		public function inserir() {
@@ -101,8 +121,13 @@
             $novoMateria->nomeMateria = $this->nomeMateria;
 			$novoMateria->descricaoMateria = $this->descricaoMateria;
 			$novoMateria->precoMateria = $this->precoMateria;
+			$novoMateria->codCategoriaMateria = $this->codCategoriaMateria;
             	
-			$novoMateria::insert($novoMateria);
+			
+				if($novoMateria::insert($novoMateria)){
+				header("location: ../ingrediente/index");
+			}
+			
 		}
 		}
         
