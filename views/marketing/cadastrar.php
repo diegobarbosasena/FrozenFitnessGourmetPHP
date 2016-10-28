@@ -6,7 +6,8 @@
 <div class="cadas"> Slider</div>
 
    
-        <form class="frm" name="frmprodutos" method="post" action="">
+        <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>marketing/<?php echo($atualizacao) ?>">
+		<input type="hidden" value="<?php echo($slider->codSlider)?>" name="codSlider"/>
             
             <table>
                   
@@ -17,7 +18,7 @@
                  
                  <tr>
                     <td class="campo_frm">Imagem Produto:</td>
-                    <td><input name="imgMarketing" type="file" value=""  /></td>
+                    <td><input name="imgFile" type="file" value=""  /></td>
                   </tr>
                      
                 

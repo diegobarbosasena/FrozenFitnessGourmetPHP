@@ -17,43 +17,48 @@
         <td class="col_consulta">
             Imagem
         </td>
-        <td class="col_consulta">
-            Promoção
-        </td>
+        
         
         <td class="col_consulta">
             Opção 
         </td>
+	</tr>
+	
+	 <?php
+			require_once('controllers/marketing_controller.php');
+			
+			$controllerSlider = new marketing_controller();
+			
+			$rs=$controllerSlider->ListarTodos();
+			
+			$cont=0;
+		
+			while ($cont < count($rs)){
+		?>   
         
     <tr class="linha_consulta">
         <td class="col_consulta">
-            Frozen Fitness Gourmet
+             <?php echo ($rs[$cont]->tituloSlider);?>
         </td>
         <td class="col_consulta">
             
         </td>
-        <td class="col_consulta">
-            
-        </td>
+        
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> 
+            <a href="<?php echo(PROJECTDIR)?>marketing/cadastrar/<?php echo($rs[$cont]->codSlider) ?>" class="link"> Editar </a>|
+			<a href="<?php echo(PROJECTDIR)?>marketing/deletar/<?php echo($rs[$cont]->codSlider) ?>" class="link">Excluir </a>
         </td>
         
     </tr>
-    <tr class="linha_consulta">
-        <td class="col_consulta">
-            Frozen Fitness Gourmet
-        </td>
-        <td class="col_consulta">
+	
+	<?php 
+                
+            $cont++; 
             
-        </td>
-        <td class="col_consulta">
             
-        </td>
-        <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> 
-        </td>
-        
-    </tr>
+            }
+	?>
+    
+   
 
 </table>

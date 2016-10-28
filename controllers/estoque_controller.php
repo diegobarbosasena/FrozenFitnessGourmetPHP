@@ -2,7 +2,7 @@
 <?php
 	
 	class estoque_controller {
-		
+		public $dtFabricacao;
 		public $dtValidade;
 		public $quantidade;
 		public $quantidadeLimite;

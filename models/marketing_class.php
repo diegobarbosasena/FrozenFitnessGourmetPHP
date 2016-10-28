@@ -17,7 +17,10 @@
 				
 		public function insert($slider) {
 
-			$sql = "";
+			$sql = "insert into tblSlider (tituloSlider, linkImagemSlider) 
+					values ('".$slider->tituloSlider."', '".$slider->linkImagemSlider."')";
+					
+					//echo("chegou".$sql);
 			
 			if(mysql_query($sql))
 				return true;
@@ -27,6 +30,8 @@
 		}		
 		
 		public function selectAll (){
+			
+			$sql = "select * from tblSlider";
             
 			$select = mysql_query($sql);
 						
@@ -35,10 +40,10 @@
             
 			while($rs = mysql_fetch_array($select)){
                 	  
-                $slider = new Estoque();
+                $slider = new Slider();
                 $slider->codSlider = $rs['codSlider'];
                 $slider->tituloSlider = $rs['tituloSlider'];
-				$slider->linkImagemSlider = $rs['linkImagemSlider'];
+				//$slider->linkImagemSlider = $rs['linkImagemSlider'];
                               
 				$listaSlider[] = $listaSlider;                              							
 			}
@@ -49,7 +54,7 @@
 		
 		public function selectById($codSlider){
 			
-			$sql = "=".$codSlider;
+			$sql = "select* from tblSlider where codSlider=".$codSlider;
 			
 			$select = mysql_query($sql);
 			
@@ -58,7 +63,7 @@
 				$slider = new Estoque();
                 $slider->codSlider = $rs['codSlider'];
                 $slider->tituloSlider = $rs['tituloSlider'];
-				$slider->linkImagemSlider = $rs['linkImagemSlider'];
+				//$slider->linkImagemSlider = $rs['linkImagemSlider'];
                
 											
 			}

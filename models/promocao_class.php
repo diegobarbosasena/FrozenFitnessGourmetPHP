@@ -22,15 +22,18 @@
 
 			$sql = "insert into tblPromocao (nomePromocao, dtInicial, dtFinal,valorDesconto) values('".$promocao->nomePromocao."','".$promocao->dtInicial."',
 					'".$promocao->dtFinal."','".$promocao->valorDesconto."')";
+					
+					echo($sql);
 			
-			if(mysql_query($sql))
+			/*if(mysql_query($sql))
 				return true;
 			else
-				return false;
+				return false;*/
 			
 		}		
 		
 		public function selectAll (){
+			$sql="select * from tblPromocao";
             
 			$select = mysql_query($sql);
 						
@@ -54,9 +57,9 @@
 							
 		}
 		
-		public function selectById($codPrato){
+		public function selectById($codPromocao){
 			
-			$sql = "=".$codPrato;
+			$sql = "select* from tblPromocao where codPromocao=".$codPromocao;
 			
 			$select = mysql_query($sql);
 			
@@ -77,17 +80,20 @@
 		
 		public function update() {
 					
-			$sql = "";     
+			$sql = "update tblPromocao set nomePromocao = '".$this->nomePromocao."', dtInicial = '".$this->dtInicial."', dtFinal = '".$this->dtFinal."',
+				valorDesconto = '".$this->valorDesconto."' where codPromocao=".$this->codPromocao; 
+
+			echo($sql);
 				
 			if(mysql_query($sql))
 				return true;
 			else
-				return false;		
+				return false;	
 		}
 		
-		public function delete($codCategoriaPrato) {
+		public function delete($codPromocao) {
 		
-			$sql = "";
+			$sql = "delete from tblPromocao where codpromocao=".$codPromocao;
 
 			if(mysql_query($sql))
 				return true;

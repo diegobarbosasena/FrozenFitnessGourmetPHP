@@ -14,7 +14,7 @@
             
             require_once('models/promocao_class.php');
      
-	         }
+	    }
 		
 		public function iniciaAtributo(){
 		
@@ -26,6 +26,8 @@
                     $this->dtInicial=$_POST['txtDtInicial'];
 					$this->dtFinal=$_POST['txtDtFinal'];
 					$this->valorDesconto=$_POST['txtDesconto'];
+					
+					
 				
             }
 		}
@@ -41,8 +43,8 @@
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Promocao();
-				$promocao=$c->selectById($id);
+				$p = new Promocao();
+				$promocao=$p->selectById($id);
 			}
 			
            require_once('views/promocao/index.php');
@@ -50,7 +52,7 @@
         
         
 		public function cadastrar(){
-			$this->iniciaAtributo();
+			
 			$atualizacao = 'inserir';
 			$promocao=new Promocao();
             //echo('CHEGOU');
@@ -83,19 +85,39 @@
 		  
 		}
 		
-		public function atualizar($codPromocao) {
-		$this->iniciaAtributo();
-		
-		
+		public function atualizar() {
+			$this->iniciaAtributo();
+			
+			$promocao = new Promocao();
+			
+			$promocao->codPromocao=$this->codPromocao;
+			$promocao->nomePromocao=$this->nomePromocao;
+			$promocao->dtInicial=$this->dtInicial;
+			$promocao->dtFinal=$this->dtFinal;
+			$promocao->valorDesconto=$this->valorDesconto;
+					
+			if($promocao->update()){	
+				
+				header("location: ../promocao/index/".$this->codPromocao);
+			}
 		}
 		
 		public function deletar($codPromocao) {
-            $DeletarPromocao = new Promocao();
+			
+			$promocao = new Promocao();
+			
+			$codPromocao = $_GET['id'];
+			
+			if($promocao->delete($codPromocao)){
+                header("location: ../../promocao/index");
+            }
+            
 
-            $DeletarPromocao->Delete($cod);	
+            
 		}
 		
 		public function inserir() {
+			$this->iniciaAtributo();
 		
             $novoPromocao = new Promocao();
             
@@ -104,7 +126,12 @@
 			$novoPromocao->dtFinal = $this->dtFinal;
 			$novoPromocao->valorDesconto = $this->valorDesconto;
             	
-			$novoPromocao::insert($novoPromocao);
+
+			if($novoPromocao::insert($novoPromocao)){
+                header("location: ../promocao/index");
+            }else{
+                header("location: ../promocao/cadastrar");                      
+			}
 		}
   
 	}

@@ -10,7 +10,7 @@
 
 
         <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>promocao/<?php echo($atualizacao) ?>">
-             <input type="hidden" value="<?php echo($promocao->codPromocao)?>" name="codPrato"/>
+             <input type="hidden" value="<?php echo($promocao->codPromocao)?>" name="codPromocao"/>
             <table>
                   
                   <tr>

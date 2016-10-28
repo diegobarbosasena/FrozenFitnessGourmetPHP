@@ -27,42 +27,45 @@
         <td class="col_consulta">
             Opção 
         </td>
-        
+		
+	</tr>
+     <?php
+			require_once('controllers/promocao_controller.php');
+			
+			$controllerPromocao = new promocao_controller();
+			
+			$rs=$controllerPromocao->ListarTodos();
+			
+			$cont=0;
+		
+			while ($cont < count($rs)){
+		?>   
     <tr class="linha_consulta">
         <td class="col_consulta">
-            Dia dos Pais
+            <?php echo ($rs[$cont]->nomePromocao);?>
         </td>
         <td class="col_consulta">
-            25/08/2016
+             <?php echo ($rs[$cont]->dtInicial);?>
         </td>
         <td class="col_consulta">
-           30/08/2016
+            <?php echo ($rs[$cont]->dtFinal);?>
         </td>
         <td class="col_consulta">
-            50%
+             <?php echo ($rs[$cont]->valorDesconto);?>
         </td>
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> 
+           <a href="<?php echo(PROJECTDIR)?>promocao/cadastrar/<?php echo($rs[$cont]->codPromocao) ?>" class="link"> Editar </a>|
+		   <a href="<?php echo(PROJECTDIR)?>promocao/deletar/<?php echo($rs[$cont]->codPromocao) ?>" class="link">Excluir </a>
         </td>
         
     </tr>
-    <tr class="linha_consulta">
-        <td class="col_consulta">
+	
+	<?php 
+                
+            $cont++; 
             
-        </td>
-        <td class="col_consulta">
             
-        </td>
-        <td class="col_consulta">
-            
-        </td>
-        <td class="col_consulta">
-           
-        </td>
-        <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> 
-        </td>
-        
-    </tr>
-
+            }
+	?>
+    
 </table>

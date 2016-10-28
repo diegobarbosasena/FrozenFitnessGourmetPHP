@@ -99,7 +99,7 @@
 			if($materiaPrima->update()){	
 				
 				header("location: ../ingrediente/index/".$this->codMateria);
-			}
+			}*/
 		
 		
 		}
