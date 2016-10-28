@@ -10,7 +10,11 @@
             require_once('views/home/home.php');
         }
 
-
+		public function visualizar(){
+			
+			require_once('views/home/visualizar.php');
+			
+		}
         //Método que chama o conteúdo da home
         public function produtos(){
 

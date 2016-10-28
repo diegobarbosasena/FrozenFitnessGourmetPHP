@@ -52,6 +52,7 @@
            require_once('views/clientes/index.php');
         }
 		
+		
 		public function cadastrar(){
 			
 			$atualizacao = 'inserir';

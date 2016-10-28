@@ -29,8 +29,10 @@
             </nav>
             
             <div class="nomeusuario"> 
+				<a href="<?php  echo PROJECTDIR; ?>home/visualizar">
                 <p>Bem Vindo!</p>
                 <p> <?php echo $usuario; ?> </p>
+				</a>
             </div>
             
             <div class="botoes">
