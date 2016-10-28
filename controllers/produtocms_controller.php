@@ -28,21 +28,38 @@
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
                                   
-                    $this->codProduto=$_POST['codPrato'];
-					$this->nomeProduto= $_POST['txtnomePrato'];
-                    $this->precoProduto=$_POST['txtprecoPrato'];
-					$this->descricaoProduto= $_POST['txtdescricaoPrato'];
-                    $this->caloriaProduto=$_POST['txtcaloria'];
-					$this->valorEnergeticoProduto= $_POST['txtvalorEnergetico'];
-                    $this->carboidratoProduto=$_POST['txtcarboidrato'];
-					$this->proteinaProduto= $_POST['txtproteina'];
-                    $this->sodioProduto=$_POST['txtsodio'];
-					$this->gordurasProduto= $_POST['txtgorduras'];
-					$this->codcategoriaProduto = $_POST['txtcategoriaPrato'];
-                    $this->imagemProduto = basename($_FILES["imagemPrato"]["name"]);
+                    $this->codProduto=$_POST['codProduto'];
+					$this->nomeProduto= $_POST['txtnomeProduto'];
+                    $this->precoProduto=$_POST['txtprecoProduto'];
+					$this->descricaoProduto= $_POST['txtdescricaoProduto'];
+                    $this->caloriaProduto=$_POST['txtcaloriaProduto'];
+					$this->valorEnergeticoProduto= $_POST['txtvalorEnergeticoProduto'];
+                    $this->carboidratoProduto=$_POST['txtcarboidratoProduto'];
+					$this->proteinaProduto= $_POST['txtproteinaProduto'];
+                    $this->sodioProduto=$_POST['txtsodioProduto'];
+					$this->gordurasProduto= $_POST['txtgordurasProduto'];
+					$this->codcategoriaProduto = $_POST['codcategoriaProduto'];
+                    $this->imagemProduto = basename($_FILES["imagem"]["name"]);					
 			}     
 			
 		}
+		
+		public function getImg(){
+			
+			$dir="conteudo/imagem/";
+		
+			$file= $dir . $this->imagemProduto;
+		
+			
+            if(strstr($this->imagemProduto, '.jpg') || strstr($this->imagemProduto, '.png')){
+                if(move_uploaded_file($_FILES["imagemProduto"]["tmp_name"],$file)){
+					
+					return $file;
+                }else{
+					return null;
+				}
+            }       
+        }
         
         public function index(){
             
@@ -64,14 +81,15 @@
 		public function cadastrar(){
 			
 			$atualizacao = 'inserir';
-            
+            $produto=new Produto();
+			
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Usuario();
-				$usuario=$c->selectById($id);
+				$p = new Produto();
+				$produto=$p->selectById($id);
 			}
             require_once('views/produtocms/cadastrar.php');
 		}
@@ -94,7 +112,7 @@
             
             $buscarProduto = new Produto();
             
-            return $buscarProduto->selectById();
+            return $buscarProduto->selectById($codProduto);
 		  
 		}
 		
@@ -102,8 +120,10 @@
 		
 			$produto = new Produto();
             
+       
             $produto->codProduto = $this->codProduto;
 			$produto->nomeProduto = $this->nomeProduto;
+			$produto->precoProduto = $this->precoProduto;
 			$produto->descricaoProduto = $this->descricaoProduto;
 			$produto->caloriaProduto = $this->caloriaProduto;
 			$produto->valorEnergeticoProduto = $this->valorEnergeticoProduto;
@@ -125,10 +145,13 @@
 		
 		public function inserir() {
 		
+			$this->iniciaAtributos();
+		
             $produto = new Produto();
             
             $produto->codProduto = $this->codProduto;
 			$produto->nomeProduto = $this->nomeProduto;
+			$produto->precoProduto = $this->precoProduto;
 			$produto->descricaoProduto = $this->descricaoProduto;
 			$produto->caloriaProduto = $this->caloriaProduto;
 			$produto->valorEnergeticoProduto = $this->valorEnergeticoProduto;

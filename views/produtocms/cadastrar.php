@@ -5,7 +5,7 @@
 <div class="cadas">Cadastrar Produto</div>
 
 
-    <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>produtocms/<?php echo($atualizacao)?>">
+    <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>produtocms/index">
         <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
         
     </form>
@@ -18,17 +18,21 @@
                     <td class="campo_frm">Nome:</td>
                     <td><input class="caixa_frm" name="txtnomeProduto" type="text"   value="<?php echo($produto->nomeProduto)?>"    /></td>
                   </tr>
+				  <tr>
+                    <td class="campo_frm">Preço:</td>
+                    <td><input class="caixa_frm"  name="txtprecoProduto" type="text"  value="<?php echo($produto->precoProduto)?>"  /></td>
+                  </tr>
                   <tr>
                     <td class="campo_frm">Carboidrato:</td>
                     <td><input class="caixa_frm"  name="txtcarboidratoProduto" type="text"  value="<?php echo($produto->carboidratoProduto)?>"  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Calorias:</td>
-                    <td><input class="caixa_frm" name="txtcaloriasProduto"  type="text" value="<?php echo($produto->caloriaProduto)?>" /></td>
+                    <td><input class="caixa_frm" name="txtcaloriaProduto"  type="text" value="<?php echo($produto->caloriaProduto)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Valor Energético:</td>
-                    <td><input class="caixa_frm" name="txtevlrenergeticoProduto" type="text" value="<?php echo($produto->valorEnergeticoProduto)?>" /></td>
+                    <td><input class="caixa_frm" name="txtvalorEnergeticoProduto" type="text" value="<?php echo($produto->valorEnergeticoProduto)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Proteina:</td>
@@ -36,42 +40,51 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Sódio:</td>
-                    <td><input class="caixa_frm" name="txtsodioProduto" type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtsodioProduto" type="text" value="<?php echo($produto->sodioProduto)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Gordura:</td>
-                    <td><input class="caixa_frm" name="txtgorduraProduto" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtgordurasProduto" type="text" value="<?php echo($produto->gordurasProduto)?>"  /></td>
                   </tr>    
-                  <tr>
-                    <td class="campo_frm">Data de Fabricação:</td>
-                    <td><input class="caixa_frm" name="txtdtfabricacaoProduto" type="text" value=""  /></td>
-                  </tr>
-                  <tr>
-                    <td class="campo_frm">Data de Validade:</td>
-                    <td><input class="caixa_frm" name="txtdtvalidadeProduto" type="text" value=""  /></td>
-                  </tr>
                 
                   <tr>
                     <td class="campo_frm">Categoria:</td>
-                    <td >  <select size="1" name="categoriaProduto">
+                    <td >  <select size="1" name="codcategoriaProduto">
 
                             <option selected value="Selecione">Selecione:</option>
+                         <?php
+                            require_once('controllers/categoria_controller.php');
 
-                            <option value="2000">2000</option>
+                            $controllerCategoria = new categoria_controller();
 
-                            <option value="2001">2001</option>
+                            $rs=$controllerCategoria->listarTodos();
 
+                            $cont=0;
+
+                            while ($cont < count($rs)){
+        
+                        ?>  
+
+                            <option value="<?php echo($rs[$cont]->codCategoriaMateria); ?>"><?php echo($rs[$cont]->nomeCategoriaMateria);?></option>
+                        <?php
+                            
+                            $cont++;
+                        }
+
+
+                        ?>
+        
                         </select>
                     </td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Imagem Produto:</td>
-                    <td><input  name="fileProduto" type="file" value=""  /></td>
+                    <td><input  name="imagem" type="file" value=""  /></td>
                   </tr>
                      
                   <tr>
                     <td class="campo_frm">Descrição:</td>
-                    <td><textarea name="descricaoProduto" class="campo_desc" cols="35" rows="8" ></textarea></td> 
+                    <td><textarea name="txtdescricaoProduto" class="campo_desc" cols="35" rows="8" ><?php echo($produto->descricaoProduto)?></textarea></td> 
                   </tr>  
                 
 

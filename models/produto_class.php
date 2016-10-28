@@ -12,8 +12,8 @@
 		public $proteinaProduto;
 		public $sodioProduto;
 		public $gordurasProduto;
-		public $dtFabricacaoProduto;
-		public $dtValidadeProduto;
+		public $codcategoriaProduto;
+		public $imagemProduto;
 		
 		 public function __construct(){
             
@@ -25,18 +25,37 @@
         }
         		
 				
-		public function insert($categoriaPrato) {
+		public function insert($produto) {
 
-			$sql = "";
+			$sql = "insert into tblProduto (nomeProduto, precoProduto, descricaoProduto, caloriaProduto, valorEnergeticoProduto, carboidratoProduto, proteinaProduto, sodioProduto, gordurasProduto, imagemProduto) 
+					values ('".$produto->nomeProduto."', '".$produto->precoProduto."', '".$produto->descricaoProduto."', '".$produto->caloriaProduto."', '".$produto->valorEnergeticoProduto."', '".$produto->carboidratoProduto."', '".$produto->proteinaProduto."', 
+					'".$produto->sodioProduto."', '".$produto->gordurasProduto."', '".$produto->imagemProduto."');";
 			
-			if(mysql_query($sql))
+			$sql2 = "insert into tblcatproduto (codCategoriaMateria, codProduto) values ('".$produto->codcategoriaProduto."', LAST_INSERT_ID())";
+			
+			echo($sql);
+			echo($sql2);
+			
+			/*if(mysql_query($sql))
 				return true;
 			else
-				return false;
+				return false;*/
 			
 		}		
 		
 		public function selectAll (){
+			
+			$sql = "select p.nomeProduto, p.precoProduto, p.descricaoProduto, p.caloriaProduto, p.valorEnergeticoProduto, p.carboidratoProduto, p.proteinaProduto, 
+				p.sodioProduto, p.gordurasProduto, p.dtFabricacaoProduto, p.dtValidadeProduto, cp.codCategoriaMateria
+				from tblProduto as p
+				inner join tblprodutomateria as pm
+				on (p.codproduto = pm.codproduto)
+				inner join tblcatmateria as cat
+				on (pm.codMateria = cat.codMateria)
+				inner join tblcategoriamateria as cp
+				on(cat.codCategoriaMateria = cp.codCategoriaMateria);";
+				
+			//$sql = "select * from tblProduto";	
             
 			$select = mysql_query($sql);
 						
@@ -66,9 +85,17 @@
 							
 		}
 		
-		public function selectById($codPrato){
+		public function selectById($codProduto){
 			
-			$sql = "=".$codPrato;
+			$sql = "select p.codProduto, p.nomeProduto, p.precoProduto, p.descricaoProduto, p.caloriaProduto, p.valorEnergeticoProduto, p.carboidratoProduto, p.proteinaProduto, 
+				p.sodioProduto, p.gordurasProduto, p.dtFabricacaoProduto, p.dtValidadeProduto, cp.codCategoriaMateria
+				from tblProduto as p
+				inner join tblprodutomateria as pm
+				on (p.codproduto = pm.codproduto)
+				inner join tblcatmateria as cat
+				on (pm.codMateria = cat.codMateria)
+				inner join tblcategoriamateria as cp
+				on(cat.codCategoriaMateria = cp.codCategoriaMateria) where p.codProduto=".$codProduto;
 			
 			$select = mysql_query($sql);
 			
@@ -95,7 +122,9 @@
 		
 		public function update() {
 					
-			$sql = "";     
+			/*$sql = "update tblProduto set nomeProduto = "", precoProduto = , descricaoProduto = "", 
+					caloriaProduto = , valorEnergeticoProduto = , carboidratoProduto = , proteinaProduto = , sodioProduto = , gordurasProduto = ,
+					dtFabricacaoProduto = "", dtValidadeProduto = "" where codPrato=";  */   
 				
 			if(mysql_query($sql))
 				return true;
@@ -103,9 +132,9 @@
 				return false;		
 		}
 		
-		public function delete($codCategoriaPrato) {
+		public function delete($codProduto) {
 		
-			$sql = "";
+			$sql = "delete from tblProduto where codProduto=".$codProduto;
 
 			if(mysql_query($sql))
 				return true;

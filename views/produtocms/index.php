@@ -30,41 +30,43 @@
         <td class="col_consulta">
             Opção 
         </td>
+		
+		<?php
+			require_once('controllers/produtocms_controller.php');
+			
+			$controllerProduto = new produtocms_controller();
+			
+			$rs=$controllerProduto->ListarTodos();
+			
+			$cont=0;
+		
+			while ($cont < count($rs)){
+		?>
+        
         
     <tr class="linha_consulta">
         <td class="col_consulta">
-            Salmão ao molho
+             <?php echo ($rs[$cont]->nomeProduto);?>
         </td>
         <td class="col_consulta">
-            R$50,00
+            <?php echo ($rs[$cont]->precoProduto);?>
         </td>
         <td class="col_consulta">
-            12/05/2016
+             <?php echo ($rs[$cont]->dtFabricacaoProduto);?>
         </td>
         <td class="col_consulta">
-           12/05/2016
+            <?php echo ($rs[$cont]->dtValidadeProduto);?>
         </td>
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> <a href="../cms/DetalheProduto" class="link">Detalhes </a>
+            <a href="<?php echo(PROJECTDIR)?>produtocms/cadastrar/<?php echo($rs[$cont]->codProduto) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>produtocms/deletar/<?php echo($rs[$cont]->codProduto) ?>" class="link">Excluir </a> <a href="<?php echo(PROJECTDIR)?>produtocms/detalhe/<?php echo($rs[$cont]->codProduto) ?>" class="link">Detalhes </a>
         </td>
-        
-    </tr>
-    <tr class="linha_consulta">
-        <td class="col_consulta">
+		<?php 
+                
+            $cont++; 
             
-        </td>
-        <td class="col_consulta">
             
-        </td>
-        <td class="col_consulta">
-            
-        </td>
-        <td class="col_consulta">
-           
-        </td>
-        <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> <a href="../produtocms/detalhe" class="link">Detalhes </a>
-        </td>
+            }
+		?>
         
     </tr>
 
