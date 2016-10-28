@@ -15,21 +15,9 @@
             <div id="logo">
             </div>
             
-           <div class="menu-cel"> 
-            
-                <ul class="sub-menu">
-                    <li><a href="home.php" class="link">outro</a></li>
-                    <li><a href="sobre.php" class="link">Sobre a banca</a></li>
-                    <li><a href="noticias.php" class="link">Noticias em destaque</a></li>
-                    <li><a href="promocoes.php" class="link">Promoções</a></li>
-                    <li><a href="celebridade.php" class="link">Sua celebridade está aqui</a></li>
-                    <li><a href="nossasBancas.php" class="link">Nossas Bancas</a></li>
-                    <li><a href="faleConosco.php" class="link">Fale conosco</a></li>
-                </ul>
-           </div>
-            
             <nav>  
                 <ul id="menu">
+				
                     <li><a href="../home/index" class="link">Home</a></li>
                     <li><a href="../home/produtos" class="link">Produtos</a></li>
                     <li><a href="../home/sobre" class="link">Sobre a Loja</a></li>

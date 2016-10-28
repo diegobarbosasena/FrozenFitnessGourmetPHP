@@ -14,21 +14,16 @@ img{
 	max-width:100%;
 	height:100%;
 }
+
+/*menuuuuuu dooooooo desktoooop principal */
 nav{
     width: 42%;
     height: 76px;
     float: left;
     margin: 10px 0;
-	background-image:url(../imagem/menu_celular.png);
 }
 
-.navprodutos{
-	width: 640px;
-    height: 76px;
-    float: left;
-    margin: 10px 0;
-	text-align:center;
-}
+
 
 #logo{
     width: 19%;
@@ -48,10 +43,8 @@ nav{
 .clear{
     clear: both;
 }
-.menu-cel{
-	display:none;
-}
-nav#menu_{
+
+nav#menu{
     width: 100%;
     height: 76px;
     float: left;
@@ -78,7 +71,7 @@ nav#menu_{
 	border-bottom: solid 2px #E08A2C;
 }
 
-/* menu produto */
+/*menuuuuuu dooooooo desktoooop roduto */
 .menu_produto{
     width: 100px;
     height: auto;
@@ -89,9 +82,7 @@ nav#menu_{
 .clear{
     clear: both;
 }
-.menu-cel{
-	display:none;
-}
+
 nav#menu_produto{
     width: 100%;
     height: 76px;
@@ -111,14 +102,15 @@ nav#menu_produto{
     height: 34px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
+    font-size: 19px;
     margin-right: 4%;
-	margin-top:-30px;
+	margin-top:80px;
+	margin-left: 27px;
 }
 #menu_produto li:hover{
 	color:#E08A2C;
 	cursor:pointer;
-    padding-bottom: 12px;
+    padding-bottom: 8px;
 	border-bottom: solid 2px #E08A2C;
 }
 .link{
@@ -1656,6 +1648,7 @@ nav{
 	margin-left:40px;
 	margin-top:-120px;
 	cursor:pointer;
+	background-image:url(../imagem/menu_celular.png);
 }
 #logo{
     width: 100%;
@@ -1666,12 +1659,10 @@ nav{
 	
     
 }
-/*.menu{
+.menu{
     width: 100%;
     height: auto;
     float: left;
-	
-	
 	
 }
 .clear{
@@ -1699,7 +1690,7 @@ nav#menu_{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     margin-right: 7%;
-	display:none;
+	
 }
 #menu li:hover{
 	color:#E08A2C;
@@ -1714,44 +1705,50 @@ nav#menu_{
 .link:hover{
 	color:#E08A2C;
 	cursor:pointer;
-}*/
-
-/* menu celular */
-
-.sub-menu li{
-	width:150px;
-	height:40px;
-	display:none;
-	background-color:#000;
-	font-size:40px;
-	text-align:center;
-	border-radius: 5px 5px 5px 5px;
-	font-family: Arial,Helvetica,sans-serif;
 }
 
 
-
-.menu-cel{
-	width:35px;
-	height:35px;
-	background-image:url(../imagem/menu_cel.png);
-	border-radius:5px 5px 5px 5px ;
-	margin-top:-50px;
-	margin-left:30px;
-	
+/**** menuuuu produtoooo */
+.menu_produto{
+    width: 100px;
+    height: auto;
+    float: left;
+    border-bottom: solid 6px #00B348;
+	background-color:#003300;
+}
+.clear{
+    clear: both;
 }
 
-.menu-cel:hover > .sub-menu li{
-	display:block;
+nav#menu_produto{
+    width: 100px;
+    height: 76px;
+    text-align: center;
+	background-color:#003300;
 }
-
-
-.menu-cel li:hover{
+#menu_produto{
+	list-style: none;
+	float: left;
+	margin-top: 45px;
+	width: 100%;
+	margin-top:1px;
+}
+#menu_produto li{
+    display: inline;
+    height: 34px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    margin-right: 4%;
+	margin-top:10px;
+	margin-left: 90px;
+}
+#menu_produto li:hover{
 	color:#E08A2C;
 	cursor:pointer;
-	
+    padding-bottom: 3px;
+	border-bottom: solid 2px #E08A2C;
 }
-
 
 .botoes{
     width: 15%;
@@ -1812,7 +1809,6 @@ input.button_pesquisa{
 	width: 30px;
 	height: 30px;
 	float:right;
-	background-image:url(../imagem/menu_celular.png);
 	cursor:pointer;
 	display:none;
 }
@@ -2752,6 +2748,105 @@ input.btn_contato{
 	margin-bottom:50px;
 	margin-top:50px;
 	margin-left:-50px;
+}
+
+.detalhes_produto{
+    width: 640px;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+	
+}
+.deta_prod_center{
+    width: 69%;
+    height: 206px;
+    margin: auto auto 0;
+    margin-top: 10px;
+}
+.img_deta_prod{
+    width: 500px;
+    height: 380px;
+    margin-left: -30px;
+    background-image: url(../imagem/prato_cel1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: left;  
+}
+.titulo_preco{
+    width: 300px;
+    height: 180px;
+    margin: 10px;
+    float: left;  
+}
+.titulo_deta_prod{
+	width:600px;
+    font-size: 24px;
+    color: #FE7101;
+    float: left;
+    margin-top: 60px;
+    margin-left: -76px;
+    margin-bottom: 10px;
+	font-size:40px;
+}
+.preco_deta_prod{
+    margin-right: 90px;
+    float: right;
+    margin-top: 10px;
+    color: #A9A9A9;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.comprar{
+	width:110px;
+	height:30px;
+    margin: 10px;
+    float: left;
+    padding: 7px;
+    border-radius: 10px;
+    text-align: center;
+    color: #00B348;
+    border: solid 2px #00B348;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+	font-size:27px;
+	display:none;
+}
+.comprar:hover{
+    background-color: #00B348;
+    cursor: pointer;
+    color: #FFFFFF;
+	
+}
+.desc_deta_prod{
+	width:640px;
+    margin: -160px auto 30px;
+    height: auto;
+    text-align: justify;
+    padding: 10px;
+    color: #666;
+	font-size:30px;
+}
+.valor_nuticional{
+    width: 640px;
+    height: auto;
+    margin: auto auto 20px;      
+}
+table{
+    width: 100%;
+    height: auto;
+    color: #666;
+}
+table td{
+	height: 50px;
+    border: solid 2px #666;
+    padding: 4px 0px 4px 10px;
+    border-radius: 5px;
+	font-size:30px;
+}
+.center{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+	font-size:30px;
 }
 
 .rodape{
