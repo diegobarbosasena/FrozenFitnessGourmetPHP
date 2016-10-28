@@ -39,7 +39,7 @@
                     $this->sodioProduto=$_POST['txtsodioProduto'];
 					$this->gordurasProduto= $_POST['txtgordurasProduto'];
 					$this->codcategoriaProduto = $_POST['codcategoriaProduto'];
-                    $this->imagemProduto = basename($_FILES["imagem"]["name"]);					
+                    $this->imagemProduto = basename($_FILES["imagemProduto"]["name"]);					
 			}     
 			
 		}

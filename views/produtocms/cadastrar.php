@@ -10,7 +10,7 @@
         
     </form>
 
-        <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>produtocms/<?php echo($atualizacao)?>">
+        <form class="frm" name="frmprodutos" method="post" enctype="multipart/form-data" action="<?php echo(PROJECTDIR)?>produtocms/<?php echo($atualizacao)?>">
             <input type="hidden" value="<?php echo($produto->codProduto)?>" name="codProduto"/>
             <table>
                   
@@ -79,7 +79,7 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Imagem Produto:</td>
-                    <td><input  name="imagem" type="file" value=""  /></td>
+                    <td><input  name="imagemProduto" type="file" value=""  /></td>
                   </tr>
                      
                   <tr>
