@@ -19,8 +19,7 @@
 
 			$sql = "insert into tblSlider (tituloSlider, linkImagemSlider) 
 					values ('".$slider->tituloSlider."', '".$slider->linkImagemSlider."')";
-					
-					//echo("chegou".$sql);
+
 			
 			if(mysql_query($sql))
 				return true;
@@ -43,9 +42,10 @@
                 $slider = new Slider();
                 $slider->codSlider = $rs['codSlider'];
                 $slider->tituloSlider = $rs['tituloSlider'];
-				//$slider->linkImagemSlider = $rs['linkImagemSlider'];
-                              
-				$listaSlider[] = $listaSlider;                              							
+				$slider->linkImagemSlider = $rs['linkImagemSlider'];
+                 echo( $slider->tituloSlider);    
+				 
+				$listaSlider[] = $slider;                              							
 			}
 			
             return $listaSlider;   
@@ -60,10 +60,10 @@
 			
 			if($rs = mysql_fetch_array($select)){
 				
-				$slider = new Estoque();
+				$slider = new Slider();
                 $slider->codSlider = $rs['codSlider'];
                 $slider->tituloSlider = $rs['tituloSlider'];
-				//$slider->linkImagemSlider = $rs['linkImagemSlider'];
+				$slider->linkImagemSlider = $rs['linkImagemSlider'];
                
 											
 			}
@@ -73,7 +73,8 @@
 		
 		public function update() {
 					
-			$sql = "";     
+			$sql = "update tblSlider set tituloSlider = '".$this->tituloSlider."',
+			linkImagemSlider = '".$this->linkImagemSlider;     
 				
 			if(mysql_query($sql))
 				return true;

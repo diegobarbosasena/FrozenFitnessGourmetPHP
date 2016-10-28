@@ -16,21 +16,23 @@
 		
 		public function iniciaAtributo(){
 		
-			 if($_SERVER['REQUEST_METHOD']==='POST')
+			if($_SERVER['REQUEST_METHOD']==='POST')
             {
 					 $this->codSlider = $_POST['codSlider'];
 					 $this->tituloSlider=$_POST['txtTituloMarketing'];
-					 //$this->linkImagemSlider = basename($_FILES["imgFile"]["name"]);		
+					 $this->linkImagemSlider = basename($_FILES["imgFile"]["name"]);		
 	
             }
 		}
 		
-		/*public function getImg(){
+		public function getImg(){
 			
 			$dir="conteudo/imagem/";
 			
 			$file= $dir . $this->linkImagemSlider;
 			
+			
+		
             if(strstr($this->linkImagemSlider, '.jpg') || strstr($this->linkImagemSlider, '.png')){
                 if(move_uploaded_file($_FILES["imgFile"]["tmp_name"],$file)){
 					return $file;
@@ -38,20 +40,16 @@
 					return null;
 				}
 			}
-        }*/
+        }
         
         public function index(){
             
 			$atualizacao = 'inserir';
 			$slider=new Slider();
-			if(isset($_GET['id']) && $_GET['id'] != ""){
-				
-				$id = $_GET['id'];
-				$atualizacao = 'atualizar';
-				
-				$c = new Slider();
-				$slider=$c->selectById($id);
-			}
+			
+			$listaSlider = $slider->selectAll();
+			
+			//var_dump($listaSlider);
 			
            require_once('views/marketing/index.php');
         }
@@ -75,7 +73,7 @@
         	
 		public function listarTodos (){
 			 
-			$listar = new Slider();
+			$listar = new Slider();	
 			return $listar->selectAll();	
 		}
 		
@@ -91,7 +89,7 @@
 			$atualizar = new Slider();
 			$atualizar->tituloSlider = $this->tituloSlider;
 			$atualizar->codSlider = $this->codSlider;
-			//$atualizar->linkImagemSlider = $this->linkImagemSlider;
+			$atualizar->linkImagemSlider = $this->linkImagemSlider;
 					
 			if($atualizar->update()){					
 				header("location: ../marketing/index".$this->codSlider);
@@ -113,8 +111,8 @@
 			$slider = new Slider();
 			$slider->codSlider = $this->codSlider;
 			$slider->tituloSlider = $this->tituloSlider;
-			//$slider->linkImagemSlider = $this->getImg();
-			
+			$slider->linkImagemSlider = $this->getImg();
+			$slider::insert($slider);
 			if($slider::insert($slider)){
 				header("location: ../marketing/index");
 			}

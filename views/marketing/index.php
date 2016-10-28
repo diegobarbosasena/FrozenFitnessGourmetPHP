@@ -25,37 +25,27 @@
 	</tr>
 	
 	 <?php
-			require_once('controllers/marketing_controller.php');
-			
-			$controllerSlider = new marketing_controller();
-			
-			$rs=$controllerSlider->ListarTodos();
-			
-			$cont=0;
 		
-			while ($cont < count($rs)){
-		?>   
+			foreach ($listaSlider as $slider){
+				?>   
         
     <tr class="linha_consulta">
         <td class="col_consulta">
-             <?php echo ($rs[$cont]->tituloSlider);?>
+             <?php echo ($slider->tituloSlider);?>
         </td>
         <td class="col_consulta">
-            
+            <?php echo ($slider->linkImagemSlider);?>
         </td>
         
         <td class="col_consulta" >
-            <a href="<?php echo(PROJECTDIR)?>marketing/cadastrar/<?php echo($rs[$cont]->codSlider) ?>" class="link"> Editar </a>|
-			<a href="<?php echo(PROJECTDIR)?>marketing/deletar/<?php echo($rs[$cont]->codSlider) ?>" class="link">Excluir </a>
+            <a href="<?php echo(PROJECTDIR)?>marketing/cadastrar/<?php echo($slider->codSlider) ?>" class="link"> Editar </a>|
+			<a href="<?php echo(PROJECTDIR)?>marketing/deletar/<?php echo($slider->codSlider) ?>" class="link">Excluir </a>
         </td>
         
     </tr>
 	
 	<?php 
-                
-            $cont++; 
-            
-            
+                           
             }
 	?>
     

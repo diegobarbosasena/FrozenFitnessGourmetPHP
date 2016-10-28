@@ -6,14 +6,14 @@
 <div class="cadas"> Slider</div>
 
    
-        <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>marketing/<?php echo($atualizacao) ?>">
+        <form class="frm" name="frmprodutos" method="post" enctype="multipart/form-data" action="<?php echo(PROJECTDIR)?>marketing/<?php echo($atualizacao) ?>">
 		<input type="hidden" value="<?php echo($slider->codSlider)?>" name="codSlider"/>
             
             <table>
                   
                   <tr>
                     <td class="campo_frm">Titulo:</td>
-                    <td><input name="txtTituloMarketing" class="caixa_frm" type="text"   value=""    /></td>
+                    <td><input name="txtTituloMarketing" class="caixa_frm" type="text"   value="<?php echo ($slider->tituloSlider)?>"    /></td>
                   </tr>
                  
                  <tr>
