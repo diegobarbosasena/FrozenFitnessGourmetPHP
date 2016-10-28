@@ -1530,6 +1530,55 @@ table td{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+
+.perfil_cliente{
+	width: 90%;
+    height: auto;
+	border-radius: 5px;
+	border: solid 1px #FE7101;
+
+}
+
+.tit_cliente{
+	font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+	font-size: 25px;
+    color: #696969	;
+	margin-bottom:70px;
+
+}
+.dados_cliente_tit{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+    color: #FE7101;
+	margin-top:100px;
+	margin-bottom:10px;
+	border: 0;
+    height: 44px;
+	
+}
+
+.dados_cliente{
+	width: 90%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+    color: #808080	;
+	margin-top:100px;
+	margin-bottom:10px;
+	margin-left:-700px;
+	margin-bottom: solid 1px #FFF;
+    height: 44px;
+}
+
+.tbl_dados{
+    width: 100%;
+    height: auto;
+    color: #666;
+	font-family: Arial, Helvetica, sans-serif;
+	border:0;
+	text-align: left;
+}
+
 .rodape{
 	list-style: outside none none;
 	float: left;
@@ -2835,6 +2884,7 @@ table{
     width: 100%;
     height: auto;
     color: #666;
+	font-family: Arial, Helvetica, sans-serif;
 }
 table td{
 	height: 50px;
@@ -2842,6 +2892,7 @@ table td{
     padding: 4px 0px 4px 10px;
     border-radius: 5px;
 	font-size:30px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .center{
     font-family: Arial, Helvetica, sans-serif;
