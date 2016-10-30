@@ -141,7 +141,7 @@
            
 			if($prato->update()){	
 				
-				header("location: ../prato/index/".$this->codPrato);
+				header("location: ../prato/index");
 			}
 		}
 		
@@ -174,15 +174,9 @@
             $prato->imagemPrato= $this->getImg();
 			$prato->codcategoriaPrato= $this->codcategoriaPrato;
            
-			
-            //echo("Imagem  ".$prato->imagemPrato);
-            //$prato::insert($prato);
-                      
 			if($prato::insert($prato)){
                 header("location: ../prato/index");
-            }else{
-                header("location: ../prato/cadastrar");                      
-			}
+            }
         }
 		
 	}

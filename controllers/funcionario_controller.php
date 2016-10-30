@@ -10,6 +10,8 @@
 		public $confirmacaoSenha;
 		public $codFuncionarioLoja;
         public $codTipoUsuario;
+        public $codUsuario;
+        public $cod;
 		
 		 public function __construct(){
 		
@@ -29,7 +31,8 @@
 					$this->confirmacaoSenha=$_POST['txtConfirmaSenha'];
 					$this->codFuncionarioLoja=$_POST['codFuncionarioLoja'];
                     $this->codTipoUsuario=$_POST['codTipoUsuario'];
-
+                    $this->codUsuario=$_POST['codUsuario'];
+                  
 				}
 		 }
 		 
@@ -42,7 +45,7 @@
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Usuario();
+				$c = new Funcionario();
 				$funcionario=$c->selectById($id);
 			}
 			
@@ -80,23 +83,31 @@
 		}
 		
 		public function atualizar() {
-			$this->iniciaAtributo();
+			 $this->iniciaAtributo();
 			 $funcionario = new Funcionario();
 			 $funcionario->nomeFuncionarioLoja = $this->nomeFuncionarioLoja;
 			 $funcionario->cpfFuncionarioLoja = $this->cpfFuncionarioLoja;
 			 $funcionario->usuarioFuncionario = $this->usuarioFuncionario;
 			 $funcionario->senhaFuncionario = $this->senhaFuncionario;
-			 $funcionario->update();
-			 /*if(funcionario->insertFuncionario();){
-				 header("location: ../usuarios/index");
-			 }	*/
+             $funcionario->codTipoUsuario = $this->codTipoUsuario;
+             $funcionario->codUsuario = $this->codUsuario;
+             $funcionario->codFuncionarioLoja = $this->codFuncionarioLoja;
+        		
+			 if($funcionario->update()){
+				 header("location: ../funcionario/index");
+			 }
 			
 		}
 		
 		public function deletar() {
-			$id = $_GET['id'];
+            if($_SERVER['REQUEST_METHOD']=='POST'){
+                $this->cod =$_POST['codDeletarUsuario'];
+                echo("Chegou".$this->cod);                        
+            }
+            
+            $id = $_GET['id'];
 			$deletar = new Funcionario();
-			$deletar->delete($id);			
+			$deletar->delete($id,$this->cod);			
 		}
 		
 		public function inserir() {
@@ -107,8 +118,7 @@
 			 $funcionario->usuarioFuncionario = $this->usuarioFuncionario;
 			 $funcionario->senhaFuncionario = $this->senhaFuncionario;
              $funcionario->codTipoUsuario = $this->codTipoUsuario;
-			 //$funcionario::insertFuncionario($funcionario);
-			  //header("location: ../funcionario/index");
+			 
 			 if($funcionario::insertFuncionario($funcionario)){
 				 header("location: ../funcionario/index");
 			 }		 

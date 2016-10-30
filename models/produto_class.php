@@ -13,6 +13,7 @@
 		public $sodioProduto;
 		public $gordurasProduto;
 		public $codcategoriaProduto;
+        public $nomeCategoriaMateria;
 		public $imagemProduto;
 		
 		 public function __construct(){
@@ -33,25 +34,24 @@
 			
 			$sql2 = "insert into tblcatproduto (codCategoriaMateria, codProduto) values ('".$produto->codcategoriaProduto."', LAST_INSERT_ID())";
 			
-			echo($sql);
-			echo($sql2);
-			
-			/*if(mysql_query($sql))
+			//echo($sql);
+			//echo($sql2);
+			mysql_query($sql);
+                
+			if(mysql_query($sql2))
 				return true;
 			else
-				return false;*/
+				return false;
 			
 		}		
 		
 		public function selectAll (){
 			
-			$sql = "select p.nomeProduto, p.precoProduto, p.descricaoProduto, p.caloriaProduto, p.valorEnergeticoProduto, p.carboidratoProduto, p.proteinaProduto, 
-				p.sodioProduto, p.gordurasProduto, p.dtFabricacaoProduto, p.dtValidadeProduto, cp.codCategoriaMateria
+			$sql = "select p.codProduto, p.nomeProduto, p.precoProduto, p.descricaoProduto, p.caloriaProduto, p.valorEnergeticoProduto, p.carboidratoProduto, p.proteinaProduto, 
+				p.sodioProduto, p.gordurasProduto, p.imagemProduto, cp.codCategoriaMateria, cp.nomeCategoriaMateria
 				from tblProduto as p
-				inner join tblprodutomateria as pm
-				on (p.codproduto = pm.codproduto)
-				inner join tblcatmateria as cat
-				on (pm.codMateria = cat.codMateria)
+				inner join tblcatproduto as cat
+				on (p.codProduto = cat.codProduto)
 				inner join tblcategoriamateria as cp
 				on(cat.codCategoriaMateria = cp.codCategoriaMateria);";
 				
@@ -75,8 +75,8 @@
                 $produto->proteinaProduto = $rs['proteinaProduto'];
 				$produto->sodioProduto = $rs['sodioProduto'];
                 $produto->gordurasProduto = $rs['gordurasProduto'];
-				$produto->dtFabricacaoProduto = $rs['dtFabricacaoProduto'];
-                $produto->dtValidadeProduto = $rs['dtValidadeProduto'];
+				$produto->imagemProduto = $rs['imagemProduto'];
+                $produto->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
                 
 				$listaProduto[] = $produto;                              							
 			}
@@ -88,12 +88,10 @@
 		public function selectById($codProduto){
 			
 			$sql = "select p.codProduto, p.nomeProduto, p.precoProduto, p.descricaoProduto, p.caloriaProduto, p.valorEnergeticoProduto, p.carboidratoProduto, p.proteinaProduto, 
-				p.sodioProduto, p.gordurasProduto, p.dtFabricacaoProduto, p.dtValidadeProduto, cp.codCategoriaMateria
+				p.sodioProduto, p.imagemProduto, p.gordurasProduto, cp.codCategoriaMateria, cp.nomeCategoriaMateria
 				from tblProduto as p
-				inner join tblprodutomateria as pm
-				on (p.codproduto = pm.codproduto)
-				inner join tblcatmateria as cat
-				on (pm.codMateria = cat.codMateria)
+				inner join tblcatproduto as cat
+				on (p.codProduto = cat.codProduto)
 				inner join tblcategoriamateria as cp
 				on(cat.codCategoriaMateria = cp.codCategoriaMateria) where p.codProduto=".$codProduto;
 			
@@ -112,8 +110,8 @@
                 $produto->proteinaProduto = $rs['proteinaProduto'];
 				$produto->sodioProduto = $rs['sodioProduto'];
                 $produto->gordurasProduto = $rs['gordurasProduto'];
-				$produto->dtFabricacaoProduto = $rs['dtFabricacaoProduto'];
-                $produto->dtValidadeProduto = $rs['dtValidadeProduto'];
+				$produto->imagemProduto = $rs['imagemProduto'];
+                $produto->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
 											
 			}
 			
@@ -122,21 +120,28 @@
 		
 		public function update() {
 					
-			/*$sql = "update tblProduto set nomeProduto = "", precoProduto = , descricaoProduto = "", 
-					caloriaProduto = , valorEnergeticoProduto = , carboidratoProduto = , proteinaProduto = , sodioProduto = , gordurasProduto = ,
-					dtFabricacaoProduto = "", dtValidadeProduto = "" where codPrato=";  */   
+			$sql = "update tblProduto set nomeProduto = '".$this->nomeProduto."', precoProduto = '".$this->precoProduto."', descricaoProduto = '".$this->descricaoProduto."', 
+					caloriaProduto = '".$this->caloriaProduto."', valorEnergeticoProduto = '".$this->valorEnergeticoProduto."', carboidratoProduto = '".$this->carboidratoProduto."', proteinaProduto = '".$this->proteinaProduto."', sodioProduto = '".$this->sodioProduto."', gordurasProduto = '".$this->gordurasProduto."' where codProduto=".$this->codProduto;  
 				
-			if(mysql_query($sql))
+            mysql_query($sql);
+            
+            $sql2 = "update tblCatProduto set codCategoriaMateria='".$this->codcategoriaProduto."' where codProduto=".$this->codProduto;  
+            
+			if(mysql_query($sql2))
 				return true;
 			else
-				return false;		
+				return false;
 		}
 		
 		public function delete($codProduto) {
 		
-			$sql = "delete from tblProduto where codProduto=".$codProduto;
+			$sql = "delete from tblCatProduto where codProduto=".$codProduto;
 
-			if(mysql_query($sql))
+            mysql_query($sql);
+            
+			$sql2 = "delete from tblProduto where codProduto=".$codProduto;
+
+            if(mysql_query($sql2))
 				return true;
 			else
 				return false;					

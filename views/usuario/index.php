@@ -9,7 +9,8 @@
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form>
-<form name="FrmUsuario" method="post" action="">
+
+
 <table class="tbl_consulta">
     <tr class="linha_consulta">
         <td class="col_consulta">
@@ -45,7 +46,6 @@
 		?>
         
     <tr class="linha_consulta">
-	
         <td class="col_consulta">
              <?php 
 					echo($rs[$cont]->nomeFuncionarioLoja);
@@ -66,6 +66,7 @@
 					echo($rs[$cont]->nomeTipoUsuario);
 			?>
         </td>
+
         <td class="col_consulta" >
             <a href="<?php echo(PROJECTDIR)?>funcionario/cadastrar/<?php echo($rs[$cont]->codFuncionarioLoja);?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>funcionario/deletar/<?php echo($rs[$cont]->codFuncionarioLoja);?>" class="link">Excluir </a> 
         </td>

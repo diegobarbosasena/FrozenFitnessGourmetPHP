@@ -94,6 +94,10 @@
 		case 'funcionario':
 			$controller = new funcionario_controller();
 			break;
+              
+        case 'produtocms':
+			$controller = new produtocms_controller();
+			break;
 			
       }
 

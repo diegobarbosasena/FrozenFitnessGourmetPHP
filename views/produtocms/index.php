@@ -21,12 +21,7 @@
         <td class="col_consulta">
             Preço
         </td>
-        <td class="col_consulta">
-            Dt. Fabricação 
-        </td>
-        <td class="col_consulta">
-            Dt. Validade 
-        </td>
+        
         <td class="col_consulta">
             Opção 
         </td>
@@ -51,14 +46,9 @@
         <td class="col_consulta">
             <?php echo ($rs[$cont]->precoProduto);?>
         </td>
-        <td class="col_consulta">
-             <?php echo ($rs[$cont]->dtFabricacaoProduto);?>
-        </td>
-        <td class="col_consulta">
-            <?php echo ($rs[$cont]->dtValidadeProduto);?>
-        </td>
+        
         <td class="col_consulta" >
-            <a href="<?php echo(PROJECTDIR)?>produtocms/cadastrar/<?php echo($rs[$cont]->codProduto) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>produtocms/deletar/<?php echo($rs[$cont]->codProduto) ?>" class="link">Excluir </a> <a href="<?php echo(PROJECTDIR)?>produtocms/detalhe/<?php echo($rs[$cont]->codProduto) ?>" class="link">Detalhes </a>
+            <a href="<?php echo(PROJECTDIR)?>produtocms/cadastrar/<?php echo($rs[$cont]->codProduto) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>produtocms/deletar/<?php echo($rs[$cont]->codProduto) ?>" class="link">Excluir </a>| <a href="<?php echo(PROJECTDIR)?>produtocms/detalhe/<?php echo($rs[$cont]->codProduto) ?>" class="link">Detalhes </a>
         </td>
 		<?php 
                 

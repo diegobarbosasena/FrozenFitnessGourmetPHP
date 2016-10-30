@@ -11,10 +11,15 @@
     	<div class="cabecalho_cms">
         	<div class="tempo">
                 <div class="data_cms">
-                    05/09/2016
+                    <?php
+                        date_default_timezone_set('America/Sao_Paulo');
+                        $date = date('d/m/Y');
+                        $hora = date('H:i');
+                        echo $date;
+                    ?>
                 </div>
                 <div class="hora_cms">
-                    15:30
+                    <?php echo $hora; ?>
                 </div>
             </div>    
         	<div class="logo">
@@ -45,11 +50,7 @@
                         <li><a href="<?php  echo PROJECTDIR; ?>exercicios/index" class="link">Adm. Exercicios</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>funcionario/index" class="link">Adm. Usuários</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>tipoUsuario/index" class="link">Adm. Tipo Usuario</a></li>
-                        <li><a href="<?php  echo PROJECTDIR; ?>clientes/index" class="link">Clientes</a></li>
-                        
-                         
-                         
-                       
+                        <li><a href="<?php  echo PROJECTDIR; ?>clientes/index" class="link">Clientes</a></li>                      
 
                     </ul>
 

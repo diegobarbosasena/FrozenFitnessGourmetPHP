@@ -9,6 +9,9 @@
         <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>funcionario/<?php echo($atualizacao) ?>">
 		
              <input type="hidden" value="<?php echo($funcionario->codFuncionarioLoja)?>" name="codFuncionarioLoja"/>
+            
+            	<input type="hidden" value="<?php echo($funcionario->codUsuario) ?>" name="codUsuario"/>
+
             <table>
                   
                   <tr>

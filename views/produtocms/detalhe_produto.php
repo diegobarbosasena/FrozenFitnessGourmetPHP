@@ -1,4 +1,4 @@
-<form  name="frmconsulta" method="post" action="../cms/ConsultaProduto">
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>produtocms/index">
         <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
         
     </form>
@@ -7,9 +7,9 @@
     <tr class="linha_consulta_dtl">
 	
 		<?php
-			require_once('controllers/prato_controller.php');
+			require_once('controllers/produtocms_controller.php');
 			
-			$controllerProduto = new prato_controller();
+			$controllerProduto = new produtocms_controller();
 			
 			$rs=$controllerProduto->buscar($_GET['id']);
 
@@ -28,6 +28,14 @@
         </td>
         <td class="col_consulta_dtl">
            <?php echo ($rs->precoProduto);?>  
+        </td>
+     </tr>
+    <tr class="linha_consulta_dtl">
+        <td class="col_consulta_dtl">
+            Categoria: 
+        </td>
+        <td class="col_consulta_dtl">
+           <?php echo ($rs->nomeCategoriaMateria);?>  
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -78,22 +86,7 @@
            <?php echo ($rs->gordurasProduto);?>   
         </td>
      </tr>
-    <tr class="linha_consulta_dtl">
-        <td class="col_consulta_dtl">
-            Data Frabricação: 
-        </td>
-        <td class="col_consulta_dtl">
-           <?php echo ($rs->dtFabricacaoProduto);?>  
-        </td>
-     </tr>
-    <tr class="linha_consulta_dtl">
-        <td class="col_consulta_dtl">
-            Data Validade: 
-        </td>
-        <td class="col_consulta_dtl">
-           <?php echo ($rs->dtValidadeProduto);?>   
-        </td>
-     </tr>
+    
     <tr class="linha_consulta_dtl">
         <td class="col_consulta_dtl">
             Imagem: 

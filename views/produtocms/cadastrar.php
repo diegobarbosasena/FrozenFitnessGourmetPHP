@@ -4,12 +4,6 @@
 
 <div class="cadas">Cadastrar Produto</div>
 
-
-    <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>produtocms/index">
-        <input class="btnConsulta" name="btnconsulta" type="submit" value="Consultar Dados" />
-        
-    </form>
-
         <form class="frm" name="frmprodutos" method="post" enctype="multipart/form-data" action="<?php echo(PROJECTDIR)?>produtocms/<?php echo($atualizacao)?>">
             <input type="hidden" value="<?php echo($produto->codProduto)?>" name="codProduto"/>
             <table>

@@ -118,9 +118,10 @@
 		
 		public function atualizar() {
 		
-			$produto = new Produto();
+			$this->iniciaAtributos();
+		
+            $produto = new Produto();
             
-       
             $produto->codProduto = $this->codProduto;
 			$produto->nomeProduto = $this->nomeProduto;
 			$produto->precoProduto = $this->precoProduto;
@@ -133,14 +134,20 @@
 			$produto->gordurasProduto = $this->gordurasProduto;
 			$produto->codcategoriaProduto = $this->codcategoriaProduto;
 			$produto->imagemProduto = $this->getImg();
-            	
-			$produto::update();
+            
+            if($produto::update()){
+                header("location: ../produtocms/index");
+            }
 		}
 		
-		public function deletar($codProduto) {
-            $Deletar = new Produto();
-
-            $Deletar->Delete($codProduto);	
+		public function deletar() {
+            $codProduto = $_GET['id'];
+            
+            $deletar = new Produto();
+	
+            if($deletar->delete($codProduto)){
+                header("location: ../../produtocms/index");
+            }
 		}
 		
 		public function inserir() {
@@ -162,7 +169,9 @@
 			$produto->codcategoriaProduto = $this->codcategoriaProduto;
 			$produto->imagemProduto = $this->getImg();
             	
-			$produto::insert($produto);
+			if($produto::insert($produto)){
+                header("location: ../produtocms/index");
+            }
 		}
         
 	}

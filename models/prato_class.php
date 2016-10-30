@@ -73,7 +73,6 @@
                 $prato->proteina = $rs['proteina'];
 				$prato->sodio = $rs['sodio'];
                 $prato->gorduras = $rs['gorduras'];
-				//$prato->visitas = $rs['visitas'];
 				$prato->imagemPrato = $rs['imagemPrato'];
 				$prato->codcategoriaPrato = $rs['codcategoriaPrato'];
 				$prato->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
@@ -125,21 +124,29 @@
 		
 		public function update() {
 					
-			$sql = "update tblprato set nomePrato = '".$this->nomePrato."', precoPrato = '".$this->precoPrato."', descricaoPrato = '".$this->descricaoPrato."', 
+			$sql = "update tblPrato set nomePrato = '".$this->nomePrato."', precoPrato = '".$this->precoPrato."', descricaoPrato = '".$this->descricaoPrato."', 
 					caloria = '".$this->caloria."', valorEnergetico = '".$this->valorEnergetico."', carboidrato = '".$this->carboidrato."', proteina = '".$this->proteina."', sodio = '".$this->sodio."', gorduras = '".$this->gorduras."',
-					imagemPrato = '".$this->imagemPrato."' where codPrato=".$this->codPrato;     
-				
-			if(mysql_query($sql))
+					imagemPrato = '".$this->imagemPrato."' where codPrato=".$this->codPrato;
+            
+            mysql_query($sql);
+            
+            $sql2 = "update tblCatPrato set codCategoriaPrato='".$this->codcategoriaPrato."' where codPrato=".$this->codPrato; 
+            
+			if(mysql_query($sql2))
 				return true;
 			else
-				return false;		
+				return false;
 		}
 		
 		public function delete($codPrato){
 		
-			$sql = "delete from tblcatprato where codPrato=".$codPrato;
+			$sql = "delete from tblCatPrato where codPrato=".$codPrato;
+            
+            mysql_query($sql);
+            
+            $sql2 = "delete from tblPrato where codPrato=".$codPrato;
 
-			if(mysql_query($sql))
+			if(mysql_query($sql2))
 				return true;
 			else
 				return false;					
