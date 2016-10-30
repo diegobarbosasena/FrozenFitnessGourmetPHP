@@ -27,7 +27,7 @@
 	 <?php
 		
 			foreach ($listaSlider as $slider){
-				?>   
+    ?>   
         
     <tr class="linha_consulta">
         <td class="col_consulta">

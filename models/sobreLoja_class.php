@@ -23,7 +23,11 @@
 				
 		public function insert($sobreLoja) {
 
-			$sql = "";
+			$sql = "insert into tblSobreLoja (tituloSobreLoja,imgSobreLoja,imgSobreLoja1, imgSobreLoja2, imgSobreLoja3,  historiaSobreLoja ) 
+					values ('".$sobreLoja->tituloSobreLoja."', '".$sobreLoja->imgSobreLoja."', '".$sobreLoja->imgSobreLoja1."',
+                    '".$sobreLoja->imgSobreLoja2."', '".$sobreLoja->imgSobreLoja3."',
+                     '".$sobreLoja->historiaSobreLoja."')";
+            
 			
 			if(mysql_query($sql))
 				return true;
@@ -34,6 +38,8 @@
 		
 		public function selectAll (){
             
+            $sql="select * from tblSobreLoja";
+            
 			$select = mysql_query($sql);
 						
             
@@ -41,7 +47,7 @@
             
 			while($rs = mysql_fetch_array($select)){
                 	  
-                $sobreLoja = new Estoque();
+                $sobreLoja = new SobreLoja();
                 $sobreLoja->codSobreLoja = $rs['codSobreLoja'];
                 $sobreLoja->imgSobreLoja = $rs['imgSobreLoja'];
 				$sobreLoja->imgSobreLoja1 = $rs['imgSobreLoja1'];
@@ -49,7 +55,7 @@
 				$sobreLoja->imgSobreLoja3 = $rs['imgSobreLoja3'];
 				$sobreLoja->tituloSobreLoja = $rs['tituloSobreLoja'];
                 $sobreLoja->historiaSobreLoja = $rs['historiaSobreLoja'];
-				$sobreLoja->codEmpresa = $rs['codEmpresa'];
+				
                               
 				$listaLoja[] = $sobreLoja;                              							
 			}
@@ -60,7 +66,7 @@
 		
 		public function selectById($codSobreLoja){
 			
-			$sql = "=".$codSobreLoja;
+			$sql = "select * from tblSobreLoja where codSobreLoja=".$codSobreLoja;
 			
 			$select = mysql_query($sql);
 			
@@ -74,7 +80,7 @@
 				$sobreLoja->imgSobreLoja3 = $rs['imgSobreLoja3'];
 				$sobreLoja->tituloSobreLoja = $rs['tituloSobreLoja'];
                 $sobreLoja->historiaSobreLoja = $rs['historiaSobreLoja'];
-				$sobreLoja->codEmpresa = $rs['codEmpresa'];
+				
                
 											
 			}
@@ -84,8 +90,8 @@
 		
 		public function update() {
 					
-			$sql = "";     
-				
+			$sql = "update tblSobreLoja set tituloSobreLoja = '".$this->tituloSobreLoja."', imgSobreLoja = '".$this->imgSobreLoja."', imgSobreLoja1 = '".$this->imgSobreLoja1."', imgSobreLoja2 = '".$this->imgSobreLoja2."', imgSobreLoja3 = '".$this->imgSobreLoja3."' where codSobreLoja=".$this->codSobreLoja; 
+            
 			if(mysql_query($sql))
 				return true;
 			else
@@ -94,7 +100,7 @@
 		
 		public function delete($codSobreLoja) {
 		
-			$sql = "";
+			$sql = "delete from tblSobreLoja where codSobreLoja=".$codSobreLoja;
 
 			if(mysql_query($sql))
 				return true;

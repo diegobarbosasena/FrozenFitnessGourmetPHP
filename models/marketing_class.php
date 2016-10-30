@@ -74,7 +74,7 @@
 		public function update() {
 					
 			$sql = "update tblSlider set tituloSlider = '".$this->tituloSlider."',
-			linkImagemSlider = '".$this->linkImagemSlider;     
+			linkImagemSlider = '".$this->linkImagemSlider."' where codSlider=".$this->codSlider;     
 				
 			if(mysql_query($sql))
 				return true;
@@ -84,7 +84,7 @@
 		
 		public function delete($codSlider) {
 		
-			$sql = "";
+			$sql = "delete from tblSlider where codSlider=".$codSlider;
 
 			if(mysql_query($sql))
 				return true;

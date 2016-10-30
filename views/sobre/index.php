@@ -21,45 +21,31 @@
         <td class="col_consulta">
             Opção 
         </td>
-        
+         <?php
+		
+			foreach ($lista as $sobreLoja){
+    ?>   
+
     <tr class="linha_consulta">
         <td class="col_consulta">
-            Frozen Fitness Gourmet
+            <?php echo ($sobreLoja->tituloSobreLoja);?>
         </td>
         <td class="col_consulta">
-        <div class="overflow" >
-        
-            Frozen Fitness Gourmet, busca no Brasil iniciar um novo conceito de mercado
-            para assim estender os nossos serviços por todo páis. Hoje estamos localizados
-            na Rua da Mooca em São Paulo.
-            Frozen Fitness Gourmet, busca no Brasil iniciar um novo conceito de mercado
-            para assim estender os nossos serviços por todo páis. Hoje estamos localizados
-            na Rua da Mooca em São Paulo.
-            Frozen Fitness Gourmet, busca no Brasil iniciar um novo conceito de mercado
-            para assim estender os nossos serviços por todo páis. Hoje estamos localizados
-            na Rua da Mooca em São Paulo.
-        </div>
+            <div class="overflow">
+            <?php echo ($sobreLoja->historiaSobreLoja);?>
+            </div>
         </td>
         
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a>
+            <a href="<?php echo(PROJECTDIR)?>sobre/cadastrar/<?php echo($sobreLoja->codSobreLoja) ?>" class="link"> Editar </a>|
+			<a href="<?php echo(PROJECTDIR)?>sobre/deletar/<?php echo($sobreLoja->codSobreLoja) ?>" class="link">Excluir </a>|<a href="<?php echo(PROJECTDIR)?>sobre/detalhe/<?php echo($sobreLoja->codSobreLoja) ?>" class="link">Detalhes </a>
         </td>
         
     </tr>
-    <tr class="linha_consulta">
-        <td class="col_consulta">
-            Frozen Fitness Gourmet
-        </td>
-        <td class="col_consulta">
-            Frozen Fitness Gourmet, busca no Brasil iniciar um novo conceito de mercado
-            para assim estender os nossos serviços por todo páis. Hoje estamos localizados
-            na Rua da Mooca em São Paulo.
-        </td>
-        
-        <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> 
-        </td>
-        
-    </tr>
+    
+    <?php 
+                           
+            }
+	?>
 
 </table>

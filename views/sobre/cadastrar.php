@@ -6,13 +6,13 @@
 
 
 
-        <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>sobre/<?php echo($atualizacao)?>">
-            
+        <form class="frm" name="frmprodutos" enctype="multipart/form-data" method="post" action="<?php echo(PROJECTDIR)?>sobre/<?php echo($atualizacao)?>">
+            <input type="hidden" value="<?php echo($sobreLoja->codSobreLoja)?>" name="txtcodSobreLoja"/>
             <table>
                   
                   <tr>
                     <td class="campo_frm">Titulo:</td>
-                    <td><input class="txtTituloSobreLoja" type="text"   value=""    /></td>
+                    <td><input class="txtTituloSobreLoja" type="text" name="txtTituloSobreLoja"  value="<?php echo($sobreLoja->tituloSobreLoja)?>"    /></td>
                   </tr>
                  
                  <tr>
@@ -25,7 +25,7 @@
                 
                  <tr>
                     <td class="campo_frm">Historia:</td>
-                    <td><textarea class="campoHistoria" cols="35" rows="8" ></textarea></td> 
+                    <td><textarea class="campoHistoria" cols="35" rows="8" name="txtHistoria" ><?php echo($sobreLoja->historiaSobreLoja)?></textarea></td> 
                   </tr> 
                 
                  <tr>
@@ -35,12 +35,12 @@
                 
                  <tr>
                     <td class="campo_frm">Imagem :</td>
-                    <td><input  name="img2" type="file" value=""  /></td>
+                    <td><input  name="imgSobreLoja2" type="file" value=""  /></td>
                   </tr>
                 
                  <tr>
                     <td class="campo_frm">Imagem :</td>
-                    <td><input  name="img3" type="file" value=""  /></td>
+                    <td><input  name="imgSobreLoja3" type="file" value=""  /></td>
                   </tr>
                
                   <tr>

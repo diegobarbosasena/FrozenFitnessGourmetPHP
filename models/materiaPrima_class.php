@@ -123,12 +123,17 @@
 		
 		public function delete($codMateria) {
 		
-			$sql = "delete from tblMateriaPrima where codMateria=".$codMateria;
+			$sql = "delete from tblCatMateria where codMateria=".$codMateria;
+            
+            mysql_query($sql);
+            
+            $sql2 = "delete from tblMateriaPrima where codMateria=".$codMateria;
 
-			if(mysql_query($sql))
+			if(mysql_query($sql2))
 				return true;
 			else
-				return false;					
+				return false;	
+ 	
 		}	
 	
 	}

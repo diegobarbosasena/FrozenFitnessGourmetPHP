@@ -20,15 +20,15 @@
 				
 		public function insert($promocao) {
 
-			$sql = "insert into tblPromocao (nomePromocao, dtInicial, dtFinal,valorDesconto) values('".$promocao->nomePromocao."','".$promocao->dtInicial."',
-					'".$promocao->dtFinal."','".$promocao->valorDesconto."')";
+			$sql = "insert into tblPromocao (nomePromocao, dtInicial, dtFinal,valorDesconto) 
+            values('".$promocao->nomePromocao."','".$promocao->dtInicial."','".$promocao->dtFinal."','".$promocao->valorDesconto."')";
 					
 					echo($sql);
 			
-			/*if(mysql_query($sql))
+			if(mysql_query($sql))
 				return true;
 			else
-				return false;*/
+				return false;
 			
 		}		
 		

@@ -112,7 +112,7 @@
 			$slider->codSlider = $this->codSlider;
 			$slider->tituloSlider = $this->tituloSlider;
 			$slider->linkImagemSlider = $this->getImg();
-			$slider::insert($slider);
+			
 			if($slider::insert($slider)){
 				header("location: ../marketing/index");
 			}
