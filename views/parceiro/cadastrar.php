@@ -6,102 +6,106 @@
 
 <div class="cadas">Cadastrar Parceiro</div>
 
-        <form class="frm" name="frmprodutos" method="post" action="">
+        <form class="frm" name="frmprodutos" enctype="multipart/form-data" method="post" action="<?php echo(PROJECTDIR)?>parceiro/<?php echo($atualizacao)?>">
             
             <table>
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input name="txtNome" class="caixa_frm" type="text"   value=""    /></td>
+                    <td><input name="txtNome" class="caixa_frm" type="text"   value="<?php echo($parceiro->nomeParceiro)?>"    /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">CNPJ:</td>
-                    <td><input class="caixa_frm"  name="txtCnpj" type="text"  value=""  /></td>
+                    <td><input class="caixa_frm"  name="txtCnpj" type="text"  value="<?php echo($parceiro->cnpjParceiro)?>"  /></td>
                   </tr>
                  <tr>
                     <td class="campo_frm">Imagem:</td>
-                    <td><input  name="txtdtvalidade" type="file" value=""  /></td>
+                    <td><input  name="imagemParceiro" type="file" value="<?php echo($parceiro->imagemParceiro)?>"  /></td>
                   </tr>
                      
                   
                   <tr>
                     <td class="campo_frm">Site:</td>
-                    <td><input class="caixa_frm" name="txtsite"  type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtsite"  type="text" value="<?php echo($parceiro->siteParceiro)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Telefone:</td>
-                    <td><input class="caixa_frm" name="txttelefone" type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txttelefone" type="text" value="<?php echo($parceiro->telefoneParceiro)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Email:</td>
-                    <td><input class="caixa_frm" name="txtemail" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtemail" type="text" value="<?php echo($parceiro->emailParceiro)?>"  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Logradouro:</td>
-                    <td><input class="caixa_frm" name="txtlogradouro" type="text" value="" /></td>
+                    <td><input class="caixa_frm" name="txtlogradouro" type="text" value="<?php echo($parceiro->endereco->logradouro)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">CEP:</td>
-                    <td><input class="caixa_frm" name="txtcep" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtcep" type="text" value="<?php echo($parceiro->endereco->cep)?>"  /></td>
                   </tr>    
                   <tr>
                     <td class="campo_frm">Numero:</td>
-                    <td><input class="caixa_frm" name="txtnumero" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtnumero" type="text" value="<?php echo($parceiro->endereco->numero)?>"  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Bairro:</td>
-                    <td><input class="caixa_frm" name="txtbairro" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtbairro" type="text" value="<?php echo($parceiro->endereco->bairro)?>"  /></td>
                   </tr>
                   
                 
                   <tr>
                     <td class="campo_frm">Estado:</td>
-                    <td >  <select size="1" name="D1">
+                    <td >  <select size="1" name="codEstado">
+						<option selected value="Selecione">Selecione:</option>		
+						 
+						 <?php
+							
+							foreach ($listaEstados as $end->cidade->estado){
+						?>   
+                         
 
-                            <option selected value="Selecione">Selecione:</option>
+                            <option value="<?php echo($end->cidade->estado->codEstado); ?>"><?php echo($end->cidade->estado->nomeEstado);?></option>
+                        <?php
+                            
+							}
 
-                            <option value="2000">2000</option>
-
-                            <option value="2001">2001</option>
-
+                        ?>
                         </select>
                     </td>
                   </tr>
                 <tr>
                     <td class="campo_frm">Cidade:</td>
-                    <td >  <select size="1" name="D1">
+                    <td >  <select size="1" name="codCidade">
 
                             <option selected value="Selecione">Selecione:</option>
 
-                            <option value="2000">2000</option>
+                             
+						 <?php
+							
+							foreach ($listaCidades as $end->cidade){
+						?>   
+                         
 
-                            <option value="2001">2001</option>
+                            <option value="<?php echo($end->cidade->codCidade); ?>"><?php echo($end->cidade->nomeCidade);?></option>
+                        <?php
+                            
+							}
+
+                        ?>
 
                         </select>
                     </td>
                   </tr>
-                    <tr>
-                    <td class="campo_frm">Empresa:</td>
-                    <td >  <select size="1" name="D1">
-
-                            <option selected value="Selecione">Selecione:</option>
-
-                            <option value="2000">2000</option>
-
-                            <option value="2001">2001</option>
-
-                        </select>
-                    </td>
-                  </tr>
+                    
                   <tr>
                     <td class="campo_frm">Complemento:</td>
                     <td>
-                    <input class="caixa_frm" name="txtcomplemento" type="text" value=""  /></td>
+                    <input class="caixa_frm" name="txtcomplemento" type="text" value="<?php echo($parceiro->endereco->complemento)?>"  /></td>
                     
                     </td> 
                   </tr>  
                 
-
                   <tr>
                       
                     <td></td>

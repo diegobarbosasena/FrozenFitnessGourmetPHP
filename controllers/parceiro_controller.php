@@ -10,12 +10,12 @@
 		public $siteParceiro;
 		public $telefoneParceiro;
 		public $emailParceiro;
-        public $codEmpresa;
+        public $endereco;
         
         public function __construct(){
             
             require_once('models/parceiro_class.php');
-   
+			require_once('models/endereco_class.php');
         }
 		
 		public function iniciaAtributo(){
@@ -29,26 +29,18 @@
 					 $this->siteParceiro=$_POST['txtsite'];
 					 $this->telefoneParceiro=$_POST['txtelefone'];
 					 $this->emailParceiro=$_POST['txtemail'];
-					 $this->imgParceiro = basename($_FILES["imgParceiro"]["name"]);	
-					 						
-				
-            }     
+					 $this->imgParceiro = basename($_FILES["imgParceiro"]["name"]);										
+            }     			
 		}
 	
 		
 		public function index(){
-            
-			$atualizacao = 'inserir';
 			$parceiro=new Parceiro();
-			if(isset($_GET['id']) && $_GET['id'] != ""){
-				
-				$id = $_GET['id'];
-				$atualizacao = 'atualizar';
-				
-				$parceiro = new Pareiro();
-				$parceiro=$c->selectById($id);
-				
-			}
+			$this->endereco = new Endereco();
+
+			$endereco=new Endereco();			
+			$listaCidades = $endereco->cidade->selectAll();
+			$listaEstados = $endereco->cidade->estado->selectAll();
 			
            require_once('views/parceiro/index.php');
         }
@@ -57,6 +49,12 @@
 			
 			$atualizacao = 'inserir';
 			$parceiro=new Parceiro();
+			$end = $parceiro->endereco = new Endereco();
+			
+			$listaCidades = $end->cidade->selectAll();
+			
+			$listaEstados = $end->cidade->estado->selectAll();
+			
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];

@@ -5,6 +5,12 @@
 
 		public $nomeParceiro;
 		public $codParceiro;
+		public $cnpjParceiro;
+		public $imagemParceiro;
+		public $siteParceiro;
+		public $telefoneParceiro;
+		public $emailParceiro;
+		public $endereco;
         
         
         public function __construct(){
@@ -14,10 +20,9 @@
             $conexao = new mysql_db();
 
             $conexao->conectar();
-        }
-        		
+        }       		
 				
-		public function insert($tipoUsuario) {
+		public function insert() {
 		
 			$sql = "insert into tblParceiro (nomeParceiro) values('".$nomeParceiro->nomeParceiro."')";
 			
