@@ -49,14 +49,18 @@ body{
 .data_cms{
 	width: 127px;
 	height: 28px;
-	l, Helvetica, sans-serif;
 	font-size: 21px;
 	color: #666666;
 	font-family: Arial, Verdana, sans-serif;
 	margin: auto auto 10px;
 	background-color: #FFF;
 }
-
+.relogio{
+    font-size: 21px;
+    font-family: Arial, Verdana, sans-serif;
+    border: none;
+    color: #666;
+}
 
 select {
     border-radius: 10px;
@@ -68,7 +72,7 @@ select {
 }
 
 .hora_cms{
-	width: 70px;
+	width: 85px;
 	height: 35px;
 	margin-left: 126px;
 	font-family: Arial, Helvetica, sans-serif;

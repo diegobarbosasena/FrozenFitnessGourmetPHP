@@ -1,25 +1,61 @@
+<?php
+    function recebe_data(){
+        date_default_timezone_set('America/Sao_Paulo');
+        $date = date('d/m/Y');
+
+        return $date;
+    }
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="<?php  echo PROJECTDIR; ?>conteudo/css/style_cms.css">
 <title>Untitled Document</title>
-</head>
 
-<body>
+<script language="JavaScript"> 
+    function moveRelogio(){ 
+        momentoAtual = new Date() 
+        hora = momentoAtual.getHours() 
+        minuto = momentoAtual.getMinutes() 
+        segundo = momentoAtual.getSeconds() 
+        
+        str_segundo = new String (segundo) 
+        
+        if (str_segundo.length == 1) 
+            segundo = "0" + segundo 
+
+        str_minuto = new String (minuto) 
+        
+        if (str_minuto.length == 1) 
+            minuto = "0" + minuto 
+
+        str_hora = new String (hora) 
+       
+        if (str_hora.length == 1) 
+            hora = "0" + hora 
+
+        horaImprimivel = hora + ":" + minuto + ":" + segundo 
+
+        document.form_relogio.relogio.value = horaImprimivel 
+
+        setTimeout("moveRelogio()",1000) 
+    } 
+</script>
+ 
+</head>
+<body onload="moveRelogio()">
 	<div class="area_cms">
     	<div class="cabecalho_cms">
         	<div class="tempo">
                 <div class="data_cms">
-                    <?php
-                        date_default_timezone_set('America/Sao_Paulo');
-                        $date = date('d/m/Y');
-                        $hora = date('H:i');
-                        echo $date;
-                    ?>
+                    <?php echo recebe_data(); ?>      
                 </div>
                 <div class="hora_cms">
-                    <?php echo $hora; ?>
+                    <form name="form_relogio"> 
+                        <input class="relogio" type="text" name="relogio" size="10" onfocus="window.document.form_relogio.relogio.blur()"> 
+                    </form> 
                 </div>
             </div>    
         	<div class="logo">
@@ -35,14 +71,14 @@
             <div class="menu_cms">
                     <ul class="menu_cms_link">
 
-						<li><a href="<?php  echo PROJECTDIR; ?>prato/index" class="link">Adm. Prato Pronto</a></li>
-                         <li><a href="<?php  echo PROJECTDIR; ?>categoriaPrato/index" class="link">Adm. Categoria Prato</a></li> 
-                         <li><a href="<?php  echo PROJECTDIR; ?>categoria/index" class="link">Adm. Categoria Matéria</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>prato/index" class="link">Adm. Prato Pronto</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>categoriaPrato/index" class="link">Adm. Categoria Prato</a></li> 
+                        <li><a href="<?php  echo PROJECTDIR; ?>categoria/index" class="link">Adm. Categoria Matéria</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>ingrediente/index" class="link">Adm. Ingredientes</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>produtocms/index" class="link">Adm. Produtos</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>estoque/index" class="link">Adm. Estoque</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>promocao/index" class="link">Adm. Promoção</a></li>
-                         <li><a href="<?php  echo PROJECTDIR; ?>sobre/index" class="link">Adm. Sobre a Loja</a></li>
+                        <li><a href="<?php  echo PROJECTDIR; ?>sobre/index" class="link">Adm. Sobre a Loja</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>marketing/index" class="link">Adm. Marketing</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>parceiro/index" class="link">Adm. Parceiros</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>objetivo/index" class="link">Adm. Objetivo</a></li>
