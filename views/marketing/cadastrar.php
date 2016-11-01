@@ -13,31 +13,14 @@
                   
                   <tr>
                     <td class="campo_frm">Titulo:</td>
-                    <td><input name="txtTituloMarketing" class="caixa_frm" type="text"   value="<?php echo ($slider->tituloSlider)?>"    /></td>
+                    <td><input name="txtTituloMarketing" class="caixa_frm" type="text"   value="<?php echo ($slider->tituloSlider)?>" required onkeypress="return txtBoxFormat(event);"   /></td>
                   </tr>
                  
                  <tr>
                     <td class="campo_frm">Imagem Produto:</td>
-                    <td><input name="imgFile" type="file" value=""  /></td>
+                    <td><input name="imgFile" type="file" value="" required /></td>
                   </tr>
-                     
-                
-                  <tr>
-                    <td class="campo_frm">Promoção:</td>
-                    <td >  <select size="1" name="D1">
-
-                            <option selected value="Selecione">Selecione:</option>
-
-                            <option value="2000">2000</option>
-
-                            <option value="2001">2001</option>
-
-                        </select>
-                    </td>
-                  </tr>
-               
-                
-
+         
                   <tr>
                       
                     <td></td>

@@ -15,7 +15,8 @@
 <title>Untitled Document</title>
 
 <script language="JavaScript"> 
-    function moveRelogio(){ 
+
+	 function moveRelogio(){ 
         momentoAtual = new Date() 
         hora = momentoAtual.getHours() 
         minuto = momentoAtual.getMinutes() 
@@ -42,6 +43,27 @@
 
         setTimeout("moveRelogio()",1000) 
     } 
+	
+	function txtBoxFormat(evtKeyPress) {
+		var i, nCount, sValue, fldLen, mskLen,bolMask, sCod, nTecla;
+
+		if(document.all) { // Internet Explorer
+			nTecla = evtKeyPress.keyCode;
+		} else if(document.layers) { // Nestcape
+			nTecla = evtKeyPress.which;
+		} else {
+			nTecla = evtKeyPress.which;
+			if (nTecla == 8) {
+				return true;
+			}
+		}
+
+		if (nTecla != 8)
+		  return ((nTecla <= 47) || (nTecla >= 58)); 
+		else 
+		  return true;
+	}
+	
 </script>
  
 </head>

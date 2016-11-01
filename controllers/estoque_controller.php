@@ -2,27 +2,37 @@
 <?php
 	
 	class estoque_controller {
+	
+		public $codEstoque;
+		public $codMateria;
 		public $dtFabricacao;
 		public $dtValidade;
 		public $quantidade;
-		public $quantidadeLimite;
+		public $quantidadeMinima;
         
         
         public function __construct(){
             
             require_once('models/estoque_class.php');
-     
-            if($_SERVER['REQUEST_METHOD']==='POST')
-            {
-				if(isset($_POST['txtusuario']) && isset($_POST['codUsuario'])){
-                    
-                    $this->dtValidade=$_POST['txtdtValidade'];
-                    $this->quantidade=$_POST['txtquantidade'];
-					$this->quantidadeLimite=$_POST['txtquantidadeLimite'];
-                    //$this->entrar();
-				}
-            }
+ 
         }
+		
+		
+			public function iniciaAtributo(){
+		
+			 if($_SERVER['REQUEST_METHOD']==='POST')
+            {
+				
+                    $this->codEstoque=$_POST['codEstoque'];
+					$this->codMateria=$_POST['codMateria'];
+                    $this->dtValidade=$_POST['txtdtValidade'];
+					 $this->dtFabricacao=$_POST['txtdtFabricacao'];
+                    $this->quantidade=$_POST['txtquantidade'];
+					$this->quantidadeMinima=$_POST['txtquantidadeLimite'];
+                    
+				
+            }
+		}
         
         
         
@@ -30,14 +40,9 @@
             
 			$atualizacao = 'inserir';
 			$estoque =new Estoque();
-			if(isset($_GET['id']) && $_GET['id'] != ""){
-				
-				$id = $_GET['id'];
-				$atualizacao = 'atualizar';
-				
-				$c = new Estoque();
-				$estoque=$c->selectById($id);
-		}
+	
+			$listar = $estoque->selectAll();
+		
 			
            require_once('views/estoque/index.php');
         }
@@ -47,15 +52,15 @@
 			
 			$atualizacao = 'inserir';
 			$estoque=new Estoque();
-            //echo('CHEGOU');
+            echo('CHEGOU');
             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Estoque();
-				$estoque=$c->selectById($id);
+				$e = new Estoque();
+				$estoque=$e->selectById($id);
 			}
             require_once('views/estoque/cadastrar.php');
 		}
@@ -78,26 +83,52 @@
 		}
 		
 		public function atualizar($codEstoque) {
+			$this->iniciaAtributo();
+		
+			$atualizar = new Estoque();
+            $atualizar->codEstoque = $this->codEstoque;
+			$atualizar->codMateria = $this->codMateria;
+            $atualizar->dtValidade = $this->dtValidade;
+			$atualizar->dtFabricacao = $this->dtFabricacao;
+			$atualizar->quantidade = $this->quantidade;
+			$atualizar->quantidadeMinima = $this->quantidadeMinima;
+					
+			if($atualizar->update()){					
+				header("location: ../estoque/index".$this->codEstoque);
+			}
 		
 		
 		}
 		
 		public function deletar($codEstoque) {
-            $DeletarEstoque = new Estoque();
+            
 
-            $DeletarEstoque->Delete($cod);	
+            
+			
+			$codEstoque = $_GET['id'];
+			
+			$DeletarEstoque = new Estoque();
+			if($DeletarEstoque->Delete($codEstoque)){
+				header("location: ../../estoque/index");
+			}		
 		}
 		
 		public function inserir() {
+		$this->iniciaAtributo();
 		
             $novoEstoque = new Estoque();
-            
+            $novoEstoque->codEstoque = $this->codEstoque;
+			$novoEstoque->codMateria = $this->codMateria;
             $novoEstoque->dtValidade = $this->dtValidade;
+			$novoEstoque->dtFabricacao = $this->dtFabricacao;
 			$novoEstoque->quantidade = $this->quantidade;
-			$novoEstoque->quantidadeLimite = $this->quantidadeLimite;
+			$novoEstoque->quantidadeMinima = $this->quantidadeMinima;
 			
-            	
-			$novoEstoque::insert($novoEstoque);
+			if($novoEstoque::insert($novoEstoque)){
+				header("location: ../estoque/index");
+				
+				
+			}
 		}
         
        

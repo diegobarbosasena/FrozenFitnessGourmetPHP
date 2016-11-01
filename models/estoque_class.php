@@ -4,8 +4,11 @@
 	
 		public $codEstoque;
 		public $dtValidade;
+		public $dtFabricacao;
 		public $quantidade;
-		public $quantidadeLimte;
+		public $quantidadeMinima;
+		public $codMateria;
+		public $nomeMateria;
 		
 		public function __construct(){
             
@@ -17,19 +20,29 @@
         }
         		
 				
-		public function insert($categoriaPrato) {
+		public function insert($estoque) {
 
-			$sql = "";
+			$sql = "insert into tblEstoque (dtFabricacao,dtValidade,quantidade,quantidadeMinima,codMateria)
+					values ('".$estoque->dtFabricacao."', '".$estoque->dtValidade."', '".$estoque->quantidade."', '".$estoque->quantidadeMinima."', '".$estoque->codMateria."')";
+					
+					echo($sql);
 			
+
 			if(mysql_query($sql))
 				return true;
 			else
-				return false;
+				return false;	
 			
 		}		
 		
 		public function selectAll (){
-            
+			
+			$sql = "select  e.codEstoque,e.dtFabricacao, e.dtValidade, e.quantidade,
+					e.quantidadeMinima, e.codMateria, m.codMateria, m.nomeMateria
+					from tblEstoque as e
+					inner join tblMateriaPrima as m
+					on (e.codMateria = m.codMateria);";
+			
 			$select = mysql_query($sql);
 						
             
@@ -38,10 +51,13 @@
 			while($rs = mysql_fetch_array($select)){
                 	  
                 $estoque = new Estoque();
+				$estoque->nomeMateria = $rs['nomeMateria'];
+				$estoque->codMateria = $rs['codMateria'];
                 $estoque->codEstoque = $rs['codEstoque'];
                 $estoque->dtValidade = $rs['dtValidade'];
+				$estoque->dtFabricacao = $rs['dtFabricacao'];
 				$estoque->quantidade = $rs['quantidade'];
-                $estoque->quantidadeLimte = $rs['quantidadeLimte'];
+                $estoque->quantidadeMinima = $rs['quantidadeMinima'];
                               
 				$listaEstoque[] = $estoque;                              							
 			}
@@ -50,29 +66,37 @@
 							
 		}
 		
-		public function selectById($codPrato){
+		public function selectById($codEstoque){
 			
-			$sql = "=".$codPrato;
+			$sql = "select e.codEstoque,e.dtFabricacao, e.dtValidade, e.quantidade,
+					e.quantidadeMinima, e.codMateria, m.codMateria, m.nomeMateria
+					from tblEstoque as e
+					inner join tblMateriaPrima as m
+					on (e.codMateria = m.codMateria) where codEstoque=".$codEstoque;
 			
 			$select = mysql_query($sql);
 			
 			if($rs = mysql_fetch_array($select)){
 				
 				$estoque = new Estoque();
+				$estoque->codMateria = $rs['codMateria'];
                 $estoque->codEstoque = $rs['codEstoque'];
                 $estoque->dtValidade = $rs['dtValidade'];
+				$estoque->dtFabricacao = $rs['dtFabricacao'];
 				$estoque->quantidade = $rs['quantidade'];
-                $estoque->quantidadeLimte = $rs['quantidadeLimte'];
+                $estoque->quantidadeMinima = $rs['quantidadeMinima'];
                
 											
 			}
 			
-			return $promocao;
+			return $estoque;
 		}
 		
 		public function update() {
 					
-			$sql = "";     
+			$sql ="update tblEstoque set codMateria = '".$this->codMateria."',
+			dtValidade = '".$this->dtValidade."',dtFabricacao = '".$this->dtFabricacao."',
+			 quantidade = '".$this->quantidade."', quantidadeMinima = '".$this->quantidadeMinima."'   where codEstoque=".$this->codEstoque;       
 				
 			if(mysql_query($sql))
 				return true;
@@ -80,9 +104,9 @@
 				return false;		
 		}
 		
-		public function delete($codCategoriaPrato) {
+		public function delete($codEstoque) {
 		
-			$sql = "";
+			$sql = "delete from tblEstoque where codEstoque=".$codEstoque;
 
 			if(mysql_query($sql))
 				return true;

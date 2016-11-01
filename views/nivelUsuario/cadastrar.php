@@ -17,7 +17,7 @@
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" type="text" name="txtTipoUsuario"  value="<?php echo($tipoUsuario->nomeTipoUsuario)?>"    /></td>
+                    <td><input class="caixa_frm" type="text" name="txtTipoUsuario"  value="<?php echo($tipoUsuario->nomeTipoUsuario)?> " required onkeypress="return txtBoxFormat(event);"    /></td>
                   </tr>
               
                   

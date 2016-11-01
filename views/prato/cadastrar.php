@@ -16,40 +16,40 @@
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" type="text"   name="txtnomePrato"  value="<?php echo($prato->nomePrato)?>"    /></td>
+                    <td><input class="caixa_frm" type="text"   name="txtnomePrato"  value="<?php echo($prato->nomePrato)?>"   required onkeypress="return txtBoxFormat(event);" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Carboidrato:</td>
-                    <td><input class="caixa_frm"  name="txtcarboidrato" type="text"  value="<?php echo($prato->carboidrato)?>"  /></td>
+                    <td><input class="caixa_frm"  name="txtcarboidrato" type="text"  value="<?php echo($prato->carboidrato)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Calorias:</td>
-                    <td><input class="caixa_frm" name="txtcaloria"  type="text" value="<?php echo($prato->caloria)?>" /></td>
+                    <td><input class="caixa_frm" name="txtcaloria"  type="text" value="<?php echo($prato->caloria)?>"required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Valor Energético:</td>
-                    <td><input class="caixa_frm" name="txtvalorEnergetico" type="text" value="<?php echo($prato->valorEnergetico)?>" /></td>
+                    <td><input class="caixa_frm" name="txtvalorEnergetico" type="text" value="<?php echo($prato->valorEnergetico)?>" required/></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Proteina:</td>
-                    <td><input class="caixa_frm" name="txtproteina" type="text" value="<?php echo($prato->proteina)?>"  /></td>
+                    <td><input class="caixa_frm" name="txtproteina" type="text" value="<?php echo($prato->proteina)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Sódio:</td>
-                    <td><input class="caixa_frm" name="txtsodio" type="text" value="<?php echo($prato->sodio)?>" /></td>
+                    <td><input class="caixa_frm" name="txtsodio" type="text" value="<?php echo($prato->sodio)?>" required/></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Gordura:</td>
-                    <td><input class="caixa_frm" name="txtgorduras" type="text" value="<?php echo($prato->gorduras)?>"  /></td>
+                    <td><input class="caixa_frm" name="txtgorduras" type="text" value="<?php echo($prato->gorduras)?>" required /></td>
                   </tr>    
                   
                   <tr>
                     <td class="campo_frm">Preço:</td>
-                    <td><input class="caixa_frm"  name="txtprecoPrato" type="text"  value="<?php echo($prato->precoPrato)?>"  /></td>
+                    <td><input class="caixa_frm"  name="txtprecoPrato" type="text"  value="<?php echo($prato->precoPrato)?>" required /></td>
                   </tr>
                    <tr>
                     <td class="campo_frm">Categoria:</td>
-                    <td >  <select  size="1" name="txtcategoriaPrato">
+                    <td >  <select  size="1" name="txtcategoriaPrato" required>
                         
                     <option selected value="Selecione">Selecione:</option>
                          <?php
@@ -65,7 +65,7 @@
         
                         ?>  
 
-                            <option value="<?php echo($rs[$cont]->codCategoriaPrato); ?>"><?php echo($rs[$cont]->nomeCategoriaPrato);?></option>
+                            <option value="<?php echo($rs[$cont]->codCategoriaPrato); ?>" required><?php echo($rs[$cont]->nomeCategoriaPrato);?></option>
                         <?php
                             
                             $cont++;

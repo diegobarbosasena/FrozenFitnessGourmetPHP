@@ -14,17 +14,17 @@
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input name="txtIgrediente" class="caixa_frm" type="text"   value="<?php echo($materiaPrima->nomeMateria)?>"/></td>
+                    <td><input name="txtIgrediente" class="caixa_frm" type="text"   value="<?php echo($materiaPrima->nomeMateria)?>" required onkeypress="return txtBoxFormat(event);"/></td>
                   </tr>
 				   <tr>
                     <td class="campo_frm">Preço:</td>
-                    <td><input name="txtPrecoMateria" class="caixa_frm" type="text"   value="<?php echo ($materiaPrima->precoMateria);?>"/>
+                    <td><input name="txtPrecoMateria" class="caixa_frm" type="text"   value="<?php echo ($materiaPrima->precoMateria);?>" required/>
                     </td>
                   </tr>
                 
                 <tr>
                     <td class="campo_frm">Categoria:</td>
-                    <td >  <select size="1" name="categoriaIngrediente">
+                    <td >  <select size="1" name="categoriaIngrediente" required>
 						<option selected value="Selecione">Selecione:</option>
                           <?php
                             require_once('controllers/categoria_controller.php');
@@ -39,7 +39,7 @@
         
                         ?>  
 
-                            <option value="<?php echo($rs[$cont]->codCategoriaMateria); ?>"><?php echo($rs[$cont]->nomeCategoriaMateria);?></option>
+                            <option  value="<?php echo($rs[$cont]->codCategoriaMateria); ?>" ><?php echo($rs[$cont]->nomeCategoriaMateria);?></option>
                         
        					 <?php
                             
