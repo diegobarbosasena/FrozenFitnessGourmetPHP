@@ -1,4 +1,4 @@
-<form  name="frmconsulta" method="post" action="../cms/ConsultaParceiro">
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>parceiro/index">
         <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
         
 </form>
@@ -9,7 +9,7 @@
             Nome: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+          <?php echo($parceiro->nomeParceiro); ?>  
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -17,7 +17,7 @@
             CNPJ: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+          <?php echo($parceiro->cnpjParceiro); ?>  
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -25,7 +25,7 @@
             Imagem: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+          <?php echo($parceiro->imagemParceiro); ?>  
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -33,7 +33,7 @@
             Site: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+          <?php echo($parceiro->siteParceiro); ?>  
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -41,15 +41,15 @@
             Telefone: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+          <?php echo($parceiro->telefoneParceiro); ?>  
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
         <td class="col_consulta_dtl">
-            Email: 
+           Email: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+          <?php echo($parceiro->emailParceiro); ?>  
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -57,7 +57,7 @@
             Logradouro: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+          <?php echo($parceiro->endereco->logradouro); ?>  
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -65,7 +65,7 @@
             Cidade: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+          <?php echo($parceiro->endereco->cidade->nomeCidade); ?>    
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -73,7 +73,7 @@
             Estado: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+          <?php echo($parceiro->endereco->cidade->estado->nomeEstado); ?>    
         </td>
         
      </tr>
@@ -82,7 +82,7 @@
             CEP: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+          <?php echo($parceiro->endereco->cep); ?>    
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -90,7 +90,7 @@
             Nº: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+           <?php echo($parceiro->endereco->numero); ?>      
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -98,7 +98,7 @@
             Bairro: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
+           <?php echo($parceiro->endereco->bairro); ?>      
         </td>
         
      </tr>
@@ -108,15 +108,7 @@
             Complemento: 
         </td>
         <td class="col_consulta_dtl">
-          dsd  
-        </td>
-     </tr>
-    <tr class="linha_consulta_dtl">
-        <td class="col_consulta_dtl">
-            Descrição:
-        </td>
-        <td class="col_consulta_dtl">
-          dsd  
+           <?php echo($parceiro->endereco->complemento); ?>      
         </td>
      </tr>
 

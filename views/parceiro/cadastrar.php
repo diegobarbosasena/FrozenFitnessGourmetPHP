@@ -6,8 +6,8 @@
 
 <div class="cadas">Cadastrar Parceiro</div>
 
-        <form class="frm" name="frmprodutos" enctype="multipart/form-data" method="post" action="<?php echo(PROJECTDIR)?>parceiro/<?php echo($atualizacao)?>">
-            
+        <form class="frm" name="frmparceiros" enctype="multipart/form-data" method="post" action="<?php echo(PROJECTDIR)?>parceiro/<?php echo($atualizacao)?>">
+            <input type="hidden" value="<?php echo($parceiro->codParceiro)?>" name="codParceiro"/>
             <table>
                   
                   <tr>
@@ -26,11 +26,11 @@
                   
                   <tr>
                     <td class="campo_frm">Site:</td>
-                    <td><input class="caixa_frm" name="txtsite"  type="text" value="<?php echo($parceiro->siteParceiro)?>"  /></td>
+                    <td><input class="caixa_frm" name="txtsite"  type="text" value="<?php echo($parceiro->siteParceiro)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Telefone:</td>
-                    <td><input class="caixa_frm" name="txttelefone" type="text" value="<?php echo($parceiro->telefoneParceiro)?>"  /></td>
+                    <td><input class="caixa_frm" name="txttelefone" type="text" value="<?php echo($parceiro->telefoneParceiro)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Email:</td>
@@ -38,11 +38,11 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Logradouro:</td>
-                    <td><input class="caixa_frm" name="txtlogradouro" type="text" value="<?php echo($parceiro->endereco->logradouro)?>"  /></td>
+                    <td><input class="caixa_frm" name="txtlogradouro" type="text" value="<?php echo($parceiro->endereco->logradouro)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">CEP:</td>
-                    <td><input class="caixa_frm" name="txtcep" type="text" value="<?php echo($parceiro->endereco->cep)?>"   /></td>
+                    <td><input class="caixa_frm" name="txtcep" type="text" value="<?php echo($parceiro->endereco->cep)?>"  /></td>
                   </tr>    
                   <tr>
                     <td class="campo_frm">Numero:</td>
@@ -56,7 +56,7 @@
                 
                   <tr>
                     <td class="campo_frm">Estado:</td>
-                    <td >  <select size="1" name="codEstado" required>
+                    <td >  <select size="1" name="codEstado">
 						<option selected value="Selecione">Selecione:</option>		
 						 
 						 <?php
@@ -65,7 +65,7 @@
 						?>   
                          
 
-                            <option value="<?php echo($end->cidade->estado->codEstado); ?>" required><?php echo($end->cidade->estado->nomeEstado);?></option>
+                            <option value="<?php echo($end->cidade->estado->codEstado); ?>"><?php echo($end->cidade->estado->nomeEstado);?></option>
                         <?php
                             
 							}

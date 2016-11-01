@@ -6,7 +6,7 @@
 		public $nomeParceiro;
 		public $codParceiro;
 		public $cnpjParceiro;
-		public $imgParceiro;
+		public $imagemParceiro;
 		public $siteParceiro;
 		public $telefoneParceiro;
 		public $emailParceiro;
@@ -20,27 +20,55 @@
 		
 		public function iniciaAtributo(){
 		
+			$this->endereco = new Endereco;
 			
             if($_SERVER['REQUEST_METHOD']==='POST')
             {
 					
+					 $this->codParceiro=$_POST['codParceiro'];
 					 $this->nomeParceiro=$_POST['txtNome'];
 					 $this->cnpjParceiro=$_POST['txtCnpj'];
 					 $this->siteParceiro=$_POST['txtsite'];
-					 $this->telefoneParceiro=$_POST['txtelefone'];
+					 $this->telefoneParceiro=$_POST['txttelefone'];
 					 $this->emailParceiro=$_POST['txtemail'];
-					 $this->imgParceiro = basename($_FILES["imgParceiro"]["name"]);										
+					 $this->imagemParceiro = basename($_FILES["imagemParceiro"]["name"]);	
+					 
+					 $this->endereco->logradouro = $_POST['txtlogradouro'];
+					 $this->endereco->cep = $_POST['txtcep'];
+					 $this->endereco->numero = $_POST['txtnumero'];
+					 $this->endereco->bairro = $_POST['txtbairro'];
+					 $this->endereco->complemento = $_POST['txtcomplemento'];
+					 $this->endereco->cidade->codCidade = $_POST['codCidade'];
+					 $this->endereco->cidade->estado->codEstado = $_POST['codEstado'];
+
+
             }     			
 		}
-	
+		
+		public function getImg(){
+			
+			$dir="conteudo/imagem/";
+		
+			$file= $dir . $this->imagemParceiro;
+		
+			
+            if(strstr($this->imagemParceiro, '.jpg') || strstr($this->imagemParceiro, '.png')){
+                if(move_uploaded_file($_FILES["imagemParceiro"]["tmp_name"],$file)){
+					
+					return $file;
+                }else{
+					return null;
+				}
+            }       
+        }
 		
 		public function index(){
 			$parceiro=new Parceiro();
-			$this->endereco = new Endereco();
+			$end = $parceiro->endereco = new Endereco();
 
 			$endereco=new Endereco();			
-			$listaCidades = $endereco->cidade->selectAll();
-			$listaEstados = $endereco->cidade->estado->selectAll();
+			
+			$listaParceiros = $parceiro->selectAll();
 			
            require_once('views/parceiro/index.php');
         }
@@ -61,7 +89,7 @@
 				$atualizacao = 'atualizar';
 				
 				$p = new Parceiro();
-				$parceiro=$c->selectById($id);
+				$parceiro=$p->selectById($id);
 			}
 			
 			
@@ -70,7 +98,10 @@
 		
         public function detalhe(){
             
-             require_once('views/parceiro/detalhe_parceiro.php');
+			$p=new Parceiro();
+			$parceiro = $p->selectById($_GET['id']);
+			
+            require_once('views/parceiro/detalhe_parceiro.php');
             
         }
 		
@@ -94,20 +125,29 @@
 		
 		public function atualizar() {
 		
-			$atualizar = new Parceiro();
-			$atualizar->codParceiro = $this->codParceiro;
-			$atualizar->nomeParceiro = $this->nomeParceiro;
-			$atualizar->siteParceiro = $this->siteParceiro;
-			$atualizar->telefoneParceiro = $this->telefoneParceiro;
-			$atualizar->emailParceiro = $this->emailParceiro;
-			$atualizar->imgParceiro = $this->getImg();
+	        $this->iniciaAtributo();
+			$parceiro = new Parceiro();
 			
+			$parceiro->codParceiro = $this->codParceiro;
+			$parceiro->nomeParceiro = $this->nomeParceiro;
+			$parceiro->siteParceiro = $this->siteParceiro;
+			$parceiro->telefoneParceiro = $this->telefoneParceiro;
+			$parceiro->emailParceiro = $this->emailParceiro;
+			$parceiro->cnpjParceiro = $this->cnpjParceiro;
+			$parceiro->imagemParceiro = $this->getImg();
 			
+			$parceiro->endereco->logradouro = $this->endereco->logradouro;
+			$parceiro->endereco->cep  = $this->endereco->cep;
+			$parceiro->endereco->numero = $this->endereco->numero;
+			$parceiro->endereco->bairro = $this->endereco->bairro;
+			$parceiro->endereco->complemento = $this->endereco->complemento;
+			$parceiro->endereco->cidade->codCidade = $this->endereco->cidade->codCidade;
+			$parceiro->endereco->cidade->estado->codEstado = $this->endereco->cidade->estado->codEstado;
 					
-			
-			
-			if($atualizar->update()){					
-				header("location: ../parceiro/index".$this->codParceiro);
+			//$parceiro->update();		
+					
+			if($parceiro->update()){					
+				header("location: ../../parceiro/index");
 			}
 		}
         
@@ -117,19 +157,29 @@
 			
 			$deletar = new Parceiro();
 			if($deletar->delete($codParceiro)){
-				header("location: ../../parceiro/index");
+				header("location: ../parceiro/index");
 			}	
 		}
 		
 		public function inserir() {
-              $this->iniciaAtributo();
+            $this->iniciaAtributo();
 			$parceiro = new Parceiro();
-			$atualizar->codParceiro = $this->codParceiro;
-			$atualizar->nomeParceiro = $this->nomeParceiro;
-			$atualizar->siteParceiro = $this->siteParceiro;
-			$atualizar->telefoneParceiro = $this->telefoneParceiro;
-			$atualizar->emailParceiro = $this->emailParceiro;
-			$atualizar->imgParceiro = $this->getImg();
+			
+			$parceiro->codParceiro = $this->codParceiro;
+			$parceiro->nomeParceiro = $this->nomeParceiro;
+			$parceiro->siteParceiro = $this->siteParceiro;
+			$parceiro->telefoneParceiro = $this->telefoneParceiro;
+			$parceiro->emailParceiro = $this->emailParceiro;
+			$parceiro->cnpjParceiro = $this->cnpjParceiro;
+			$parceiro->imagemParceiro = $this->getImg();
+			
+			$parceiro->endereco->logradouro = $this->endereco->logradouro;
+			$parceiro->endereco->cep  = $this->endereco->cep;
+			$parceiro->endereco->numero = $this->endereco->numero;
+			$parceiro->endereco->bairro = $this->endereco->bairro;
+			$parceiro->endereco->complemento = $this->endereco->complemento;
+			$parceiro->endereco->cidade->codCidade = $this->endereco->cidade->codCidade;
+			$parceiro->endereco->cidade->estado->codEstado = $this->endereco->cidade->estado->codEstado;
 			
 			if($parceiro::insert($parceiro)){
 				header("location: ../parceiro/index");

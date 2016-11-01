@@ -4,7 +4,6 @@
 	
 	class Endereco {
 		
-		public $estado;
 		public $logradouro;
 		public $cep;
 		public $numero;

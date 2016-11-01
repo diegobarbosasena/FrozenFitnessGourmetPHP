@@ -29,42 +29,33 @@
         <td class="col_consulta">
             Opção 
         </td>
-        
+        <?php
+								
+			foreach ($listaParceiros as $parceiro){
+		?>  
     <tr class="linha_consulta">
+		 
+                         
         <td class="col_consulta">
-            Smart Fit
+            <?php echo($parceiro->nomeParceiro); ?>
         </td>
         <td class="col_consulta">
-            (11)4002-8922
+             <?php echo($parceiro->telefoneParceiro); ?>
         </td>
         <td class="col_consulta">
-            smart_fit@gmail.com
+             <?php echo($parceiro->emailParceiro); ?>
         </td>
         <td class="col_consulta">
-           www.smartfit.com.br
+            <?php echo($parceiro->siteParceiro); ?>
         </td>
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> <a href="../cms/DetalheParceiro" class="link">Detalhes </a>
+            <a href="<?php echo(PROJECTDIR)?>parceiro/cadastrar/<?php echo($parceiro->codParceiro); ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>parceiro/deletar/<?php echo($parceiro->codParceiro); ?>" class="link">Excluir </a> <a href="<?php echo(PROJECTDIR)?>parceiro/detalhe/<?php echo($parceiro->codParceiro); ?>" class="link">Detalhes </a>
         </td>
-        
+		
     </tr>
-    <tr class="linha_consulta">
-        <td class="col_consulta">
-            
-        </td>
-        <td class="col_consulta">
-            
-        </td>
-        <td class="col_consulta">
-            
-        </td>
-        <td class="col_consulta">
-           
-        </td>
-        <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a> <a href="../cms/DetalheParceiro" class="link">Detalhes </a>
-        </td>
-        
-    </tr>
+		<?php
+                            
+			}
 
+		?>
 </table>
