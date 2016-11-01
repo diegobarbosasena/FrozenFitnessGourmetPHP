@@ -6,8 +6,8 @@
 
 <div class="cadas">Cadastrar Parceiro</div>
 
-        <form class="frm" name="frmprodutos" enctype="multipart/form-data" method="post" action="<?php echo(PROJECTDIR)?>parceiro/<?php echo($atualizacao)?>">
-            
+        <form class="frm" name="frmparceiros" enctype="multipart/form-data" method="post" action="<?php echo(PROJECTDIR)?>parceiro/<?php echo($atualizacao)?>">
+            <input type="hidden" value="<?php echo($parceiro->codParceiro)?>" name="codParceiro"/>
             <table>
                   
                   <tr>

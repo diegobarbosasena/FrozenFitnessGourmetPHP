@@ -19,17 +19,7 @@
 		
 		public function iniciaAtributo(){
 		
-			
-            if($_SERVER['REQUEST_METHOD']==='POST')
-            {
-				 $this->cidade->estado->codEstado = $_POST['codEstado'];
-				 $this->logradouro= $_POST['txtlogradouro'];
-				 $this->cep = $_POST['txtcep'];
-				 $this->numero = $_POST['txtnumero'];
-				 $this->bairro = $_POST['txtbairro'];
-				 $this->cidade->codCidade = $_POST['codCidade']; 						
-				 $this->complemento = $_POST['txtcomplemento'];
-            }     
+			     
 		}
 		
 		public function listarTodos (){

@@ -6,7 +6,7 @@
 	class Cidade {
 		
 		public $codCidade;
-		public $cidade;
+		public $nomeCidade;
 		public $estado;
 
               
