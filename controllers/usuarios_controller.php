@@ -3,8 +3,13 @@
 	
 	class usuarios_controller {
 		
+		public $tipoUsuario;
+		public $codUsuario;
 		public $usuario;
 		public $senha;
+		public $codTipoUsuario;
+		public $nometipoUsuario;
+		public $perfilAcesso;
         
         
         public function __construct(){
@@ -20,80 +25,31 @@
 			 if($_SERVER['REQUEST_METHOD']==='POST')
             {
 			
-					$this->nomeTipoUsuario=$_POST['txtTipoUsuario'];
-					$this->codTipoUsuario= $_POST['codTipoUsuario'];
-				
+					$this->usuario=$_POST['txtusuario'];
+					$this->senha= $_POST['txtsenha'];
             }
 		}
 		
 		
-		public function listarTodos (){
-			 
-			$listar = new Usuario();
-			return $listar->selectAll();	
-		}
-		
-		public function buscar($codusuario){
-			
-			$buscar = new Usuario();
-			return $buscar->selectById($codusuario);
-			
-		}
-		
-		public function atualizar() {
-			$this->iniciaAtributo();
-			$atualizar = new Usuario();
-			$atualizar->usuario = $this->usuario;
-			$atualizar->codUsuario=  $this->codUsuario;
-			$atualizar->senha=  $this->senha;
-						
-			if($atualizar->update()){	
-				
-				header("location: ../usuario/index/".$this->codUsuario);
-			}
-		}
-		
-		public function deletar() {
-			
-			$codUsuario = $_GET['id'];
-			
-			$deletar = new Usuario();
-			if($deletar->delete($codUsuario)){
-				header("location: ../../usuario/index");
-			}	
-		}
-		
-		public function inserir() {
-		    $this->iniciaAtributo();
-            $novoUsuario = new Usuario();
-            
-            $novoUsuario->usuario = $this->usuario;
-			$novoUsuario->senha = $this->senha;
-            	
-			$novoUsuario::insert($novousuario);
-		}
         
         public function entrar(){
-            
+            $this->iniciaAtributo();
             $loginUsuario = new Usuario();
             
             $loginCliente = $loginUsuario->loginCliente($this->usuario,$this->senha);
             $loginFunc = $loginUsuario->loginFunc($this->usuario,$this->senha);
-            //echo('Chegou');            
+            
             if($loginCliente){
-				echo('Cliente');
-                //require_once('controllers/home_controller.php');
-				
-                //header("location: ../home/index");
+				echo('Cliente');				
+                header("location: ../home/index");
             }elseif($loginFunc){
 				echo('Funcionario');
-                //require_once('controllers/prato_controller.php');
-               // header("location: ../objetivo/index");
+				header("location: ../prato/index");
             }else{
                 echo('Erro');
-                //header("location: ../home/index");
             }
         }
+		
 	}
 
 ?>

@@ -41,7 +41,7 @@
                     <a href="#" class="link"></a>
                     <div class="entrar">
                         <div class="form">                          
-                            <form class="login-form" method="post" action="../usuarios/entrar">
+                            <form class="login-form" method="post" action="<?php  echo PROJECTDIR; ?>usuarios/entrar">
                                 <input type="text" name="txtusuario" placeholder="username" required/>
                                 <input type="password" name="txtsenha" placeholder="password" required/>
                                 <input class="button_login" type="submit" name="btnLogin" value="Login"/>

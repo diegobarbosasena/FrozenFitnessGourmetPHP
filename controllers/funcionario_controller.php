@@ -15,9 +15,7 @@
 		
 		 public function __construct(){
 		
-		  require_once('models/funcionario_class.php');
-		  //require_once('models/usuario_class.php');
-               
+		  require_once('models/funcionario_class.php');       
      
 		 }
 		 
