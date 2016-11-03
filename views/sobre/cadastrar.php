@@ -12,7 +12,7 @@
                   
                   <tr>
                     <td class="campo_frm">Titulo:</td>
-                    <td><input class="txtTituloSobreLoja" type="text" name="txtTituloSobreLoja"  value="<?php echo($sobreLoja->tituloSobreLoja)?>"    /></td>
+                    <td><input class="txtTituloSobreLoja" type="text" name="txtTituloSobreLoja"  value="<?php echo($sobreLoja->tituloSobreLoja)?>"  required onkeypress="return txtBoxFormat(event);"  /></td>
                   </tr>
                  
                  <tr>
@@ -25,11 +25,11 @@
                 
                  <tr>
                     <td class="campo_frm">Historia:</td>
-                    <td><textarea class="campoHistoria" cols="35" rows="8" name="txtHistoria" ><?php echo($sobreLoja->historiaSobreLoja)?></textarea></td> 
+                    <td><textarea class="campoHistoria" cols="35" rows="8" name="txtHistoria" required ><?php echo($sobreLoja->historiaSobreLoja)?></textarea></td> 
                   </tr> 
                 
                  <tr>
-                    <td class="campo_frm">Imagem 1 :</td>
+                    <td class="campo_frm">Imagem  :</td>
                     <td><input  name="imgSobreLoja1" type="file" value=""  /></td>
                   </tr>
                 

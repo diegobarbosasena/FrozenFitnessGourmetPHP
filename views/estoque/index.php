@@ -13,15 +13,6 @@
 
 	<div class="clear"> </div>
 
-	<form  name="frmEscolha" method="post" action="<?php echo(PROJECTDIR)?>estoque/cadastrar">
-    <input class="btnescolha" name="btnescolha" type="submit" value="Ingredientes" />
-	</form>
-
-	<form  name="frmEscolha" method="post" action="<?php echo(PROJECTDIR)?>estoque/cadastrar">
-  	  <input class="btnescolha" name="btnescolha" type="submit" value="Produto" />
-	</form>
-
-	
 <table class="tbl_consulta">
     <tr class="linha_consulta">
         <td class="col_consulta">
@@ -29,6 +20,9 @@
         </td>
         <td class="col_consulta">
             Quantidade 
+        </td>
+        <td class="col_consulta">
+            Quantidade Minima
         </td>
         <td class="col_consulta">
            Data de Fabricação
@@ -40,23 +34,37 @@
             Opções
         </td>
     </tr>
+     <?php
+		
+			foreach ($listar as $estoque){
+    ?>   
     <tr class="linha_consulta">
         <td class="col_consulta">
-            
+            <?php echo ($estoque->nomeMateria);?>
         </td>
         <td class="col_consulta">
-           
+            <?php echo ($estoque->quantidade);?>
         </td>
         <td class="col_consulta">
-          
+            <?php echo ($estoque->quantidadeMinima);?>
+        </td>
+        <td class="col_consulta">
+        	 <?php echo ($estoque->dtFabricacao);?>  
         </td>
 		<td class="col_consulta">
-          
+        	 <?php echo ($estoque->dtValidade);?>
         </td>
         <td class="col_consulta" >
-            <a href="" class="link"> Editar </a>| <a href="" class="link">Excluir </a>
+           <a href="<?php echo(PROJECTDIR)?>estoque/cadastrar/<?php echo($estoque->codEstoque) ?>" class="link"> Editar </a>|
+			<a href="<?php echo(PROJECTDIR)?>estoque/deletar/<?php echo($estoque->codEstoque) ?>" class="link">Excluir </a>
         </td>
     </tr>
+    
+    
+	<?php 
+                           
+            }
+	?>
     
 
 </table>

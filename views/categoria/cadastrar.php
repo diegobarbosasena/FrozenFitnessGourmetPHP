@@ -14,10 +14,10 @@
 			
 			<input type="hidden" value="<?php echo($categoria->codCategoriaMateria)?>" name="codCategoriaMateria"/>
             <table>
-                  
+                
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" type="text" name="txtCategoriaMateria"  value="<?php echo($categoria->nomeCategoriaMateria)?>"    /></td>
+                    <td><input class="caixa_frm" type="text" name="txtCategoriaMateria"  value="<?php echo($categoria->nomeCategoriaMateria)?>"  required onkeypress="return txtBoxFormat(event);" /></td>
                   </tr>
               
                   

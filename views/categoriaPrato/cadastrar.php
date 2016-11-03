@@ -12,20 +12,18 @@
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" name="txtNomeCategoriaPrato" value="<?php echo($categoriaPrato->nomeCategoriaPrato)?>"  type="text"/></td>
+                    <td><input class="caixa_frm" name="txtNomeCategoriaPrato" value="<?php echo($categoriaPrato->nomeCategoriaPrato) ?>" required onkeypress="return txtBoxFormat(event);" type="text"/></td>
                 </tr>
                   <tr>
                     <td class="campo_frm">Imagem Produto:</td>
-                    <td><input  name="CategoriaPratoFile" type="file"  value="<?php echo($categoriaPrato->imagemCategoriaPrato)?>" /></td>
+                    <td><input  name="CategoriaPratoFile" type="file"  value="<?php echo($categoriaPrato->imagemCategoriaPrato)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Descrição:</td>
                     <td>
-						<div class="overflow" >
-                        
-							<textarea class="campo_desc" name="txtDescricaoCategoriaPrato"   cols="35" rows="8" ><?php echo($categoriaPrato->descricaoCategoriaPrato);?></textarea>
-						</div>
-                        
+
+							<textarea class="campo_desc" name="txtDescricaoCategoriaPrato"  required cols="35" rows="8" ><?php echo($categoriaPrato->descricaoCategoriaPrato);?></textarea>
+				
           
 					</td> 
                   </tr>  

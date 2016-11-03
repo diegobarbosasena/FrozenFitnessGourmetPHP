@@ -16,27 +16,27 @@
                   
                   <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td><input class="caixa_frm" type="text"   name="txtNome" value="<?php echo($funcionario->nomeFuncionarioLoja)?>"    /></td>
+                    <td><input class="caixa_frm" type="text"   name="txtNome" value="<?php echo($funcionario->nomeFuncionarioLoja)?>" required onkeypress="return txtBoxFormat(event);"   /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">CPF:</td>
-                    <td><input class="caixa_frm"  name="txtCpf" type="text"  value="<?php echo($funcionario->cpfFuncionarioLoja)?>"  /></td>
+                    <td><input class="caixa_frm"  name="txtCpf" type="text"  value="<?php echo($funcionario->cpfFuncionarioLoja)?>" required  /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Usuário:</td>
-                    <td><input class="caixa_frm" name="txtUsuario"  type="text" value="<?php echo($funcionario->usuarioFuncionario)?>" /></td>
+                    <td><input class="caixa_frm" name="txtUsuario"  type="text" value="<?php echo($funcionario->usuarioFuncionario)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Senha:</td>
-                    <td><input class="caixa_frm" name="txtSenha" type="text" value="<?php echo($funcionario->senhaFuncionario)?>" /></td>
+                    <td><input class="caixa_frm" name="txtSenha" type="text" value="<?php echo($funcionario->senhaFuncionario)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Confirmar senha:</td>
-                    <td><input class="caixa_frm" name="txtConfirmaSenha" type="text" value="<?php echo($funcionario->confirmacaoSenha)?>"  /></td>
+                    <td><input class="caixa_frm" name="txtConfirmaSenha" type="text" value="<?php echo($funcionario->confirmacaoSenha)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Tipo:</td>
-                    <td >  <select size="1" name="codTipoUsuario">
+                    <td >  <select size="1" name="codTipoUsuario" required>
 				     
                     <option selected value="Selecione">Selecione:</option>
                          <?php
@@ -52,7 +52,7 @@
         
                         ?>  
 
-                            <option value="<?php echo($rs[$cont]->codTipoUsuario); ?>"><?php echo($rs[$cont]->nomeTipoUsuario);?></option>
+                            <option value="<?php echo($rs[$cont]->codTipoUsuario); ?>" required><?php echo($rs[$cont]->nomeTipoUsuario);?></option>
                         <?php
                             
                             $cont++;

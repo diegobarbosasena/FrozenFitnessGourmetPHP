@@ -12,17 +12,17 @@
                   
                   <tr>
                     <td class="campo_frm">Titulo:</td>
-                    <td><input class="caixa_frm" name="txtTituloExercicio" value="<?php echo($exercicios->tituloExercicio)?>"  type="text"/></td>
+                    <td><input class="caixa_frm" name="txtTituloExercicio" value="<?php echo($exercicios->tituloExercicio)?>" required onkeypress="return txtBoxFormat(event);" type="text"/></td>
                 </tr>
                   <tr>
                     <td class="campo_frm">Imagem Produto:</td>
-                    <td><input  name="ExercicioFile" type="file"  value="<?php echo($exercicios->imagemExercicio)?>" /></td>
+                    <td><input  name="ExercicioFile" type="file"  value="<?php echo($exercicios->imagemExercicio)?>" required/></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Descrição:</td>
                     <td>
 						<div>
-							<textarea class="campo_desc" name="txtDescricaoExercicio"   cols="35" rows="8" ><?php echo($exercicios->descricaoExercicio);?></textarea>
+							<textarea class="campo_desc" name="txtDescricaoExercicio"   cols="35" rows="8" required ><?php echo($exercicios->descricaoExercicio);?></textarea>
 						</div>
                         
           

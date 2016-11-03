@@ -12,17 +12,17 @@
                   
                   <tr>
                     <td class="campo_frm">Titulo:</td>
-                    <td><input class="caixa_frm" name="txtTituloDica" value="<?php echo($dicas->tituloDica)?>"  type="text"/></td>
+                    <td><input class="caixa_frm" name="txtTituloDica" value="<?php echo($dicas->tituloDica)?>" required onkeypress="return txtBoxFormat(event);" type="text"/></td>
                 </tr>
                   <tr>
                     <td class="campo_frm">Imagem Produto:</td>
-                    <td><input  name="DicaFile" type="file"  value="<?php echo($dicas->imagemDica)?>" /></td>
+                    <td><input  name="DicaFile" type="file"  value="<?php echo($dicas->imagemDica)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Descrição:</td>
                     <td>
 						<div>
-							<textarea class="campo_desc" name="txtDescricaoDica"   cols="35" rows="8" ><?php echo($dicas->descricaoDica);?></textarea>
+							<textarea class="campo_desc" name="txtDescricaoDica" required   cols="35" rows="8" ><?php echo($dicas->descricaoDica);?></textarea>
 						</div>
                         
           

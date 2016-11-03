@@ -1,5 +1,5 @@
 
-<div class="cadas">Estoque</div>
+<div class="cadas">Estoque Ingrediente</div>
 
     <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>estoque/index">
         <input class="btnVoltar" name="btnvoltar" type="submit" value="Voltar" />
@@ -8,25 +8,37 @@
 
 
 
-        <form class="frm" name="frmprodutos" method="post" action="">
+        <form class="frm" name="frmprodutos" method="post" action="<?php echo(PROJECTDIR)?>estoque/<?php echo($atualizacao) ?>">
+        <input type="hidden" value="<?php echo($estoque->codEstoque)?>" name="codEstoque"/>
             
             <table>
-                  
-                  <tr>
-                    <td class="campo_frm">Escolha:</td>
-                    <td><input name="escolhaEstoque" type="radio"   value=""    /> Produto 
-                      <input name="escolhaEstoque" type="radio"   value=""    />Ingrediente</td>
-                  </tr>
                 
                 <tr>
                     <td class="campo_frm">Nome:</td>
-                    <td >  <select size="1" name="D1">
+                    <td >   <select size="1" name="codMateria">
+						<option selected value="Selecione">Selecione:</option>
+                          <?php
+                            require_once('controllers/ingrediente_controller.php');
 
-                            <option selected value="Selecione">Selecione:</option>
+                            $controllerIngrediente = new ingrediente_controller();
 
-                            <option value="2000">2000</option>
+                            $rs=$controllerIngrediente->listarTodos();
 
-                            <option value="2001">2001</option>
+                            $cont=0;
+
+                            while ($cont < count($rs)){
+        
+                        ?>  
+
+                            <option value="<?php echo($rs[$cont]->codMateria); ?>" required><?php echo($rs[$cont]->nomeMateria);?></option>
+                        
+       					 <?php
+                            
+                            $cont++;
+                        }
+
+
+                        ?>
 
                         </select>
                     </td>
@@ -34,19 +46,19 @@
                 
                  <tr>
                     <td class="campo_frm">Quantidade Inserida:</td>
-                    <td><input class="caixa_frm" name="txtquantidade" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtquantidade" type="text" value="<?php echo ($estoque->quantidade);?>" required /></td>
                 </tr>
                 <tr>
                     <td class="campo_frm">Quantidade Minima:</td>
-                    <td><input class="caixa_frm" name="txtquantidadeLimite" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtquantidadeLimite" type="text" value="<?php echo ($estoque->quantidadeMinima);?>" required /></td>
                 </tr>
                  <tr>
                     <td class="campo_frm">Data de Fabricação:</td>
-                    <td><input class="caixa_frm" name="txtdtValidade" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtdtFabricacao" type="text" value="<?php echo ($estoque->dtFabricacao);?>" required /></td>
                 </tr>
 				<tr>
                     <td class="campo_frm">Data de Validade:</td>
-                    <td><input class="caixa_frm" name="txtdtValidade" type="text" value=""  /></td>
+                    <td><input class="caixa_frm" name="txtdtValidade" type="text" value="<?php echo ($estoque->dtValidade);?>"  required /></td>
                 </tr>
 				
 

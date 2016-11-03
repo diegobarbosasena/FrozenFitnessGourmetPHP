@@ -11,11 +11,11 @@
                   
                   <tr>
                     <td class="campo_frm">Objetivo:</td>
-                    <td><input class="caixa_frm" name="txtNomeObjetivo" value="<?php echo($objetivo->nomeObjetivo)?>"  type="text"/></td>
+                    <td><input class="caixa_frm" name="txtNomeObjetivo" value="<?php echo($objetivo->nomeObjetivo)?>" required onkeypress="return txtBoxFormat(event);" type="text"/></td>
                   </tr>
                    <tr>
                     <td class="campo_frm">Descricao:</td>
-                    <td> <textarea name="txtDescricaoObjetivo" class="campo_desc" cols="35" rows="8" >  <?php echo($objetivo->descricaoObjetivo)?>  </textarea></td>
+                    <td> <textarea name="txtDescricaoObjetivo" class="campo_desc" cols="35" rows="8" required >  <?php echo($objetivo->descricaoObjetivo)?>  </textarea></td>
                    
                   </tr>
                   

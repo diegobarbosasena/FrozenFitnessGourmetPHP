@@ -112,8 +112,11 @@
 		
 		
 		$sql = "update tblMateriaPrima set nomeMateria = '".$this->nomeMateria."', precoMateria = '".$this->precoMateria."', descricaoMateria = '".$this->descricaoMateria."' where codMateria=".$this->codMateria;     
+				mysql_query($sql);
 				
-			if(mysql_query($sql))
+		$sql2 = "update tblCatMateria set codCategoriaMateria='".$this->codCategoriaMateria."' where codMateria =".$this->codMateria;
+			//echo($sql2);	
+			if(mysql_query($sql2))
 				return true;
 			else
 				return false;		
