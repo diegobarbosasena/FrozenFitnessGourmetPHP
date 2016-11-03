@@ -26,15 +26,17 @@
                   
                   <tr>
                     <td class="campo_frm">Site:</td>
-                    <td><input class="caixa_frm" name="txtsite"  type="text" value="<?php echo($parceiro->siteParceiro)?>" /></td>
+                    <td><input class="caixa_frm" name="txtsite" placeholder="http://www.smartgourmet.com.br" type="url" value="<?php echo($parceiro->siteParceiro)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Telefone:</td>
-                    <td><input class="caixa_frm" name="txttelefone" type="text" value="<?php echo($parceiro->telefoneParceiro)?>" /></td>
+                    <td><input class="caixa_frm" name="txttelefone" placeholder="00 0000-0000" type="tel" maxlenght="12" onkeypress="mascara(this,'## ####-####')" value="<?php echo($parceiro->telefoneParceiro)?>" /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Email:</td>
-                    <td><input class="caixa_frm" name="txtemail" type="text" value="<?php echo($parceiro->emailParceiro)?>"  /></td>
+                    <td>
+                    	<input class="caixa_frm" name="txtemail" maxlenght="100" placeholder="frozen@smart.com" type="email" value="<?php echo($parceiro->emailParceiro)?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                    </td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Logradouro:</td>
