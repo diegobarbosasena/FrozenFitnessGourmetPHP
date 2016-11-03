@@ -18,14 +18,14 @@
                   </tr>
 				   <tr>
                     <td class="campo_frm">Preço:</td>
-                    <td><input name="txtPrecoMateria" class="caixa_frm" type="text"   value="<?php echo ($materiaPrima->precoMateria);?>" required/>
+                    <td><input name="txtPrecoMateria" class="caixa_frm" type="number"   value="<?php echo ($materiaPrima->precoMateria);?>"   required/>
                     </td>
                   </tr>
                 
                 <tr>
                     <td class="campo_frm">Categoria:</td>
                     <td >  <select size="1" name="categoriaIngrediente" required>
-						<option selected value="Selecione">Selecione:</option>
+						<!--<option selected value="Selecione">Selecione:</option>-->
                           <?php
                             require_once('controllers/categoria_controller.php');
 
@@ -54,7 +54,7 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Descrição:</td>
-                    <td><textarea  name="descricaoIgrediente"class="campo_desc" cols="35" rows="8" > <?php echo($materiaPrima->descricaoMateria)?></textarea></td> 
+                    <td><textarea  name="descricaoIgrediente" class="campo_desc" cols="35" rows="8" > <?php echo($materiaPrima->descricaoMateria)?></textarea></td> 
                   </tr>  
                 
 
