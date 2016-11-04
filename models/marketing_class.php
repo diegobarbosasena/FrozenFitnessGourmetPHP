@@ -43,7 +43,7 @@
                 $slider->codSlider = $rs['codSlider'];
                 $slider->tituloSlider = $rs['tituloSlider'];
 				$slider->linkImagemSlider = $rs['linkImagemSlider'];
-                 echo( $slider->tituloSlider);    
+                  
 				 
 				$listaSlider[] = $slider;                              							
 			}

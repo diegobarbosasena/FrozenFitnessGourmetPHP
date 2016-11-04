@@ -45,13 +45,17 @@
                   
                   <tr>
                     <td class="campo_frm">Preço:</td>
-                    <td><input class="caixa_frm"  name="txtprecoPrato" type="number"  value="<?php echo($prato->precoPrato)?>" required /></td>
+                    <td><input class="caixa_frm"  name="txtprecoPrato" type="number" placeholder="000.00" value="<?php echo($prato->precoPrato)?>" required /></td>
                   </tr>
                    <tr>
+				   
+				   
                     <td class="campo_frm">Categoria:</td>
                     <td >  <select  size="1" name="txtcategoriaPrato" required>
                         
-                    	<!-- <option selected value="Selecione">Selecione:</option> -->
+                    	<!-- <option selected value="Selecione">Selecione:</option> 
+							
+						-->
                          <?php
                             require_once('controllers/categoriaPrato_controller.php');
 

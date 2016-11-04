@@ -115,6 +115,9 @@
 			
 			if($slider::insert($slider)){
 				header("location: ../marketing/index");
+			}else{
+				
+				$echo("nem foi");
 			}
 		}
 
