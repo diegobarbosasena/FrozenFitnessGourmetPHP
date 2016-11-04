@@ -5,9 +5,7 @@
 		public $usuario;
 		public $senha;
 
-
-        
-        
+		
         public function __construct(){
             
             require_once('models/banco_dados.php');

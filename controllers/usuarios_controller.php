@@ -2,16 +2,10 @@
 <?php
 	
 	class usuarios_controller {
-		
-		public $tipoUsuario;
-		public $codUsuario;
+
 		public $usuario;
 		public $senha;
-		public $codTipoUsuario;
-		public $nometipoUsuario;
-		public $perfilAcesso;
-        
-        
+   
         public function __construct(){
             
             require_once('models/usuario_class.php');

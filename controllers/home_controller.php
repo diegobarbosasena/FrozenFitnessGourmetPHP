@@ -38,6 +38,36 @@
         
         public function cadastro(){
 
+			require_once('models/clientes_class.php');
+
+			$atualizacao = 'inserir';
+			$cliente = new Cliente();
+			$cliente->objetivo = new Objetivo();
+			$end = $cliente->endereco = new Endereco();
+			
+			$listaObjetivos = $cliente->objetivo->selectAll();
+			
+			$listaCidades = $end->cidade->selectAll();
+	
+			echo("AQUI");
+	
+			$listaEstados = $end->cidade->estado->selectAll();
+			
+			foreach ($listaEstados as $end->cidade->estado){
+				
+				echo("AQUI".$end->cidade->estado->nomeEstado);
+			}
+			
+			//$cliente = new Cliente();
+			/*if(isset($_GET['id']) && $_GET['id'] != ""){
+				
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
+				
+				$c = new Cliente();
+				$cliente=$c->selectById($id);
+			}*/
+		
             require_once('views/home/cadastro.php');
         }
         

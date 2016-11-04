@@ -40,7 +40,7 @@
 					 $this->endereco->complemento = $_POST['txtcomplemento'];
 					 $this->endereco->cidade->codCidade = $_POST['codCidade'];
 					 $this->endereco->cidade->estado->codEstado = $_POST['codEstado'];
-
+					 $this->objetivo->codObjetivo = $_POST['codObjetivo'];	
 
             }     			
 		}

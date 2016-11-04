@@ -12,61 +12,47 @@
         public $telefoneCliente;
         public $celularCliente;
         public $emailCliente;  
+		public $endereco;
+		public $usuarioCliente;
+		public $senhaCliente;
+		public $confirmacaoSenha;
+		public $objetivo;
         
         
         public function __construct(){
             
-            require_once('models/clientes_class.php');
-
-    
-            if($_SERVER['REQUEST_METHOD']==='POST')
+            require_once('models/clientes_class.php');   
+			require_once('models/endereco_class.php');	
+			require_once('models/objetivo_class.php');		
+        }
+		
+		public function iniciaAtributo(){
+			
+			$this->endereco = new Endereco;
+			$this->objetivo = new Objetivo;
+			
+			 if($_SERVER['REQUEST_METHOD']==='POST')
             {
-				if(isset($_POST['txtnomeCliente']) && isset($_POST['codCliente'])){
 					 $this->codCliente = $_POST['codCliente'];
-					 $this->nomeCliente=$_POST['txtnomeCliente'];
-					 $this->cpfCliente=$_POST['txtcpfCliente'];
-					 $this->dtNascCliente = $_POST['txtdtNascCliente'];
-					 $this->peso=$_POST['txtpeso'];
-					 $this->altura=$_POST['txtaltura'];
-					 $this->telefoneCliente = $_POST['txttelefoneCliente'];	
-					 $this->celularCliente=$_POST['txtcelularCliente'];
-					 $this->emailCliente=$_POST['txtemailCliente'];				
-				}
+					 $this->nomeCliente=$_POST['txtnomecliente'];
+					 $this->cpfCliente=$_POST['txtcpfcliente'];
+					 $this->dtNascCliente = $_POST['txtdtnascimento'];
+					 $this->peso=$_POST['txtpesocliente'];
+					 $this->altura=$_POST['txtalturacliente'];
+					 $this->telefoneCliente = $_POST['txttelcliente'];	
+					 $this->celularCliente=$_POST['txtcelcliente'];
+					 $this->emailCliente=$_POST['txtemailcliente'];
+					 $this->usuarioCliente=$_POST['txtusuario'];
+					 $this->senhaCliente=$_POST['txtsenha'];
+					 
+					 $this->endereco->logradouro = $_POST['txtlogradouro'];
+					 $this->endereco->cep = $_POST['txtcep'];
+					 $this->endereco->numero = $_POST['txtnumero'];
+					 $this->endereco->bairro = $_POST['txtbairro'];
+					 $this->endereco->complemento = $_POST['txtcomplemento'];
+					 $this->endereco->cidade->codCidade = $_POST['codCidade'];
+					 $this->endereco->cidade->estado->codEstado = $_POST['codEstado'];
             }       
-        }
-		
-	
-        public function index(){
-            
-			$atualizacao = 'inserir';
-			$cliente = new Cliente();
-			if(isset($_GET['id']) && $_GET['id'] != ""){
-				
-				$id = $_GET['id'];
-				$atualizacao = 'atualizar';
-				
-				$c = new Cliente();
-				$cliente=$c->selectById($id);
-			}
-			
-           require_once('views/clientes/index.php');
-        }
-		
-		
-		public function cadastrar(){
-			
-			$atualizacao = 'inserir';
-			$cliente = new Cliente();
-			if(isset($_GET['id']) && $_GET['id'] != ""){
-				
-				$id = $_GET['id'];
-				$atualizacao = 'atualizar';
-				
-				$c = new Cliente();
-				$cliente=$c->selectById($id);
-			}
-			
-           require_once('views/home/cadastro.php');
 		}
         
 		 public function detalhe(){
@@ -116,8 +102,9 @@
 		}
 		
 		public function inserir() {
-              
+            $this->iniciaAtributo();
 			$cliente = new Cliente();
+			
 			$cliente->nomeCliente = $this->nomeCliente;
 			$cliente->cpfCliente = $this->cpfCliente;
 			$cliente->dtNascCliente = $this->dtNascCliente;
@@ -126,8 +113,20 @@
 			$cliente->telefoneCliente = $this->telefoneCliente;
 			$cliente->celularCliente = $this->celularCliente;
 			$cliente->emailCliente = $this->emailCliente;
+			$cliente->usuarioCliente = $this->usuarioCliente;
+			$cliente->senhaCliente = $this->senhaCliente;
+			$cliente->emailCliente = $this->emailCliente;
+			
+			$cliente->endereco->logradouro = $this->endereco->logradouro;
+			$cliente->endereco->cep  = $this->endereco->cep;
+			$cliente->endereco->numero = $this->endereco->numero;
+			$cliente->endereco->bairro = $this->endereco->bairro;
+			$cliente->endereco->complemento = $this->endereco->complemento;
+			$cliente->endereco->cidade->codCidade = $this->endereco->cidade->codCidade;
+			$cliente->endereco->cidade->estado->codEstado = $this->endereco->cidade->estado->codEstado;
+		
 			$cliente::insert($cliente);
-			header("location: ../home/cadastro.php");
+		
 			/*if($cliente::insert($cliente)){
 				header("location: ../home/cadastro.php");
 			}*/
