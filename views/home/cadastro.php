@@ -22,8 +22,8 @@
                    
                     <br>
                    
-                <INPUT TYPE="radio" NAME="FEMININO" VALUE="op1"> Feminino
-                <INPUT TYPE="radio" NAME="MASCULINO" VALUE="op2"> Masculino
+                <INPUT TYPE="radio" NAME="txtsexo" VALUE="F" checked> Feminino
+                <INPUT TYPE="radio" NAME="txtsexo" VALUE="M"> Masculino
                 <br>
                 <div class="altura"> </div> 
                 <tr>

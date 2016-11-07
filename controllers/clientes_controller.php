@@ -11,7 +11,8 @@
         public $altura;
         public $telefoneCliente;
         public $celularCliente;
-        public $emailCliente;  
+        public $emailCliente; 
+		public $sexo;
 		public $endereco;
 		public $usuarioCliente;
 		public $senhaCliente;
@@ -46,6 +47,7 @@
 					 $this->emailCliente=$_POST['txtemailcliente'];
 					 $this->usuarioCliente=$_POST['txtusuario'];
 					 $this->senhaCliente=$_POST['txtsenha'];
+					 $this->sexo=$_POST['txtsexo'];
 					 
 					 $this->endereco->logradouro = $_POST['txtlogradouro'];
 					 $this->endereco->cep = $_POST['txtcep'];
@@ -119,6 +121,7 @@
 			$cliente->usuarioCliente = $this->usuarioCliente;
 			$cliente->senhaCliente = $this->senhaCliente;
 			$cliente->emailCliente = $this->emailCliente;
+			$cliente->sexo =  $this->sexo;
 			
 			$cliente->endereco->logradouro = $this->endereco->logradouro;
 			$cliente->endereco->cep  = $this->endereco->cep;
@@ -130,11 +133,11 @@
 		
             $cliente->objetivo->codObjetivo = $this->objetivo->codObjetivo;
             
-			$cliente::insert($cliente);
+			//$cliente::insert($cliente);
 		
-			/*if($cliente::insert($cliente)){
-				header("location: ../home/cadastro.php");
-			}*/
+			if($cliente::insert($cliente)){
+				header("location: ../home/visualizar");
+			}
 		}
 
 	}
