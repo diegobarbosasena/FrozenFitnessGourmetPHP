@@ -33,10 +33,10 @@
             $loginCliente = $loginUsuario->loginCliente($this->usuario,$this->senha);
             $loginFunc = $loginUsuario->loginFunc($this->usuario,$this->senha);
             
-            if($loginCliente != 0){			
-                header("location: ../home/index/".$loginCliente);
-            }elseif($loginFunc != 0){
-				header("location: ../prato/index/".$loginFunc);
+            if($loginCliente != null){					
+                header("location: ../home/index");
+            }elseif($loginFunc != null){
+				header("location: ../prato/index");
             }else{
                 echo('Erro');
             }

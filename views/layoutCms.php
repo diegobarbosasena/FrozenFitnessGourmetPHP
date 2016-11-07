@@ -99,7 +99,7 @@
         	<div class="logo">
             </div>
             <div class="bemvindo_cms">
-            	<p> Bem vindo(a), Janaína </p> 
+            	<p> Bem vindo(a),<?php echo $_SESSION['usuario']; ?> </p> 
                 
                 <p> <a class="sair" href="../home/index"> Sair </a> </p>
             </div>
