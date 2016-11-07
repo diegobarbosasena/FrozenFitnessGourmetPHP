@@ -18,7 +18,7 @@
                 
                 <div class="clear"> </div>
                 
-                <a class="comprar"> Comprar </a>
+                <a href="../home/venda" class="comprar"> Comprar </a>
                 
                 <a class="comprar"> Adicionar </a>
                 

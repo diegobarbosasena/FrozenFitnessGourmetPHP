@@ -616,7 +616,9 @@ figure {
     background-repeat: no-repeat;
     background-position: center;
 	background-image:url(../imagem/prato1.png);
+   
 }
+
 .titulo_produtos{
 	width:100%;
 	height:38px;
@@ -666,13 +668,16 @@ input.btn_detalhes{
     margin-right: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    margin-top: 10px;
+    margin-top: 0px;
     border-radius: 15px;
     color: #00B348;
     background-color: #FFFFFF;
     margin-left: 55px;
+    float: left;
+
 }
 input.btn_comprar{
+    float: left;
 	width:90px;
 	height:40px;
 	border: solid 1px #00B348;
@@ -917,6 +922,7 @@ input.btn_monteja{
     margin: 8px;
 
 }
+
 .montar{
     width: 41%;
     height: 60px;
@@ -1060,6 +1066,89 @@ input.btn_adquirir:hover{
     border-radius: 5px;
 	
 }
+   
+    .categoria_venda{
+    width: 50%;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 19px;
+    text-align: center;
+    float: left;
+    margin-top: 170px;
+    color: #666;
+    margin-left: -78px;
+    
+}
+    
+    .quantidade_venda{
+    width:20%;
+    height: 23px;
+    border: solid 1px #ccc;
+    float: right;
+    margin-right: 90px;
+    margin-top: -47px;
+    text-align: center;
+    padding-top: 6px;
+    background-color: #FFF;
+    border-radius: 5px;
+	
+}
+    
+    input.btn_mais_venda{
+    width: 20%;
+    float: right;
+    margin-right: 120px;
+    height: 35px;
+    border-radius: 7px;
+    border:0px;
+    margin-top: -50px;
+	background-image:url(../imagem/btn_mais.png);
+	background-color:#F0F0F0;
+	cursor:pointer;
+}
+input.btn_menos_venda{
+    width: 30%;
+    float: right;
+    margin-right: 79px;
+    height: 38px;
+    border-radius: 7px;
+    border: 0px;
+    margin-top: -50px;
+    background-image: url(../imagem/btn_menos.png);
+    background-color: #F0F0F0;
+    cursor: pointer;
+}
+    .escolher_monte_venda{
+    width: 100%;
+    height: 115px;
+    margin-left: -50px;
+
+}
+    .categoria_monte_venda{
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 19px;
+    text-align: center;
+    float: left;
+    margin-top: 125px;
+    color: #666;
+    padding-right: 5px;
+	width:20%;
+       
+    
+}
+.imagem_produtos5{
+	width: 62%;
+    height: 153px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center;
+	background-image:url(../imagem/prato1.png);
+    margin-left: 190px;
+    margin-top: -110px;
+}
+    
+    
+    
+    
 .contatos{
 	font-family: Verdana,Arial,Helvetica,sans-serif;
 	color: #FFF;
@@ -1496,6 +1585,7 @@ input.btn_contato:hover{
     border: solid 1px #00B348;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #FFFFFF;
+    text-decoration: none;
 }
 .comprar:hover{
     background-color: #00B348;
@@ -2874,11 +2964,13 @@ input.btn_contato{
     background-color: #FFFFFF;
 	font-size:27px;
 	display:none;
+    text-decoration:none;
 }
 .comprar:hover{
     background-color: #00B348;
     cursor: pointer;
     color: #FFFFFF;
+    text-decoration:none;
 	
 }
 .desc_deta_prod{

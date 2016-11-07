@@ -35,6 +35,10 @@
 
             require_once('views/home/detalhe.php');
         }
+         public function venda(){
+
+            require_once('views/home/venda.php');
+        }
         
         public function cadastro(){
 
