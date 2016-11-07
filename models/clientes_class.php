@@ -33,22 +33,39 @@
 			
 			$sql = "INSERT INTO `tblCliente`(`nomeCliente`, `cpfCliente`, `dtNascCliente`, `peso`, `altura`, `telefoneCliente`, `celularCliente`, `emailCliente`) 
 					VALUES ('".$cliente->nomeCliente."','".$cliente->cpfCliente."','".$cliente->dtNascCliente."', '".$cliente->peso."', '".$cliente->altura."', 
-					'".$cliente->telefoneCliente."'), '".$cliente->celularCliente."', '".$cliente->emailCliente."';";
+					'".$cliente->telefoneCliente."', '".$cliente->celularCliente."', '".$cliente->emailCliente."');";
 			
-			$last_id = "set @id = LAST_INSERT_ID()";
+            $sqlobjetivo = "INSERT INTO tblObjetivoCliente (codObjetivo, codCliente) 
+                values ('".$cliente->objetivo->codObjetivo."',LAST_INSERT_ID());";
+            
+			$last_id = "set @id = LAST_INSERT_ID();";
 			
 			$sql2 = "insert into tblEndereco (logradouro,cep,numero,bairro,complemento,codCidade) values ('".$cliente->endereco->logradouro."',
 			'".$cliente->endereco->cep."','".$cliente->endereco->numero."','".$cliente->endereco->bairro."','".$cliente->endereco->complemento."',
-			'".$cliente->endereco->cidade->codCidade."')";
+			'".$cliente->endereco->cidade->codCidade."');";
 			
-			$sql3 = "INSERT INTO `tblClienteEnd`(`codEndereco`, `codCliente`) VALUES (@id,LAST_INSERT_ID());";
+			$sql3 = "INSERT INTO `tblClienteEnd`(`codEndereco`, `codCliente`) VALUES (LAST_INSERT_ID(),@id);";
+            
+            $sqluser = "insert into tblUsuario (usuario,senha,codTipoUsuario) values ('".$cliente->usuarioCliente."','".$cliente->senhaCliente."',2);";
+            
+            $sql4 = "insert into tblUsuarioCliente (codCliente, codUsuario) values (@id, LAST_INSERT_ID());";
 			
 			echo($sql);
+            echo($sqlobjetivo);
 			echo($last_id);
 			echo($sql2);
 			echo($sql3);
+            echo($sqluser);
+            echo($sql4);
+
+			/*mysql_query($sqlobjetivo);
+			mysql_query($sqlobjetivo);
+			mysql_query($last_id);
+			mysql_query($sql2);
+			mysql_query($sql3);
+			mysql_query($sqluser);
 			
-			/*if(mysql_query($sql))
+			if(mysql_query($sql4))
 				return true;
 			else
 				return false;*/
@@ -79,6 +96,8 @@
 				$cliente->telefoneCliente = $rs['telefoneCliente'];
                 $cliente->celularCliente = $rs['celularCliente'];
 				$cliente->emailCliente = $rs['emailCliente'];
+                $cliente->usuarioCliente = $rs['usuario'];
+				$cliente->senhaCliente = $rs['senha'];
                 
 				$listaClientes[] = $cliente;                              							
 			}

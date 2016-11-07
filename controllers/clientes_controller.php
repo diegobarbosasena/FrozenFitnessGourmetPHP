@@ -23,13 +23,15 @@
             
             require_once('models/clientes_class.php');   
 			require_once('models/endereco_class.php');	
-			require_once('models/objetivo_class.php');		
+			require_once('models/objetivo_class.php');	
+            
+            $this->endereco = new Endereco;
+			$this->objetivo = new Objetivo;
         }
 		
 		public function iniciaAtributo(){
 			
-			$this->endereco = new Endereco;
-			$this->objetivo = new Objetivo;
+			
 			
 			 if($_SERVER['REQUEST_METHOD']==='POST')
             {
@@ -52,6 +54,7 @@
 					 $this->endereco->complemento = $_POST['txtcomplemento'];
 					 $this->endereco->cidade->codCidade = $_POST['codCidade'];
 					 $this->endereco->cidade->estado->codEstado = $_POST['codEstado'];
+                     $this->objetivo->codObjetivo = $_POST['codObjetivo'];
             }       
 		}
         
@@ -125,6 +128,8 @@
 			$cliente->endereco->cidade->codCidade = $this->endereco->cidade->codCidade;
 			$cliente->endereco->cidade->estado->codEstado = $this->endereco->cidade->estado->codEstado;
 		
+            $cliente->objetivo->codObjetivo = $this->objetivo->codObjetivo;
+            
 			$cliente::insert($cliente);
 		
 			/*if($cliente::insert($cliente)){

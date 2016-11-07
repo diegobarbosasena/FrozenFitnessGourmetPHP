@@ -49,14 +49,7 @@
 			
 			$listaCidades = $end->cidade->selectAll();
 	
-			echo("AQUI");
-	
 			$listaEstados = $end->cidade->estado->selectAll();
-			
-			foreach ($listaEstados as $end->cidade->estado){
-				
-				echo("AQUI".$end->cidade->estado->nomeEstado);
-			}
 			
 			//$cliente = new Cliente();
 			/*if(isset($_GET['id']) && $_GET['id'] != ""){

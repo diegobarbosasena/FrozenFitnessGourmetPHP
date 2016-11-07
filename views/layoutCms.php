@@ -14,6 +14,10 @@
 <link rel="stylesheet" type="text/css" href="<?php  echo PROJECTDIR; ?>conteudo/css/style_cms.css">
 <title>Untitled Document</title>
 
+ 
+</head>
+    
+
 <script language="JavaScript"> 
 
 	 function moveRelogio(){ 
@@ -78,11 +82,7 @@
 	
 	}
 </script>
-
-
-
- 
-</head>
+    
 <body onload="moveRelogio()">
 	<div class="area_cms">
     	<div class="cabecalho_cms">

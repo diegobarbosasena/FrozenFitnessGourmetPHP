@@ -34,10 +34,10 @@
             $loginFunc = $loginUsuario->loginFunc($this->usuario,$this->senha);
             
             if($loginCliente){
-				echo('Cliente');				
+				//echo('Cliente');				
                 header("location: ../home/index");
             }elseif($loginFunc){
-				echo('Funcionario');
+				//echo('Funcionario');
 				header("location: ../prato/index");
             }else{
                 echo('Erro');
