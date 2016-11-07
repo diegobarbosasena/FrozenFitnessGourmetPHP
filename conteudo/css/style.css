@@ -141,6 +141,11 @@ nav#menu_produto{
     text-align: center;
     padding-top: 3px;
 }
+    
+.nomeusuario a{
+    text-decoration: none;    
+}   
+    
 input.pesquisar{
 	width: 30%;
 	height: 30px;
