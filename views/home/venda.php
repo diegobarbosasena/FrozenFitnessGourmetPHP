@@ -5,26 +5,72 @@
 
      
      <div class="escolher_monte">
-     <div class="categoria_monte_venda"> Bedidas:</div>
+     <div class="categoria_monte_venda"> Produto 1:</div>
         <div  class="categoria_venda"> 
         <form id="">
         	<input class="btn_mais_venda" type="submit" value=""> 
         </form>
         <div class="quantidade_venda"> 10 </div>
         <form id="">
-        	<input class="btn_menos" type="submit" value=""> 
+        	<input class="btn_menos_venda" type="submit" value=""> 
         </form>
         </div>
          
          <div class="imagem_produtos5">
             </div>
      </div>
+        <div class="escolher_monte">
+     <div class="categoria_monte_venda"> Produto 2:</div>
+        <div  class="categoria_venda"> 
+        <form id="">
+        	<input class="btn_mais_venda" type="submit" value=""> 
+        </form>
+        <div class="quantidade_venda"> 10 </div>
+        <form id="">
+        	<input class="btn_menos_venda" type="submit" value=""> 
+        </form>
+        </div>
+         
+         <div class="imagem_produtos5">
+            </div>
+     </div>
+        <div class="escolher_monte">
+     <div class="categoria_monte_venda"> Produto 3:</div>
+        <div  class="categoria_venda"> 
+        <form id="">
+        	<input class="btn_mais_venda" type="submit" value=""> 
+        </form>
+        <div class="quantidade_venda"> 10 </div>
+        <form id="">
+        	<input class="btn_menos_venda" type="submit" value=""> 
+        </form>
+        </div>
+         
+         <div class="imagem_produtos5">
+            </div>
+     </div>
+        <div class="escolher_monte">
+     <div class="categoria_monte"> Bedidas:</div>
+        <select class="montar" size="1" name="Carnes">
+            <option selected value="Selecione">Selecione:</option>
+            <option value="bovina">Bovina</option>
+            <option value="suina">Suína</option>
+        </select>
+        
+        <form id="">
+        	<input class="btn_mais" type="submit" value=""> 
+        </form>
+        <div class="quantidade"> 10 </div>
+        <form id="">
+        	<input class="btn_menos" type="submit" value=""> 
+        </form>
+     </div>
        
     
      
    </div>
     
-    <div class="adicionados">
+    <div class="adicionados_venda">
    		<p class="itens_adc"> Itens adicionados</p>
         <ul class="lst_itens_adc">
               <li class="item_lst_adc">Produto 1
@@ -46,12 +92,23 @@
    </div>
    
    
-    <div class="adicionados">
-   		<p class="itens_adc"> Total </p>
-        <p class="qnt_adc"> R$ 265,04. </p>
-         <form class="login-form" action="../home/venda">
-          <input class="btn_adquirir" type="submit" value="Adcionar ao carrinho"> 
+    
+    <div class="adicionados_venda">
+        <p class="itens_adc"> Total </p>
+        <p class="qnt_adc"> R$ 260,00. </p>
+   		<p class="itens_adc"> Forma de Pagamento: </p>
+        <p class="qnt_adc"> Parcelar no Boleto em até 3 vezes sem juros: </p>
+         <select class="parcela" size="1" name="Parcelas">
+            <option selected value="Selecione">Selecione:</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+         </select>
+            <p class="qnt_adc">  3x de R$ 52,00. </p>
+        <form class="login-form" action="../home/venda">
+          <input class="btn_adquirir" type="submit" value="Concluir a compra"> 
          </form>
+        
    </div>  
     
     
