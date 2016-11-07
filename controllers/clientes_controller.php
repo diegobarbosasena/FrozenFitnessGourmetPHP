@@ -78,20 +78,34 @@
 		}
 		
 		public function atualizar() {
+		 $this->iniciaAtributo();
+			$cliente = new Cliente();
+			
+			$cliente->nomeCliente = $this->nomeCliente;
+			$cliente->cpfCliente = $this->cpfCliente;
+			$cliente->dtNascCliente = $this->dtNascCliente;
+			$cliente->peso = $this->peso;
+			$cliente->altura = $this->altura;
+			$cliente->telefoneCliente = $this->telefoneCliente;
+			$cliente->celularCliente = $this->celularCliente;
+			$cliente->emailCliente = $this->emailCliente;
+			$cliente->usuarioCliente = $this->usuarioCliente;
+			$cliente->senhaCliente = $this->senhaCliente;
+			$cliente->emailCliente = $this->emailCliente;
+			$cliente->sexo =  $this->sexo;
+			
+			$cliente->endereco->logradouro = $this->endereco->logradouro;
+			$cliente->endereco->cep  = $this->endereco->cep;
+			$cliente->endereco->numero = $this->endereco->numero;
+			$cliente->endereco->bairro = $this->endereco->bairro;
+			$cliente->endereco->complemento = $this->endereco->complemento;
+			$cliente->endereco->cidade->codCidade = $this->endereco->cidade->codCidade;
+			$cliente->endereco->cidade->estado->codEstado = $this->endereco->cidade->estado->codEstado;
 		
-			$atualizar = new Cliente();
-			$atualizar->nomeCliente = $this->nomeCliente;
-			$atualizar->cpfCliente = $this->cpfCliente;
-			$atualizar->dtNascCliente = $this->dtNascCliente;
-			$atualizar->peso = $this->peso;
-			$atualizar->altura = $this->altura;
-			$atualizar->telefoneCliente = $this->telefoneCliente;
-			$atualizar->celularCliente = $this->celularCliente;
-			$atualizar->emailCliente = $this->emailCliente;
-			
-			
-			if($atualizar->update()){					
-				header("location: ../clientes/index".$this->codCliente);
+            $cliente->objetivo->codObjetivo = $this->objetivo->codObjetivo;
+ 
+			if($cliente->update()){					
+				header("location: ../clientes/index");
 			}
 		}
         
@@ -131,8 +145,6 @@
 			$cliente->endereco->cidade->estado->codEstado = $this->endereco->cidade->estado->codEstado;
 		
             $cliente->objetivo->codObjetivo = $this->objetivo->codObjetivo;
-            
-			//$cliente::insert($cliente);
 		
 			if($cliente::insert($cliente)){
 				header("location: ../home/visualizar");

@@ -1,8 +1,5 @@
-
-<?php
-    $usuario = "Teste Nome De Usuário";
 	
-?>
+	
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,7 +28,7 @@
             <div class="nomeusuario"> 
 				<a href="<?php  echo PROJECTDIR; ?>home/visualizar">
                 <p>Bem Vindo!</p>
-                <p> <?php echo $usuario; ?> </p>
+                <p> <?php echo $_SESSION['usuario']; ?> </p>
 				</a>
             </div>
             
