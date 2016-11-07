@@ -27,6 +27,8 @@
 
             $conexao->conectar();
 			
+			$this->endereco = new Endereco();
+			$this->objetivo = new Objetivo();
         }
         		
 				
@@ -76,11 +78,59 @@
 		public function selectAll (){
 			
 			$sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente, c.cpfCliente, c.dtNascCliente, 
-					c.peso, c.altura, c.telefoneCliente, c.celularCliente, c.emailCliente, tu.codTipoUsuario,
+					c.peso, c.altura, c.telefoneCliente, c.celularCliente, c.emailCliente, c.sexo, tu.codTipoUsuario,
 					tu.nomeTipoUsuario, oc.codObjetivo, o.nomeObjetivo, e.logradouro, e.numero, e.bairro, e.cep, e.complemento,  ec.codEndereco, ci.codCidade, ci.nomeCidade, s.codEstado, s.nomeEstado from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente 
 					as c on (c.codCliente = uc.codCliente) inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario) inner join tblobjetivocliente as oc on (oc.codCliente = c.codCliente) 
 					inner join tblobjetivo as o on (o.codObjetivo = oc.codObjetivo) inner join tblClienteEnd as ec on (ec.codCliente = c.codCliente) inner join tblEndereco as e on (e.codEndereco = ec.codEndereco) inner join tblcidade as ci on (ci.codCidade = e.codCidade)
 					inner join tblEstado as s on (s.codEstado = ci.codEstado);";
+            
+			$select = mysql_query($sql);
+						
+            
+            $listaClientes = array();
+            
+			while($rs = mysql_fetch_array($select)){
+                	  
+                $cliente = new Cliente();
+				
+                $cliente->codCliente = $rs['codCliente'];
+                $cliente->nomeCliente = $rs['nomeCliente'];
+				$cliente->cpfCliente = $rs['cpfCliente'];
+                $cliente->dtNascCliente = $rs['dtNascCliente'];
+				$cliente->peso = $rs['peso'];
+                $cliente->altura = $rs['altura'];
+				$cliente->telefoneCliente = $rs['telefoneCliente'];
+                $cliente->celularCliente = $rs['celularCliente'];
+				$cliente->emailCliente = $rs['emailCliente'];
+                $cliente->usuarioCliente = $rs['usuario'];
+				$cliente->senhaCliente = $rs['senha'];
+				$cliente->sexo =  $rs['sexo'];
+				
+				$cliente->endereco->logradouro = $rs['logradouro'];
+				$cliente->endereco->cep  = $rs['cep'];
+				$cliente->endereco->numero = $rs['numero'];
+				$cliente->endereco->bairro = $rs['bairro'];
+				$cliente->endereco->complemento = $rs['complemento'];
+				$cliente->endereco->cidade->codCidade = $rs['codCidade'];
+				$cliente->endereco->cidade->estado->codEstado = $rs['codEstado'];
+
+				$cliente->objetivo->codObjetivo = $rs['codObjetivo'];
+                
+				$listaClientes[] = $cliente;                              							
+			}
+			
+            return $listaClientes;   
+							
+		}
+		
+		public function selectById($codCliente){
+			
+				$sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente, c.cpfCliente, c.dtNascCliente, 
+					c.peso, c.altura, c.telefoneCliente, c.celularCliente, c.emailCliente,c.sexo, tu.codTipoUsuario,
+					tu.nomeTipoUsuario, oc.codObjetivo, o.nomeObjetivo, e.logradouro, e.numero, e.bairro, e.cep, e.complemento,  ec.codEndereco, ci.codCidade, ci.nomeCidade, s.codEstado, s.nomeEstado from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente 
+					as c on (c.codCliente = uc.codCliente) inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario) inner join tblobjetivocliente as oc on (oc.codCliente = c.codCliente) 
+					inner join tblobjetivo as o on (o.codObjetivo = oc.codObjetivo) inner join tblClienteEnd as ec on (ec.codCliente = c.codCliente) inner join tblEndereco as e on (e.codEndereco = ec.codEndereco) inner join tblcidade as ci on (ci.codCidade = e.codCidade)
+					inner join tblEstado as s on (s.codEstado = ci.codEstado) where c.codCliente=".$codCliente;
             
 			$select = mysql_query($sql);
 						
@@ -107,7 +157,7 @@
 				$cliente->endereco->logradouro = $rs['logradouro'];
 				$cliente->endereco->cep  = $rs['cep'];
 				$cliente->endereco->numero = $rs['numero'];
-				$cliente->endereco->bairro = $rs['sexo'];
+				$cliente->endereco->bairro = $rs['bairro'];
 				$cliente->endereco->complemento = $rs['complemento'];
 				$cliente->endereco->cidade->codCidade = $rs['codCidade'];
 				$cliente->endereco->cidade->estado->codEstado = $rs['codEstado'];
@@ -118,31 +168,6 @@
 			}
 			
             return $listaClientes;   
-							
-		}
-		
-		public function selectById($codCliente){
-			
-			$sql = "".$codCliente;
-			
-			$select = mysql_query($sql);
-			
-			if($rs = mysql_fetch_array($select)){
-				
-				$cliente = new Cliente();
-                $cliente->codCliente = $rs['codCliente'];
-                $cliente->nomeCliente = $rs['nomeCliente'];
-				$cliente->cpfCliente = $rs['cpfCliente'];
-                $cliente->dtNascCliente = $rs['dtNascCliente'];
-				$cliente->peso = $rs['peso'];
-                $cliente->altura = $rs['altura'];
-				$cliente->telefoneCliente = $rs['telefoneCliente'];
-                $cliente->celularCliente = $rs['celularCliente'];
-				$cliente->emailCliente = $rs['emailCliente'];
-                  
-			}
-			
-			return $prato;
 		}
 		
 		public function update() {

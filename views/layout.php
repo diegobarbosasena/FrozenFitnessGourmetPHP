@@ -18,12 +18,12 @@
             <nav>  
                 <ul id="menu">
 				
-                    <li><a href="../home/index" class="link">Home</a></li>
-                    <li><a href="../home/produtos" class="link">Produtos</a></li>
-                    <li><a href="../home/sobre" class="link">Sobre a Loja</a></li>
-                    <li><a href="../home/parceiros" class="link">Parceiros</a></li>
-                    <li><a href="../home/personalizado" class="link">Personalize</a></li>
-                    <li><a href="../home/contatos" class="link">Contato</a></li>
+                    <li><a href="<?php  echo PROJECTDIR; ?>home/index" class="link">Home</a></li>
+                    <li><a href="<?php  echo PROJECTDIR; ?>home/produtos" class="link">Produtos</a></li>
+                    <li><a href="<?php  echo PROJECTDIR; ?>home/sobre" class="link">Sobre a Loja</a></li>
+                    <li><a href="<?php  echo PROJECTDIR; ?>home/parceiros" class="link">Parceiros</a></li>
+                    <li><a href="<?php  echo PROJECTDIR; ?>home/personalizado" class="link">Personalize</a></li>
+                    <li><a href="<?php  echo PROJECTDIR; ?>home/contatos" class="link">Contato</a></li>
                    
                 </ul>
             </nav>

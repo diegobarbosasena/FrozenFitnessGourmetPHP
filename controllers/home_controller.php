@@ -3,6 +3,8 @@
 //Classe que controla as ações do site
     class home_controller{
 
+		public $nomeUser;
+        	
 
         //Método que chama o conteúdo da home
         public function index() {
@@ -11,7 +13,7 @@
         }
 
 		public function visualizar(){
-			
+					
 			require_once('views/home/visualizar.php');
 			
 		}

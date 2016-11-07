@@ -72,7 +72,6 @@
 		}
 		
 		public function buscar($codCliente){
-			
 			$buscar = new Cliente();
 			return $buscar->selectById($codCliente);
 			
