@@ -50,20 +50,22 @@
             </div>
      </div>
         <div class="escolher_monte">
-     <div class="categoria_monte"> Bedidas:</div>
-        <select class="montar" size="1" name="Carnes">
+     <div class="categoria_bebida"> Bedidas:</div>
+        <select class="bebida" size="1" name="Carnes">
             <option selected value="Selecione">Selecione:</option>
             <option value="bovina">Bovina</option>
             <option value="suina">Suína</option>
         </select>
         
+        <div  class="categoria_venda_bebida"> 
         <form id="">
-        	<input class="btn_mais" type="submit" value=""> 
+        	<input class="btn_mais_venda" type="submit" value=""> 
         </form>
-        <div class="quantidade"> 10 </div>
+        <div class="quantidade_venda"> 10 </div>
         <form id="">
-        	<input class="btn_menos" type="submit" value=""> 
+        	<input class="btn_menos_venda" type="submit" value=""> 
         </form>
+        </div>
      </div>
        
     
@@ -89,8 +91,20 @@
                   </form>
               </li>
         </ul>
+        <p class="itens_adc"> Total </p>
+        <p class="qnt_adc"> R$ 240,00. </p>
    </div>
    
+    <div class="adicionados_venda">
+       
+   		
+        <form class="login-form" action="../home/venda">
+          <input class="btn_adquirir" type="submit" value=" Calcular Frete"> 
+         </form>
+         <p class="itens_adc"> Valor do Frete  </p>
+        <p class="qnt_adc"> R$ 20,00. </p>
+        
+   </div> 
    
     
     <div class="adicionados_venda">
