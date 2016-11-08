@@ -9,7 +9,7 @@
         public function __construct(){
             
             require_once('models/usuario_class.php');
-     
+     	    require_once('models/clientes_class.php');
         }
         
         
@@ -28,16 +28,26 @@
         
         public function entrar(){
             $this->iniciaAtributo();
+            
             $loginUsuario = new Usuario();
+            $c = new Cliente();
             
             $loginCliente = $loginUsuario->loginCliente($this->usuario,$this->senha);
             $loginFunc = $loginUsuario->loginFunc($this->usuario,$this->senha);
             
-            if($loginCliente != null){					
-                header("location: ../home/index");
+            $_SESSION['usuario'] = "";
+            
+            if($loginCliente != null){	 
+                
+                $lista = $c->selectById($loginCliente);
+                
+                $_SESSION['usuario'] = "Aqui".$lista->nomeCliente;  
+                echo( $_SESSION['usuario'] );
+                //header("location: ../home/index");
             }elseif($loginFunc != null){
+                $_SESSION['usuario'] = $loginFunc; 
 				header("location: ../prato/index");
-            }else{
+            }else{               
                 echo('Erro');
             }
         }

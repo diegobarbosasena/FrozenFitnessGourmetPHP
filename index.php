@@ -34,13 +34,11 @@
 
 
 	if (in_array($controller, $lstCtrlCMS)){
-		//$usuario = $_GET['id'];
-		$_SESSION['usuario'] = $_GET['id'];
+		
         require_once('views/layoutCms.php');
     }else{
         //Inclusão do arquivo principal do site
-	   //$usuario = $_GET['id'];
-	   $_SESSION['usuario'] = $_GET['id'];
+	
 	   require_once('views/layout.php');
     }
 	
