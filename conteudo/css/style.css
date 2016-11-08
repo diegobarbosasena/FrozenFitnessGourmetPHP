@@ -2020,22 +2020,24 @@ input.button_pesquisa{
 	display:none;
 }
 .carrinho{
-	width: 30px;
-	height: 30px;
+	width: 70px;
+	height: 70px;
 	float:right;
 	cursor:pointer;
-	display:none;
+	background-image:url(../imagem/carrinho_cel.png);
+	margin-top:25px;
 }
 .login{
-	width: 80px;
-	height: 80px;
+	width: 70px;
+	height: 70px;
 	float:right;
 	background-image:url(../imagem/login_celular.png);
 	cursor:pointer;
 	display:block;
 	position:absolute;
-	margin-top:-100px;
-	display:none;
+	margin-left:-20px;
+	margin-top:25px;
+	
 	
 }
 .entrar{
@@ -2996,26 +2998,19 @@ input.btn_contato{
 }
 .titulo_deta_prod{
 	width:600px;
-    font-size: 24px;
     color: #FE7101;
-    float: left;
-    margin-top: 60px;
-    margin-left: -76px;
-    margin-bottom: 10px;
+    margin-left: -5px;
 	font-size:40px;
 }
 .preco_deta_prod{
-    margin-right: 90px;
-    float: right;
-    margin-top: 10px;
+	width:210px;
+	height:30px;
     color: #A9A9A9;
     font-size: 30px;
-    margin-bottom: 10px;
 }
 .comprar{
-	width:110px;
-	height:30px;
-    margin: 10px;
+	width:600px;
+	height:50px;
     float: left;
     padding: 7px;
     border-radius: 10px;
@@ -3024,9 +3019,9 @@ input.btn_contato{
     border: solid 2px #00B348;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #FFFFFF;
-	font-size:27px;
-	display:none;
+	font-size:35px;
     text-decoration:none;
+	margin-left:-100px;
 }
 .comprar:hover{
     background-color: #00B348;
@@ -3037,7 +3032,7 @@ input.btn_contato{
 }
 .desc_deta_prod{
 	width:640px;
-    margin: -160px auto 30px;
+    margin: 120px auto 30px;
     height: auto;
     text-align: justify;
     padding: 10px;

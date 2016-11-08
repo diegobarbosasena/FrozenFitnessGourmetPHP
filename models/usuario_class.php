@@ -27,10 +27,10 @@
 				
 				foreach($lista as $c){
 					if($c->usuarioCliente == $usuario && $c->senhaCliente == $senha){
-						 return $c->nomeCliente; 
+						return $c->codCliente; 
 					}				
 				}
-				
+                    
 				return null;
     
         }
@@ -42,7 +42,7 @@
 				
 				foreach($lista as $f){
 					if($f->usuarioFuncionario == $usuario && $f->senhaFuncionario == $senha){
-						 return $f->nomeFuncionarioLoja; 
+						 return $f->codFuncionarioLoja; 
 					}				
 				}
 				

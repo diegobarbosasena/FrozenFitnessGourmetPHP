@@ -9,14 +9,17 @@
         public $funcionario;
    
         public function __construct(){
-            
+        
             require_once('models/banco_dados.php');
 			require_once('models/funcionario_class.php');
 			require_once('models/clientes_class.php');
             
             $cliente = new Cliente();
             $funcionario = new Funcionario();
-        }       
+   
+   
+        }
+      
         
        public function iniciaAtributo(){
 		
@@ -30,6 +33,8 @@
         
         public function entrar(){
             $this->iniciaAtributo();
+    
+            $c = new Cliente();
             
             $loginCliente = $this->loginCliente($this->usuario,$this->senha);
             $loginFunc = $this->loginFunc($this->usuario,$this->senha);
@@ -42,7 +47,7 @@
             }elseif($loginFunc != null){
                 $_SESSION['usuario'] = $this->funcionario->nomeFuncionarioLoja;
 				header("location: ../prato/index");
-            }else{
+            }else{               
                 echo('Erro');
             }
         }

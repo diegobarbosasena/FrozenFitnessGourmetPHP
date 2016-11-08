@@ -49,7 +49,7 @@
 			
 			$sql3 = "INSERT INTO `tblClienteEnd`(`codEndereco`, `codCliente`) VALUES (LAST_INSERT_ID(),@id);";
             
-            $sqluser = "insert into tblUsuario (usuario,senha,codTipoUsuario) values ('".$cliente->usuarioCliente."','".$cliente->senhaCliente."',2);";
+            $sqluser = "insert into tblUsuario (usuario,senha) values ('".$cliente->usuarioCliente."','".$cliente->senhaCliente."');";
             
             $sql4 = "insert into tblUsuarioCliente (codCliente, codUsuario) values (@id, LAST_INSERT_ID());";
 			
@@ -78,9 +78,8 @@
 		public function selectAll (){
 			
 			$sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente, c.cpfCliente, c.dtNascCliente, 
-					c.peso, c.altura, c.telefoneCliente, c.celularCliente, c.emailCliente, c.sexo, tu.codTipoUsuario,
-					tu.nomeTipoUsuario, oc.codObjetivo, o.nomeObjetivo, e.logradouro, e.numero, e.bairro, e.cep, e.complemento,  ec.codEndereco, ci.codCidade, ci.nomeCidade, s.codEstado, s.nomeEstado from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente 
-					as c on (c.codCliente = uc.codCliente) inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario) inner join tblobjetivocliente as oc on (oc.codCliente = c.codCliente) 
+					c.peso, c.altura, c.telefoneCliente, c.celularCliente, c.emailCliente, c.sexo,  oc.codObjetivo, o.nomeObjetivo, e.logradouro, e.numero, e.bairro, e.cep, e.complemento,  ec.codEndereco, ci.codCidade, ci.nomeCidade, s.codEstado, s.nomeEstado from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente 
+					as c on (c.codCliente = uc.codCliente) inner join tblobjetivocliente as oc on (oc.codCliente = c.codCliente) 
 					inner join tblobjetivo as o on (o.codObjetivo = oc.codObjetivo) inner join tblClienteEnd as ec on (ec.codCliente = c.codCliente) inner join tblEndereco as e on (e.codEndereco = ec.codEndereco) inner join tblcidade as ci on (ci.codCidade = e.codCidade)
 					inner join tblEstado as s on (s.codEstado = ci.codEstado);";
             
@@ -129,11 +128,10 @@
 		public function selectById($codCliente){
 			
 				$sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente, c.cpfCliente, c.dtNascCliente, 
-					c.peso, c.altura, c.telefoneCliente, c.celularCliente, c.emailCliente,c.sexo, tu.codTipoUsuario,
-					tu.nomeTipoUsuario, oc.codObjetivo, o.nomeObjetivo, e.logradouro, e.numero, e.bairro, e.cep, e.complemento,  ec.codEndereco, ci.codCidade, ci.nomeCidade, s.codEstado, s.nomeEstado from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente 
-					as c on (c.codCliente = uc.codCliente) inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario) inner join tblobjetivocliente as oc on (oc.codCliente = c.codCliente) 
+					c.peso, c.altura, c.telefoneCliente, c.celularCliente, c.emailCliente, c.sexo,  oc.codObjetivo, o.nomeObjetivo, e.logradouro, e.numero, e.bairro, e.cep, e.complemento,  ec.codEndereco, ci.codCidade, ci.nomeCidade, s.codEstado, s.nomeEstado from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente 
+					as c on (c.codCliente = uc.codCliente) inner join tblobjetivocliente as oc on (oc.codCliente = c.codCliente) 
 					inner join tblobjetivo as o on (o.codObjetivo = oc.codObjetivo) inner join tblClienteEnd as ec on (ec.codCliente = c.codCliente) inner join tblEndereco as e on (e.codEndereco = ec.codEndereco) inner join tblcidade as ci on (ci.codCidade = e.codCidade)
-					inner join tblEstado as s on (s.codEstado = ci.codEstado) where c.codCliente=".$codCliente;
+					inner join tblEstado as s on (s.codEstado = ci.codEstado) where c.codCliente =".$codCliente;
             
 			$select = mysql_query($sql);
 						                        
