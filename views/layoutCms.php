@@ -5,6 +5,8 @@
 
         return $date;
     }
+
+    $logado = $_SESSION['usuario']; 
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -99,9 +101,9 @@
         	<div class="logo">
             </div>
             <div class="bemvindo_cms">
-            	<p> Bem vindo(a),<?php echo $_SESSION['usuario']; ?> </p> 
+            	<p> Bem vindo(a),<?php echo $logado; ?> </p> 
                 
-                <p> <a class="sair" href="../home/index"> Sair </a> </p>
+                <p> <a class="sair" href="<?php  echo PROJECTDIR; ?>home/index"> Sair </a> </p>
             </div>
     	</div>
         

@@ -112,9 +112,12 @@
 				$cliente->endereco->bairro = $rs['bairro'];
 				$cliente->endereco->complemento = $rs['complemento'];
 				$cliente->endereco->cidade->codCidade = $rs['codCidade'];
+				$cliente->endereco->cidade->nomeCidade = $rs['nomeCidade'];
 				$cliente->endereco->cidade->estado->codEstado = $rs['codEstado'];
+				$cliente->endereco->cidade->estado->nomeEstado = $rs['nomeEstado'];
 
 				$cliente->objetivo->codObjetivo = $rs['codObjetivo'];
+                $cliente->objetivo->nomeObjetivo = $rs['nomeObjetivo'];
                 
 				$listaClientes[] = $cliente;                              							
 			}
@@ -133,11 +136,8 @@
 					inner join tblEstado as s on (s.codEstado = ci.codEstado) where c.codCliente=".$codCliente;
             
 			$select = mysql_query($sql);
-						
-            
-            $listaClientes = array();
-            
-			while($rs = mysql_fetch_array($select)){
+						                        
+			if($rs = mysql_fetch_array($select)){
                 	  
                 $cliente = new Cliente();
                 $cliente->codCliente = $rs['codCliente'];
@@ -160,14 +160,16 @@
 				$cliente->endereco->bairro = $rs['bairro'];
 				$cliente->endereco->complemento = $rs['complemento'];
 				$cliente->endereco->cidade->codCidade = $rs['codCidade'];
+				$cliente->endereco->cidade->nomeCidade = $rs['nomeCidade'];
 				$cliente->endereco->cidade->estado->codEstado = $rs['codEstado'];
+				$cliente->endereco->cidade->estado->nomeEstado = $rs['nomeEstado'];
 
 				$cliente->objetivo->codObjetivo = $rs['codObjetivo'];
-                
-				$listaClientes[] = $cliente;                              							
+				$cliente->objetivo->nomeObjetivo = $rs['nomeObjetivo'];
+                                   							
 			}
 			
-            return $listaClientes;   
+            return $cliente;   
 		}
 		
 		public function update() {
