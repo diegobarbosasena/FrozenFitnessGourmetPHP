@@ -12,6 +12,7 @@
 		public function logOff(){
 			
 			$_SESSION['usuario'] = "";
+			$_SESSION['cod'] = "";
 			
 			header("location: ../home/index ");
 		}
@@ -19,13 +20,17 @@
 		public function visualizar(){
             require_once('models/clientes_class.php');
             
-            $c = new Cliente();
-            $cliente = new Cliente();
-            
-            $cliente = $c->selectById($_SESSION['cod']);    
-            
-			require_once('views/home/visualizar.php');
-			
+            if(($_SESSION['cod']) != null){
+				$c = new Cliente();
+				$cliente = new Cliente();
+				
+				$cliente = $c->selectById($_SESSION['cod']);    
+				
+				require_once('views/home/visualizar.php');
+			}else{
+				require_once('views/home/home.php');
+			}
+		
 		}
 
         public function produtos(){

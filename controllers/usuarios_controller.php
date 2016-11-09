@@ -71,22 +71,26 @@
                 return 0;
         }
 		
-		   public function loginFunc($usuario, $senha){
+		  public function loginFunc($usuario, $senha){
             
-				$f = new Funcionario();
-				$lista = $f->selectAll();
+			$f = new Funcionario();
+			$lista = $f->selectAll();
 				
-				foreach($lista as $f){
-					if($f->usuarioFuncionario == $usuario && $f->senhaFuncionario == $senha){
-                        $this->funcionario->nomeFuncionarioLoja = $f->nomeFuncionarioLoja;
-                        return 1;
-					}				
-				}
+			foreach($lista as $f){
+				if($f->usuarioFuncionario == $usuario && $f->senhaFuncionario == $senha){
+                       $this->funcionario->nomeFuncionarioLoja = $f->nomeFuncionarioLoja;
+                       return 1;
+				}				
+			}
 				
-				return 0;
+			return 0;
+		}
+		
+        public function clearUsuario(){
 			
-		   }
-        
+				
+			
+		}
 		
 	}
 

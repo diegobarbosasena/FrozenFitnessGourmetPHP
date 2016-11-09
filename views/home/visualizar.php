@@ -4,7 +4,6 @@
 	<fieldset class="perfil_cliente">
 		 <legend class="tit_cliente">Meus Dados</legend>
                     
-
 		      <table class="tbl_dados">
 				<tr>
 					<td class="dados_cliente_tit">Nome:</td>
