@@ -1,28 +1,17 @@
-<form  name="frmconsulta" method="post" action="../../prato/index">
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>clientesCms/index">
         <input class="btnVoltar" name="btnconsulta" type="submit" value="Voltar" />
         
 </form>
 <div class="cadas">Detalhes</div>
 <table class="tbl_consulta_dtl">
-    
      
-		<?php
-			require_once('controllers/clientes_controller.php');
-			
-			$controllerClientes = new clientes_controller();
-			
-			$rs=$controllerClientes->buscar($_GET['id']);
-
-		?>
-        
-    
     <tr class="linha_consulta_dtl">
        
         <td class="col_consulta_dtl">
           Nome:
         </td>
         <td class="col_consulta_dtl">
-           <?php echo ($rs->nomeCliente);?>  
+           <?php echo ($cliente->nomeCliente);?>  
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -30,7 +19,7 @@
             CPF: 
         </td>
         <td class="col_consulta_dtl">
-           <?php echo ($rs->cpfCliente);?>  
+           <?php echo ($cliente->cpfCliente);?>  
         </td>
      </tr>
       <tr class="linha_consulta_dtl">
@@ -39,7 +28,7 @@
         </td>
         <td class="col_consulta_dtl">
        
-           <?php echo ($rs->dtNascCliente);?>  
+           <?php echo ($cliente->dtNascCliente);?>  
         
         </td>
      </tr>
@@ -49,7 +38,7 @@
         </td>
         <td class="col_consulta_dtl">
        
-           <?php echo ($rs->peso);?>  
+           <?php echo ($cliente->peso);?>  
         
         </td>
      </tr>
@@ -59,7 +48,7 @@
         </td>
         <td class="col_consulta_dtl">
        
-           <?php echo ($rs->altura);?>  
+           <?php echo ($cliente->altura);?>  
         
         </td>
      </tr>
@@ -69,7 +58,7 @@
         </td>
         <td class="col_consulta_dtl">
        
-           <?php echo ($rs->telefoneCliente);?>  
+           <?php echo ($cliente->telefoneCliente);?>  
         
         </td>
      </tr>
@@ -78,7 +67,7 @@
             Celular: 
         </td>
         <td class="col_consulta_dtl">
-           <?php echo ($rs->celularCliente);?>    
+           <?php echo ($cliente->celularCliente);?>    
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -86,7 +75,7 @@
             Email: 
         </td>
         <td class="col_consulta_dtl">
-          <?php echo ($rs->emailCliente);?>    
+          <?php echo ($cliente->emailCliente);?>    
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -94,13 +83,8 @@
             Objetivo: 
         </td>
         <td class="col_consulta_dtl">
-          <?php echo ($rs->nomeObjetovo);?>    
+          <?php echo($cliente->objetivo->nomeObjetivo); ?>    
         </td>
      </tr>
-
-		<?php 
-                
-           
-    ?>
 
 </table>

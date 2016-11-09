@@ -10,6 +10,7 @@
 		public $bairro;
 		public $cidade;
 		public $complemento;
+        public $codEndereco;
         
         
         public function __construct(){

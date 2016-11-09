@@ -126,7 +126,7 @@
                         <li><a href="<?php  echo PROJECTDIR; ?>exercicios/index" class="link">Adm. Exercicios</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>funcionario/index" class="link">Adm. Usuários</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>tipoUsuario/index" class="link">Adm. Tipo Usuario</a></li>
-                        <li><a href="<?php  echo PROJECTDIR; ?>clientes/index" class="link">Clientes</a></li>                      
+                        <li><a href="<?php  echo PROJECTDIR; ?>clientesCms/index" class="link">Clientes</a></li>                      
 
                     </ul>
 

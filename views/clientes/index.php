@@ -29,48 +29,41 @@
             Objetivo 
         </td>
          <td class="col_consulta">
-            Opções 
+            OpÃ§Ãµes 
         </td>
     </tr>
     <?php
-		require_once('controllers/clientes_controller.php');
 		
-		$controllerClientes = new clientes_controller();
-				
-		$rs=$controllerClientes->listarTodos();
-		
-		$cont=0;
-		
-		while ($cont < count($rs)){
+        foreach($listaClientes as $cliente){
 	
 	?> 
         
     <tr class="linha_consulta">
         <td class="col_consulta">
-        <?php echo($rs[$cont]->nomeCliente); ?>
+        <?php echo($cliente->nomeCliente); ?>
             
         </td>
         <td class="col_consulta">
-             <?php echo($rs[$cont]->cpfCliente); ?>
+             <?php echo($cliente->cpfCliente); ?>
         </td>
         <td class="col_consulta">
-            <?php echo($rs[$cont]->telefoneCliente); ?>
+            <?php echo($cliente->telefoneCliente); ?>
         </td>
         <td class="col_consulta">
-             <?php echo($rs[$cont]->celularCliente); ?>
+             <?php echo($cliente->celularCliente); ?>
         </td>
          <td class="col_consulta">
-           <?php echo($rs[$cont]->emailCliente); ?>
+           <?php echo($cliente->emailCliente); ?>
         </td>
          <td class="col_consulta">
-            <?php echo($rs[$cont]->nomeObjetivo); ?>
+            <?php echo($cliente->objetivo->nomeObjetivo); ?>
         </td>
          <td class="col_consulta">
-            <a href="<?php echo(PROJECTDIR)?>clientes/detalhe/<?php echo($rs[$cont]->codCliente) ?>" class="link">Detalhes </a>
+            <a href="<?php echo(PROJECTDIR)?>clientesCms/detalhe/<?php echo($cliente->codCliente) ?>" class="link">Detalhes </a>
         </td>
         <?php 
 		
-		$cont++;
+		
 		}
 	?>
       </tr>

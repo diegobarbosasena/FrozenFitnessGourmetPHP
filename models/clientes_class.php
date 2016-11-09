@@ -13,6 +13,7 @@
 		public $endereco;
 		public $sexo;
 		public $usuarioCliente;
+		public $codUsuarioCliente;
 		public $senhaCliente;
 		public $confirmacaoSenha;
 		public $objetivo;
@@ -103,9 +104,12 @@
 				$cliente->emailCliente = $rs['emailCliente'];
                 $cliente->usuarioCliente = $rs['usuario'];
 				$cliente->senhaCliente = $rs['senha'];
+				$cliente->codUsuarioCliente = $rs['codUsuario'];
 				$cliente->sexo =  $rs['sexo'];
 				
+
 				$cliente->endereco->logradouro = $rs['logradouro'];
+				$cliente->endereco->codEndereco = $rs['codEndereco'];
 				$cliente->endereco->cep  = $rs['cep'];
 				$cliente->endereco->numero = $rs['numero'];
 				$cliente->endereco->bairro = $rs['bairro'];
@@ -116,7 +120,7 @@
 				$cliente->endereco->cidade->estado->nomeEstado = $rs['nomeEstado'];
 
 				$cliente->objetivo->codObjetivo = $rs['codObjetivo'];
-                $cliente->objetivo->nomeObjetivo = $rs['nomeObjetivo'];
+				$cliente->objetivo->nomeObjetivo = $rs['nomeObjetivo'];
                 
 				$listaClientes[] = $cliente;                              							
 			}
@@ -149,10 +153,12 @@
 				$cliente->emailCliente = $rs['emailCliente'];
                 $cliente->usuarioCliente = $rs['usuario'];
 				$cliente->senhaCliente = $rs['senha'];
+				$cliente->codUsuarioCliente = $rs['codUsuario'];
 				$cliente->sexo =  $rs['sexo'];
 				
 
 				$cliente->endereco->logradouro = $rs['logradouro'];
+				$cliente->endereco->codEndereco = $rs['codEndereco'];
 				$cliente->endereco->cep  = $rs['cep'];
 				$cliente->endereco->numero = $rs['numero'];
 				$cliente->endereco->bairro = $rs['bairro'];
@@ -172,9 +178,22 @@
 		
 		public function update() {
 					
-			$sql = "";     
-				
-			if(mysql_query($sql))
+			$sqlCliente = "update tblCliente set nomeCliente='".$this->nomeCliente."', cpfCliente = '".$this->cpfCliente."', dtNascCliente='".$this->dtNascCliente."', peso='".$this->peso."', altura='".$this->altura."',  telefoneCliente='".$this->telefoneCliente."', celularCliente='".$this->celularCliente."',
+            emailCliente='".$this->emailCliente."' where codCliente=".$this->codCliente;   
+            
+            $sqlEndereco = "update tblEndereco set logradouro = '".$this->endereco->logradouro."', cep = '".$this->endereco->cep."', numero = '".$this->endereco->numero."', bairro = '".$this->endereco->bairro."',
+            complemento = '".$this->endereco->complemento."', codCidade = '".$this->endereco->cidade->codCidade."' where codEndereco=".$this->endereco->codEndereco;
+            
+            $sqlUsuario = "update tblUsuario set usuario = '".$this->usuarioCliente."', senha = '".$this->senhaCliente."' where codUsuario=".$this->codUsuarioCliente;
+            
+            /*echo($sqlCliente);
+            echo($sqlEndereco);
+            echo($sqlUsuario);*/
+           
+			mysql_query($sqlCliente);	
+			mysql_query($sqlEndereco);	
+            
+			if(mysql_query($sqlUsuario))
 				return true;
 			else
 				return false;		

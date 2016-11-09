@@ -6,6 +6,8 @@
             <form id="formulario" method="post" action="<?php echo(PROJECTDIR)?>clientes/<?php echo($atualizacao)?> "> 
 				
 				 <input type="hidden" value="<?php echo($cliente->codCliente)?>" name="codCliente"/>
+				 <input type="hidden" value="<?php echo($cliente->endereco->codEndereco)?>" name="codEndereco"/>
+				 <input type="hidden" value="<?php echo($cliente->codUsuarioCliente)?>" name="codUsuarioCliente"/>
 			
                 <fieldset>
                     

@@ -43,7 +43,7 @@
                                 <input type="password" name="txtsenha" placeholder="password" required/>
                                 <input class="button_login" type="submit" name="btnLogin" value="Login"/>
                              
-                                <p class="message">Não é registrado? <a href="../home/cadastro">Crie sua conta</a></p>
+                                <p class="message">Não é registrado? <a href="<?php  echo PROJECTDIR; ?>home/cadastro">Crie sua conta</a></p>
                             </form>
                         </div>
                     </div>

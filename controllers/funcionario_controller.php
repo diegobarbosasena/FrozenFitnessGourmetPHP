@@ -98,14 +98,14 @@
 		}
 		
 		public function deletar() {
-            if($_SERVER['REQUEST_METHOD']=='POST'){
-                $this->cod =$_POST['codDeletarUsuario'];
-                echo("Chegou".$this->cod);                        
-            }
             
             $id = $_GET['id'];
-			$deletar = new Funcionario();
-			$deletar->delete($id,$this->cod);			
+			$f = new Funcionario();
+ 
+            $funcionario=$f->selectById($id);
+			if($f->delete($funcionario)){
+                header("location: ../funcionario/index");
+            }			
 		}
 		
 		public function inserir() {

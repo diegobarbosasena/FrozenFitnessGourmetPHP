@@ -15,6 +15,7 @@
 		public $sexo;
 		public $endereco;
 		public $usuarioCliente;
+		public $codUsuarioCliente;
 		public $senhaCliente;
 		public $confirmacaoSenha;
 		public $objetivo;
@@ -47,9 +48,11 @@
 					 $this->emailCliente=$_POST['txtemailcliente'];
 					 $this->usuarioCliente=$_POST['txtusuario'];
 					 $this->senhaCliente=$_POST['txtsenha'];
+					 $this->codUsuarioCliente=$_POST['codUsuarioCliente'];                
 					 $this->sexo=$_POST['txtsexo'];
 					 
 					 $this->endereco->logradouro = $_POST['txtlogradouro'];
+					 $this->endereco->codEndereco = $_POST['codEndereco'];
 					 $this->endereco->cep = $_POST['txtcep'];
 					 $this->endereco->numero = $_POST['txtnumero'];
 					 $this->endereco->bairro = $_POST['txtbairro'];
@@ -60,11 +63,7 @@
             }       
 		}
         
-		 public function detalhe(){
-            
-             require_once('views/clientes/detalhe_clientes.php');
-            
-        }
+		
 		public function listarTodos (){
 			 
 			$listar = new Cliente();
@@ -78,10 +77,11 @@
 		}
 		
 		public function atualizar() {
-		 $this->iniciaAtributo();
+		    $this->iniciaAtributo();
 			$cliente = new Cliente();
 			
 			$cliente->nomeCliente = $this->nomeCliente;
+			$cliente->codCliente = $this->codCliente;
 			$cliente->cpfCliente = $this->cpfCliente;
 			$cliente->dtNascCliente = $this->dtNascCliente;
 			$cliente->peso = $this->peso;
@@ -92,9 +92,11 @@
 			$cliente->usuarioCliente = $this->usuarioCliente;
 			$cliente->senhaCliente = $this->senhaCliente;
 			$cliente->emailCliente = $this->emailCliente;
+			$cliente->codUsuarioCliente = $this->codUsuarioCliente;
 			$cliente->sexo =  $this->sexo;
 			
 			$cliente->endereco->logradouro = $this->endereco->logradouro;
+			$cliente->endereco->codEndereco = $this->endereco->codEndereco;
 			$cliente->endereco->cep  = $this->endereco->cep;
 			$cliente->endereco->numero = $this->endereco->numero;
 			$cliente->endereco->bairro = $this->endereco->bairro;
@@ -104,8 +106,10 @@
 		
             $cliente->objetivo->codObjetivo = $this->objetivo->codObjetivo;
  
+            //$cliente->update();
+            
 			if($cliente->update()){					
-				header("location: ../clientes/index");
+				header("location: ../home/visualizar");
 			}
 		}
         
@@ -115,7 +119,7 @@
 			
 			$deletar = new Cliente();
 			if($deletar->delete($codCliente)){
-				header("location: ../../clientes/index");
+				header("location: ../home/visualizar");
 			}	
 		}
 		
