@@ -19,10 +19,9 @@
 				
 		public function insert($objetivo) {
 		
-				$sql = "insert into tblobjetivo (nomeObjetivo, descricaoObjetivo) values ('".$objetivo->nomeObjetivo."', '".$objetivo->descricaoObjetivo."');";
+				$sql = "insert into tblObjetivo (nomeObjetivo, descricaoObjetivo) values ('".$objetivo->nomeObjetivo."', '".$objetivo->descricaoObjetivo."');";
 			
 				if(mysql_query($sql)){
-					echo($sql);
 					return true;
 				}else{
 					return false;	
@@ -31,7 +30,7 @@
 		
 		public function selectAll (){
             
-			$sql = "select * from tblobjetivo";
+			$sql = "select * from tblObjetivo";
 			
 			$select = mysql_query($sql);
             
@@ -53,7 +52,7 @@
 		
 		public function selectById($codObjetivo){
 			
-			$sql = "select * from tblobjetivo where codObjetivo=".$codObjetivo;
+			$sql = "select * from tblObjetivo where codObjetivo=".$codObjetivo;
 			
 			$select = mysql_query($sql);
 			
@@ -70,7 +69,7 @@
 		
 		public function update() {
 		
-			$sql = "update tblobjetivo set nomeObjetivo = '".$this->nomeObjetivo."', descricaoObjetivo = '".$this->descricaoObjetivo."' where codObjetivo=".$this->codObjetivo;     
+			$sql = "update tblObjetivo set nomeObjetivo = '".$this->nomeObjetivo."', descricaoObjetivo = '".$this->descricaoObjetivo."' where codObjetivo=".$this->codObjetivo;     
 			
 			if(mysql_query($sql)){				
 				return true;
@@ -81,7 +80,7 @@
 		
 		public function delete($codObjetivo) {
 		
-			$sql = "delete from tblobjetivo where codObjetivo=".$codObjetivo;
+			$sql = "delete from tblObjetivo where codObjetivo=".$codObjetivo;
 
 			if(mysql_query($sql))
 				return true;

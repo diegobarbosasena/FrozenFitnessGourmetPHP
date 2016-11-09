@@ -1,5 +1,4 @@
-	
-	
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,7 +32,9 @@
             </div>
             
             <div class="botoes">
-
+			
+			
+			<?php if($_SESSION['usuario'] == ""){ ?> 
                 <div class="login">
                     <a href="#" class="link"></a>
                     <div class="entrar">
@@ -43,12 +44,17 @@
                                 <input type="password" name="txtsenha" placeholder="password" required/>
                                 <input class="button_login" type="submit" name="btnLogin" value="Login"/>
                              
-                                <p class="message">Não é registrado? <a href="../home/cadastro">Crie sua conta</a></p>
+                                <p class="message">Não é registrado? <a href="<?php  echo PROJECTDIR; ?>home/cadastro">Crie sua conta</a></p>
                             </form>
                         </div>
                     </div>
                 </div>
-                
+                <?php }else{ ?> 
+					
+					<a href="<?php  echo PROJECTDIR; ?>home/logOff"  > <div class="logOff" title="Deseja sair?" ></div> </a>
+					
+					
+				<?php } ?> 
                 
                 <div class="carrinho">
                     <a href="#" class="link"></a>

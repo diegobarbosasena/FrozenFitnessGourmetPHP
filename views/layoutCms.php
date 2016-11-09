@@ -5,6 +5,7 @@
 
         return $date;
     }
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -99,9 +100,10 @@
         	<div class="logo">
             </div>
             <div class="bemvindo_cms">
+
             	<p> Bem vindo(a),<?php echo $_SESSION['usuario']; ?> </p> 
                 
-                <p> <a class="sair" href="../home/index"> Sair </a> </p>
+                <p> <a class="sair" href="<?php  echo PROJECTDIR; ?>home/logOff"> Sair </a> </p>
             </div>
     	</div>
         
@@ -124,7 +126,7 @@
                         <li><a href="<?php  echo PROJECTDIR; ?>exercicios/index" class="link">Adm. Exercicios</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>funcionario/index" class="link">Adm. Usuários</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>tipoUsuario/index" class="link">Adm. Tipo Usuario</a></li>
-                        <li><a href="<?php  echo PROJECTDIR; ?>clientes/index" class="link">Clientes</a></li>                      
+                        <li><a href="<?php  echo PROJECTDIR; ?>clientesCms/index" class="link">Clientes</a></li>                      
 
                     </ul>
 

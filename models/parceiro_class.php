@@ -48,7 +48,7 @@
 		public function selectAll (){
             
 			$sql = "select p.codParceiro, p.cnpjParceiro, p.nomeParceiro, p.imagemParceiro, p.siteParceiro, p.telefoneParceiro, p.emailParceiro,
-					e.codEndereco, e.logradouro, e.cep, e.numero, e.bairro, e.complemento, c.codCidade, c.nomeCidade, s.codEstado, s.nomeEstado, s.Uf
+					e.codEndereco, e.logradouro, e.cep, e.numero, e.bairro, e.complemento, c.codCidade, c.nomeCidade, s.codEstado, s.nomeEstado, s.uf
 					from tblParceiro as p inner join tblEndereco as e on (p.codEndereco= e.codEndereco) inner join tblCidade as c on (e.codCidade = c.codCidade)
 					inner join tblEstado as s on (c.codEstado = s.codEstado);";
 			
@@ -87,7 +87,7 @@
 		public function selectById($codParceiro){
 			
 					$sql = "select p.codParceiro, p.cnpjParceiro, p.nomeParceiro, p.imagemParceiro, p.siteParceiro, p.telefoneParceiro, p.emailParceiro,
-					e.codEndereco, e.logradouro, e.cep, e.numero, e.bairro, e.complemento, c.codCidade, c.nomeCidade, s.codEstado, s.nomeEstado, s.Uf
+					e.codEndereco, e.logradouro, e.cep, e.numero, e.bairro, e.complemento, c.codCidade, c.nomeCidade, s.codEstado, s.nomeEstado, s.uf
 					from tblParceiro as p inner join tblEndereco as e on (p.codEndereco= e.codEndereco) inner join tblCidade as c on (e.codCidade = c.codCidade)
 					inner join tblEstado as s on (c.codEstado = s.codEstado) where p.codParceiro=".$codParceiro;
 			

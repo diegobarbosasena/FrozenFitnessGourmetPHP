@@ -5,16 +5,29 @@
 
         //Método que chama o conteúdo da home
         public function index() {
-
+		
             require_once('views/home/home.php');
         }
 
+		public function logOff(){
+			
+			$_SESSION['usuario'] = "";
+			
+			header("location: ../home/index ");
+		}
+		
 		public function visualizar(){
-					
+            require_once('models/clientes_class.php');
+            
+            $c = new Cliente();
+            $cliente = new Cliente();
+            
+            $cliente = $c->selectById($_SESSION['cod']);    
+            
 			require_once('views/home/visualizar.php');
 			
 		}
-        //Método que chama o conteúdo da home
+
         public function produtos(){
 
             require_once('views/home/produtos.php');
@@ -54,15 +67,14 @@
 	
 			$listaEstados = $end->cidade->estado->selectAll();
 			
-			//$cliente = new Cliente();
-			/*if(isset($_GET['id']) && $_GET['id'] != ""){
+			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
 				$c = new Cliente();
 				$cliente=$c->selectById($id);
-			}*/
+			}
 		
             require_once('views/home/cadastro.php');
         }

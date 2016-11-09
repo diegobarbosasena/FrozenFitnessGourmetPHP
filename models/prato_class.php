@@ -49,12 +49,11 @@
 			
 			$sql = "select p.codPrato,p.nomePrato, p.precoPrato, p.descricaoPrato, p.caloria, p.valorEnergetico, p.carboidrato, p.proteina, p.sodio, p.gorduras, p.imagemPrato,
 					cp.nomeCategoriaPrato, cp.codcategoriaPrato
-					from tblprato as p
+					from tblPrato as p
 					inner join tblCatPrato as cat
 					on (p.codPrato = cat.codPrato)
-					inner join tblcategoriaprato as cp
+					inner join tblCategoriaPrato as cp
 					on(cat.codCategoriaPrato = cp.codCategoriaPrato);";
-            //$sql = "select * from tblprato";
             
 			$select = mysql_query($sql);
 						

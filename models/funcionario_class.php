@@ -23,26 +23,27 @@
 		public function selectAll (){
             
             $sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario,u.senha,  c.codFuncionarioLoja, c.nomeFuncionarioLoja, c.cpfFuncionarioLoja,
-                    tu.codTipoUsuario, tu.nomeTipoUsuario from tblusuarioFuncionarioLoja as uc inner join tblusuario as u on 
+                    tu.codTipoUsuario, tu.nomeTipoUsuario from tblUsuarioFuncionarioLoja as uc inner join tblUsuario as u on 
                     (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja) 
-                    inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario);";
+                    inner join tblTipoUsuario as tu on (tu.codTipoUsuario = u.codTipoUsuario);";
 			
 			$select = mysql_query($sql);
 			
-			$cont=0;
+            $listaFuncionario = array();
+            
 			while($rs = mysql_fetch_array($select)){
 				
-				$listaFuncionario[] = new Funcionario();
+				$funcionario = new Funcionario();
 				  
-				$listaFuncionario[$cont]->codFuncionarioLoja = $rs['codFuncionarioLoja'];
-                $listaFuncionario[$cont]->nomeFuncionarioLoja = $rs['nomeFuncionarioLoja'];
-				$listaFuncionario[$cont]->cpfFuncionarioLoja = $rs['cpfFuncionarioLoja'];
-				$listaFuncionario[$cont]->nomeTipoUsuario = $rs['nomeTipoUsuario'];
-				$listaFuncionario[$cont]->senhaFuncionario = $rs['senha'];				
-				$listaFuncionario[$cont]->usuarioFuncionario = $rs['usuario'];
-				$listaFuncionario[$cont]->codUsuario = $rs['codUsuario'];
+				$funcionario->codFuncionarioLoja = $rs['codFuncionarioLoja'];
+                $funcionario->nomeFuncionarioLoja = $rs['nomeFuncionarioLoja'];
+				$funcionario->cpfFuncionarioLoja = $rs['cpfFuncionarioLoja'];
+				$funcionario->nomeTipoUsuario = $rs['nomeTipoUsuario'];
+				$funcionario->senhaFuncionario = $rs['senha'];				
+				$funcionario->usuarioFuncionario = $rs['usuario'];
+				$funcionario->codUsuario = $rs['codUsuario'];
                 
-				$cont++;							
+				$listaFuncionario[] = $funcionario;					
 			}
 			
 			return $listaFuncionario;
@@ -52,9 +53,10 @@
 		public function selectById($codFuncionarioLoja){
 			
 			  
-			$sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario, u.senha, c.codFuncionarioLoja, c.nomeFuncionarioLoja, cpfFuncionarioLoja
-                     from tblusuarioFuncionarioLoja as uc inner join tblusuario as u on 
-                    (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja) where c.codFuncionarioLoja=".$codFuncionarioLoja;
+			$sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario,u.senha,  c.codFuncionarioLoja, c.nomeFuncionarioLoja, c.cpfFuncionarioLoja,
+                    tu.codTipoUsuario, tu.nomeTipoUsuario from tblUsuarioFuncionarioLoja as uc inner join tblUsuario as u on 
+                    (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja) 
+                    inner join tblTipoUsuario as tu on (tu.codTipoUsuario = u.codTipoUsuario) where c.codFuncionarioLoja=".$codFuncionarioLoja;
 			
 			$select = mysql_query($sql);
 			
@@ -66,9 +68,10 @@
 				$funcionario->codFuncionarioLoja = $rs['codFuncionarioLoja'];
                 $funcionario->nomeFuncionarioLoja = $rs['nomeFuncionarioLoja'];
 				$funcionario->cpfFuncionarioLoja = $rs['cpfFuncionarioLoja'];
-				$funcionario->senhaFuncionario = $rs['senha'];
+				$funcionario->nomeTipoUsuario = $rs['nomeTipoUsuario'];
+				$funcionario->senhaFuncionario = $rs['senha'];				
 				$funcionario->usuarioFuncionario = $rs['usuario'];
-                $funcionario->codUsuario = $rs['codUsuario'];
+				$funcionario->codUsuario = $rs['codUsuario'];
                 
 			}
 			
@@ -90,35 +93,38 @@
 		
 		}
 		
-		public function delete($codFuncionarioLoja,$codUsuario) {
+		public function delete($funcionario) {
 		
-			$sql = "delete from tblUsuarioFuncionarioloja where codfuncionarioloja =".$codFuncionarioLoja;
+			$sql = "delete from tblUsuarioFuncionarioloja where codFuncionarioLoja =".$funcionario->codFuncionarioLoja;
 			
-            $sql2 = "delete from Funcionarioloja where codfuncionarioloja =".$codFuncionarioLoja;
+            $sql2 = "delete from tblFuncionarioloja where codFuncionarioLoja =".$funcionario->codFuncionarioLoja;
             
-            $sql3 = "delete from Usuario where codUsuario =".$codUsuario;
+            $sql3 = "delete from tblUsuario where codUsuario =".$funcionario->codUsuario;
 
-            echo($sql);
+            /*echo($sql);
             echo($sql2);
-            echo($sql3);
+            echo($sql3);*/
             
-			/*if(mysql_query($sq3))
+            mysql_query($sql);
+            mysql_query($sql2);
+            
+			if(mysql_query($sql3))
 				return true;
 			else
-				return false;*/
+				return false;
 		}
 		
 		public function insertFuncionario($novofuncionario) {
 			
-			$sql = "insert into tblfuncionarioLoja (nomeFuncionarioLoja,cpfFuncionarioLoja) values ('".$novofuncionario->nomeFuncionarioLoja."', '".$novofuncionario->cpfFuncionarioLoja."')";
-			$last_id = "set @id = LAST_INSERT_ID()";
-			$sql2 ="insert into tblusuario (usuario, senha, codTipoUsuario) values('".$novofuncionario->usuarioFuncionario."','".$novofuncionario->senhaFuncionario."','".$novofuncionario->codTipoUsuario."')";
-			$sql3 = "insert into tblusuariofuncionarioloja (codFuncionarioLoja, codUsuario) values (@id, LAST_INSERT_ID())";
+			$sql = "insert into tblFuncionarioLoja (nomeFuncionarioLoja,cpfFuncionarioLoja) values ('".$novofuncionario->nomeFuncionarioLoja."', '".$novofuncionario->cpfFuncionarioLoja."');";
+			$last_id = "set @id = LAST_INSERT_ID();";
+			$sql2 ="insert into tblUsuario (usuario, senha, codTipoUsuario) values('".$novofuncionario->usuarioFuncionario."','".$novofuncionario->senhaFuncionario."','".$novofuncionario->codTipoUsuario."');";
+			$sql3 = "insert into tblUsuarioFuncionarioLoja (codFuncionarioLoja, codUsuario) values (@id, LAST_INSERT_ID());";
 					
-			//echo($sql);	
-			//echo($last_id);	
-			//echo($sql2);	
-			//echo($sql3);	
+			/*echo($sql);	
+			echo($last_id);	
+			echo($sql2);	
+			echo($sql3);*/	
 					
 			mysql_query($sql);
             mysql_query($last_id);

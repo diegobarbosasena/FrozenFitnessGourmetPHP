@@ -9,9 +9,9 @@ class mysql_db{
 	
 	public function __construct(){
 		
-		$this->server="localhost";
+		$this->server="10.107.140.14";
 		$this->user="root";
-		$this->password="bcd127";
+		$this->password="root";
 	}
 	
 	public function conectar(){

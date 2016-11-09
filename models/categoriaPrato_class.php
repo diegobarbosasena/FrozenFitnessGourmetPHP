@@ -24,7 +24,6 @@
 				$sql = "insert into tblcategoriaprato (nomeCategoriaPrato, descricaoCategoriaPrato, imagemCategoriaPrato) values('".$categoriaPrato->nomeCategoriaPrato."','".$categoriaPrato->descricaoCategoriaPrato."',
 					'".$categoriaPrato->imagemCategoriaPrato."')";
 
-				//echo($sql);
 				if(mysql_query($sql)){
 				
 					return true;
@@ -35,7 +34,7 @@
 		
 		public function selectAll (){
             
-			$sql = "select * from tblcategoriaprato";
+			$sql = "select * from tblCategoriaPrato";
 			
 			$select = mysql_query($sql);
             

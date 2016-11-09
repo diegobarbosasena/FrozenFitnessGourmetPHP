@@ -13,6 +13,7 @@
 		public $endereco;
 		public $sexo;
 		public $usuarioCliente;
+		public $codUsuarioCliente;
 		public $senhaCliente;
 		public $confirmacaoSenha;
 		public $objetivo;
@@ -49,7 +50,7 @@
 			
 			$sql3 = "INSERT INTO `tblClienteEnd`(`codEndereco`, `codCliente`) VALUES (LAST_INSERT_ID(),@id);";
             
-            $sqluser = "insert into tblUsuario (usuario,senha,codTipoUsuario) values ('".$cliente->usuarioCliente."','".$cliente->senhaCliente."',2);";
+            $sqluser = "insert into tblUsuario (usuario,senha) values ('".$cliente->usuarioCliente."','".$cliente->senhaCliente."');";
             
             $sql4 = "insert into tblUsuarioCliente (codCliente, codUsuario) values (@id, LAST_INSERT_ID());";
 			
@@ -78,10 +79,9 @@
 		public function selectAll (){
 			
 			$sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente, c.cpfCliente, c.dtNascCliente, 
-					c.peso, c.altura, c.telefoneCliente, c.celularCliente, c.emailCliente, c.sexo, tu.codTipoUsuario,
-					tu.nomeTipoUsuario, oc.codObjetivo, o.nomeObjetivo, e.logradouro, e.numero, e.bairro, e.cep, e.complemento,  ec.codEndereco, ci.codCidade, ci.nomeCidade, s.codEstado, s.nomeEstado from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente 
-					as c on (c.codCliente = uc.codCliente) inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario) inner join tblobjetivocliente as oc on (oc.codCliente = c.codCliente) 
-					inner join tblobjetivo as o on (o.codObjetivo = oc.codObjetivo) inner join tblClienteEnd as ec on (ec.codCliente = c.codCliente) inner join tblEndereco as e on (e.codEndereco = ec.codEndereco) inner join tblcidade as ci on (ci.codCidade = e.codCidade)
+					c.peso, c.altura, c.telefoneCliente, c.celularCliente, c.emailCliente, c.sexo,  oc.codObjetivo, o.nomeObjetivo, e.logradouro, e.numero, e.bairro, e.cep, e.complemento,  ec.codEndereco, ci.codCidade, ci.nomeCidade, s.codEstado, s.nomeEstado from tblUsuarioCliente as uc inner join tblUsuario as u on (uc.codUsuario = u.codUsuario) inner join tblCliente 
+					as c on (c.codCliente = uc.codCliente) inner join tblObjetivoCliente as oc on (oc.codCliente = c.codCliente) 
+					inner join tblObjetivo as o on (o.codObjetivo = oc.codObjetivo) inner join tblClienteEnd as ec on (ec.codCliente = c.codCliente) inner join tblEndereco as e on (e.codEndereco = ec.codEndereco) inner join tblCidade as ci on (ci.codCidade = e.codCidade)
 					inner join tblEstado as s on (s.codEstado = ci.codEstado);";
             
 			$select = mysql_query($sql);
@@ -104,17 +104,23 @@
 				$cliente->emailCliente = $rs['emailCliente'];
                 $cliente->usuarioCliente = $rs['usuario'];
 				$cliente->senhaCliente = $rs['senha'];
+				$cliente->codUsuarioCliente = $rs['codUsuario'];
 				$cliente->sexo =  $rs['sexo'];
 				
+
 				$cliente->endereco->logradouro = $rs['logradouro'];
+				$cliente->endereco->codEndereco = $rs['codEndereco'];
 				$cliente->endereco->cep  = $rs['cep'];
 				$cliente->endereco->numero = $rs['numero'];
 				$cliente->endereco->bairro = $rs['bairro'];
 				$cliente->endereco->complemento = $rs['complemento'];
 				$cliente->endereco->cidade->codCidade = $rs['codCidade'];
+				$cliente->endereco->cidade->nomeCidade = $rs['nomeCidade'];
 				$cliente->endereco->cidade->estado->codEstado = $rs['codEstado'];
+				$cliente->endereco->cidade->estado->nomeEstado = $rs['nomeEstado'];
 
 				$cliente->objetivo->codObjetivo = $rs['codObjetivo'];
+				$cliente->objetivo->nomeObjetivo = $rs['nomeObjetivo'];
                 
 				$listaClientes[] = $cliente;                              							
 			}
@@ -126,18 +132,14 @@
 		public function selectById($codCliente){
 			
 				$sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente, c.cpfCliente, c.dtNascCliente, 
-					c.peso, c.altura, c.telefoneCliente, c.celularCliente, c.emailCliente,c.sexo, tu.codTipoUsuario,
-					tu.nomeTipoUsuario, oc.codObjetivo, o.nomeObjetivo, e.logradouro, e.numero, e.bairro, e.cep, e.complemento,  ec.codEndereco, ci.codCidade, ci.nomeCidade, s.codEstado, s.nomeEstado from tblusuariocliente as uc inner join tblusuario as u on (uc.codUsuario = u.codUsuario) inner join tblcliente 
-					as c on (c.codCliente = uc.codCliente) inner join tbltipousuario as tu on (tu.codTipoUsuario = u.codTipoUsuario) inner join tblobjetivocliente as oc on (oc.codCliente = c.codCliente) 
-					inner join tblobjetivo as o on (o.codObjetivo = oc.codObjetivo) inner join tblClienteEnd as ec on (ec.codCliente = c.codCliente) inner join tblEndereco as e on (e.codEndereco = ec.codEndereco) inner join tblcidade as ci on (ci.codCidade = e.codCidade)
-					inner join tblEstado as s on (s.codEstado = ci.codEstado) where c.codCliente=".$codCliente;
+					c.peso, c.altura, c.telefoneCliente, c.celularCliente, c.emailCliente, c.sexo,  oc.codObjetivo, o.nomeObjetivo, e.logradouro, e.numero, e.bairro, e.cep, e.complemento,  ec.codEndereco, ci.codCidade, ci.nomeCidade, s.codEstado, s.nomeEstado from tblUsuarioCliente as uc inner join tblUsuario as u on (uc.codUsuario = u.codUsuario) inner join tblCliente 
+					as c on (c.codCliente = uc.codCliente) inner join tblObjetivoCliente as oc on (oc.codCliente = c.codCliente) 
+					inner join tblObjetivo as o on (o.codObjetivo = oc.codObjetivo) inner join tblClienteEnd as ec on (ec.codCliente = c.codCliente) inner join tblEndereco as e on (e.codEndereco = ec.codEndereco) inner join tblCidade as ci on (ci.codCidade = e.codCidade)
+					inner join tblEstado as s on (s.codEstado = ci.codEstado) where c.codCliente =".$codCliente;
             
 			$select = mysql_query($sql);
-						
-            
-            $listaClientes = array();
-            
-			while($rs = mysql_fetch_array($select)){
+						                        
+			if($rs = mysql_fetch_array($select)){
                 	  
                 $cliente = new Cliente();
                 $cliente->codCliente = $rs['codCliente'];
@@ -151,30 +153,47 @@
 				$cliente->emailCliente = $rs['emailCliente'];
                 $cliente->usuarioCliente = $rs['usuario'];
 				$cliente->senhaCliente = $rs['senha'];
+				$cliente->codUsuarioCliente = $rs['codUsuario'];
 				$cliente->sexo =  $rs['sexo'];
 				
 
 				$cliente->endereco->logradouro = $rs['logradouro'];
+				$cliente->endereco->codEndereco = $rs['codEndereco'];
 				$cliente->endereco->cep  = $rs['cep'];
 				$cliente->endereco->numero = $rs['numero'];
 				$cliente->endereco->bairro = $rs['bairro'];
 				$cliente->endereco->complemento = $rs['complemento'];
 				$cliente->endereco->cidade->codCidade = $rs['codCidade'];
+				$cliente->endereco->cidade->nomeCidade = $rs['nomeCidade'];
 				$cliente->endereco->cidade->estado->codEstado = $rs['codEstado'];
+				$cliente->endereco->cidade->estado->nomeEstado = $rs['nomeEstado'];
 
 				$cliente->objetivo->codObjetivo = $rs['codObjetivo'];
-                
-				$listaClientes[] = $cliente;                              							
+				$cliente->objetivo->nomeObjetivo = $rs['nomeObjetivo'];
+                                   							
 			}
 			
-            return $listaClientes;   
+            return $cliente;   
 		}
 		
 		public function update() {
 					
-			$sql = "";     
-				
-			if(mysql_query($sql))
+			$sqlCliente = "update tblCliente set nomeCliente='".$this->nomeCliente."', cpfCliente = '".$this->cpfCliente."', dtNascCliente='".$this->dtNascCliente."', peso='".$this->peso."', altura='".$this->altura."',  telefoneCliente='".$this->telefoneCliente."', celularCliente='".$this->celularCliente."',
+            emailCliente='".$this->emailCliente."' where codCliente=".$this->codCliente;   
+            
+            $sqlEndereco = "update tblEndereco set logradouro = '".$this->endereco->logradouro."', cep = '".$this->endereco->cep."', numero = '".$this->endereco->numero."', bairro = '".$this->endereco->bairro."',
+            complemento = '".$this->endereco->complemento."', codCidade = '".$this->endereco->cidade->codCidade."' where codEndereco=".$this->endereco->codEndereco;
+            
+            $sqlUsuario = "update tblUsuario set usuario = '".$this->usuarioCliente."', senha = '".$this->senhaCliente."' where codUsuario=".$this->codUsuarioCliente;
+            
+            /*echo($sqlCliente);
+            echo($sqlEndereco);
+            echo($sqlUsuario);*/
+           
+			mysql_query($sqlCliente);	
+			mysql_query($sqlEndereco);	
+            
+			if(mysql_query($sqlUsuario))
 				return true;
 			else
 				return false;		

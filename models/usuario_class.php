@@ -27,10 +27,17 @@
 				
 				foreach($lista as $c){
 					if($c->usuarioCliente == $usuario && $c->senhaCliente == $senha){
+<<<<<<< HEAD
 						 return $c->nomeCliente; 
 					}				
 				}
 				
+=======
+						return $c->codCliente; 
+					}				
+				}
+                    
+>>>>>>> 67bd89c9ea9f4f1c6d98c5a22780cda550ba53ac
 				return null;
     
         }

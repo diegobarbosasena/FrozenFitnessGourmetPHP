@@ -21,7 +21,7 @@
 				
 		public function insert($exercicios) {
 		
-				$sql = "insert into tblexercicio (tituloExercicio, descricaoExercicio, imagemExercicio) values('".$exercicios->tituloExercicio."','".$exercicios->descricaoExercicio."',
+				$sql = "insert into tblExercicio (tituloExercicio, descricaoExercicio, imagemExercicio) values('".$exercicios->tituloExercicio."','".$exercicios->descricaoExercicio."',
 					'".$exercicios->imagemExercicio."')";
 					
 
@@ -36,7 +36,7 @@
 		
 		public function selectAll (){
             
-			$sql = "select * from tblexercicio";
+			$sql = "select * from tblExercicio";
 			
 			$select = mysql_query($sql);
             
@@ -59,7 +59,7 @@
 		
 		public function selectById($codExercicio){
 			
-			$sql = "select * from tblexercicio where codExercicio=".$codExercicio;
+			$sql = "select * from tblExercicio where codExercicio=".$codExercicio;
 			
 			$select = mysql_query($sql);
 			
@@ -79,7 +79,7 @@
 		
 		public function update() {
 		
-			$sql = "update tblexercicio set tituloExercicio='".$this->tituloExercicio."', descricaoExercicio='".$this->descricaoExercicio."', imagemExercicio='".$this->imagemExercicio."'  where codExercicio=".$this->codExercicio;     
+			$sql = "update tblExercicio set tituloExercicio='".$this->tituloExercicio."', descricaoExercicio='".$this->descricaoExercicio."', imagemExercicio='".$this->imagemExercicio."'  where codExercicio=".$this->codExercicio;     
 			
 			if(mysql_query($sql)){				
 				return true;
@@ -90,7 +90,7 @@
 		
 		public function delete($codExercicio) {
 		
-			$sql = "delete from tblexercicio where codExercicio=".$codExercicio;
+			$sql = "delete from tblExercicio where codExercicio=".$codExercicio;
 
 			if(mysql_query($sql))
 				return true;
