@@ -922,6 +922,22 @@ input.btn_monteja{
 	width: 49%;
 	float:left;
 }
+.venda_prods{
+	width: 60%;
+	float:left;
+    height: auto;
+    
+}
+    
+.venda_itens{
+    width: 35%;
+	float:left;
+    margin-left: 30px;
+    min-height: 100px;
+     height: auto;
+    
+    
+}
 
 .monte{
     width: 100%;
@@ -962,9 +978,10 @@ input.btn_monteja{
     margin-top: 105px;
     color: #666; 
     padding-left: 5px;
-    margin-left: -2px;
+    margin-left: 95px;
     
 }
+   
 .categoria_monte{
     font-family: Verdana,Arial,Helvetica,sans-serif;
     font-size: 19px;
@@ -1077,9 +1094,23 @@ input.btn_adquirir {
     color: #FFF;
     background-color: #00B348;
     margin-bottom: 9px;
-    margin-top: 27px;
+    margin-top: 10px;
     margin-left: 15px;
 	cursor:pointer;
+}
+    
+.frete{
+
+    width: 88%;
+    height: 40px;
+    border: solid 1px #00B348;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    border-radius: 15px;
+    color: #FFF;
+    margin-bottom: 9px;
+    margin-top: 27px;
+    margin-left: 15px;
 }
 
 input.btn_adquirir:hover{
@@ -1122,17 +1153,17 @@ input.btn_adquirir:hover{
     float: left;
     margin-top: 0px;
     color: #666;
-    margin-left: 245px;
+    margin-left: 60px;
     margin-bottom: 5px;
 }
 
     
     .quantidade_venda{
-       width: 15%;
+       width: 12%;
     height: 23px;
     border: solid 1px #ccc;
     float: right;
-    margin-right: 94px;
+    margin-right: 164px;
     margin-top: -47px;
     text-align: center;
     padding-top: 6px;
@@ -1142,9 +1173,9 @@ input.btn_adquirir:hover{
 }
     
     input.btn_mais_venda{
-    width: 16%;
+    width: 12%;
     float: right;
-    margin-right: 127px;
+    margin-right: 200px;
     height: 36px;
     border-radius: 15px;
     border: 0px;
@@ -1154,15 +1185,15 @@ input.btn_adquirir:hover{
     cursor: pointer;
 }
 input.btn_menos_venda{
-    width: 16%;
+    width: 12%;
     float: right;
-    margin-right: 58px;
+    margin-right: 131px;
     height: 38px;
     border-radius: 6px;
     border: 0px;
     margin-top: -50px;
     background-image: url(../imagem/btn_menos.png);
-    background-color: #F0F0F0;
+    
     cursor: pointer;
 }
     .escolher_monte_venda{
@@ -1170,6 +1201,13 @@ input.btn_menos_venda{
     height: 115px;
     margin-left: -50px;
 
+}
+.escolher_monte{
+    width: 40%;
+    min-height: 200px;
+    height: auto;
+    background-color: #000;
+      
 }
     .categoria_monte_venda{
     font-family: Verdana,Arial,Helvetica,sans-serif;
@@ -1206,11 +1244,11 @@ input.btn_menos_venda{
 }
     
     .adicionados_venda{
-	width: 31%;
+	width: 81%;
     height: auto;
     float: left;
-    margin-top: 68px;
-    margin-left: 98px;
+    margin-top: 55px;
+    margin-left: 18px;
     border: solid 1px #ccc;
     border-radius: 10px;
     padding-bottom: 22px;
@@ -1551,6 +1589,20 @@ input, textarea, select{ outline: none; }
     border: solid 1px #FE7101;
     resize: none;
     width: 440px;
+}
+    .campo_frete{
+    width: 200px;
+    height: 40px;
+    background-color: #FFF;
+    margin-left: 23px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 1px #00B348;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+    margin-top: 10px;
 }
 input.btn_contato{
 	width: 90px;

@@ -7,21 +7,26 @@
 
     <div class="area_produtos">
         
+        <?php foreach($produto as $p){ ?>
+        
         <div class="produtos">
             <div class="imagem_produtos1">
             </div>
-            <p class="titulo_produtos">Strogonoff Light</p>
+            <p class="titulo_produtos"> <?php  echo ($p->nomeProduto); ?></p>
             <p class="descricao_produto">
-                Nesse prato podemos contar com uma grande quantidade de energia e nutrientes.
+                <?php  echo ($p->descricaoProduto); ?>
             </p>
-            <p class="kcal_produtos"> Calorias: 500kcal.</p>
-            <p class="preco_produtos">R$45,00.</p>
+            <p class="kcal_produtos"> Calorias: <?php  echo ($p->caloriaProduto); ?></p>
+            <p class="preco_produtos">R$<?php  echo ($p->precoProduto); ?></p>
           
-            <form class="login-form" action="../home/detalhes"> <input class="btn_detalhes" type="submit" value="Detalhes"> 
+            <form class="login-form" method="post" action="../home/detalhes/<?php  echo($p->codProduto); ?>"> <input class="btn_detalhes" type="submit" value="Detalhes"> 
             <input class="btn_comprar" type="submit" value="Comprar"> </form>
+            
         </div>
+        
+        <?php }?>
 
-        <div class="produtos">
+        <!-- <div class="produtos">
             <div class="imagem_produtos2">
             </div>
             <p class="titulo_produtos"> Frango com Batata Doce</p>
@@ -118,7 +123,7 @@
             <p class="preco_produtos">R$45,00.</p>
            <form class="login-form" action="../home/detalhes"> <input class="btn_detalhes" type="submit" value="Detalhes"> 
             <input class="btn_comprar" type="submit" value="Comprar"> </form>
-        </div>
+        </div> -->
 
     </div>
     

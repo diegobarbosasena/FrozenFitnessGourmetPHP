@@ -34,8 +34,8 @@
 			
 			$sql2 = "insert into tblCatProduto (codCategoriaMateria, codProduto) values ('".$produto->codcategoriaProduto."', LAST_INSERT_ID())";
 			
-			//echo($sql);
-			//echo($sql2);
+			echo($sql);
+			echo($sql2);
 			mysql_query($sql);
                 
 			if(mysql_query($sql2))
@@ -54,8 +54,7 @@
 				on (p.codProduto = cat.codProduto)
 				inner join tblCategoriaMateria as cp
 				on(cat.codCategoriaMateria = cp.codCategoriaMateria);";
-				
-			//$sql = "select * from tblProduto";	
+					
             
 			$select = mysql_query($sql);
 						

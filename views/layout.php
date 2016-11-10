@@ -34,7 +34,7 @@
             <div class="botoes">
 			
 			
-			<?php if(isset($_SESSION['usuario']) and $_SESSION['usuario'] == ""){ ?> 
+			<?php if($_SESSION['usuario'] == ""){ ?> 
                 <div class="login">
                     <a href="#" class="link"></a>
                     <div class="entrar">

@@ -1,5 +1,6 @@
 <?php 
-
+require_once('models/produto_class.php');
+require_once('models/clientes_class.php');
 //Classe que controla as ações do site
     class home_controller{
 
@@ -18,7 +19,7 @@
 		}
 		
 		public function visualizar(){
-            require_once('models/clientes_class.php');
+           
             
             if(($_SESSION['cod']) != null){
 				$c = new Cliente();
@@ -34,6 +35,10 @@
 		}
 
         public function produtos(){
+            
+            $p = new Produto();
+            
+            $produto = $p->selectAll();
 
             require_once('views/home/produtos.php');
         }
@@ -53,13 +58,17 @@
             require_once('views/home/detalhe.php');
         }
          public function venda(){
+             
+            $id = $_GET['id'];
+            
+            $p = new Produto();
+            
+            $produto = $p->selectById($id);
 
             require_once('views/home/venda.php');
         }
         
         public function cadastro(){
-
-			require_once('models/clientes_class.php');
 
 			$atualizacao = 'inserir';
 			$cliente = new Cliente();
@@ -85,6 +94,12 @@
         }
         
         public function detalhes(){
+            
+            $id = $_GET['id'];
+            
+            $p = new Produto();
+            
+            $produto = $p->selectById($id);
             
             require_once('views/home/detalhesProduto.php');
         }
