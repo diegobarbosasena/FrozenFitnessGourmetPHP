@@ -1,8 +1,8 @@
 
 <?php
 
-	define("PROJECTDIR", "/FrozenFitnessGourmetPHP/");
-	//define("PROJECTDIR", "/");
+	//define("PROJECTDIR", "/FrozenFitnessGourmetPHP/");
+	define("PROJECTDIR", "/");
 
 
 

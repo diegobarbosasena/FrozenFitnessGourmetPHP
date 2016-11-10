@@ -176,10 +176,7 @@
            
 			if($prato::insert($prato)){
                 header("location: ../prato/index");
-            }else{
-			
-				echo("nem foi");
-			}
+            }
         }
 		
 	}

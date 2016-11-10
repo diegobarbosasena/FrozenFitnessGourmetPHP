@@ -21,7 +21,7 @@
 				
 		public function insert($categoriaPrato) {
 		
-				$sql = "insert into tblcategoriaprato (nomeCategoriaPrato, descricaoCategoriaPrato, imagemCategoriaPrato) values('".$categoriaPrato->nomeCategoriaPrato."','".$categoriaPrato->descricaoCategoriaPrato."',
+				$sql = "insert into tblCategoriaPrato (nomeCategoriaPrato, descricaoCategoriaPrato, imagemCategoriaPrato) values('".$categoriaPrato->nomeCategoriaPrato."','".$categoriaPrato->descricaoCategoriaPrato."',
 					'".$categoriaPrato->imagemCategoriaPrato."')";
 
 				if(mysql_query($sql)){
@@ -57,7 +57,7 @@
 		
 		public function selectById($codCategoriaPrato){
 			
-			$sql = "select * from tblcategoriaprato where codCategoriaPrato=".$codCategoriaPrato;
+			$sql = "select * from tblCategoriaPrato where codCategoriaPrato=".$codCategoriaPrato;
 			
 			$select = mysql_query($sql);
 			
@@ -76,7 +76,7 @@
 		
 		public function update() {
 		
-			$sql = "update tblcategoriaprato set nomeCategoriaPrato='".$this->nomeCategoriaPrato."', descricaoCategoriaPrato='".$this->descricaoCategoriaPrato."'  where codCategoriaPrato=".$this->codCategoriaPrato;     
+			$sql = "update tblCategoriaPrato set nomeCategoriaPrato='".$this->nomeCategoriaPrato."', descricaoCategoriaPrato='".$this->descricaoCategoriaPrato."'  where codCategoriaPrato=".$this->codCategoriaPrato;     
 			
 			if(mysql_query($sql)){				
 				return true;
@@ -87,7 +87,7 @@
 		
 		public function delete($codCategoriaPrato) {
 		
-			$sql = "delete from tblcategoriaprato where codCategoriaPrato=".$codCategoriaPrato;
+			$sql = "delete from tblCategoriaPrato where codCategoriaPrato=".$codCategoriaPrato;
 
 			if(mysql_query($sql))
 				return true;

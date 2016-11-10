@@ -13,9 +13,9 @@ class mysql_db{
 		$this->user="root";
 		$this->password="root";*/
         
-        $this->server="localhost";
-		$this->user="root";
-		$this->password="bcd127";
+        $this->server="192.168.0.2";
+		$this->user="smartgourmet";
+		$this->password="smart147852";
 	}
 	
 	public function conectar(){
