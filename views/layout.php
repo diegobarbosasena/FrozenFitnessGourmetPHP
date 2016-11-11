@@ -27,14 +27,16 @@
             <div class="nomeusuario"> 
 				<a href="<?php  echo PROJECTDIR; ?>home/visualizar">
                 <p>Bem Vindo!</p>
-                <p> <?php echo $_SESSION['usuario']; ?> </p>
+                <p> <?php 
+					if(isset($_SESSION['usuario']))
+						echo $_SESSION['usuario']; ?> </p>
 				</a>
             </div>
             
             <div class="botoes">
 			
 			
-			<?php if($_SESSION['usuario'] == ""){ ?> 
+			<?php if(!isset($_SESSION['usuario']) || $_SESSION['usuario'] == ""){ ?> 
                 <div class="login">
                     <a href="#" class="link"></a>
                     <div class="entrar">

@@ -1,5 +1,5 @@
 <div id="conteudo">
-    <p class="monte"> Compras</p>
+    <p class="monte"> Carrinho de Compras </p>
     
     
 
