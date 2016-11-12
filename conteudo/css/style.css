@@ -928,6 +928,14 @@ input.btn_monteja{
     height: auto;
     
 }
+.per_prods{
+	width: 55%;
+	float:left;
+    height: auto;
+    
+    
+    
+}
     
 .venda_itens{
     width: 35%;
@@ -935,6 +943,15 @@ input.btn_monteja{
     margin-left: 30px;
     min-height: 100px;
      height: auto;
+    
+    
+}
+    .per_itens{
+    width: 40%;
+	float:left;
+    margin-left: 5px;
+    min-height: 100px;
+    height: auto;
     
     
 }
@@ -948,19 +965,15 @@ input.btn_monteja{
    
 }
 
-.escolher_monte{
-    width: 100%;
-    height: 115px;
-    margin: 8px;
 
-}
 
 .montar{
-    width: 41%;
-    height: 60px;
-    margin-top: 45px;
-    color: #666; 
-    padding-left: 5px;
+    width: 39%;
+    height: 51px;
+    margin-top: 51px;
+    color: #666;
+    padding-left: 25px;
+    margin-left: -23px;
 }
     
 .parcela{
@@ -990,38 +1003,39 @@ input.btn_monteja{
     margin-top: 65px;
     color: #666;
     padding-right: 12px;
-	width:20%;
+	width:25%;
+    
     
 }
   
 
 input.btn_mais{
-    width: 7%;
+        width: 6%;
     float: right;
-    margin-right: 138px;
-    height: 38px;
-    border-radius: 7px;
-    border:0px;
-    margin-top: -50px;
-	background-image:url(../imagem/btn_mais.png);
-	background-color:#F0F0F0;
-	cursor:pointer;
-}
-input.btn_menos{
-    width: 8%;
-    float: right;
-    margin-right: 79px;
+    margin-right: 176px;
     height: 38px;
     border-radius: 7px;
     border: 0px;
-    margin-top: -50px;
+    margin-top: -57px;
+    background-image: url(../imagem/btn_mais.png);
+    background-color: #F0F0F0;
+    cursor: pointer;
+}
+input.btn_menos{
+        width: 7%;
+    float: right;
+    margin-right: 112px;
+    height: 38px;
+    border-radius: 7px;
+    border: 0px;
+    margin-top: -59px;
     background-image: url(../imagem/btn_menos.png);
     background-color: #F0F0F0;
     cursor: pointer;
 }
 
 .adicionados{
-	width: 31%;
+	width: 75%;
     height: auto;
     float: left;
     margin-top: 68px;
@@ -1125,8 +1139,8 @@ input.btn_adquirir:hover{
     height: 23px;
     border: solid 1px #ccc;
     float: right;
-    margin-right: 112px;
-    margin-top: -47px;
+    margin-right: 145px;
+    margin-top: -54px;
     text-align: center;
     padding-top: 6px;
     background-color: #FFF;
@@ -1203,10 +1217,10 @@ input.btn_menos_venda{
 
 }
 .escolher_monte{
-    width: 40%;
+    width: 100%;
     min-height: 200px;
     height: auto;
-    background-color: #000;
+   
       
 }
     .categoria_monte_venda{
