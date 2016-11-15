@@ -704,6 +704,27 @@ input.btn_comprar{
 	background-color:#FFFFFF;
 	margin-bottom: 10px;
 }
+    
+button{
+        
+    float: left;
+	width:90px;
+	height:40px;
+	border: solid 1px #00B348;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	border-radius:15px;
+	color:#00B348;
+	background-color:#FFFFFF;
+	margin-bottom: 10px;
+}
+    
+button:hover{
+	background-color:#00B348;
+	cursor:pointer;
+	color:#FFFFFF;
+}    
+    
 input.btn_detalhes:hover{
 	background-color:#00B348;
 	cursor:pointer;
@@ -2066,6 +2087,8 @@ nav#menu_produto{
     padding-top: 3px;
 	display:none;
 }
+  
+    
 input.pesquisar{
 	width: 560px;
 	height: 70px;

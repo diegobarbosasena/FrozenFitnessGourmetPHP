@@ -3,10 +3,29 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="<?php  echo PROJECTDIR; ?>conteudo/css/style.css">
+        
+    <script  type="text/javascript">
+       var cont = 1;
+        
+        function addProduto(codProduto)
+        {
+            var obj = document.getElementById("contador");
+            obj.innerHTML = cont++;
+            
+            var produto = {};
+            produto.id = codProduto;
+            produto.qtd = cont;
+            
+        }
+    </script>
+        
         <title>Frozen Fitness Gourmet</title>
     </head>
     <body>
 
+        <!-- <div id="contador"> <?php $_SESSION['var'] = "<script>document.write(obj);</script>";
+                            echo $_SESSION['var'];?> </div> -->
+        
         <div class="menu">
             <div id="logo">
             </div>
@@ -36,6 +55,7 @@
             <div class="botoes">
 			
 			
+                
 			<?php if(!isset($_SESSION['usuario']) || $_SESSION['usuario'] == ""){ ?> 
                 <div class="login">
                     <a href="#" class="link"></a>
@@ -58,11 +78,12 @@
 					
 				<?php } ?> 
                 
-                <div class="carrinho">
-                    <a href="#" class="link"></a>
-                </div>
+                <a href="<?php  echo PROJECTDIR;?>home/venda" class="link"> 
+                    <div class="carrinho">
+                     
+                </div> </a>
 
-                <form name="FrmPesquisa" method="post" action="home.php">
+                <form name="FrmPesquisa" method="post" action="<?php  echo PROJECTDIR;?>home/index">
                     <input class="button_pesquisa" type="submit" name="btnPesquisa" value=""/>
                     <input class="pesquisar" type="text" name="lala" value="" placeholder="Pesquisar...">
                 </form>

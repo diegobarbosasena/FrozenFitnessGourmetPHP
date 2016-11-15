@@ -10,11 +10,11 @@
             </div>
 
             <div class="titulo_preco">
-                <p class="titulo_deta_prod"> <?php echo($produto->nomeProduto)?> </p>
+                <p class="titulo_deta_prod"> <?php echo($prato->nomePrato)?> </p>
 
                 <div class="clear"> </div>
 
-                <p class="preco_deta_prod">R$ <?php echo($produto->precoProduto)?></p>
+                <p class="preco_deta_prod">Preço: R$ <?php echo($prato->precoPrato)?></p>
                 
                 <div class="clear"> </div>
                 
@@ -28,7 +28,7 @@
         <div class="clear"> </div>
         
         <p class="desc_deta_prod">
-            <?php echo($produto->descricaoProduto)?> 
+            <?php echo($prato->descricaoPrato)?> 
         </p>    
         
         <div class="clear"> </div>
@@ -56,22 +56,22 @@
                 
                 <tr>
                     <td>Valor Calórico</td>
-                    <td><?php echo($produto->caloriaProduto)?>g </td>
+                    <td><?php echo($prato->caloria)?>g </td>
                     <td>3,25%</td>
                 </tr>
                 <tr>
                     <td>Carboidratos</td>
-                    <td><?php echo($produto->carboidratoProduto)?>g</td>
+                    <td><?php echo($prato->carboidrato)?>g</td>
                     <td>4,71%</td>
                 </tr>
                 <tr>
                     <td>Proteínas</td>
-                    <td><?php echo($produto->proteinaProduto)?>g</td>
+                    <td><?php echo($prato->proteina)?>g</td>
                     <td>1,70%</td>
                 </tr>
                 <tr>
                     <td>Gorduras Totais</td>
-                    <td><?php echo($produto->gordurasProduto)?>g</td>
+                    <td><?php echo($prato->gorduras)?>g</td>
                     <td>0,76%</td>
                 </tr>
                 <!-- <tr>

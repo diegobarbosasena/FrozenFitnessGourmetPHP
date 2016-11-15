@@ -1,6 +1,7 @@
 <?php 
-require_once('models/produto_class.php');
+require_once('models/prato_class.php');
 require_once('models/clientes_class.php');
+require_once('models/carrinho_class.php');
 //Classe que controla as ações do site
     class home_controller{
 
@@ -36,9 +37,9 @@ require_once('models/clientes_class.php');
 
         public function produtos(){
             
-            $p = new Produto();
+            $p = new Prato();
             
-            $produto = $p->selectAll();
+            $prato = $p->selectAll();
 
             require_once('views/home/produtos.php');
         }
@@ -58,12 +59,11 @@ require_once('models/clientes_class.php');
             require_once('views/home/detalhe.php');
         }
          public function venda(){
-             
-            $id = $_GET['id'];
             
-            $p = new Produto();
+            $c = new Carrinho();
+            $c->cliente = new Cliente();
             
-            $produto = $p->selectById($id);
+            $carrinho = $c->selectAll();
 
             require_once('views/home/venda.php');
         }
@@ -97,9 +97,9 @@ require_once('models/clientes_class.php');
             
             $id = $_GET['id'];
             
-            $p = new Produto();
+            $p = new Prato();
             
-            $produto = $p->selectById($id);
+            $prato = $p->selectById($id);
             
             require_once('views/home/detalhesProduto.php');
         }

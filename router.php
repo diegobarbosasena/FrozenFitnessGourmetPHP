@@ -100,6 +100,10 @@
         case 'produtocms':
 			$controller = new produtocms_controller();
 			break;
+              
+        case 'carrinho':
+            $controller = new carrinho_controller();
+            break;  
 			
       }
 
