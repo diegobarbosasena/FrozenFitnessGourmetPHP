@@ -81,7 +81,7 @@
         <p class="qnt_adc"> R$ 260,00. </p>
    		<p class="itens_adc"> Forma de Pagamento: </p>
         <p class="qnt_adc"> Boleto </p>
-        <form class="login-form" action="../home/venda">
+        <form class="login-form" action="../home/confirmaEndereco">
           <input class="btn_adquirir" type="submit" value="Concluir a compra"> 
          </form>
         

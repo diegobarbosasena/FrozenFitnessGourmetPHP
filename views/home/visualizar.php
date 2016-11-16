@@ -1,7 +1,7 @@
  <div id="conteudo">
 	
 
-	<fieldset class="perfil_cliente">
+	<fieldset class="perfil">
 		 <legend class="tit_cliente">Meus Dados</legend>
                     
 		      <table class="tbl_dados">
