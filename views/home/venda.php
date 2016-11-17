@@ -7,6 +7,7 @@
      <div class="venda_prods">
            
         <?php foreach($carrinho as $c){ ?> 
+         
         <div class="categoria_monte_venda"> <?php  echo ($c->prato->nomePrato); ?></div>
                 <div  class="categoria_venda"> 
                 <form id="">
@@ -21,6 +22,7 @@
                  <div class="imagem_produtos5">
                 </div>
          <?php } ?>
+     
             
          <!-- <div class="categoria_bebida"> Bedidas:</div>
                 <div class="espaco">

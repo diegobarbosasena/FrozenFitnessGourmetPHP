@@ -34,7 +34,7 @@
 				 <?php } ?> 
 			  </table>
         
-                <form id="formulario" method="post" action="<?php echo(PROJECTDIR)?>home/confirmaEnd"> 
+                <form id="formulario" method="post" action="<?php echo(PROJECTDIR)?>pedido/inserir"> 
 
                         <input class="btn_contato" type="submit" value="Confirmar"> 
                 </form>

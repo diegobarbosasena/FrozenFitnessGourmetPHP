@@ -104,6 +104,10 @@
         case 'carrinho':
             $controller = new carrinho_controller();
             break;  
+              
+         case 'pedido':
+            $controller = new pedido_controller();
+            break;       
 			
       }
 

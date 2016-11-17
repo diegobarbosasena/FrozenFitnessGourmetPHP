@@ -1,39 +1,34 @@
 <?php
 	
-	class Pedido {
+	class itemPedido {
 
+		public $codItemPedido;
+		public $quantidade;
 		public $codPedido;
-		public $tipoPedido;
-		public $dtEntrega;
-        public $dtCompra;
-        public $cliente;
-        public $total;
+        public $codPrato;
         	
         public function __construct(){
             
             require_once('models/banco_dados.php');
-            require_once('models/clientes_class.php');
+            require_once('models/carrinho_class.php');
 		
             $conexao = new mysql_db();
 
             $conexao->conectar();
-            
-            $this->cliente = new Cliente();
+
         }
         		
 				
-		public function insert() {
-                
-                $item = new ItemPedido();
-                date_default_timezone_set('America/Sao_Paulo');
-                $this->dtCompra = date('Y-m-d');
-                $dia = date('d');
-		
-                $sql = "insert into tblPedido (tipoPedido,dtCompra,codCliente)
-                values ('online','".$this->dtCompra."','".$_SESSION['cod']."')";
- 
-                $item->insert('LAST_INSERT_ID()');
-			            
+		public function insert($codPedido) {
+                $c = new Carrinho();
+
+                $carrinho = $c->selectAll();
+            
+                foreach($carrinho as $c){
+                    $sql = "insert into tblItemPedido (codPedido,codPrato,quantidade)
+                    values (".$codPedido.",'".$c->prato->codPrato."','".$c->qtd."')";
+                }   
+
                 echo($sql);        
 				/*if(mysql_query($sql)){
 					return true;
