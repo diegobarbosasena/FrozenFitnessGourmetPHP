@@ -59,11 +59,17 @@ require_once('models/carrinho_class.php');
             require_once('views/home/detalhe.php');
         }
          public function confirmaEndereco(){
+ 
+            $c = new Cliente();
+            
+            $cliente = $c->selectAll();
 
             require_once('views/home/confirmaEndereco.php');
         }
+        
          public function outroEnd(){
-
+ 
+             
             require_once('views/home/outroEnd.php');
         }
          public function venda(){
