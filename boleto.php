@@ -1,8 +1,9 @@
 <html>
-<HEAD>
-
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="conteudo/css/print.css">
 <TITLE></TITLE>
+ </head>
 <BODY>
 
 <P align=center>
