@@ -1827,6 +1827,36 @@ table td{
 	text-align: left;
 }
 
+.tblBoleto{
+	width:100%;
+	height:200px;
+	border: #0099FF, 1px;	
+}
+.linha_boleto{
+	height:50px;
+
+}
+.col_boleto_img{
+	width:80%;
+	height:100px;
+	background-image:url(../imagem/boleto2.png);
+	background-repeat:no-repeat;
+
+}
+.col_boleto_img_banco{
+
+	width:50px;
+	height:100px;
+	background-image:url(../imagem/bradesco.png);
+	background-repeat:no-repeat;
+
+}
+.col{
+	width:50px;
+	height:100px;
+
+}
+
 .rodape{
 	list-style: outside none none;
 	float: left;
@@ -1926,6 +1956,12 @@ footer{
     background-color: #F0F0F0;
     border-top: solid 6px #00B348;
 }
+
+
+
+
+
+
 
 }
 @media(min-device-width: 320px) and (max-device-width:640px){

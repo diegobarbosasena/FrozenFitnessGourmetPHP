@@ -53,6 +53,11 @@ require_once('models/carrinho_class.php');
 
             require_once('views/home/contatos.php');
         }
+		public function boleto(){
+
+            require_once('views/home/boleto.php');
+        }
+
 
         public function detalhe(){
 
