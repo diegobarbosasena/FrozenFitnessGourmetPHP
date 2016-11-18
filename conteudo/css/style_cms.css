@@ -137,6 +137,15 @@ height: auto;
 /*!  */
 background-color: #FFF;
 }
+
+.bem_vindo_cms{
+   width: 610px;
+   height: 900px;
+   background-image:url(../imagem/entrada.png);
+   margin-top: 60px;
+   margin-left: 30px;
+}
+
 .menu_cms{
 	width: 270px;
 	min-height: 648px;

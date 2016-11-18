@@ -109,6 +109,9 @@
             $controller = new pedido_controller();
             break;       
 			
+        case 'homeCms':
+            $controller = new homeCms_controller();
+            break;          
       }
 
       // call the action
