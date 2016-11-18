@@ -53,6 +53,11 @@ require_once('models/carrinho_class.php');
             require_once('views/home/sobreLoja.php');
         }
 
+        public function login(){
+
+            require_once('views/home/login.php');
+        }
+        
         public function contatos(){
 
             require_once('views/home/contatos.php');
