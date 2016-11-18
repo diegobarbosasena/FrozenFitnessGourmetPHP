@@ -49,7 +49,7 @@
     
             if($pedido->insert()){
                 
-                header("Location: ../home/meusPedidos");
+                header("Location: ../boleto.php");
             }                
         }
 		

@@ -83,7 +83,8 @@
             <p class="qnt_adc"> R$ <?php  echo ($totalProdutos); ?> </p>
             <p class="itens_adc"> Forma de Pagamento: </p>
             <p class="qnt_adc"> Boleto </p>
-            <form class="login-form" method="post" action="../home/confirmaEndereco">
+            <!-- <form class="login-form" method="post" action="../boleto.php" target="_blank"> -->
+            <form class="login-form" method="post" action="../home/confirmaEndereco"> 
               <input class="btn_adquirir" type="submit" value="Concluir a compra"> 
              </form>
         <?php } ?> 
