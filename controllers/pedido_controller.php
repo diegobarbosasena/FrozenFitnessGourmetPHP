@@ -49,7 +49,7 @@
     
             if($pedido->insert()){
                 
-                header("Location: ../home/index");
+                header("Location: ../home/meusPedidos");
             }                
         }
 		
