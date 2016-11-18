@@ -19,9 +19,46 @@
             
         }
     </script>
+        <script  type="text/javascript">
+    function txtBoxFormat(evtKeyPress) {
+		var i, nCount, sValue, fldLen, mskLen,bolMask, sCod, nTecla;
+
+		if(document.all) { // Internet Explorer
+			nTecla = evtKeyPress.keyCode;
+		} else if(document.layers) { // Nestcape
+			nTecla = evtKeyPress.which;
+		} else {
+			nTecla = evtKeyPress.which;
+			if (nTecla == 8) {
+				return true;
+			}
+		}
+
+		if (nTecla != 8)
+		  return ((nTecla <= 47) || (nTecla >= 58)); 
+		else 
+		  return true;
+	}
+	
+
+</script>
+
+<script language="JavaScript">
+	function mascara(t, mask){
+		var i= t.value.length;
+		var saida = mask.substring(1,0);
+		var texto = mask.substring(i)
+		if(texto.substring(0,1) != saida){
+			t.value += texto.substring(0,1);
+		}
+	
+	}
+</script>
         
         <title>Frozen Fitness Gourmet</title>
     </head>
+    
+    
     <body>
 
         <!-- <div id="contador"> <?php $_SESSION['var'] = "<script>document.write(obj);</script>";
@@ -40,10 +77,7 @@
                     <li><a href="<?php  echo PROJECTDIR; ?>home/parceiros" class="link">Parceiros</a></li>
                     <li><a href="<?php  echo PROJECTDIR; ?>home/personalizado" class="link">Personalize</a></li>
                     <li><a href="<?php  echo PROJECTDIR; ?>home/contatos" class="link">Contato</a></li>
-                    
-                    <?php if($_SESSION['usuario'] != null){ ?>
-                        <li><a href="<?php  echo PROJECTDIR; ?>home/meusPedidos" class="link">Meus Pedidos</a></li>
-                    <?php }?>
+                    <li><a href="<?php  echo PROJECTDIR; ?>home/meusPedidos" class="link">Meus Pedidos</a></li>
                    
                 </ul>
             </nav>
