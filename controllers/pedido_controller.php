@@ -45,12 +45,12 @@
             
             $pedido = new Pedido();
 
-            $pedido->insert();
+            //$pedido->insert();
     
-            /*if($pedido->insert()){
+            if($pedido->insert()){
                 
                 header("Location: ../home/index");
-            }   */             
+            }                
         }
 		
 	}

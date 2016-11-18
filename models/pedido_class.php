@@ -31,15 +31,20 @@
 		
                 $sql = "insert into tblPedido (tipoPedido,dtCompra,codCliente)
                 values ('online','".$this->dtCompra."','".$_SESSION['cod']."')";
- 
-                $item->insert('LAST_INSERT_ID()');
-			            
-                echo($sql);        
-				/*if(mysql_query($sql)){
+                $last_id = "set @id = LAST_INSERT_ID();";
+                mysql_query($sql);
+                /*echo($sql);
+                echo($last_id);
+                mysql_query($sql);
+                mysql_query($last_id);
+                $item->insert('@id');*/
+				
+            if(mysql_query($last_id)){
+                    $item->insert('@id');
 					return true;
 				}else{
 					return false;	
-				}*/
+				}
 		}		
 		
 		public function selectAll (){

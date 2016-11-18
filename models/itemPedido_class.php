@@ -27,14 +27,10 @@
                 foreach($carrinho as $c){
                     $sql = "insert into tblItemPedido (codPedido,codPrato,quantidade)
                     values (".$codPedido.",'".$c->prato->codPrato."','".$c->qtd."')";
+                    //echo($sql);  
+                    mysql_query($sql);
                 }   
-
-                echo($sql);        
-				/*if(mysql_query($sql)){
-					return true;
-				}else{
-					return false;	
-				}*/
+                      
 		}		
 		
 		public function selectAll (){
