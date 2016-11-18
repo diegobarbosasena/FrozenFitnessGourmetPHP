@@ -70,12 +70,13 @@
 		
 		public function delete() {
 		
-			$sql = "";
-
-			if(mysql_query($sql))
+			$sql = "TRUNCATE tblCarrinho;";
+            mysql_query($sql);
+			
+            /*if(mysql_query($sql))
 				return true;
 			else
-				return false;							
+				return false;	*/						
 		}	
 	}
 

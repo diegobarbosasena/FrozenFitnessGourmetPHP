@@ -24,8 +24,9 @@
 		
 		public function iniciaAtributos(){
 			
-			$this->cliente->codCliente = $_SESSION['cod'];   
-			$this->prato->codPrato = $_GET['id'];      
+         
+                $this->cliente->codCliente = $_SESSION['cod'];   
+                $this->prato->codPrato = $_GET['id'];
 			
 		}
          
@@ -45,7 +46,9 @@
 
 		
 		public function deletar() {
+            $carrinho = new Carrinho();
             
+            $carrinho->delete();
 		}
 		
 		public function inserir() {
@@ -59,6 +62,8 @@
             
             if($carrinho->insert()){
                 header("Location: ../../home/produtos");
+            }else{
+                header("Location: ../../home/login");
             }
         
                          

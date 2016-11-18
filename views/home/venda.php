@@ -64,7 +64,7 @@
                 <p class="itens_adc"> Total </p>
                 <p class="qnt_adc"> R$ <?php  echo ($totalProdutos); ?> </p>
            </div>
-        <div class="adicionados_venda">
+        <!-- <div class="adicionados_venda">
        <p class="itens_adc"> Frete </p>
    		
         <form class="login-form" action="../home/venda">
@@ -75,12 +75,12 @@
          <p class="itens_adc"> Valor do Frete  </p>
         <p class="qnt_adc"> R$ 20,00. </p>
         
-        </div>
+        </div> -->
         
         
         <div class="adicionados_venda">
         <p class="itens_adc"> Total </p>
-        <p class="qnt_adc"> R$ 260,00. </p>
+        <p class="qnt_adc"> R$ <?php  echo ($totalProdutos); ?> </p>
    		<p class="itens_adc"> Forma de Pagamento: </p>
         <p class="qnt_adc"> Boleto </p>
         <form class="login-form" method="post" action="../home/confirmaEndereco">

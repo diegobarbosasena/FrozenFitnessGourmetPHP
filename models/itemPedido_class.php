@@ -30,7 +30,9 @@
                     //echo($sql);  
                     mysql_query($sql);
                 }   
-                      
+            
+            
+                $c->delete();      
 		}		
 		
 		public function selectAll (){

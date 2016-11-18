@@ -2,6 +2,8 @@
 require_once('models/prato_class.php');
 require_once('models/clientes_class.php');
 require_once('models/carrinho_class.php');
+require_once('models/pedido_class.php');
+require_once('models/itemPedido_class.php');
 //Classe que controla as ações do site
     class home_controller{
 
@@ -36,6 +38,11 @@ require_once('models/carrinho_class.php');
 		}
         
         public function meusPedidos(){
+            
+            $p = new Pedido();
+            
+            $pedido = $p->selectAll();
+            
             require_once('views/home/meusPedidos.php');
         }
 
