@@ -859,11 +859,12 @@ input.btn_comprar:hover{
 }
 .subtitulo_sobre{
 	font-family:"Microsoft YaHei";
-    font-size: 17px;
+    font-size: 20px;
     color:#999999;
-  
-    text-align: center;
+  text-align: center;
 }
+
+    
 .imagemsobre{
 	float: left;
 	width: 299px;
