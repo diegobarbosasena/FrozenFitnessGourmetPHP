@@ -40,6 +40,7 @@
                     <li><a href="<?php  echo PROJECTDIR; ?>home/parceiros" class="link">Parceiros</a></li>
                     <li><a href="<?php  echo PROJECTDIR; ?>home/personalizado" class="link">Personalize</a></li>
                     <li><a href="<?php  echo PROJECTDIR; ?>home/contatos" class="link">Contato</a></li>
+                    <li><a href="<?php  echo PROJECTDIR; ?>home/meusPedidos" class="link">Meus Pedidos</a></li>
                    
                 </ul>
             </nav>

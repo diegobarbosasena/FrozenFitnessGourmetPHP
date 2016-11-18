@@ -34,6 +34,10 @@ require_once('models/carrinho_class.php');
 			}
 		
 		}
+        
+        public function meusPedidos(){
+            require_once('views/home/meusPedidos.php');
+        }
 
         public function produtos(){
             
