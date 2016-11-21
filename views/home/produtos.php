@@ -20,7 +20,7 @@
           
             <form class="login-form" method="post" action="<?php echo(PROJECTDIR)?>home/detalhes/<?php  echo($p->codPrato); ?>"> <input class="btn_detalhes" type="submit" value="Detalhes"> </form>
             
-            <!-- <button type="button" onclick="addProduto(<?php echo($p->codPrato)?>);"> Comprar </button> -->
+            <!-- <button type="button" onclick="addProduto(<?php //echo($p->codPrato)?>);"> Comprar </button> -->
             
             <form class="login-form" method="post" action="<?php echo(PROJECTDIR)?>carrinho/inserir/<?php  echo($p->codPrato); ?>"> <input class="btn_comprar" type="submit" value="Adicionar"> </form>
             

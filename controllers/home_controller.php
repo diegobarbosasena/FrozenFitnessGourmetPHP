@@ -4,12 +4,28 @@ require_once('models/clientes_class.php');
 require_once('models/carrinho_class.php');
 require_once('models/pedido_class.php');
 require_once('models/itemPedido_class.php');
+require_once('models/dicas_class.php');
+require_once('models/exercicios_class.php');
+require_once('models/categoriaPrato_class.php');
+require_once('models/sobreLoja_class.php');
 //Classe que controla as ações do site
     class home_controller{
 
         //Método que chama o conteúdo da home
         public function index() {
-		
+			$d = new Dicas();        
+            $dicas = $d->selectAll();
+			
+			$e = new Exercicios();        
+            $exercicios = $e->selectAll();
+			
+			$c = new categoriaPrato();        
+            $categoria = $c->selectHome();
+
+			$p = new Prato();
+            
+            $prato = $p->selectAll();	
+			
             require_once('views/home/home.php');
         }
 
@@ -56,7 +72,9 @@ require_once('models/itemPedido_class.php');
         }
 
         public function sobre(){
-
+			$loja = new SobreLoja(); 			
+            $sobre = $loja->selectSite();
+			
             require_once('views/home/sobreLoja.php');
         }
 

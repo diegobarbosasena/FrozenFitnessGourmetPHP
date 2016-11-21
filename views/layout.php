@@ -91,7 +91,7 @@
 						<p><?php echo $_SESSION['usuario'];?> </p>
 					</a>
 				 <?php }else{ ?>
-					<a href="<?php  echo PROJECTDIR; ?>home/login">
+					<a href="<?php  echo PROJECTDIR; ?>home/cadastro">
 						<p>Cadastre-se!</p>	
 					</a><?php } ?>	
             </div>

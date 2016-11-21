@@ -52,8 +52,30 @@
 			}
 			
 			return $listaCategoriaPrato;
-				
 		}
+		
+		public function selectHome (){
+            
+			$sql = "select * from tblCategoriaPrato order by rand() limit 3";
+			
+			$select = mysql_query($sql);
+            
+            $listaCategoriaPrato = array(); 
+			
+			while($rs = mysql_fetch_array($select)){
+				
+                $categoriaPrato = new categoriaPrato();
+				$categoriaPrato->codCategoriaPrato = $rs['codCategoriaPrato'];
+                $categoriaPrato->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
+				$categoriaPrato->descricaoCategoriaPrato = $rs['descricaoCategoriaPrato'];
+				$categoriaPrato->imagemCategoriaPrato = $rs['imagemCategoriaPrato'];
+				
+				$listaCategoriaPrato[] = $categoriaPrato;						
+			}
+			
+			return $listaCategoriaPrato;
+		}
+		
 		
 		public function selectById($codCategoriaPrato){
 			

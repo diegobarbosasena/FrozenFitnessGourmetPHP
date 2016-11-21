@@ -3,19 +3,25 @@
 
 ?>
 <div id="conteudo">
-    
+
+	<?php 		
+	foreach($categoria as $c){ 
+	?>
     <div class="categoria">
         <div class="categoria1 margin">
 
         </div>
         <div class="titulo_categoria1 titulo">
-            Força e Explosão   
+            <?php  echo ($c->nomeCategoriaPrato); ?>  
         </div>
         <div class="descricao_categoria1">
-            Na formação dos músculos de nosso corpo contamos com diversos tipos de proteínas,nutrientes, que por sua vez são facilmente encontrados nos alimentos.
+			<?php  echo ($c->descricaoCategoriaPrato); ?>  
         </div>
     </div>
-    <div class="categoria">
+			
+    <?php  
+	} ?>
+	<!-- <div class="categoria">
         <div class="categoria2 margin">
 
         </div>
@@ -35,14 +41,14 @@
         <div class="descricao_categoria3">
             As gorduras localizadas no nosso corpo não apareceram ali do dia para noite, mas são resultados de meses ou anos de uma alimentação não equilibrada.
         </div>
-    </div>
+    </div> -->
     
     <div class="clear"> </div>
     
     <div class="vendidos">            
         
         <div class="mais_vendidos">
-            Produtos mais Vendidos
+            Produtos em Destaque
         </div>
         
         <div class="icone3">
@@ -50,7 +56,19 @@
 
         <div class="area_mais_vendidos">
 
-            <div class="pratos_mais_vendidos">
+		<?php foreach($prato as $p){ ?>
+			<div class="pratos_mais_vendidos">
+                <div class="imagem_mais_vendidos1 mais">
+                </div>
+                <p class="titulo_mais_vendido"><?php  echo ($p->nomePrato); ?></p>
+                <p class="descricao_mais_vendido"><?php  echo ($p->descricaoPrato); ?></p>
+                <p class="kcal_mais_vendido"> Calorias: <?php  echo ($p->caloria); ?></p>
+                <p class="preco_mais_vendido">R$<?php  echo ($p->precoPrato); ?></p>
+                <form class="login-form" action="<?php echo(PROJECTDIR)?>home/detalhes/<?php  echo($p->codPrato); ?>"> <input class="btn_detalhes" type="submit" value="Detalhes"> 
+                <input class="btn_comprar" type="submit" value="Comprar"> </form>
+            </div>
+		<?php } ?>
+            <!--<div class="pratos_mais_vendidos">
                 <div class="imagem_mais_vendidos1 mais">
                 </div>
                 <p class="titulo_mais_vendido">Strogonoff Light</p>
@@ -114,7 +132,7 @@
                 <p class="preco_mais_vendido">R$45,00.</p>
                  <form class="login-form" action="../home/detalhes"> <input class="btn_detalhes" type="submit" value="Detalhes"> 
                 <input class="btn_comprar" type="submit" value="Comprar"> </form>
-            </div>
+            </div> -->
 
         </div>
 
@@ -136,34 +154,26 @@
         <div class="icone1">
         </div>
         <div class="imagem_dica">
-        </div>
-        <p class="assunto_dica">2 dicas de fitness para você entrar em forma!</p>
-        <p class="descricao_dica">
-            1- Dê um tempo aos aparelhos de academia Permanecemos o dia inteiro sentadas no escritório. Na hora de malhar,o ideal é mudar de posição para sacudir a preguiça.
-            <br> 2- Invista nos circuitos "Mover-se rapidamente de um exercício ao outro é ótimo para o sistema cardiovascular e também para tonificar o corpo por inteiro", diz Chico Salgado, personal trainer de Fernanda Paes Leme. 
+        </div> <?php foreach($dicas as $d){ ?>
+        <p class="assunto_dica"><?php  echo ($d->tituloDica); ?></p>
+        <p class="descricao_dica">           
+            <?php  echo ($d->descricaoDica); ?>
         </p>
+		<?php } ?>
     </div>
 
     <div class="exercicio">
+		<?php foreach($exercicios as $e){ ?>
         <p class="titulo_dica_exercicio"> Exercícios Fitness</p>
         <div class="icone2">
         </div>
         <div class="imagem_exercicio">
         </div>
-        <p class="assunto_exercicio">Benefícios dos Exercícios Físicos</p>
+        <p class="assunto_exercicio"><?php  echo ($e->tituloExercicio); ?></p>
         <p class="descricao_exercicio">
-            Queima de calorias e perda de peso; 
-            Manutenção da tonificação dos músculos; 
-            Melhoria na circulação;
-            Melhoria nas funções cardíacas e pulmonares;
-            Aumento do autocontrole;
-            Redução do estresse;
-            Aumento da habilidade de concentração;
-            Melhoria na aparência;
-            Redução da depressão;
-            Melhoria na qualidade do sono;
-            Prevenção de pressão sangüínea e colesterol altos e diabetes. 
+            <?php  echo ($e->descricaoExercicio); ?>
         </p>
+		<?php  } ?>
     </div>
     
     <div class="clear"> </div>

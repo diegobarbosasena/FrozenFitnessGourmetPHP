@@ -103,8 +103,8 @@
             </div>
             <div class="bemvindo_cms">
 
-            	<p> Bem vindo(a),<?php if(isset($_SESSION['usuario']))
-											echo $_SESSION['usuario']; ?> </p> 
+            	<p> Bem vindo(a),<?php if(isset($_SESSION['usuarioCms']))
+											echo $_SESSION['usuarioCms']; ?> </p> 
                 
                 <p> <a class="sair" href="<?php  echo PROJECTDIR; ?>home/logOff"> Sair </a> </p>
             </div>

@@ -20,7 +20,7 @@
                 
                 <a href="<?php echo(PROJECTDIR)?>home/venda" class="comprar"> Comprar </a>
                 
-                <a class="comprar"> Adicionar </a>
+                <a href="<?php echo(PROJECTDIR)?>carrinho/inserir/<?php  echo($p->codPrato); ?>" class="comprar"> Adicionar </a>
                 
             </div>    
         </div>

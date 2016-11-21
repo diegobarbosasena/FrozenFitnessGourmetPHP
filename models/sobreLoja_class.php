@@ -64,6 +64,34 @@
 							
 		}
 		
+		public function selectSite (){
+            
+            $sql="select * from tblSobreLoja order by rand() limit 1";
+            
+			$select = mysql_query($sql);
+						
+            
+            $listaLoja = array();
+            
+			while($rs = mysql_fetch_array($select)){
+                	  
+                $sobreLoja = new SobreLoja();
+                $sobreLoja->codSobreLoja = $rs['codSobreLoja'];
+                $sobreLoja->imgSobreLoja = $rs['imgSobreLoja'];
+				$sobreLoja->imgSobreLoja1 = $rs['imgSobreLoja1'];
+				$sobreLoja->imgSobreLoja2 = $rs['imgSobreLoja2'];
+				$sobreLoja->imgSobreLoja3 = $rs['imgSobreLoja3'];
+				$sobreLoja->tituloSobreLoja = $rs['tituloSobreLoja'];
+                $sobreLoja->historiaSobreLoja = $rs['historiaSobreLoja'];
+				
+                              
+				$listaLoja[] = $sobreLoja;                              							
+			}
+			
+            return $listaLoja;   
+							
+		}
+		
 		public function selectById($codSobreLoja){
 			
 			$sql = "select * from tblSobreLoja where codSobreLoja=".$codSobreLoja;
