@@ -84,7 +84,7 @@
 		}
 	
 	}
-</script>-->
+</script>
     
 <body onload="moveRelogio()">  
 	<div class="area_cms">

@@ -24,7 +24,7 @@ require_once('models/itemPedido_class.php');
 		public function visualizar(){
            
             
-            if(($_SESSION['cod']) != null){
+            if(isset($_SESSION['cod']) && $_SESSION['cod'] != null){
 				$c = new Cliente();
 				$cliente = new Cliente();
 				

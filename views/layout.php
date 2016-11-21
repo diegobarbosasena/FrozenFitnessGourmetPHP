@@ -4,7 +4,11 @@
     <head>
         <link rel="stylesheet" type="text/css" href="<?php  echo PROJECTDIR; ?>conteudo/css/style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        
+        <title>Frozen Fitness Gourmet</title>
+    </head>
+
+    <?php ob_start(); ?>
+    
     <script  type="text/javascript">
        var cont = 1;
         
@@ -54,9 +58,6 @@
 	
 	}
 </script>
-        
-        <title>Frozen Fitness Gourmet</title>
-    </head>
     
     
     <body>
@@ -77,18 +78,22 @@
                     <li><a href="<?php  echo PROJECTDIR; ?>home/parceiros" class="link">Parceiros</a></li>
                     <li><a href="<?php  echo PROJECTDIR; ?>home/personalizado" class="link">Personalize</a></li>
                     <li><a href="<?php  echo PROJECTDIR; ?>home/contatos" class="link">Contato</a></li>
+					<?php if(isset($_SESSION['usuario']) && $_SESSION['usuario'] != null){ ?>
                     <li><a href="<?php  echo PROJECTDIR; ?>home/meusPedidos" class="link">Meus Pedidos</a></li>
-                   
+					<?php } ?>
                 </ul>
             </nav>
             
             <div class="nomeusuario"> 
-				<a href="<?php  echo PROJECTDIR; ?>home/visualizar">
-                <p>Bem Vindo!</p>
-                <p> <?php 
-					if(isset($_SESSION['usuario']))
-						echo $_SESSION['usuario']; ?> </p>
-				</a>
+                 <?php if(isset($_SESSION['usuario']) && $_SESSION['usuario'] != null){ ?>
+					<a href="<?php  echo PROJECTDIR; ?>home/visualizar">
+						<p>Bem Vindo!</p>	
+						<p><?php echo $_SESSION['usuario'];?> </p>
+					</a>
+				 <?php }else{ ?>
+					<a href="<?php  echo PROJECTDIR; ?>home/login">
+						<p>Cadastre-se!</p>	
+					</a><?php } ?>	
             </div>
             
             <div class="botoes">

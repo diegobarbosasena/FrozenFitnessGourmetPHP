@@ -47,7 +47,7 @@
             }elseif($loginFunc != null){
                 $_SESSION['usuario'] = $this->funcionario->nomeFuncionarioLoja;
 				 $_SESSION['cod'] = $this->funcionario->nomeFuncionarioLoja;
-				header("location: ../prato/index");
+				header("location: ../homeCms/index");
             }else{               
                 echo('Erro');
             }
