@@ -5,18 +5,21 @@
 
         return $date;
     }
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 <link rel="stylesheet" type="text/css" href="<?php  echo PROJECTDIR; ?>conteudo/css/style_cms.css">
 <title>Untitled Document</title>
 
  
 </head>
     
+    <?php ob_start(); ?>
 
 <script language="JavaScript"> 
 
@@ -81,9 +84,9 @@
 		}
 	
 	}
-</script>
+</script>-->
     
-<body onload="moveRelogio()">
+<body onload="moveRelogio()">  
 	<div class="area_cms">
     	<div class="cabecalho_cms">
         	<div class="tempo">
@@ -92,16 +95,18 @@
                 </div>
                 <div class="hora_cms">
                     <form name="form_relogio"> 
-                        <input class="relogio" type="text" name="relogio" size="10" onfocus="window.document.form_relogio.relogio.blur()"> 
+                        <input class="relogio" type="text" name="relogio" size="10" onfocus="window.document.form_relogio.relogio.blur()">
                     </form> 
                 </div>
             </div>    
         	<div class="logo">
             </div>
             <div class="bemvindo_cms">
-            	<p> Bem vindo(a),<?php echo $_SESSION['usuario']; ?> </p> 
+
+            	<p> Bem vindo(a),<?php if(isset($_SESSION['usuario']))
+											echo $_SESSION['usuario']; ?> </p> 
                 
-                <p> <a class="sair" href="../home/index"> Sair </a> </p>
+                <p> <a class="sair" href="<?php  echo PROJECTDIR; ?>home/logOff"> Sair </a> </p>
             </div>
     	</div>
         
@@ -124,7 +129,7 @@
                         <li><a href="<?php  echo PROJECTDIR; ?>exercicios/index" class="link">Adm. Exercicios</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>funcionario/index" class="link">Adm. Usuários</a></li>
                         <li><a href="<?php  echo PROJECTDIR; ?>tipoUsuario/index" class="link">Adm. Tipo Usuario</a></li>
-                        <li><a href="<?php  echo PROJECTDIR; ?>clientes/index" class="link">Clientes</a></li>                      
+                        <li><a href="<?php  echo PROJECTDIR; ?>clientesCms/index" class="link">Clientes</a></li>                      
 
                     </ul>
 

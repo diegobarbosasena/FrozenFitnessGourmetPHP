@@ -27,10 +27,11 @@
 				
 				foreach($lista as $c){
 					if($c->usuarioCliente == $usuario && $c->senhaCliente == $senha){
+
 						 return $c->nomeCliente; 
 					}				
 				}
-				
+
 				return null;
     
         }

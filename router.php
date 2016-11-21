@@ -83,6 +83,9 @@
 		case 'clientes':
 			$controller = new clientes_controller();
 			break;
+        case 'clientesCms':
+			$controller = new clientesCms_controller();
+			break;
 		case 'exercicios':
 			$controller = new exercicios_controller();
 			break;
@@ -97,7 +100,18 @@
         case 'produtocms':
 			$controller = new produtocms_controller();
 			break;
+              
+        case 'carrinho':
+            $controller = new carrinho_controller();
+            break;  
+              
+         case 'pedido':
+            $controller = new pedido_controller();
+            break;       
 			
+        case 'homeCms':
+            $controller = new homeCms_controller();
+            break;          
       }
 
       // call the action

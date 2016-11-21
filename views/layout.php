@@ -1,13 +1,69 @@
-	
-	
+
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="<?php  echo PROJECTDIR; ?>conteudo/css/style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+    <script  type="text/javascript">
+       var cont = 1;
+        
+        function addProduto(codProduto)
+        {
+            var obj = document.getElementById("contador");
+            obj.innerHTML = cont++;
+            
+            var produto = {};
+            produto.id = codProduto;
+            produto.qtd = cont;
+            
+        }
+    </script>
+        <script  type="text/javascript">
+    function txtBoxFormat(evtKeyPress) {
+		var i, nCount, sValue, fldLen, mskLen,bolMask, sCod, nTecla;
+
+		if(document.all) { // Internet Explorer
+			nTecla = evtKeyPress.keyCode;
+		} else if(document.layers) { // Nestcape
+			nTecla = evtKeyPress.which;
+		} else {
+			nTecla = evtKeyPress.which;
+			if (nTecla == 8) {
+				return true;
+			}
+		}
+
+		if (nTecla != 8)
+		  return ((nTecla <= 47) || (nTecla >= 58)); 
+		else 
+		  return true;
+	}
+	
+
+</script>
+
+<script language="JavaScript">
+	function mascara(t, mask){
+		var i= t.value.length;
+		var saida = mask.substring(1,0);
+		var texto = mask.substring(i)
+		if(texto.substring(0,1) != saida){
+			t.value += texto.substring(0,1);
+		}
+	
+	}
+</script>
+        
         <title>Frozen Fitness Gourmet</title>
     </head>
+    
+    
     <body>
 
+        <!-- <div id="contador"> <?php $_SESSION['var'] = "<script>document.write(obj);</script>";
+                            echo $_SESSION['var'];?> </div> -->
+        
         <div class="menu">
             <div id="logo">
             </div>
@@ -21,6 +77,7 @@
                     <li><a href="<?php  echo PROJECTDIR; ?>home/parceiros" class="link">Parceiros</a></li>
                     <li><a href="<?php  echo PROJECTDIR; ?>home/personalizado" class="link">Personalize</a></li>
                     <li><a href="<?php  echo PROJECTDIR; ?>home/contatos" class="link">Contato</a></li>
+                    <li><a href="<?php  echo PROJECTDIR; ?>home/meusPedidos" class="link">Meus Pedidos</a></li>
                    
                 </ul>
             </nav>
@@ -28,12 +85,17 @@
             <div class="nomeusuario"> 
 				<a href="<?php  echo PROJECTDIR; ?>home/visualizar">
                 <p>Bem Vindo!</p>
-                <p> <?php echo $_SESSION['usuario']; ?> </p>
+                <p> <?php 
+					if(isset($_SESSION['usuario']))
+						echo $_SESSION['usuario']; ?> </p>
 				</a>
             </div>
             
             <div class="botoes">
-
+			
+			
+                
+			<?php if(!isset($_SESSION['usuario']) || $_SESSION['usuario'] == ""){ ?> 
                 <div class="login">
                     <a href="#" class="link"></a>
                     <div class="entrar">
@@ -43,18 +105,24 @@
                                 <input type="password" name="txtsenha" placeholder="password" required/>
                                 <input class="button_login" type="submit" name="btnLogin" value="Login"/>
                              
-                                <p class="message">Não é registrado? <a href="../home/cadastro">Crie sua conta</a></p>
+                                <p class="message">Não é registrado? <a href="<?php  echo PROJECTDIR; ?>home/cadastro">Crie sua conta</a></p>
                             </form>
                         </div>
                     </div>
                 </div>
+                <?php }else{ ?> 
+					
+					<a href="<?php  echo PROJECTDIR; ?>home/logOff"  > <div class="logOff" title="Deseja sair?" ></div> </a>
+					
+					
+				<?php } ?> 
                 
-                
-                <div class="carrinho">
-                    <a href="#" class="link"></a>
-                </div>
+                <a href="<?php  echo PROJECTDIR;?>home/venda" class="link"> 
+                    <div class="carrinho">
+                     
+                </div> </a>
 
-                <form name="FrmPesquisa" method="post" action="home.php">
+                <form name="FrmPesquisa" method="post" action="<?php  echo PROJECTDIR;?>home/index">
                     <input class="button_pesquisa" type="submit" name="btnPesquisa" value=""/>
                     <input class="pesquisar" type="text" name="lala" value="" placeholder="Pesquisar...">
                 </form>

@@ -19,7 +19,7 @@
 				
 		public function insert($categoria) {
 		
-			$sql = "insert into tblcategoriaMateria (nomeCategoriaMateria) values('".$categoria->nomeCategoriaMateria."')";
+			$sql = "insert into tblCategoriaMateria (nomeCategoriaMateria) values('".$categoria->nomeCategoriaMateria."')";
 			echo("teste".$sql);
 			if(mysql_query($sql))
 				return true;
@@ -32,7 +32,7 @@
 		
 		public function selectAll (){
             
-			$sql = "select * from tblcategoriaMateria";
+			$sql = "select * from tblCategoriaMateria";
 			
 			$select = mysql_query($sql);
 						
@@ -53,7 +53,7 @@
 		
 		public function selectById($codCategoriaMateria){
 			
-			$sql = "select * from tblcategoriaMateria where codCategoriaMateria=".$codCategoriaMateria;
+			$sql = "select * from tblCategoriaMateria where codCategoriaMateria=".$codCategoriaMateria;
 			
 			$select = mysql_query($sql);
 			
@@ -71,7 +71,7 @@
 		
 		public function update() {
 		
-			$sql = "update tblcategoriaMateria set nomeCategoriaMateria='".$this->nomeCategoriaMateria."' where codCategoriaMateria=".$this->codCategoriaMateria;     
+			$sql = "update tblCategoriaMateria set nomeCategoriaMateria='".$this->nomeCategoriaMateria."' where codCategoriaMateria=".$this->codCategoriaMateria;     
 				
 			if(mysql_query($sql))
 				return true;
@@ -81,7 +81,7 @@
 		
 		public function delete($codCategoriaMateria) {
 		
-			$sql = "delete from tblcategoriaMateria where codCategoriaMateria=".$codCategoriaMateria;
+			$sql = "delete from tblCategoriaMateria where codCategoriaMateria=".$codCategoriaMateria;
             //echo($sql);
 			if(mysql_query($sql))
 				return true;

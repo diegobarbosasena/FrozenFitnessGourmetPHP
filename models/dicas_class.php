@@ -21,7 +21,7 @@
 				
 		public function insert($dicas) {
 		
-				$sql = "insert into tbldica (tituloDica, descricaoDica, imagemDica) values('".$dicas->tituloDica."','".$dicas->descricaoDica."',
+				$sql = "insert into tblDica (tituloDica, descricaoDica, imagemDica) values('".$dicas->tituloDica."','".$dicas->descricaoDica."',
 					'".$dicas->imagemDica."')";
 
 				echo($sql);
@@ -35,7 +35,7 @@
 		
 		public function selectAll (){
             
-			$sql = "select * from tbldica";
+			$sql = "select * from tblDica";
 			
 			$select = mysql_query($sql);
             
@@ -58,7 +58,7 @@
 		
 		public function selectById($codDica){
 			
-			$sql = "select * from tbldica where codDica=".$codDica;
+			$sql = "select * from tblDica where codDica=".$codDica;
 			
 			$select = mysql_query($sql);
 			
@@ -78,7 +78,7 @@
 		
 		public function update() {
 		
-			$sql = "update tbldica set tituloDica='".$this->tituloDica."', descricaoDica='".$this->descricaoDica."'  where codDica=".$this->codDica;     
+			$sql = "update tblDica set tituloDica='".$this->tituloDica."', descricaoDica='".$this->descricaoDica."'  where codDica=".$this->codDica;     
 		
 			if(mysql_query($sql)){				
 				return true;
@@ -89,7 +89,7 @@
 		
 		public function delete($codDica) {
 		
-			$sql = "delete from tbldica where codDica=".$codDica ;
+			$sql = "delete from tblDica where codDica=".$codDica ;
 
 			if(mysql_query($sql))
 				return true;

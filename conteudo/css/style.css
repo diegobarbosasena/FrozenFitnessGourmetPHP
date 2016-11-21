@@ -141,6 +141,11 @@ nav#menu_produto{
     text-align: center;
     padding-top: 3px;
 }
+    
+.nomeusuario a{
+    text-decoration: none;    
+}   
+    
 input.pesquisar{
 	width: 30%;
 	height: 30px;
@@ -182,6 +187,17 @@ input.button_pesquisa{
 	cursor:pointer;
 	display:block;
 }
+
+.logOff{
+	width: 50px;
+	height: 50px;
+	float:right;
+	background-image:url(../imagem/logout.png);
+	cursor:pointer;
+	display:block;
+	background-size: contain;
+}
+
 .entrar{
 	display:none;
 	width: 200px;
@@ -329,27 +345,28 @@ a,img {border: none;width: 100%;}
  
 /*controladores*/
 span {
-    background:#FF6600;
+    background:#fff;
     cursor: pointer; 
-    filter:alpha(opacity=0); 
     position: absolute;
     bottom: 40%;
-    width: 35px;; 
-    height: 43px;
+    width: 35px;
+    height: 35px;
+    border: solid 1px #ccc;
+    border-radius: 50px;
     z-index: 5;
 }
 .next {
-	right: 10px;
+	right: 20px;
 }
 .next:before,.next:after{
-    left: 21px;
+    left: 10px;
 }
 .next:before {
     -webkit-transform: rotate(-42deg);
-    top: 5px;
+    top: 20px;
 }
 .next:after {
-    -webkit-transform: rotate(-132deg);
+    -webkit-transform: rotate(-12deg);
     top: 19px;
 }
 .next:before,.next:after,.prev:before,.prev:after {
@@ -688,6 +705,27 @@ input.btn_comprar{
 	background-color:#FFFFFF;
 	margin-bottom: 10px;
 }
+    
+button{
+        
+    float: left;
+	width:90px;
+	height:40px;
+	border: solid 1px #00B348;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	border-radius:15px;
+	color:#00B348;
+	background-color:#FFFFFF;
+	margin-bottom: 10px;
+}
+    
+button:hover{
+	background-color:#00B348;
+	cursor:pointer;
+	color:#FFFFFF;
+}    
+    
 input.btn_detalhes:hover{
 	background-color:#00B348;
 	cursor:pointer;
@@ -822,11 +860,12 @@ input.btn_comprar:hover{
 }
 .subtitulo_sobre{
 	font-family:"Microsoft YaHei";
-    font-size: 17px;
+    font-size: 20px;
     color:#999999;
-  
-    text-align: center;
+  text-align: center;
 }
+
+    
 .imagemsobre{
 	float: left;
 	width: 299px;
@@ -906,6 +945,39 @@ input.btn_monteja{
 	width: 49%;
 	float:left;
 }
+.venda_prods{
+	width: 60%;
+	float:left;
+    height: auto;
+    
+}
+.per_prods{
+	width: 55%;
+	float:left;
+    height: auto;
+    
+    
+    
+}
+    
+.venda_itens{
+    width: 35%;
+	float:left;
+    margin-left: 30px;
+    min-height: 100px;
+     height: auto;
+    
+    
+}
+    .per_itens{
+    width: 40%;
+	float:left;
+    margin-left: 5px;
+    min-height: 100px;
+    height: auto;
+    
+    
+}
 
 .monte{
     width: 100%;
@@ -916,19 +988,15 @@ input.btn_monteja{
    
 }
 
-.escolher_monte{
-    width: 100%;
-    height: 115px;
-    margin: 8px;
 
-}
 
 .montar{
-    width: 41%;
-    height: 60px;
-    margin-top: 45px;
-    color: #666; 
-    padding-left: 5px;
+    width: 39%;
+    height: 51px;
+    margin-top: 51px;
+    color: #666;
+    padding-left: 25px;
+    margin-left: -23px;
 }
     
 .parcela{
@@ -946,9 +1014,10 @@ input.btn_monteja{
     margin-top: 105px;
     color: #666; 
     padding-left: 5px;
-    margin-left: -2px;
+    margin-left: 95px;
     
 }
+   
 .categoria_monte{
     font-family: Verdana,Arial,Helvetica,sans-serif;
     font-size: 19px;
@@ -957,38 +1026,39 @@ input.btn_monteja{
     margin-top: 65px;
     color: #666;
     padding-right: 12px;
-	width:20%;
+	width:25%;
+    
     
 }
   
 
 input.btn_mais{
-    width: 7%;
+        width: 6%;
     float: right;
-    margin-right: 138px;
-    height: 38px;
-    border-radius: 7px;
-    border:0px;
-    margin-top: -50px;
-	background-image:url(../imagem/btn_mais.png);
-	background-color:#F0F0F0;
-	cursor:pointer;
-}
-input.btn_menos{
-    width: 8%;
-    float: right;
-    margin-right: 79px;
+    margin-right: 176px;
     height: 38px;
     border-radius: 7px;
     border: 0px;
-    margin-top: -50px;
+    margin-top: -57px;
+    background-image: url(../imagem/btn_mais.png);
+    background-color: #F0F0F0;
+    cursor: pointer;
+}
+input.btn_menos{
+        width: 7%;
+    float: right;
+    margin-right: 112px;
+    height: 38px;
+    border-radius: 7px;
+    border: 0px;
+    margin-top: -59px;
     background-image: url(../imagem/btn_menos.png);
     background-color: #F0F0F0;
     cursor: pointer;
 }
 
 .adicionados{
-	width: 31%;
+	width: 75%;
     height: auto;
     float: left;
     margin-top: 68px;
@@ -1061,9 +1131,23 @@ input.btn_adquirir {
     color: #FFF;
     background-color: #00B348;
     margin-bottom: 9px;
-    margin-top: 27px;
+    margin-top: 10px;
     margin-left: 15px;
 	cursor:pointer;
+}
+    
+.frete{
+
+    width: 88%;
+    height: 40px;
+    border: solid 1px #00B348;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    border-radius: 15px;
+    color: #FFF;
+    margin-bottom: 9px;
+    margin-top: 27px;
+    margin-left: 15px;
 }
 
 input.btn_adquirir:hover{
@@ -1078,8 +1162,8 @@ input.btn_adquirir:hover{
     height: 23px;
     border: solid 1px #ccc;
     float: right;
-    margin-right: 112px;
-    margin-top: -47px;
+    margin-right: 145px;
+    margin-top: -54px;
     text-align: center;
     padding-top: 6px;
     background-color: #FFF;
@@ -1106,17 +1190,17 @@ input.btn_adquirir:hover{
     float: left;
     margin-top: 0px;
     color: #666;
-    margin-left: 245px;
+    margin-left: 60px;
     margin-bottom: 5px;
 }
 
     
     .quantidade_venda{
-       width: 15%;
+       width: 12%;
     height: 23px;
     border: solid 1px #ccc;
     float: right;
-    margin-right: 94px;
+    margin-right: 164px;
     margin-top: -47px;
     text-align: center;
     padding-top: 6px;
@@ -1126,9 +1210,9 @@ input.btn_adquirir:hover{
 }
     
     input.btn_mais_venda{
-    width: 16%;
+    width: 12%;
     float: right;
-    margin-right: 127px;
+    margin-right: 200px;
     height: 36px;
     border-radius: 15px;
     border: 0px;
@@ -1138,15 +1222,15 @@ input.btn_adquirir:hover{
     cursor: pointer;
 }
 input.btn_menos_venda{
-    width: 16%;
+    width: 12%;
     float: right;
-    margin-right: 58px;
+    margin-right: 131px;
     height: 38px;
     border-radius: 6px;
     border: 0px;
     margin-top: -50px;
     background-image: url(../imagem/btn_menos.png);
-    background-color: #F0F0F0;
+    
     cursor: pointer;
 }
     .escolher_monte_venda{
@@ -1154,6 +1238,13 @@ input.btn_menos_venda{
     height: 115px;
     margin-left: -50px;
 
+}
+.escolher_monte{
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+   
+      
 }
     .categoria_monte_venda{
     font-family: Verdana,Arial,Helvetica,sans-serif;
@@ -1190,11 +1281,11 @@ input.btn_menos_venda{
 }
     
     .adicionados_venda{
-	width: 31%;
+	width: 81%;
     height: auto;
     float: left;
-    margin-top: 68px;
-    margin-left: 98px;
+    margin-top: 55px;
+    margin-left: 18px;
     border: solid 1px #ccc;
     border-radius: 10px;
     padding-bottom: 22px;
@@ -1536,6 +1627,20 @@ input, textarea, select{ outline: none; }
     resize: none;
     width: 440px;
 }
+    .campo_frete{
+    width: 200px;
+    height: 40px;
+    background-color: #FFF;
+    margin-left: 23px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 1px #00B348;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+    margin-top: 10px;
+}
 input.btn_contato{
 	width: 90px;
     height: 40px;
@@ -1724,6 +1829,36 @@ table td{
 	text-align: left;
 }
 
+.tblBoleto{
+	width:100%;
+	height:200px;
+	border: #0099FF, 1px;	
+}
+.linha_boleto{
+	height:50px;
+
+}
+.col_boleto_img{
+	width:80%;
+	height:100px;
+	background-image:url(../imagem/boleto2.png);
+	background-repeat:no-repeat;
+
+}
+.col_boleto_img_banco{
+
+	width:50px;
+	height:100px;
+	background-image:url(../imagem/bradesco.png);
+	background-repeat:no-repeat;
+
+}
+.col{
+	width:50px;
+	height:100px;
+
+}
+
 .rodape{
 	list-style: outside none none;
 	float: left;
@@ -1823,6 +1958,12 @@ footer{
     background-color: #F0F0F0;
     border-top: solid 6px #00B348;
 }
+
+
+
+
+
+
 
 }
 @media(min-device-width: 320px) and (max-device-width:640px){
@@ -1984,6 +2125,8 @@ nav#menu_produto{
     padding-top: 3px;
 	display:none;
 }
+  
+    
 input.pesquisar{
 	width: 560px;
 	height: 70px;
@@ -2015,22 +2158,24 @@ input.button_pesquisa{
 	display:none;
 }
 .carrinho{
-	width: 30px;
-	height: 30px;
+	width: 70px;
+	height: 70px;
 	float:right;
 	cursor:pointer;
-	display:none;
+	background-image:url(../imagem/carrinho_cel.png);
+	margin-top:25px;
 }
 .login{
-	width: 80px;
-	height: 80px;
+	width: 70px;
+	height: 70px;
 	float:right;
 	background-image:url(../imagem/login_celular.png);
 	cursor:pointer;
 	display:block;
 	position:absolute;
-	margin-top:-100px;
-	display:none;
+	margin-left:-20px;
+	margin-top:25px;
+	
 	
 }
 .entrar{
@@ -2043,6 +2188,9 @@ input.button_pesquisa{
 	margin-left:-258px;
 	margin-top: 50px;
 }
+
+
+    
 .login:hover>.entrar {
 	display:block;
 	width: 390px;
@@ -2948,6 +3096,8 @@ input.btn_contato{
     color: #FFFFFF;
 	margin-left:70px;
 }
+    
+    
 .area_mapa{
     width: 740px;
     height: 310px;
@@ -2991,26 +3141,19 @@ input.btn_contato{
 }
 .titulo_deta_prod{
 	width:600px;
-    font-size: 24px;
     color: #FE7101;
-    float: left;
-    margin-top: 60px;
-    margin-left: -76px;
-    margin-bottom: 10px;
+    margin-left: -5px;
 	font-size:40px;
 }
 .preco_deta_prod{
-    margin-right: 90px;
-    float: right;
-    margin-top: 10px;
+	width:210px;
+	height:30px;
     color: #A9A9A9;
     font-size: 30px;
-    margin-bottom: 10px;
 }
 .comprar{
-	width:110px;
-	height:30px;
-    margin: 10px;
+	width:600px;
+	height:50px;
     float: left;
     padding: 7px;
     border-radius: 10px;
@@ -3019,9 +3162,9 @@ input.btn_contato{
     border: solid 2px #00B348;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #FFFFFF;
-	font-size:27px;
-	display:none;
+	font-size:35px;
     text-decoration:none;
+	margin-left:-100px;
 }
 .comprar:hover{
     background-color: #00B348;
@@ -3032,7 +3175,7 @@ input.btn_contato{
 }
 .desc_deta_prod{
 	width:640px;
-    margin: -160px auto 30px;
+    margin: 120px auto 30px;
     height: auto;
     text-align: justify;
     padding: 10px;

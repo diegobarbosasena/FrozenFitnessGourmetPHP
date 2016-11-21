@@ -32,10 +32,10 @@
 					values ('".$produto->nomeProduto."', '".$produto->precoProduto."', '".$produto->descricaoProduto."', '".$produto->caloriaProduto."', '".$produto->valorEnergeticoProduto."', '".$produto->carboidratoProduto."', '".$produto->proteinaProduto."', 
 					'".$produto->sodioProduto."', '".$produto->gordurasProduto."', '".$produto->imagemProduto."');";
 			
-			$sql2 = "insert into tblcatproduto (codCategoriaMateria, codProduto) values ('".$produto->codcategoriaProduto."', LAST_INSERT_ID())";
+			$sql2 = "insert into tblCatProduto (codCategoriaMateria, codProduto) values ('".$produto->codcategoriaProduto."', LAST_INSERT_ID())";
 			
-			//echo($sql);
-			//echo($sql2);
+			echo($sql);
+			echo($sql2);
 			mysql_query($sql);
                 
 			if(mysql_query($sql2))
@@ -50,12 +50,11 @@
 			$sql = "select p.codProduto, p.nomeProduto, p.precoProduto, p.descricaoProduto, p.caloriaProduto, p.valorEnergeticoProduto, p.carboidratoProduto, p.proteinaProduto, 
 				p.sodioProduto, p.gordurasProduto, p.imagemProduto, cp.codCategoriaMateria, cp.nomeCategoriaMateria
 				from tblProduto as p
-				inner join tblcatproduto as cat
+				inner join tblCatProduto as cat
 				on (p.codProduto = cat.codProduto)
-				inner join tblcategoriamateria as cp
+				inner join tblCategoriaMateria as cp
 				on(cat.codCategoriaMateria = cp.codCategoriaMateria);";
-				
-			//$sql = "select * from tblProduto";	
+					
             
 			$select = mysql_query($sql);
 						
@@ -88,11 +87,11 @@
 		public function selectById($codProduto){
 			
 			$sql = "select p.codProduto, p.nomeProduto, p.precoProduto, p.descricaoProduto, p.caloriaProduto, p.valorEnergeticoProduto, p.carboidratoProduto, p.proteinaProduto, 
-				p.sodioProduto, p.imagemProduto, p.gordurasProduto, cp.codCategoriaMateria, cp.nomeCategoriaMateria
+				p.sodioProduto, p.gordurasProduto, p.imagemProduto, cp.codCategoriaMateria, cp.nomeCategoriaMateria
 				from tblProduto as p
-				inner join tblcatproduto as cat
+				inner join tblCatProduto as cat
 				on (p.codProduto = cat.codProduto)
-				inner join tblcategoriamateria as cp
+				inner join tblCategoriaMateria as cp
 				on(cat.codCategoriaMateria = cp.codCategoriaMateria) where p.codProduto=".$codProduto;
 			
 			$select = mysql_query($sql);

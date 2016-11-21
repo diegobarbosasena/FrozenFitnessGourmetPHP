@@ -10,15 +10,15 @@
             </div>
 
             <div class="titulo_preco">
-                <p class="titulo_deta_prod"> Salmão ao Molho</p>
+                <p class="titulo_deta_prod"> <?php echo($prato->nomePrato)?> </p>
 
                 <div class="clear"> </div>
 
-                <p class="preco_deta_prod">R$ 00.00</p>
+                <p class="preco_deta_prod">Preço: R$ <?php echo($prato->precoPrato)?></p>
                 
                 <div class="clear"> </div>
                 
-                <a href="../home/venda" class="comprar"> Comprar </a>
+                <a href="<?php echo(PROJECTDIR)?>home/venda" class="comprar"> Comprar </a>
                 
                 <a class="comprar"> Adicionar </a>
                 
@@ -28,7 +28,7 @@
         <div class="clear"> </div>
         
         <p class="desc_deta_prod">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis libero mauris, vel sodales risus dictum id. Phasellus posuere pulvinar mauris. Proin et ante ex. Nulla vitae ornare dui, eget interdum quam. Aliquam erat volutpat. 
+            <?php echo($prato->descricaoPrato)?> 
         </p>    
         
         <div class="clear"> </div>
@@ -56,25 +56,25 @@
                 
                 <tr>
                     <td>Valor Calórico</td>
-                    <td>65kcal</td>
+                    <td><?php echo($prato->caloria)?>g </td>
                     <td>3,25%</td>
                 </tr>
                 <tr>
                     <td>Carboidratos</td>
-                    <td>14,13g</td>
+                    <td><?php echo($prato->carboidrato)?>g</td>
                     <td>4,71%</td>
                 </tr>
                 <tr>
                     <td>Proteínas</td>
-                    <td>1,28g</td>
+                    <td><?php echo($prato->proteina)?>g</td>
                     <td>1,70%</td>
                 </tr>
                 <tr>
                     <td>Gorduras Totais</td>
-                    <td>0,42g</td>
+                    <td><?php echo($prato->gorduras)?>g</td>
                     <td>0,76%</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>Gorduras Saturadas</td>
                     <td>0,39mg</td>
                     <td>1,77%</td>
@@ -98,7 +98,7 @@
                     <td>Colesterol</td>
                     <td>1,19mg</td>
                     <td>0,39%</td>
-                </tr>
+                </tr>-->
                 
                 <tr>
                     <td colspan="3">
@@ -106,7 +106,7 @@
                         <br>
                         (**) % Valores calculados em uma dieta de 2000 kcal ou 8.400kj.
                     </td>
-                </tr>
+                </tr> 
             </table>
         </div>
 
