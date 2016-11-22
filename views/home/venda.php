@@ -20,7 +20,11 @@
                 </div>
          
                  <div class="imagem_produtos5">
+                      <img src="<?php  echo (PROJECTDIR.$c->img); ?> ">  
                 </div>
+         
+                 
+          
          <?php } ?>
      
             

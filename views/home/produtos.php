@@ -10,6 +10,7 @@
         <?php foreach($prato as $p){ ?>
         <div class="produtos">
             <div class="imagem_produtos1">
+                <img src="<?php  echo (PROJECTDIR.$p->img); ?>" class="imagem_produtos1">  
             </div>
             <p class="titulo_produtos"> <?php  echo ($p->nomePrato); ?></p>
             <p class="descricao_produto">

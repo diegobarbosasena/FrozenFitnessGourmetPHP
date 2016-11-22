@@ -7,6 +7,7 @@
 		public $prato;
         public $qtd;
         public $total;
+        public $img;
         	
         public function __construct(){
             
@@ -37,7 +38,7 @@
 		
 		public function selectAll (){
             
-			$sql = "select car.codCarrinho,c.codCliente, c.nomeCliente, p.codPrato, p.nomePrato, p.precoPrato, SUM(p.precoPrato) as total ,count(*) as qtd from tblCarrinho as car 
+			$sql = "select car.codCarrinho,c.codCliente, c.nomeCliente, p.codPrato, p.imagemPrato, p.nomePrato, p.precoPrato, SUM(p.precoPrato) as total ,count(*) as qtd from tblCarrinho as car 
             inner join tblCliente as c on (c.codCliente = car.codCliente) inner join tblPrato as p on (p.codPrato = car.codPrato)  where c.codCliente = '".$_SESSION['cod']."' group by p.codPrato";
 
 			
@@ -55,6 +56,7 @@
 				$carrinho->prato->precoPrato = $rs['precoPrato'];
 				$carrinho->qtd = $rs['qtd'];
 				$carrinho->total = $rs['total'];
+				$carrinho->img = $rs['imagemPrato'];
                
 				$listaItens[] = $carrinho;						
 			}
