@@ -29,6 +29,8 @@
                 $sql = "insert into tblCarrinho (codCliente,codPrato)
                 values ('".$this->cliente->codCliente."','".$this->prato->codPrato."')";
 			
+				//echo($sql);
+			
 				if(mysql_query($sql)){
 					return true;
 				}else{

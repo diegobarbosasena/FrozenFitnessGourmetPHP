@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="<?php  echo PROJECTDIR; ?>conteudo/css/style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Frozen Fitness Gourmet</title>
+		<link rel="icon" href="<?php  echo PROJECTDIR; ?>conteudo/imagem/icone.png">
     </head>
 
     <?php ob_start(); ?>

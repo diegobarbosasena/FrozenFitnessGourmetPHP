@@ -95,7 +95,7 @@
 			$atualizar->nomeCategoriaPrato = $this->nomeCategoriaPrato;
 			$atualizar->codCategoriaPrato = $this->codCategoriaPrato;
 			$atualizar->descricaoCategoriaPrato = $this->descricaoCategoriaPrato;
-			$atualizar->imagemCategoriaPrato = $this->imagemCategoriaPrato;
+			$atualizar->imagemCategoriaPrato =  $this->getImg();
 					
 			if($atualizar->update()){					
 				header("location: ../categoriaPrato/index".$this->codCategoriaPrato);

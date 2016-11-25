@@ -8,8 +8,8 @@
 	foreach($categoria as $c){ 
 	?>
     <div class="categoria">
-        <div class="categoria1 margin">
-
+        <div>
+			<img src="<?php  echo (PROJECTDIR.$c->imagemCategoriaPrato); ?>" class="categoria1 margin">  
         </div>
         <div class="titulo_categoria1 titulo">
             <?php  echo ($c->nomeCategoriaPrato); ?>  
@@ -18,7 +18,6 @@
 			<?php  echo ($c->descricaoCategoriaPrato); ?>  
         </div>
     </div>
-			
     <?php  
 	} ?>
 	<!-- <div class="categoria">
@@ -58,7 +57,8 @@
 
 		<?php foreach($prato as $p){ ?>
 			<div class="pratos_mais_vendidos">
-                <div class="imagem_mais_vendidos1 mais">
+                <div>
+					<img src="<?php  echo (PROJECTDIR.$c->imagemPrato); ?>" class="imagem_mais_vendidos1 mais">  
                 </div>
                 <p class="titulo_mais_vendido"><?php  echo ($p->nomePrato); ?></p>
                 <p class="descricao_mais_vendido"><?php  echo ($p->descricaoPrato); ?></p>

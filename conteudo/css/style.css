@@ -426,7 +426,6 @@ figure {
 .categoria1{
 	width: 250px;
 	height: 250px;
-	background-image:url(../imagem/alimentacao.png);
 	float: left;
 	border-radius: 60%;
 }
@@ -524,7 +523,6 @@ figure {
 }
 .imagem_mais_vendidos1{
 	float:left;
-	background-image:url(../imagem/prato1.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -608,7 +606,6 @@ figure {
     float: left;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(../imagem/prato1.png);
 }
 .imagem_produtos2{
 	width: 100%;

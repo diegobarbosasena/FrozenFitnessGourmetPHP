@@ -9,8 +9,8 @@
         
         <?php foreach($prato as $p){ ?>
         <div class="produtos">
-            <div class="imagem_produtos1">
-                <img src="<?php  echo (PROJECTDIR.$p->img); ?>" class="imagem_produtos1">  
+            <div>
+                <img src="<?php  echo (PROJECTDIR.$p->imagemPrato); ?>" class="imagem_produtos1">  
             </div>
             <p class="titulo_produtos"> <?php  echo ($p->nomePrato); ?></p>
             <p class="descricao_produto">
@@ -24,7 +24,6 @@
             <!-- <button type="button" onclick="addProduto(<?php //echo($p->codPrato)?>);"> Comprar </button> -->
             
             <form class="login-form" method="post" action="<?php echo(PROJECTDIR)?>carrinho/inserir/<?php  echo($p->codPrato); ?>"> <input class="btn_comprar" type="submit" value="Adicionar"> </form>
-            
             
         </div>
         

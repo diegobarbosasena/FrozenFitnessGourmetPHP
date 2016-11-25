@@ -14,7 +14,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <link rel="stylesheet" type="text/css" href="<?php  echo PROJECTDIR; ?>conteudo/css/style_cms.css">
-<title>Untitled Document</title>
+<title>.:CMS - Frozen Fitness Gourmet:.</title>
+<link rel="icon" href="<?php  echo PROJECTDIR; ?>conteudo/imagem/icone.png">
 
  
 </head>
