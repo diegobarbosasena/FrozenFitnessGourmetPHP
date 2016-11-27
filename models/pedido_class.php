@@ -72,7 +72,7 @@ from tblItemPedido as i inner join tblPedido as p on p.codPedido = i.codPedido i
 				$pedido->codPedido = $rs['codPedido'];
 				$pedido->dtEntrega= $rs['dtEntrega'];
 				$pedido->dtCompra = $rs['dtCompra'];
-				$pedido->cliente- >codCliente = $rs['codCliente'];
+				$pedido->cliente->codCliente = $rs['codCliente'];
 				$pedido->codStatus = $rs['codStatus'];
 				$pedido->nomeStatus = $rs['statusPedido'];
                

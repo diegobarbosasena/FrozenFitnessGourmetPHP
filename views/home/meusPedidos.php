@@ -19,11 +19,12 @@
             <td><?php echo($p->nomeStatus) ?></td>
         </tr>
            <?php }?> 
+        
     </table>
 </fieldset>
     <p>
     
-<!-- <fieldset>
+ <fieldset>
      <p class="subtitulo_sobre">Histórico de pedidos</p>
     
     <table class="tbl_dados">
@@ -42,5 +43,5 @@
             <td>Em andamento</td>
         </tr>
     </table>
-    </fieldset> -->
+    </fieldset> 
 </div>

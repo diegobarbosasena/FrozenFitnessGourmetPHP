@@ -43,8 +43,12 @@
                 <p class="descricao_mais_vendido"><?php  echo ($p->descricaoPrato); ?></p>
                 <p class="kcal_mais_vendido"> Calorias: <?php  echo ($p->caloria); ?></p>
                 <p class="preco_mais_vendido">R$<?php  echo ($p->precoPrato); ?></p>
-                <form class="login-form" action="<?php echo(PROJECTDIR)?>home/detalhes/<?php  echo($p->codPrato); ?>"> <input class="btn_detalhes" type="submit" value="Detalhes"> 
-                <input class="btn_comprar" type="submit" value="Comprar"> </form>
+               
+               
+                <form class="login-form" method="post" action="<?php echo(PROJECTDIR)?>home/detalhes/<?php  echo($p->codPrato); ?>"> <input class="btn_detalhes" type="submit" value="Detalhes"> </form>
+                    
+                 <form class="login-form" method="post" action="<?php echo(PROJECTDIR)?>carrinho/inserir/<?php  echo($p->codPrato); ?>"> <input class="btn_comprar" type="submit" value="Adicionar"> </form>
+            
             </div>
 		<?php } ?>
             

@@ -44,12 +44,14 @@
                 $_SESSION['cod'] = $this->cliente->codCliente;
 
                 header("location: ../home/index");
+                
             }elseif($loginFunc != null){
+                
                 $_SESSION['usuarioCms'] = $this->funcionario->nomeFuncionarioLoja;
-				 $_SESSION['codCms'] = $this->funcionario->nomeFuncionarioLoja;
+				$_SESSION['codCms'] = $this->funcionario->nomeFuncionarioLoja;
 				header("location: ../homeCms/index");
             }else{               
-                echo('Erro');
+                header("location: ../home/login");
             }
         }
         

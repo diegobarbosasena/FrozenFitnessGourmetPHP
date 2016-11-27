@@ -116,9 +116,14 @@ require_once('models/sobreLoja_class.php');
             $c = new Carrinho();
             $c->cliente = new Cliente();
              
-            $carrinho = $c->selectAll();
+            
 
-            require_once('views/home/venda.php');
+            if(isset($_SESSION['usuario']) && $_SESSION['usuario'] != null){
+                $carrinho = $c->selectAll();
+                require_once('views/home/venda.php');
+            }else{
+                require_once('views/home/login.php');
+            }
         }
         
         public function cadastro(){

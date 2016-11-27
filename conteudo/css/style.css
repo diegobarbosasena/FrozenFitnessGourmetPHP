@@ -2158,6 +2158,17 @@ input.button_pesquisa{
 	background-image:url(../imagem/carrinho_cel.png);
 	margin-top:25px;
 }
+    
+.qtd{
+    width: 10px;
+    height: 23px;
+    border: solid 1px #000;
+    text-align: center;
+    padding-top: 6px;
+    background-color: #000;
+    border-radius: 5px;
+}
+    
 .login{
 	width: 70px;
 	height: 70px;

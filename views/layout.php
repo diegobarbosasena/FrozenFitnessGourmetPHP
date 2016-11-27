@@ -96,10 +96,8 @@
 						<p>Cadastre-se!</p>	
 					</a><?php } ?>	
             </div>
-            
+             
             <div class="botoes">
-			
-			
                 
 			<?php if(!isset($_SESSION['usuario']) || $_SESSION['usuario'] == ""){ ?> 
                 <div class="login">
@@ -124,15 +122,15 @@
 				<?php } ?> 
                 
                 <a href="<?php  echo PROJECTDIR;?>home/venda" class="link"> 
-                    <div class="carrinho">
-                     
-                </div> </a>
+                    <div class="carrinho"> </div>
+                </a>
+                
 
                 <form name="FrmPesquisa" method="post" action="<?php  echo PROJECTDIR;?>home/index">
                     <input class="button_pesquisa" type="submit" name="btnPesquisa" value=""/>
                     <input class="pesquisar" type="text" name="lala" value="" placeholder="Pesquisar...">
                 </form>
-
+               
             </div>
         </div>
 
