@@ -115,7 +115,7 @@ require_once('models/sobreLoja_class.php');
             
             $c = new Carrinho();
             $c->cliente = new Cliente();
-            
+             
             $carrinho = $c->selectAll();
 
             require_once('views/home/venda.php');

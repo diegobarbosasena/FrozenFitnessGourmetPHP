@@ -20,27 +20,6 @@
     </div>
     <?php  
 	} ?>
-	<!-- <div class="categoria">
-        <div class="categoria2 margin">
-
-        </div>
-        <div class="titulo_categoria2 titulo">
-            Energia e Resistência   
-        </div>
-        <div class="descricao_categoria2">
-            Capacidade de superação da resistência externa e de contra-ação a esta resistência, alimentação é essencial nesse processo.
-        </div>
-    </div>    
-    <div class="categoria">
-        <div class="categoria3 margin">
-        </div>
-        <div class="titulo_categoria3 titulo">
-            Emagrecimento   
-        </div>
-        <div class="descricao_categoria3">
-            As gorduras localizadas no nosso corpo não apareceram ali do dia para noite, mas são resultados de meses ou anos de uma alimentação não equilibrada.
-        </div>
-    </div> -->
     
     <div class="clear"> </div>
     
@@ -58,7 +37,7 @@
 		<?php foreach($prato as $p){ ?>
 			<div class="pratos_mais_vendidos">
                 <div>
-					<img src="<?php  echo (PROJECTDIR.$c->imagemPrato); ?>" class="imagem_mais_vendidos1 mais">  
+					<img src="<?php  echo (PROJECTDIR.$p->imagemPrato); ?>" class="imagem_mais_vendidos1 mais">  
                 </div>
                 <p class="titulo_mais_vendido"><?php  echo ($p->nomePrato); ?></p>
                 <p class="descricao_mais_vendido"><?php  echo ($p->descricaoPrato); ?></p>
@@ -68,74 +47,7 @@
                 <input class="btn_comprar" type="submit" value="Comprar"> </form>
             </div>
 		<?php } ?>
-            <!--<div class="pratos_mais_vendidos">
-                <div class="imagem_mais_vendidos1 mais">
-                </div>
-                <p class="titulo_mais_vendido">Strogonoff Light</p>
-                <p class="descricao_mais_vendido">Nesse prato podemos contar com uma grande quantidade de energia e nutrientes.</p>
-                <p class="kcal_mais_vendido"> Calorias: 500kcal.</p>
-                <p class="preco_mais_vendido">R$45,00.</p>
-                <form class="login-form" action="../home/detalhes"> <input class="btn_detalhes" type="submit" value="Detalhes"> 
-                <input class="btn_comprar" type="submit" value="Comprar"> </form>
-            </div>
-
-            <div class="pratos_mais_vendidos">
-                <div class="imagem_mais_vendidos2 mais">
-                </div>
-                <p class="titulo_mais_vendido"> Frango com Batata Doce</p>
-                <p class="descricao_mais_vendido">Nesse prato podemos contar com uma grande quantidade de energia e nutrientes.</p>
-                <p class="kcal_mais_vendido">Calorias: 500kcal.</p>
-                <p class="preco_mais_vendido">R$45,00.</p>
-                 <form class="login-form" action="../home/detalhes"> <input class="btn_detalhes" type="submit" value="Detalhes"> 
-                <input class="btn_comprar" type="submit" value="Comprar"> </form>
-            </div>
-
-            <div class="pratos_mais_vendidos">
-                <div class="imagem_mais_vendidos3 mais">
-                </div>
-                <p class="titulo_mais_vendido"> Salmão ao molho</p>
-                <p class="descricao_mais_vendido">Nesse prato podemos contar com uma grande quantidade de energia e nutrientes.</p>
-                <p class="kcal_mais_vendido"> Calorias: 500kcal.</p>
-                <p class="preco_mais_vendido">R$45,00.</p>
-                 <form class="login-form" action="../home/detalhes"> <input class="btn_detalhes" type="submit" value="Detalhes"> 
-                <input class="btn_comprar" type="submit" value="Comprar"> </form>
-            </div>
-
-            <div class="pratos_mais_vendidos">
-                <div class="imagem_mais_vendidos4 mais">
-                </div>
-                <p class="titulo_mais_vendido"> Frango com Brócolis</p>
-                <p class="descricao_mais_vendido">Nesse prato podemos contar com uma grande quantidade de energia e nutrientes.</p>
-                <p class="kcal_mais_vendido"> Calorias: 500kcal.</p>
-                <p class="preco_mais_vendido">R$45,00.</p>
-                 <form class="login-form" action="../home/detalhes"> <input class="btn_detalhes" type="submit" value="Detalhes"> 
-                <input class="btn_comprar" type="submit" value="Comprar"> </form>
-            </div>
             
-            <div class="pratos_mais_vendidos">
-                <div class="imagem_mais_vendidos1 mais">
-                </div>
-                <p class="titulo_mais_vendido">Strogonoff Light</p>
-                <p class="descricao_mais_vendido">Nesse prato podemos contar com uma grande quantidade de energia e nutrientes.</p>
-                <p class="kcal_mais_vendido"> Calorias: 500kcal.</p>
-                <p class="preco_mais_vendido">R$45,00.</p>
-                 <form class="login-form" action="../home/detalhes"> <input class="btn_detalhes" type="submit" value="Detalhes"> 
-                     <input class="btn_comprar" type="submit" value="Comprar"> </form>
-            </div>
-            
-            <div class="pratos_mais_vendidos">
-                <div class="imagem_mais_vendidos2 mais">
-                </div>
-                <p class="titulo_mais_vendido"> Frango com Batata Doce</p>
-                <p class="descricao_mais_vendido">Nesse prato podemos contar com uma grande quantidade de energia e nutrientes.</p>
-                <p class="kcal_mais_vendido">Calorias: 500kcal.</p>
-                <p class="preco_mais_vendido">R$45,00.</p>
-                 <form class="login-form" action="../home/detalhes"> <input class="btn_detalhes" type="submit" value="Detalhes"> 
-                <input class="btn_comprar" type="submit" value="Comprar"> </form>
-            </div> -->
-
-        </div>
-
     </div> 
     
     <div class="clear"> </div>
@@ -153,8 +65,10 @@
         <p class="titulo_dica_exercicio"> Dica Frozen Fitness</p>
         <div class="icone1">
         </div>
-        <div class="imagem_dica">
-        </div> <?php foreach($dicas as $d){ ?>
+        <?php foreach($dicas as $d){ ?>
+        <div>
+            <img src="<?php  echo (PROJECTDIR.$d->imagemDica); ?>" class="imagem_dica">  
+        </div> 
         <p class="assunto_dica"><?php  echo ($d->tituloDica); ?></p>
         <p class="descricao_dica">           
             <?php  echo ($d->descricaoDica); ?>
@@ -177,7 +91,7 @@
     </div>
     
     <div class="clear"> </div>
-    
+    </div>
 </div>           
  
    

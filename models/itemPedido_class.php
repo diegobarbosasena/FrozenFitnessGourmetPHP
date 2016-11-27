@@ -27,7 +27,7 @@
                 foreach($carrinho as $c){
                     $sql = "insert into tblItemPedido (codPedido,codPrato,quantidade)
                     values (".$codPedido.",'".$c->prato->codPrato."','".$c->qtd."')";
-                    //echo($sql);  
+                  
                     mysql_query($sql);
                 }   
             

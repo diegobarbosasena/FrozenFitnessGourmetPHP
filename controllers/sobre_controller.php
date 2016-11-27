@@ -48,22 +48,22 @@
             
 			
             if(strstr($fileimg, '.jpg') || strstr($fileimg, '.png')){
-                if(move_uploaded_file($_FILES["imgSobreLoja1"]["tmp_name"],$file1)  ){
+                if(move_uploaded_file($_FILES["imgSobreLoja"]["tmp_name"],$file)  ){
 					return $file;
                 }else{
 					return null;
 				}
-                if(move_uploaded_file($_FILES["imgSobreLoja2"]["tmp_name"],$file1)  ){
+                if(move_uploaded_file($_FILES["imgSobreLoja1"]["tmp_name"],$file1)  ){
 					return $file1;
                 }else{
 					return null;
 				}
-                if(move_uploaded_file($_FILES["imgSobreLoja3"]["tmp_name"],$file2)  ){
+                if(move_uploaded_file($_FILES["imgSobreLoja2"]["tmp_name"],$file2)  ){
 					return $file2;
                 }else{
 					return null;
 				}
-                if(move_uploaded_file($_FILES["imgSobreLoja"]["tmp_name"],$file3)  ){
+                if(move_uploaded_file($_FILES["imgSobreLoja3"]["tmp_name"],$file3)  ){
 					return $file3;
                 }else{
 					return null;
@@ -130,10 +130,10 @@
 			$atualizar->tituloSobreLoja = $this->tituloSobreLoja;
 			$atualizar->historiaSobreLoja = $this->historiaSobreLoja;
             $atualizar->codSobreLoja = $this->codSobreLoja;
-			$atualizar->imgSobreLoja = $this->imgSobreLoja;
-			$atualizar->imgSobreLoja1 = $this->imgSobreLoja1;
-			$atualizar->imgSobreLoja2 = $this->imgSobreLoja2;
-			$atualizar->imgSobreLoja3 = $this->imgSobreLoja3;
+			$atualizar->imgSobreLoja = $this->getImg($this->imgSobreLoja);
+			$atualizar->imgSobreLoja1 = $this->getImg($this->imgSobreLoja1);
+			$atualizar->imgSobreLoja2 = $this->getImg($this->imgSobreLoja2);
+			$atualizar->imgSobreLoja3 = $this->getImg($this->imgSobreLoja3);
 			
 			
 						
@@ -159,10 +159,10 @@
             $sobreLoja->codSobreLoja = $this->codSobreLoja;
 			$sobreLoja->tituloSobreLoja = $this->tituloSobreLoja;
 			$sobreLoja->historiaSobreLoja = $this->historiaSobreLoja;
-			$sobreLoja->imgSobreLoja = $this->imgSobreLoja;
-            $sobreLoja->imgSobreLoja1 = $this->imgSobreLoja1;
-            $sobreLoja->imgSobreLoja2 = $this->imgSobreLoja2;
-            $sobreLoja->imgSobreLoja3 = $this->imgSobreLoja3;
+			$sobreLoja->imgSobreLoja = $this->getImg($this->imgSobreLoja);
+            $sobreLoja->imgSobreLoja1 = $this->getImg($this->imgSobreLoja1);
+            $sobreLoja->imgSobreLoja2 = $this->getImg($this->imgSobreLoja2);
+            $sobreLoja->imgSobreLoja3 = $this->getImg($this->imgSobreLoja3);
 
             
 			

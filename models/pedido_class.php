@@ -27,22 +27,26 @@
         		
 				
 		public function insert() {
-                $item = new ItemPedido();
                 
+                $item = new ItemPedido();
+                $c = new Carrinho();
+            
+                $car = $c->selectAll();
+            
+                foreach($carrinho as $c){
+                    $totalProdutos = $totalProdutos + $c->total; 
+                }
+                    
                 date_default_timezone_set('America/Sao_Paulo');
                 $this->dtCompra = date('Y-m-d');
                 $dia = date('d');
 		
-                $sql = "insert into tblPedido (tipoPedido,dtCompra,dtEntrega,codCliente,codStatus)
-                values ('web','".$this->dtCompra."', now() + INTERVAL 5 DAY,'".$_SESSION['cod']."', '1')";
+                $sql = "insert into tblPedido (tipoPedido,dtCompra,dtEntrega,codCliente,codStatus,total)
+                values ('web','".$this->dtCompra."', now() + INTERVAL 5 DAY,'".$_SESSION['cod']."', '1','".$totalProdutos."')";
                 $last_id = "set @id = LAST_INSERT_ID();";
-                //echo($sql);
+
                 mysql_query($sql);
-                /*echo($sql);
-                echo($last_id);
-                mysql_query($sql);
-                mysql_query($last_id);
-                $item->insert('@id');*/
+             
 				
             if(mysql_query($last_id)){
                     $item->insert('@id');
@@ -68,7 +72,7 @@ from tblItemPedido as i inner join tblPedido as p on p.codPedido = i.codPedido i
 				$pedido->codPedido = $rs['codPedido'];
 				$pedido->dtEntrega= $rs['dtEntrega'];
 				$pedido->dtCompra = $rs['dtCompra'];
-				$pedido->cliente->codCliente = $rs['codCliente'];
+				$pedido->cliente- >codCliente = $rs['codCliente'];
 				$pedido->codStatus = $rs['codStatus'];
 				$pedido->nomeStatus = $rs['statusPedido'];
                

@@ -793,7 +793,6 @@ input.btn_comprar:hover{
     height: 190px;
     border-radius: 180%;
     border: solid 2px #FE7101;
-    background-image: url(../imagem/dica.png);
     float: left;
     margin: 10px;
 }
@@ -802,7 +801,6 @@ input.btn_comprar:hover{
     height: 190px;
     border-radius: 180%;
     border: solid 2px #FE7101;
-    background-image: url(../imagem/exer.png);
     float: left;
     margin: 10px;
 }
@@ -962,8 +960,8 @@ input.btn_monteja{
 	float:left;
     margin-left: 30px;
     min-height: 100px;
-     height: auto;
-    
+    height: auto;
+    padding-bottom: 20px;
     
 }
     .per_itens{
@@ -1176,7 +1174,7 @@ input.btn_adquirir:hover{
     float: left;
     margin-top: 170px;
     color: #666;
-    margin-left: -78px;
+    margin-left: -60px;
     
 }
     .categoria_venda_bebida{
@@ -1267,14 +1265,12 @@ input.btn_menos_venda{
     
 }
 .imagem_produtos5{
-	width: 62%;
-    height: 153px;
+	width: 30%;
+    height: 123px;
     float: left;
-    background-repeat: no-repeat;
     background-position: center;
-	background-image:url(../imagem/prato1.png);
-    margin-left: 230px;
-    margin-top: -110px;
+    margin-left: 180px;
+    margin-top: -90px;
 }
     
     .adicionados_venda{

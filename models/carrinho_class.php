@@ -23,7 +23,7 @@
             $this->prato = new Prato();
         }
         		
-				
+        
 		public function insert() {
 		
                 $sql = "insert into tblCarrinho (codCliente,codPrato)
@@ -47,11 +47,13 @@
 			$select = mysql_query($sql);
             
             $listaItens = array(); 
+            
 			
 			while($rs = mysql_fetch_array($select)){
 				
                 $carrinho = new Carrinho();
 				$carrinho->cliente->codCliente = $rs['codCliente'];
+				$carrinho->codCarrinho = $rs['codCarrinho'];
 				$carrinho->cliente->nomeCliente = $rs['nomeCliente'];
 				$carrinho->prato->codPrato = $rs['codPrato'];
 				$carrinho->prato->nomePrato = $rs['nomePrato'];
@@ -76,11 +78,17 @@
 		
 			$sql = "TRUNCATE tblCarrinho;";
             mysql_query($sql);
-			
-            /*if(mysql_query($sql))
+								
+		}	
+        
+        public function deleteById($codCarrinho) {
+		
+			$sql = "delete from tblCarrinho where codCarrinho='".$codCarrinho."'";
+
+            if(mysql_query($sql))
 				return true;
 			else
-				return false;	*/						
+				return false;							
 		}	
 	}
 

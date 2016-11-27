@@ -29,6 +29,22 @@
                 $this->prato->codPrato = $_GET['id'];
 			
 		}
+        
+        public function add(){
+            
+            $this->cliente->codCliente = $_SESSION['cod'];   
+            $this->prato->codPrato = $_POST['codPrato'];
+            
+            $carrinho = new Carrinho();
+            
+            $carrinho->cliente->codCliente = $this->cliente->codCliente;
+            $carrinho->prato->codPrato = $this->prato->codPrato;
+            
+            
+            if($carrinho->insert()){
+                header("Location: ../home/venda");
+            } 
+        }
          
         	
         public function listarTodos (){
@@ -43,9 +59,20 @@
 		  
 		}
 		
+        public function remove() {
+            $codCarrinho = $_POST['codCarrinho'];
 
+            $carrinho = new Carrinho();
+
+            if($carrinho->deleteById($codCarrinho)){
+                 header("Location: ../home/venda");
+            }
+		}
+		
+        
 		
 		public function deletar() {
+            
             $carrinho = new Carrinho();
             
             $carrinho->delete();
@@ -60,13 +87,13 @@
             $carrinho->cliente->codCliente = $this->cliente->codCliente;
             $carrinho->prato->codPrato = $this->prato->codPrato;
             
+            
+            
             if($carrinho->insert()){
                 header("Location: ../../home/produtos");
             }else{
                 header("Location: ../../home/login");
-            }
-        
-                         
+            }                                
         }
 		
 	}

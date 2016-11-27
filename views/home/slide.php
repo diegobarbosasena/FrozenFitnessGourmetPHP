@@ -5,9 +5,9 @@
                    <span class="trs prev">&laquo;</span>
  
    			<div id="slider">
-             <a href="#" class="trs" ><img src="../conteudo/imagem/slide1.png" alt="1" /></a>
-              <a href="#" class="trs"><img src="../conteudo/imagem/slide2.png" alt="2" /></a>
-              <a href="#" class="trs"><img src="../conteudo/imagem/slide3.png" alt="3" /></a>   			
+             <a href="#" class="trs" ><img src="../conteudo/imagem/slide1.png"  /></a>
+              <a href="#" class="trs"><img src="../conteudo/imagem/slide2.png"  /></a>
+              <a href="#" class="trs"><img src="../conteudo/imagem/slide3.png"  /></a>   			
              </div>
  
    			<figcaption></figcaption>

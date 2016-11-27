@@ -21,6 +21,12 @@
             $cliente = new Cliente();
 
         }
+        
+        public function iniciaAtributo(){
+            
+            
+            
+        }
          
         	
         public function listarTodos (){
@@ -45,7 +51,7 @@
             
             $pedido = new Pedido();
 
-            //$pedido->insert();
+            
     
             if($pedido->insert()){
                 

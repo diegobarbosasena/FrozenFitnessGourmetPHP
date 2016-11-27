@@ -95,7 +95,7 @@
 			$atualizar->tituloDica = $this->tituloDica;
 			$atualizar->codDica = $this->codDica;
 			$atualizar->descricaoDica = $this->descricaoDica;
-			$atualizar->imagemDica = $this->imagemDica;
+			$atualizar->imagemDica = $this->getImg();
 			
 			if($atualizar->update()){					
 				header("location: ../dicas/index".$this->codDica);

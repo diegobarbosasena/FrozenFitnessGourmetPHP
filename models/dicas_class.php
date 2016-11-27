@@ -78,7 +78,7 @@
 		
 		public function update() {
 		
-			$sql = "update tblDica set tituloDica='".$this->tituloDica."', descricaoDica='".$this->descricaoDica."'  where codDica=".$this->codDica;     
+			$sql = "update tblDica set tituloDica='".$this->tituloDica."', descricaoDica='".$this->descricaoDica."' , imagemDica= '".$this->imagemDica."' where codDica=".$this->codDica;     
 		
 			if(mysql_query($sql)){				
 				return true;

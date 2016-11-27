@@ -7,44 +7,27 @@
      <div class="venda_prods">
            
         <?php foreach($carrinho as $c){ ?> 
-         
         <div class="categoria_monte_venda"> <?php  echo ($c->prato->nomePrato); ?></div>
                 <div  class="categoria_venda"> 
-                <form id="">
+                <form method="post" action="<?php echo (PROJECTDIR); ?>carrinho/add">
+            <input type="hidden" value="<?php echo($c->prato->codPrato)?>" name="codPrato"/>
+
                     <input class="btn_mais_venda" type="submit" value=""> 
                 </form>
+                    
                 <div class="quantidade_venda"> <?php  echo ($c->qtd); ?> </div>
-                <form id="">
+                    
+                <form method="post" action="<?php echo (PROJECTDIR); ?>carrinho/remove">
+            <input type="hidden" value="<?php echo($c->codCarrinho)?>" name="codCarrinho"/>
                     <input class="btn_menos_venda" type="submit" value=""> 
                 </form>
                 </div>
-         
                  <div class="imagem_produtos5">
                       <img src="<?php  echo (PROJECTDIR.$c->img); ?> ">  
                 </div>
          
-                 
           
          <?php } ?>
-     
-            
-         <!-- <div class="categoria_bebida"> Bedidas:</div>
-                <div class="espaco">
-                <select class="bebida" size="1" name="Carnes">
-                    <option selected value="Selecione">Selecione:</option>
-                    <option value="bovina">Bovina</option>
-                    <option value="suina">Suína</option>
-                </select>
-                </div>
-                <div  class="categoria_venda_bebida"> 
-                    <form id="">
-                        <input class="btn_mais_venda" type="submit" value=""> 
-                    </form>
-                    <div class="quantidade_venda"> 10 </div>
-                    <form id="">
-                        <input class="btn_menos_venda" type="submit" value=""> 
-                    </form>
-                </div> -->
 
         </div>
     <div class="venda_itens">
