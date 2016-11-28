@@ -67,9 +67,11 @@
         </td>
 		
 		 <td class="col_consulta">
+             <div class="overflow" >
            <?php 
 					echo($rs[$cont]->descricaoCategoriaPrato);
 			?>
+                 <div class="overflow" >
         </td>
         
         <td class="col_consulta">

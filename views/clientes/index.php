@@ -3,8 +3,8 @@
 <div class="cadas">Consulta de Clientes</div>
 
   
-<form>
-    <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
+<form method="post" action="<?php echo(PROJECTDIR)?>clientes/<?php echo(buscar)?> " >
+    <input class="pesquisarCms" type="text" name="txtBusca" value="" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form>
 <form name="FrmUsuario" method="post" action="">

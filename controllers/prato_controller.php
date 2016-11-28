@@ -113,9 +113,12 @@
 		public function buscar($codPrato){
             
             $prato = new Prato();
+            if(isset($_POST["btnPesquisa"])){
+					
+				$pesquisa = $_POST["txtBusca"];
             
             return $prato->selectById($codPrato);
-		  
+            }
 		}
 		
 		public function atualizar() {

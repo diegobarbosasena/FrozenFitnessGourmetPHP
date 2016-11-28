@@ -1,12 +1,12 @@
 
 <div class="cadas">Consulta de Pratos Prontos</div>
 
-<form  name="frmconsulta" method="post" action="../prato/cadastrar">
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>prato/buscar">
        <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
         
     </form>
 	
-<form name="FrmPesquisa" method="post" action="home.php">
+<form name="FrmPesquisa" method="post" action="method="post" action="<?php echo(PROJECTDIR)?>clientes/<?php echo(buscar)?> ">
     
     <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>

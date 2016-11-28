@@ -109,7 +109,9 @@
             Complemento: 
         </td>
         <td class="col_consulta_dtl">
-           <?php echo($parceiro->endereco->complemento); ?>      
+            <div class="overflow">
+           <?php echo($parceiro->endereco->complemento); ?>   
+            </div>
         </td>
      </tr>
 

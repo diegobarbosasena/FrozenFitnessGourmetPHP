@@ -67,12 +67,18 @@
 		public function listarTodos (){
 			 
 			$listar = new Cliente();
-			return $listar->selectAll();	
+			return $listar->selectAll();
+            
 		}
 		
 		public function buscar($codCliente){
 			$buscar = new Cliente();
-			return $buscar->selectById($codCliente);
+            if(isset($_POST["btnPesquisa"])){
+					
+				$pesquisa = $_POST["txtBusca"];
+                return $buscar->selectById($codCliente);
+            }
+			
 			
 		}
 		

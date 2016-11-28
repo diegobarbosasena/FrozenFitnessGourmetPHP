@@ -54,7 +54,9 @@
            <?php echo ($rs[$cont]->nomeCategoriaMateria);?>
         </td>
         <td class="col_consulta">
-          <?php echo ($rs[$cont]->descricaoMateria);?>
+            <div class="overflow" >
+                <?php echo ($rs[$cont]->descricaoMateria);?>
+            <div class="overflow" >
         </td>
 		 <td class="col_consulta">
            <?php echo ($rs[$cont]->precoMateria);?>

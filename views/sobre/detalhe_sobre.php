@@ -68,7 +68,7 @@
         </td>
         <td class="col_consulta_dtl">
             <div class="overflow">
-          <?php echo ($rs->historiaSobreLoja);?>
+                <?php echo ($rs->historiaSobreLoja);?>
             </div>
         </td>
      </tr>
