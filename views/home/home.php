@@ -85,7 +85,8 @@
         <p class="titulo_dica_exercicio"> Exercícios Fitness</p>
         <div class="icone2">
         </div>
-        <div class="imagem_exercicio">
+        <div>
+            <img src="<?php  echo (PROJECTDIR.$e->imagemExercicio); ?>" class="imagem_exercicio">  
         </div>
         <p class="assunto_exercicio"><?php  echo ($e->tituloExercicio); ?></p>
         <p class="descricao_exercicio">

@@ -24,7 +24,7 @@
 				$sql = "insert into tblDica (tituloDica, descricaoDica, imagemDica) values('".$dicas->tituloDica."','".$dicas->descricaoDica."',
 					'".$dicas->imagemDica."')";
 
-				echo($sql);
+				//echo($sql);
 				if(mysql_query($sql)){
 				
 					return true;
