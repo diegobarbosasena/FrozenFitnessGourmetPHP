@@ -34,7 +34,8 @@
              <?php echo ($slider->tituloSlider);?>
         </td>
         <td class="col_consulta">
-            <?php echo ($slider->linkImagemSlider);?>
+            <img src="<?php  echo (PROJECTDIR.$slider->linkImagemSlider); ?>" class="imgTable" >
+            
         </td>
         
         <td class="col_consulta" >

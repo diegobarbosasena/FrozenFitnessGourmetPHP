@@ -86,9 +86,10 @@
     <tr class="linha_consulta_dtl">
         <td class="col_consulta_dtl">
             Imagem: 
-        </td>
-        <td class="col_consulta_dtl">
-          <?php echo ($rs->imagemPrato);?>    
+        </td >
+        <td  class="col_consulta_dtl">
+            <img src="<?php  echo (PROJECTDIR.$rs->imagemPrato); ?>" class="imgTable" >   
+             
         </td>
      </tr>
 	 
@@ -97,7 +98,7 @@
             Categoria: 
         </td>
         <td class="col_consulta_dtl">
-          <?php echo ($rs->nomeCategoriaPrato);?>    
+            
         </td>
      </tr>
 	 

@@ -25,7 +25,8 @@
             Imagem: 
         </td>
         <td class="col_consulta_dtl">
-          <?php echo($parceiro->imagemParceiro); ?>  
+            <img src="<?php  echo (PROJECTDIR.$parceiro->imagemParceiro); ?>" class="imgTable" >
+           
         </td>
      </tr>
     <tr class="linha_consulta_dtl">

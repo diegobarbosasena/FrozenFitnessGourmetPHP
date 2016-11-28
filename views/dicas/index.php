@@ -53,9 +53,12 @@
 			?>
         </td>
         <td class="col_consulta">
-           <?php 
-					echo($rs[$cont]->imagemDica);
-			?>
+          
+                
+                 <img src="<?php  echo(PROJECTDIR.$rs[$cont]->imagemDica); ?>" class="imgTable" >
+                    
+					
+			
         </td>
         <td class="col_consulta">
            <?php 

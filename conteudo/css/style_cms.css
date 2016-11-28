@@ -3,6 +3,15 @@
 input{
 outline:none;
 }
+.imgTable{
+	width: 80%;
+    height: 120px;
+	float:left;
+	background-repeat: no-repeat;
+	background-position: center;
+    text-align: center;
+   
+}
 
 body{
 	background-color:#F0F0F0;
@@ -394,6 +403,9 @@ input.btnVoltar:hover{
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
 }
 
 .overflow{
@@ -425,6 +437,9 @@ input.btnVoltar:hover{
 .linha_consulta_dtl{
     height: 40px; 
 }
+.linha_consulta_dtl.img{
+    height: 40px; 
+}
 
 .col_consulta_dtl{
     width: 90px;
@@ -432,6 +447,14 @@ input.btnVoltar:hover{
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+}
+.col_consulta_dtl.img{
+    width: 90px;
+    border: solid 1px #CCC;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    height: 100px;
 }
 
 input.pesquisarCms{

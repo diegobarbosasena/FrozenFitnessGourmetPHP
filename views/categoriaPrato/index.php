@@ -60,9 +60,10 @@
         </td>
 		
 		  <td class="col_consulta">
-           <?php 
-					echo($rs[$cont]->imagemCategoriaPrato);
-			?>
+           
+                <img src="<?php  echo (PROJECTDIR.$rs[$cont]->imagemCategoriaPrato); ?>" class="imgTable" >  
+                
+
         </td>
 		
 		 <td class="col_consulta">

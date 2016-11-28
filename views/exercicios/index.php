@@ -59,9 +59,10 @@
 			?>
         </td>
         <td class="col_consulta">
-           <?php 
-					echo($rs[$cont]->imagemExercicio);
-			?>
+           
+					
+                 <img src="<?php  echo(PROJECTDIR.$rs[$cont]->imagemExercicio); ?>" class="imgTable" >
+		
         </td>
         <td class="col_consulta">
         <div class="overflow" >

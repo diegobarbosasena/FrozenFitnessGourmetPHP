@@ -22,6 +22,7 @@
           Titulo:
         </td>
         <td class="col_consulta_dtl">
+            
            <?php echo ($rs->tituloSobreLoja);?>  
         </td>
      </tr>
@@ -30,7 +31,8 @@
             Imagem Principal: 
         </td>
         <td class="col_consulta_dtl">
-           <?php echo ($rs->imgSobreLoja);?>  
+            <img src="<?php  echo (PROJECTDIR.$rs->imgSobreLoja); ?>" class="imgTable" >
+           
         </td>
      </tr>
     <tr class="linha_consulta_dtl">

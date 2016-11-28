@@ -92,7 +92,8 @@
             Imagem: 
         </td>
         <td class="col_consulta_dtl">
-           <?php echo ($rs->imagemProduto);?>  
+            <img src="<?php  echo (PROJECTDIR.$rs->imagemPrato); ?>" class="imgTable">  
+            
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
