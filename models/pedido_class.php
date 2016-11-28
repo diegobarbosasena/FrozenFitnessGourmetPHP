@@ -10,11 +10,12 @@
         public $codStatus;
         public $nomeStatus;
         public $total;
-        	
+        
         public function __construct(){
             
             require_once('models/banco_dados.php');
             require_once('models/clientes_class.php');
+            require_once('models/carrinho_class.php');
 		
             $conexao = new mysql_db();
 
@@ -29,22 +30,16 @@
 		public function insert() {
                 
                 $item = new ItemPedido();
-                $c = new Carrinho();
-            
-                $car = $c->selectAll();
-            
-                foreach($carrinho as $c){
-                    $totalProdutos = $totalProdutos + $c->total; 
-                }
+                
                     
                 date_default_timezone_set('America/Sao_Paulo');
                 $this->dtCompra = date('Y-m-d');
                 $dia = date('d');
 		
                 $sql = "insert into tblPedido (tipoPedido,dtCompra,dtEntrega,codCliente,codStatus,total)
-                values ('web','".$this->dtCompra."', now() + INTERVAL 5 DAY,'".$_SESSION['cod']."', '1','".$totalProdutos."')";
-                $last_id = "set @id = LAST_INSERT_ID();";
-
+                values ('web','".$this->dtCompra."', now() + INTERVAL 5 DAY,'".$_SESSION['cod']."', '1','".$this->total."')";
+                $last_id = "set @id = LAST_INSERT_ID();";       
+            
                 mysql_query($sql);
              
 				

@@ -67,6 +67,10 @@ require_once('models/sobreLoja_class.php');
             $p = new Prato();
             
             $prato = $p->selectAll();
+            
+            $c = new categoriaPrato();
+            
+            $categoria = $c->selectAll();
 
             require_once('views/home/produtos.php');
         }

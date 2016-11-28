@@ -80,6 +80,44 @@
             return $listaPrato;   
 							
 		}
+        
+        public function listarPorCategoria($idCategoria){
+         		
+			$sql = "select p.codPrato,p.nomePrato, p.precoPrato, p.descricaoPrato, p.caloria, p.valorEnergetico, p.carboidrato, p.proteina, p.sodio, p.gorduras, p.imagemPrato,
+					cp.nomeCategoriaPrato, cp.codCategoriaPrato
+					from tblPrato as p
+					inner join tblCatPrato as cat
+					on (p.codPrato = cat.codPrato)
+					inner join tblCategoriaPrato as cp
+					on(cat.codCategoriaPrato = cp.codCategoriaPrato) 
+                    where cp.codCategoriaPrato =".$idCategoria;
+            
+			$select = mysql_query($sql);
+						
+            $listaPrato = array();
+            
+			while($rs = mysql_fetch_array($select)){
+                	  
+                $prato = new Prato();
+                $prato->codPrato = $rs['codPrato'];
+                $prato->nomePrato = $rs['nomePrato'];
+				$prato->precoPrato = $rs['precoPrato'];
+                $prato->descricaoPrato = $rs['descricaoPrato'];
+				$prato->caloria = $rs['caloria'];
+                $prato->valorEnergetico = $rs['valorEnergetico'];
+				$prato->carboidrato = $rs['carboidrato'];
+                $prato->proteina = $rs['proteina'];
+				$prato->sodio = $rs['sodio'];
+                $prato->gorduras = $rs['gorduras'];
+				$prato->imagemPrato = $rs['imagemPrato'];
+				$prato->codcategoriaPrato = $rs['codCategoriaPrato'];
+				$prato->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
+            
+				$listaPrato[] = $prato;                              							
+			}
+			
+            return $listaPrato;    
+        }
 		
 		public function selectById($codPrato){
 			

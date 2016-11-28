@@ -51,7 +51,13 @@
             
             $pedido = new Pedido();
 
+            $c = new Carrinho();
             
+            $car = $c->selectAll();
+
+            foreach($car as $c){
+                $pedido->total = $pedido->total + $c->total; 
+            }
     
             if($pedido->insert()){
                 
