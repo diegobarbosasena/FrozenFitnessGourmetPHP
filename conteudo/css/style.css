@@ -2938,6 +2938,390 @@ input.btn_monteja{
 	display:none;
 }
 
+.monte_ja{
+   width: 100%;
+   height: 250px; 
+   background-image:url(../imagem/monteja.png);
+   margin-top: 50px;
+      
+}
+
+input.btn_monteja{
+    width: 25%;
+    height: 37px;
+    background-color: #FE7101;
+    float: right;
+    margin-top: 176px;
+    margin-right: -240px;
+    border:0px;
+    color: #FFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size:18px; 
+    cursor: pointer;
+
+    
+}
+
+.text_personalizado{
+    width: 25%;
+    color: #666;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size:18px;
+    text-align: center;
+    float: right;
+    margin-top: 80px;
+    margin-right: 110px;
+    
+}
+
+.montar_prato{
+	width: 49%;
+	float:left;
+}
+.venda_prods{
+	width: 60%;
+	float:left;
+    height: auto;
+    
+}
+.per_prods{
+	width: 91%;
+	float:left;
+    height: auto;
+    
+   
+}
+    
+.venda_itens{
+    width: 35%;
+	float:left;
+    margin-left: 30px;
+    min-height: 100px;
+    height: auto;
+    padding-bottom: 20px;
+    
+}
+    .per_itens{
+    width: 40%;
+	float:left;
+    margin-left: 5px;
+    min-height: 100px;
+    height: auto;
+    
+    
+}
+
+.monte{
+    width: 100%;
+    color: #666;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 25px;
+    text-align: center;
+   
+}
+
+
+
+.montar{
+    width: 39%;
+    height: 51px;
+    margin-top: 51px;
+    color: #666;
+    padding-left: 25px;
+    margin-left: -23px;
+}
+    
+.parcela{
+    width: 51%;
+    height: 60px;
+    margin-top: 45px;
+    color: #666; 
+    padding-left: 5px;
+    margin-left: 75px;
+    
+}
+    .bebida{
+    width: 41%;
+    height: 40px;
+    margin-top: 105px;
+    color: #666; 
+    padding-left: 5px;
+    margin-left: 95px;
+    
+}
+   
+.categoria_monte{
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 19px;
+    text-align: center;
+    float: left;
+    margin-top: 65px;
+    color: #666;
+    padding-right: 12px;
+	width:25%;
+    
+    
+}
+  
+
+input.btn_mais{
+        width: 6%;
+    float: right;
+    margin-right: 176px;
+    height: 38px;
+    border-radius: 7px;
+    border: 0px;
+    margin-top: -57px;
+    background-image: url(../imagem/btn_mais.png);
+    background-color: #F0F0F0;
+    cursor: pointer;
+}
+input.btn_menos{
+        width: 7%;
+    float: right;
+    margin-right: 112px;
+    height: 38px;
+    border-radius: 7px;
+    border: 0px;
+    margin-top: -59px;
+    background-image: url(../imagem/btn_menos.png);
+    background-color: #F0F0F0;
+    cursor: pointer;
+}
+
+.adicionados{
+	width: 75%;
+    height: auto;
+    float: left;
+    margin-top: 68px;
+    margin-left: 48px;
+    border: solid 1px #ccc;
+    border-radius: 10px;
+    padding-bottom: 22px;
+	background-color:#FFFFFF;
+}
+
+.itens_adc{
+	width:100%;
+	height:auto;
+	text-align:center;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	color: #333;
+	font-size:18px;
+	padding-top:10px;
+	border-bottom: solid 1px #EAEAEA;
+	
+}
+
+.qnt_adc{
+	width:100%;
+	height:auto;
+	text-align:center;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	color: #666;
+	font-size:18px;
+	padding-top:20px;
+	padding-bottom:5px;
+
+}
+
+.lst_itens_adc{
+	width:50%;
+	list-style-image:url(../imagem/flexa.png);
+	text-align:center;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	color: #333;
+	padding-top:10px;
+	margin-left:50px;
+}
+
+.item_lst_adc{
+	padding-top:10px;
+
+}
+
+input.btn_dlt_item{
+	width: 13%;
+    height: 21px;
+    border: 0px;
+    background-color: #FFF;
+    cursor: pointer;
+	background-image:url(../imagem/xis.png);
+    float: right;
+    margin-top: -19px;
+    margin-right: -62px;
+
+}
+
+input.btn_adquirir {
+    width: 88%;
+    height: 40px;
+    border: solid 1px #00B348;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    border-radius: 15px;
+    color: #FFF;
+    background-color: #00B348;
+    margin-bottom: 9px;
+    margin-top: 10px;
+    margin-left: 15px;
+	cursor:pointer;
+}
+    
+.frete{
+
+    width: 88%;
+    height: 40px;
+    border: solid 1px #00B348;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    border-radius: 15px;
+    color: #FFF;
+    margin-bottom: 9px;
+    margin-top: 27px;
+    margin-left: 15px;
+}
+
+input.btn_adquirir:hover{
+	border:solid 1px #00B348;
+	background-color:#FFF;
+	color:#00B348;
+	
+
+}
+.quantidade{
+    width: 5%;
+    height: 23px;
+    border: solid 1px #ccc;
+    float: right;
+    margin-right: 145px;
+    margin-top: -54px;
+    text-align: center;
+    padding-top: 6px;
+    background-color: #FFF;
+    border-radius: 5px;
+	
+}
+   
+    .categoria_venda{
+    width: 50%;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 19px;
+    text-align: center;
+    float: left;
+    margin-top: 170px;
+    color: #666;
+    margin-left: -60px;
+    
+}
+    .categoria_venda_bebida{
+    width: 50%;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 19px;
+    text-align: center;
+    float: left;
+    margin-top: 0px;
+    color: #666;
+    margin-left: 60px;
+    margin-bottom: 5px;
+}
+
+    
+    .quantidade_venda{
+       width: 12%;
+    height: 23px;
+    border: solid 1px #ccc;
+    float: right;
+    margin-right: 164px;
+    margin-top: -47px;
+    text-align: center;
+    padding-top: 6px;
+    background-color: #FFF;
+    border-radius: 5px;
+	
+}
+    
+    input.btn_mais_venda{
+    width: 12%;
+    float: right;
+    margin-right: 200px;
+    height: 36px;
+    border-radius: 15px;
+    border: 0px;
+    margin-top: -48px;
+    background-image: url(../imagem/btn_mais.png);
+    background-color: #F0F0F0;
+    cursor: pointer;
+}
+input.btn_menos_venda{
+    width: 12%;
+    float: right;
+    margin-right: 131px;
+    height: 38px;
+    border-radius: 6px;
+    border: 0px;
+    margin-top: -50px;
+    background-image: url(../imagem/btn_menos.png);
+    
+    cursor: pointer;
+}
+    .escolher_monte_venda{
+    width: 100%;
+    height: 115px;
+    margin-left: -50px;
+
+}
+.escolher_monte{
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+   
+      
+}
+    .categoria_monte_venda{
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 19px;
+    text-align: center;
+    float: left;
+    margin-top: 125px;
+    color: #666;
+    padding-right: 5px;
+	width:25%;
+       
+    
+}
+   .categoria_bebida{
+   font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 19px;
+    text-align: center;
+    float: left;
+    margin-top: 115px;
+    color: #666;
+    padding-right: 5px;
+	width:25%;
+    
+}
+.imagem_produtos5{
+	width: 30%;
+    height: 123px;
+    float: left;
+    background-position: center;
+    margin-left: 180px;
+    margin-top: -90px;
+}
+    
+    .adicionados_venda{
+	width: 81%;
+    height: auto;
+    float: left;
+    margin-top: 55px;
+    margin-left: 18px;
+    border: solid 1px #ccc;
+    border-radius: 10px;
+    padding-bottom: 22px;
+	background-color:#FFFFFF;
+}
+
 .imagem_parceiro{
     width: 100%;
     height: 260px;
