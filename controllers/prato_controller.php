@@ -98,7 +98,10 @@
         
         public function detalhe(){
             
-             require_once('views/prato/detalhe_prato_pronto.php');
+            $p = new Prato();
+            $prato=$p->selectAll();
+            
+            require_once('views/prato/detalhe_prato_pronto.php');
             
         }
         	

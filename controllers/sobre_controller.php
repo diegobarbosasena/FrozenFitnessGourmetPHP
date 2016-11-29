@@ -134,9 +134,7 @@
 			$atualizar->imgSobreLoja1 = $this->getImg($this->imgSobreLoja1);
 			$atualizar->imgSobreLoja2 = $this->getImg($this->imgSobreLoja2);
 			$atualizar->imgSobreLoja3 = $this->getImg($this->imgSobreLoja3);
-			
-			
-						
+								
 			if($atualizar->update()){	
 				
 				header("location: ../sobre/index/".$this->codSobreLoja);

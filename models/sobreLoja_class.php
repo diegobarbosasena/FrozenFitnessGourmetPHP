@@ -118,7 +118,7 @@
 		
 		public function update() {
 					
-			$sql = "update tblSobreLoja set tituloSobreLoja = '".$this->tituloSobreLoja."', imgSobreLoja = '".$this->imgSobreLoja."', imgSobreLoja1 = '".$this->imgSobreLoja1."', imgSobreLoja2 = '".$this->imgSobreLoja2."', imgSobreLoja3 = '".$this->imgSobreLoja3."' where codSobreLoja=".$this->codSobreLoja; 
+			$sql = "update tblSobreLoja set tituloSobreLoja = '".$this->tituloSobreLoja."', imgSobreLoja = '".$this->imgSobreLoja."', imgSobreLoja1 = '".$this->imgSobreLoja1."', imgSobreLoja2 = '".$this->imgSobreLoja2."', imgSobreLoja3 = '".$this->imgSobreLoja3."', historiaSobreLoja = '".$this->historiaSobreLoja."'  where codSobreLoja=".$this->codSobreLoja; 
             
 			if(mysql_query($sql))
 				return true;

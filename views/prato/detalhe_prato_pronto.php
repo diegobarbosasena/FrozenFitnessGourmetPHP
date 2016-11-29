@@ -6,14 +6,9 @@
 <table class="tbl_consulta_dtl">
     
      
-		<?php
-			require_once('controllers/prato_controller.php');
-			
-			$controllerPrato = new prato_controller();
-			
-			$rs=$controllerPrato->buscar($_GET['id']);
+	
+			<?php foreach($prato as $p){ ?>
 
-		?>
         
     
     <tr class="linha_consulta_dtl">
@@ -22,7 +17,7 @@
           Nome:
         </td>
         <td class="col_consulta_dtl">
-           <?php echo ($rs->nomePrato);?>  
+          <?php  echo ($p->nomePrato); ?>
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -30,7 +25,7 @@
             Preço: 
         </td>
         <td class="col_consulta_dtl">
-           <?php echo ($rs->precoPrato);?>  
+           <?php  echo ($p->precoPrato); ?>
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -39,7 +34,7 @@
         </td>
         <td class="col_consulta_dtl">
        	<div class="overflow" >
-           <?php echo ($rs->descricaoPrato);?>  
+           <?php  echo ($p->descricaoPrato); ?>
         </div>
         </td>
      </tr>
@@ -48,7 +43,7 @@
             Valor Energético: 
         </td>
         <td class="col_consulta_dtl">
-           <?php echo ($rs->valorEnergetico);?>    
+           <?php  echo ($p->valorEnergetico); ?>
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -56,7 +51,7 @@
             Carboidrato: 
         </td>
         <td class="col_consulta_dtl">
-          <?php echo ($rs->carboidrato);?>    
+            <?php  echo ($p->carboidrato); ?>  
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -64,7 +59,7 @@
             Proteina: 
         </td>
         <td class="col_consulta_dtl">
-          <?php echo ($rs->proteina);?>    
+          <?php  echo ($p->proteina); ?>   
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -72,7 +67,7 @@
             Sódio: 
         </td>
         <td class="col_consulta_dtl">
-          <?php echo ($rs->sodio);?>    
+          <?php  echo ($p->sodio); ?>   
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -80,7 +75,7 @@
             Gorduras: 
         </td>
         <td class="col_consulta_dtl">
-          <?php echo ($rs->gorduras);?>    
+          <?php  echo ($p->gorduras); ?>
         </td>
      </tr>
     <tr class="linha_consulta_dtl">
@@ -88,7 +83,7 @@
             Imagem: 
         </td >
         <td  class="col_consulta_dtl">
-            <img src="<?php  echo (PROJECTDIR.$rs->imagemPrato); ?>" class="imgTable" >   
+           <img src="<?php  echo (PROJECTDIR.$p->imagemPrato); ?>" class="imgTable" >   
              
         </td>
      </tr>
@@ -98,7 +93,7 @@
             Categoria: 
         </td>
         <td class="col_consulta_dtl">
-            
+             <?php  echo ($p->nomeCategoriaPrato); ?>
         </td>
      </tr>
 	 
@@ -107,12 +102,12 @@
             Caloria:
         </td>
         <td class="col_consulta_dtl">
-          <?php echo ($rs->caloria);?>    
+           <?php  echo ($p->caloria); ?>
         </td>
      </tr>
 		<?php 
                 
-           
-    ?>
+        }
+        ?>
 
 </table>

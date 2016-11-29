@@ -1,7 +1,7 @@
 
 <div class="cadas">Consulta de Pratos Prontos</div>
 
-<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>prato/buscar">
+<form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>prato/cadastrar">
        <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
         
     </form>
