@@ -58,7 +58,7 @@
                     (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja) 
                     inner join tblTipoUsuario as tu on (tu.codTipoUsuario = u.codTipoUsuario) where c.codFuncionarioLoja=".$codFuncionarioLoja;
 			
-			$select = mysql_query($sql);
+			$select = mysql_query($sql);  
 			
 	
 			if($rs = mysql_fetch_array($select)){

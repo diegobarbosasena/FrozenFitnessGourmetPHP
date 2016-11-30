@@ -34,8 +34,7 @@
 			
 			$sql2 = "insert into tblCatProduto (codCategoriaMateria, codProduto) values ('".$produto->codcategoriaProduto."', LAST_INSERT_ID())";
 			
-			echo($sql);
-			echo($sql2);
+			
 			mysql_query($sql);
                 
 			if(mysql_query($sql2))

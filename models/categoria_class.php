@@ -20,8 +20,8 @@
 		public function insert($categoria) {
 		
 			$sql = "insert into tblCategoriaMateria (nomeCategoriaMateria) values('".$categoria->nomeCategoriaMateria."')";
-			echo("teste".$sql);
-			if(mysql_query($sql))
+
+            if(mysql_query($sql))
 				return true;
 			else
 				return false;

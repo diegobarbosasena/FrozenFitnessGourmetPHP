@@ -8,6 +8,7 @@ require_once('models/dicas_class.php');
 require_once('models/exercicios_class.php');
 require_once('models/categoriaPrato_class.php');
 require_once('models/sobreLoja_class.php');
+require_once('models/produto_class.php');
 //Classe que controla as ações do site
     class home_controller{
 
@@ -171,6 +172,12 @@ require_once('models/sobreLoja_class.php');
         }
         
         public function personalizado(){
+            
+             
+            $p = new Produto();
+            
+            $produto = $p->selectAll();
+            
             require_once('views/home/personalizado.php');
         }
        

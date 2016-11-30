@@ -1,13 +1,17 @@
 <div id="conteudo">
-    <p class="monte"> Personalização de dieta</p>
+    <p class="monte"> Personalize seu prato! </p>
     
     <div class="per_prods">
+       
      <div class="escolher_monte">
-     <div class="categoria_monte"> Bedidas:</div>
+     <div class="categoria_monte"> Itens </div>
+          
         <select class="montar" size="1" name="Carnes">
+            
             <option selected value="Selecione">Selecione:</option>
-            <option value="bovina">Bovina</option>
-            <option value="suina">Suína</option>
+            <?php foreach($produto as $p){ ?>
+            <option value="bovina"><?php echo ($p->nomeProduto); ?></option>
+            <?php } ?>
         </select>
         
         <form id="">
@@ -18,12 +22,16 @@
         	<input class="btn_menos" type="submit" value=""> 
         </form>
      </div>
-        <div class="escolher_monte">
-     <div class="categoria_monte"> Bedidas:</div>
+        
+    <div class="escolher_monte">
+     <div class="categoria_monte"> Sobremesas </div>
+          
         <select class="montar" size="1" name="Carnes">
+            
             <option selected value="Selecione">Selecione:</option>
-            <option value="bovina">Bovina</option>
-            <option value="suina">Suína</option>
+            <?php foreach($produto as $p){ ?>
+            <option value="bovina"><?php echo ($p->nomeProduto); ?></option>
+            <?php } ?>
         </select>
         
         <form id="">
@@ -33,13 +41,17 @@
         <form id="">
         	<input class="btn_menos" type="submit" value=""> 
         </form>
-     </div>
-        <div class="escolher_monte">
-     <div class="categoria_monte"> Bedidas:</div>
+     </div> 
+        
+    <div class="escolher_monte">
+     <div class="categoria_monte"> Sucos </div>
+          
         <select class="montar" size="1" name="Carnes">
+            
             <option selected value="Selecione">Selecione:</option>
-            <option value="bovina">Bovina</option>
-            <option value="suina">Suína</option>
+            <?php foreach($produto as $p){ ?>
+            <option value="bovina"><?php echo ($p->nomeProduto); ?></option>
+            <?php } ?>
         </select>
         
         <form id="">
@@ -49,26 +61,12 @@
         <form id="">
         	<input class="btn_menos" type="submit" value=""> 
         </form>
-     </div>
-        <div class="escolher_monte">
-     <div class="categoria_monte"> Bedidas:</div>
-        <select class="montar" size="1" name="Carnes">
-            <option selected value="Selecione">Selecione:</option>
-            <option value="bovina">Bovina</option>
-            <option value="suina">Suína</option>
-        </select>
+     </div> 
+            
         
-        <form id="">
-        	<input class="btn_mais" type="submit" value=""> 
-        </form>
-        <div class="quantidade"> 10 </div>
-        <form id="">
-        	<input class="btn_menos" type="submit" value=""> 
-        </form>
-     </div>
-     
-   </div>
-   <div class="per_itens">
+    </div>
+    
+    <div class="per_itens">
        <div class="adicionados">
             <p class="itens_adc"> Itens adicionados</p>
             <ul class="lst_itens_adc">
