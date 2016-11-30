@@ -82,9 +82,122 @@
             return $listaProduto;   
 							
 		}
-        
-  
 		
+		public function selectItens(){
+			
+			$sql = "select p.codProduto, p.nomeProduto, p.precoProduto, p.descricaoProduto, p.caloriaProduto, p.valorEnergeticoProduto, p.carboidratoProduto, p.proteinaProduto, 
+				p.sodioProduto, p.gordurasProduto, p.imagemProduto, cp.codCategoriaMateria, cp.nomeCategoriaMateria
+				from tblProduto as p
+				inner join tblCatProduto as cat
+				on (p.codProduto = cat.codProduto)
+				inner join tblCategoriaMateria as cp
+				on(cat.codCategoriaMateria = cp.codCategoriaMateria) where cp.nomeCategoriaMateria <> 'Sobremesa' and cp.nomeCategoriaMateria <> 'Suco';";
+					
+            
+			$select = mysql_query($sql);
+						
+            
+            $listaProduto = array();
+            
+			while($rs = mysql_fetch_array($select)){
+                	  
+                $produto = new Produto();
+                $produto->codProduto = $rs['codProduto'];
+                $produto->nomeProduto = $rs['nomeProduto'];
+				$produto->precoProduto = $rs['precoProduto'];
+                $produto->descricaoProduto = $rs['descricaoProduto'];
+				$produto->caloriaProduto = $rs['caloriaProduto'];
+                $produto->valorEnergeticoProduto = $rs['valorEnergeticoProduto'];
+				$produto->carboidratoProduto = $rs['carboidratoProduto'];
+                $produto->proteinaProduto = $rs['proteinaProduto'];
+				$produto->sodioProduto = $rs['sodioProduto'];
+                $produto->gordurasProduto = $rs['gordurasProduto'];
+				$produto->imagemProduto = $rs['imagemProduto'];
+                $produto->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
+                
+				$listaProduto[] = $produto;                              							
+			}
+			
+            return $listaProduto;   						
+		}
+		
+		
+		public function selectSobremesa(){
+			
+			$sql = "select p.codProduto, p.nomeProduto, p.precoProduto, p.descricaoProduto, p.caloriaProduto, p.valorEnergeticoProduto, p.carboidratoProduto, p.proteinaProduto, 
+				p.sodioProduto, p.gordurasProduto, p.imagemProduto, cp.codCategoriaMateria, cp.nomeCategoriaMateria
+				from tblProduto as p
+				inner join tblCatProduto as cat
+				on (p.codProduto = cat.codProduto)
+				inner join tblCategoriaMateria as cp
+				on(cat.codCategoriaMateria = cp.codCategoriaMateria) where cp.nomeCategoriaMateria = 'Sobremesa';";
+					
+            
+			$select = mysql_query($sql);
+						
+            
+            $listaProduto = array();
+            
+			while($rs = mysql_fetch_array($select)){
+                	  
+                $produto = new Produto();
+                $produto->codProduto = $rs['codProduto'];
+                $produto->nomeProduto = $rs['nomeProduto'];
+				$produto->precoProduto = $rs['precoProduto'];
+                $produto->descricaoProduto = $rs['descricaoProduto'];
+				$produto->caloriaProduto = $rs['caloriaProduto'];
+                $produto->valorEnergeticoProduto = $rs['valorEnergeticoProduto'];
+				$produto->carboidratoProduto = $rs['carboidratoProduto'];
+                $produto->proteinaProduto = $rs['proteinaProduto'];
+				$produto->sodioProduto = $rs['sodioProduto'];
+                $produto->gordurasProduto = $rs['gordurasProduto'];
+				$produto->imagemProduto = $rs['imagemProduto'];
+                $produto->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
+                
+				$listaProduto[] = $produto;                              							
+			}
+			
+            return $listaProduto;   						
+		}
+		
+		public function selectBebida(){
+			
+			$sql = "select p.codProduto, p.nomeProduto, p.precoProduto, p.descricaoProduto, p.caloriaProduto, p.valorEnergeticoProduto, p.carboidratoProduto, p.proteinaProduto, 
+				p.sodioProduto, p.gordurasProduto, p.imagemProduto, cp.codCategoriaMateria, cp.nomeCategoriaMateria
+				from tblProduto as p
+				inner join tblCatProduto as cat
+				on (p.codProduto = cat.codProduto)
+				inner join tblCategoriaMateria as cp
+				on(cat.codCategoriaMateria = cp.codCategoriaMateria) where cp.nomeCategoriaMateria = 'Bebida';";
+					
+            
+			$select = mysql_query($sql);
+						
+            
+            $listaProduto = array();
+            
+			while($rs = mysql_fetch_array($select)){
+                	  
+                $produto = new Produto();
+                $produto->codProduto = $rs['codProduto'];
+                $produto->nomeProduto = $rs['nomeProduto'];
+				$produto->precoProduto = $rs['precoProduto'];
+                $produto->descricaoProduto = $rs['descricaoProduto'];
+				$produto->caloriaProduto = $rs['caloriaProduto'];
+                $produto->valorEnergeticoProduto = $rs['valorEnergeticoProduto'];
+				$produto->carboidratoProduto = $rs['carboidratoProduto'];
+                $produto->proteinaProduto = $rs['proteinaProduto'];
+				$produto->sodioProduto = $rs['sodioProduto'];
+                $produto->gordurasProduto = $rs['gordurasProduto'];
+				$produto->imagemProduto = $rs['imagemProduto'];
+                $produto->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
+                
+				$listaProduto[] = $produto;                              							
+			}
+			
+            return $listaProduto;   						
+		}
+        	
 		public function selectById($codProduto){
 			
 			$sql = "select p.codProduto, p.nomeProduto, p.precoProduto, p.descricaoProduto, p.caloriaProduto, p.valorEnergeticoProduto, p.carboidratoProduto, p.proteinaProduto, 

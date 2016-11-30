@@ -7,8 +7,7 @@
      <div class="categoria_monte"> Itens </div>
           
         <select class="montar" size="1" name="Carnes">
-            
-            <option selected value="Selecione">Selecione:</option>
+           
             <?php foreach($produto as $p){ ?>
             <option value="bovina"><?php echo ($p->nomeProduto); ?></option>
             <?php } ?>
@@ -27,9 +26,8 @@
      <div class="categoria_monte"> Sobremesas </div>
           
         <select class="montar" size="1" name="Carnes">
-            
-            <option selected value="Selecione">Selecione:</option>
-            <?php foreach($produto as $p){ ?>
+        
+            <?php foreach($sobremesa as $p){ ?>
             <option value="bovina"><?php echo ($p->nomeProduto); ?></option>
             <?php } ?>
         </select>
@@ -44,12 +42,11 @@
      </div> 
         
     <div class="escolher_monte">
-     <div class="categoria_monte"> Sucos </div>
+     <div class="categoria_monte"> Bebidas </div>
           
         <select class="montar" size="1" name="Carnes">
             
-            <option selected value="Selecione">Selecione:</option>
-            <?php foreach($produto as $p){ ?>
+            <?php foreach($bebida as $p){ ?>
             <option value="bovina"><?php echo ($p->nomeProduto); ?></option>
             <?php } ?>
         </select>

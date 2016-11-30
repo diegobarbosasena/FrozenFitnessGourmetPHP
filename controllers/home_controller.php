@@ -176,7 +176,9 @@ require_once('models/produto_class.php');
              
             $p = new Produto();
             
-            $produto = $p->selectAll();
+            $produto = $p->selectItens();
+			$sobremesa = $p->selectSobremesa();
+			$bebida = $p->selectBebida();
             
             require_once('views/home/personalizado.php');
         }
