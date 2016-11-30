@@ -18,7 +18,7 @@
                   </tr>
 				   <tr>
                     <td class="campo_frm">Preço:</td>
-                    <td><input name="txtPrecoMateria" class="caixa_frm" type="number"   value="<?php echo ($materiaPrima->precoMateria);?>"   required/>
+                    <td><input name="txtPrecoMateria" class="caixa_frm" type="text"   value="<?php echo ($materiaPrima->precoMateria);?>"   required/>
                     </td>
                   </tr>
                 

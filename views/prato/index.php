@@ -6,9 +6,9 @@
         
     </form>
 	
-<form name="FrmPesquisa" method="post" action="method="post" action="<?php echo(PROJECTDIR)?>clientes/<?php echo(buscar)?> ">
+<form name="FrmPesquisa" method="post" action="<?php echo(PROJECTDIR)?>prato/buscarNome">
     
-    <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
+    <input class="pesquisarCms" type="text" name="txtPesquisa" value="" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form> 
 <table class="tbl_consulta">

@@ -128,6 +128,9 @@
 					on (p.codPrato = cat.codPrato)
 					inner join tblCategoriaPrato as cp
 					on(cat.codCategoriaPrato = cp.codCategoriaPrato) where p.codPrato=".$codPrato;
+            
+            
+            
 			
 			//$sql = "select * from tblprato where codPrato=".$codPrato;
 			
@@ -157,6 +160,47 @@
 			return $prato;
 		}
 		
+        public function selectByName($nomePrato){
+			
+			$sql = "select p.codPrato,p.nomePrato, p.precoPrato, p.descricaoPrato, p.caloria, p.valorEnergetico, p.carboidrato, p.proteina, p.sodio, p.gorduras, p.imagemPrato,
+					cp.nomeCategoriaPrato, cp.codCategoriaPrato
+					from tblPrato as p
+					inner join tblCatPrato as cat
+					on (p.codPrato = cat.codPrato)
+					inner join tblCategoriaPrato as cp
+					on(cat.codCategoriaPrato = cp.codCategoriaPrato) where p.nomePrato=".$nomePrato;
+            
+            
+            
+			
+			//$sql = "select * from tblprato where codPrato=".$codPrato;
+			
+			$select = mysql_query($sql);
+			
+			if($rs = mysql_fetch_array($select)){
+				
+				$prato= new Prato();
+				  
+				$prato->codPrato = $rs['codPrato'];
+                $prato->nomePrato = $rs['nomePrato'];
+				$prato->precoPrato = $rs['precoPrato'];
+                $prato->descricaoPrato = $rs['descricaoPrato'];
+				$prato->caloria = $rs['caloria'];
+                $prato->valorEnergetico = $rs['valorEnergetico'];
+				$prato->carboidrato = $rs['carboidrato'];
+                $prato->proteina = $rs['proteina'];
+				$prato->sodio = $rs['sodio'];
+                $prato->gorduras = $rs['gorduras'];
+				//$prato->visitas = $rs['visitas'];
+				$prato->imagemPrato = $rs['imagemPrato'];
+				$prato->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
+				$prato->codcategoriaPrato = $rs['codCategoriaPrato'];
+											
+			}
+			
+			return $prato;
+		}
+        
 		public function update() {
 					
 			$sql = "update tblPrato set nomePrato = '".$this->nomePrato."', precoPrato = '".$this->precoPrato."', descricaoPrato = '".$this->descricaoPrato."', 

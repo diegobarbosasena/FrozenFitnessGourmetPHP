@@ -14,31 +14,31 @@
                   </tr>
 				  <tr>
                     <td class="campo_frm">Preço:</td>
-                    <td><input class="caixa_frm"  name="txtprecoProduto" type="number"  value="<?php echo($produto->precoProduto)?>" required /></td>
+                    <td><input class="caixa_frm"  name="txtprecoProduto" type="text"  value="<?php echo($produto->precoProduto)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Carboidrato:</td>
-                    <td><input class="caixa_frm"  name="txtcarboidratoProduto" type="number"  value="<?php echo($produto->carboidratoProduto)?>" required /></td>
+                    <td><input class="caixa_frm"  name="txtcarboidratoProduto" type="text"  value="<?php echo($produto->carboidratoProduto)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Calorias:</td>
-                    <td><input class="caixa_frm" name="txtcaloriaProduto"  type="number" value="<?php echo($produto->caloriaProduto)?>"required /></td>
+                    <td><input class="caixa_frm" name="txtcaloriaProduto"  type="text" value="<?php echo($produto->caloriaProduto)?>"required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Valor Energético:</td>
-                    <td><input class="caixa_frm" name="txtvalorEnergeticoProduto" type="number" value="<?php echo($produto->valorEnergeticoProduto)?>" required /></td>
+                    <td><input class="caixa_frm" name="txtvalorEnergeticoProduto" type="text" value="<?php echo($produto->valorEnergeticoProduto)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Proteina:</td>
-                    <td><input class="caixa_frm" name="txtproteinaProduto" type="number" value="<?php echo($produto->proteinaProduto)?>" required /></td>
+                    <td><input class="caixa_frm" name="txtproteinaProduto" type="text" value="<?php echo($produto->proteinaProduto)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Sódio:</td>
-                    <td><input class="caixa_frm" name="txtsodioProduto" type="number" value="<?php echo($produto->sodioProduto)?>" required/></td>
+                    <td><input class="caixa_frm" name="txtsodioProduto" type="text" value="<?php echo($produto->sodioProduto)?>" required/></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Gordura:</td>
-                    <td><input class="caixa_frm" name="txtgordurasProduto" type="number" value="<?php echo($produto->gordurasProduto)?>" required /></td>
+                    <td><input class="caixa_frm" name="txtgordurasProduto" type="text" value="<?php echo($produto->gordurasProduto)?>" required /></td>
                   </tr>    
                 
                   <tr>

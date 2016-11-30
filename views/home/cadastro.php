@@ -108,7 +108,7 @@
                     <legend> Login</legend>
                          <div class="altura"> </div>
                         
-                            <br> <label>Usuario:</label> <input name="txtusuario" class="campo_usuario" type="password" placeholder="Digite um nome para seu Login" value="<?php echo $cliente->usuarioCliente; ?>" required>
+                            <br> <label>Usuario:</label> <input name="txtusuario" class="campo_usuario" type="text" placeholder="Digite um nome para seu Login" value="<?php echo $cliente->usuarioCliente; ?>" required>
                             <br> <label>Senha:</label> <input name="txtsenha" class="campo_senha" type="password" placeholder="Digite sua senha" maxlength="10" required>
                             <br> <label>Confirmar Senha:</label> <input name="txtconfirmasenha" class="campo_confirmar_senha" type="password" maxlength="10" placeholder="Digite sua senha novamente" required>
                            

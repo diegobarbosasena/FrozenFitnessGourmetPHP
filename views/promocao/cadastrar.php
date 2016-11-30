@@ -27,7 +27,7 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Valor desconto %:</td>
-                    <td><input class="caixa_frm" name="txtDesconto" type="number" value="<?php echo($promocao->valorDesconto)?>"required /></td>
+                    <td><input class="caixa_frm" name="txtDesconto" type="text" value="<?php echo($promocao->valorDesconto)?>"required /></td>
                   </tr>
                
 

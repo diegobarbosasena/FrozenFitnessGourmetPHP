@@ -118,9 +118,20 @@
             $prato = new Prato();
             if(isset($_POST["btnPesquisa"])){
 					
-				$pesquisa = $_POST["txtBusca"];
+				$pesquisa = $_POST["txtPesquisa"];
             
             return $prato->selectById($codPrato);
+            }
+		}
+        
+        public function buscarNome($nomePrato){
+            
+            $prato = new Prato();
+            if(isset($_POST["btnPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+            return $prato->selectByName($nomePrato);
             }
 		}
 		
@@ -150,15 +161,26 @@
 				header("location: ../prato/index");
 			}
 		}
+        
+
 		
 		public function deletar() {
             $prato = new Prato();
 			$codPrato = $_GET['id'];
-			
-			if($prato->delete($codPrato)){
+   
+
+            if($prato->delete($codPrato)){
+
                 header("location: ../../prato/index");
+
             }
-		}
+         
+           
+        }
+           
+               
+           
+
 		
 		public function inserir() {
 		

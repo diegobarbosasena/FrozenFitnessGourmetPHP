@@ -46,11 +46,11 @@
                 
                  <tr>
                     <td class="campo_frm">Quantidade Inserida:</td>
-                    <td><input class="caixa_frm" name="txtquantidade" type="number" value="<?php echo ($estoque->quantidade);?>" required /></td>
+                    <td><input class="caixa_frm" name="txtquantidade" type="text" value="<?php echo ($estoque->quantidade);?>" required /></td>
                 </tr>
                 <tr>
                     <td class="campo_frm">Quantidade Minima:</td>
-                    <td><input class="caixa_frm" name="txtquantidadeLimite" type="number" value="<?php echo ($estoque->quantidadeMinima);?>" required /></td>
+                    <td><input class="caixa_frm" name="txtquantidadeLimite" type="text" value="<?php echo ($estoque->quantidadeMinima);?>" required /></td>
                 </tr>
                  <tr>
                     <td class="campo_frm">Data de Fabricação:</td>

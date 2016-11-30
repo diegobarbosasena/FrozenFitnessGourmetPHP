@@ -28,11 +28,11 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">Senha:</td>
-                    <td><input class="caixa_frm" name="txtSenha" type="text" value="<?php echo($funcionario->senhaFuncionario)?>" required /></td>
+                    <td><input class="caixa_frm" name="txtSenha" type="password" value="<?php echo($funcionario->senhaFuncionario)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Confirmar senha:</td>
-                    <td><input class="caixa_frm" name="txtConfirmaSenha" type="text" value="<?php echo($funcionario->confirmacaoSenha)?>" required /></td>
+                    <td><input class="caixa_frm" name="txtConfirmaSenha" type="password" value="<?php echo($funcionario->confirmacaoSenha)?>" required /></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Tipo:</td>
