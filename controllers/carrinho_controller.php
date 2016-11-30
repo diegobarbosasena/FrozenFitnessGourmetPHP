@@ -92,6 +92,7 @@
             if($carrinho->insert()){
                 header("Location: ../../home/produtos");
             }else{
+                
                 header("Location: ../../home/login");
             }                                
         }

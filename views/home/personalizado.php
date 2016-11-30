@@ -1,9 +1,11 @@
 <div id="conteudo">
+     
     <p class="monte"> Personalize seu prato! </p>
-    
-    <div class="per_prods">
+            
+    <div class="per_prods"> 
        
-     <div class="escolher_monte">
+     <div class="escolher_monte">  
+         
      <div class="categoria_monte"> Itens </div>
           
         <select class="montar" size="1" name="Carnes">
@@ -20,7 +22,10 @@
         <form id="">
         	<input class="btn_menos" type="submit" value=""> 
         </form>
+         <button id="AddItem" onclick="MoreItens('escolher_monte')" >Mais Itens</button> 
      </div>
+        
+        
         
     <div class="escolher_monte">
      <div class="categoria_monte"> Sobremesas </div>

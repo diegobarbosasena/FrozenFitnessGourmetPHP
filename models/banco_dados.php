@@ -14,17 +14,17 @@ class mysql_db{
 		$this->password="root";*/
 		
 			
-		$this->server="10.107.140.14";
+		/*$this->server="10.107.140.14";
 		$this->user="root";
-		$this->password="root";
+		$this->password="root";*/
         
         /*$this->server="192.168.0.2";
 		$this->user="smartgourmet";
 		$this->password="smart147852";*/
         
-        /*$this->server="localhost";
+        $this->server="localhost";
 		$this->user="root";
-		$this->password="bcd127";*/
+		$this->password="bcd127";
 	}
 	
 	public function conectar(){

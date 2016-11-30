@@ -40,10 +40,9 @@
 		
 		public function selectAll (){
             
-			$sql = "select car.codCarrinho,c.codCliente, c.nomeCliente, p.codPrato, p.imagemPrato, p.nomePrato, p.precoPrato, SUM(p.precoPrato) as total ,count(*) as qtd from tblCarrinho as car 
+			$sql = "select car.codCarrinho,c.codCliente, c.nomeCliente, p.codPrato, p.imagemPrato, p.nomePrato, p.precoPrato, sum(p.precoPrato) as total ,count(*) as qtd from tblCarrinho as car 
             inner join tblCliente as c on (c.codCliente = car.codCliente) inner join tblPrato as p on (p.codPrato = car.codPrato)  where c.codCliente = '".$_SESSION['cod']."' group by p.codPrato";
 
-			echo($sql);
 			$select = mysql_query($sql);
             
             $listaItens = array(); 
