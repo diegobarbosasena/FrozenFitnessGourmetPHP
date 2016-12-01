@@ -18,6 +18,11 @@ class mysql_db{
 		$this->user="root";
 		$this->password="root";*/
         
+        	
+		/*$this->server="10.107.144.26";
+		$this->user="root";
+		$this->password="root";*/
+        
         /*$this->server="192.168.0.2";
 		$this->user="smartgourmet";
 		$this->password="smart147852";*/
