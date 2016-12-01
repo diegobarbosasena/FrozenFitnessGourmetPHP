@@ -2010,8 +2010,8 @@ nav#menu_{
     list-style: none;
     float: left;
     margin-top: 80px;
-	border-radius:10px;
 	color:#000;
+	
 }
 
 #menu li{
@@ -2022,6 +2022,8 @@ nav#menu_{
     font-size: 40px;
     margin-right: 7%;
 	color:#000;
+	border: solid 2px #FFF;
+	padding-top:20px;
 	
 }    
 nav:hover > #menu li{
@@ -2032,14 +2034,13 @@ nav:hover > #menu li{
     font-size: 38px;
     text-align: left;
 	background-color:#FFF;
-	border-radius:10px;
+	border-radius:2px;
 	padding-left:30px;
 }    
 #menu li:hover{
 	color:#E08A2C;
 	cursor:pointer;
-    padding-bottom: 2px;
-	border-bottom: solid 1px #E08A2C;
+	border: solid 5px #E08A2C;
 }
 .link{
 	text-decoration:none;
@@ -3342,6 +3343,337 @@ input.btn_menos_venda{
     border-radius: 10px;
     padding-bottom: 22px;
 	background-color:#FFFFFF;
+}
+
+.contatos{
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	color: #FFF;
+	font-size:18px;
+	text-align: center;
+	background-color:#FE7101;
+	margin-bottom:20px;
+    margin-top: 20px;
+}
+.titulo_contato{
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 33px;
+    color: #666666;
+    margin-top: 50px;
+    text-align: left;
+}
+.row2{
+	width: 100%;
+    height: auto;
+    background-color: #FE7101;
+    clear: both;
+    margin-top: 10px;
+    float: left;
+}
+.area_contato{
+    width: 100%;
+    height: auto;
+    color: #666666;
+    float: left;
+    margin-top: 20px;
+}
+.titulo_area_contato{
+	font-family:"Chaparral Pro Light";
+    font-size: 33px;
+    color: #666666;
+    margin-top: 50px;
+    text-align: left;
+}
+.imagem_contato{
+    width: 100%;
+    height: 260px;
+    background-image: url(../imagem/contato.png);
+    background-color: #F0F0F0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    float: left;
+}
+.imagem_parceiro{
+    width: 100%;
+    height: 260px;
+    background-image: url(../imagem/parceiro.png);
+    background-color: #F0F0F0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    float: left;
+}
+
+.parceiro{
+    width: 30%;
+    height:auto;
+    float: left;
+    margin-left:25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+}
+
+.img_parceiro{
+    width: 80%;
+    height: 219px;
+    margin: auto;
+    border-radius: 60%;
+    border: solid 1px;
+    background-image: url(../imagem/smart.png);
+   /* background-repeat: no-repeat;*/
+    
+}
+.nome_parceiro{
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #FE7101;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tel_parceiro{
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.desc_parceiro{
+    width: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#formulario{
+	width: 80%;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: auto auto 20px;
+    margin-top: 20px;
+}
+input, textarea, select{ outline: none; }
+.campo_nome{
+    width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_data
+{
+  	width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_cpf{
+   width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_altura
+{
+	width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_celular
+{
+	width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_email{
+	width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_telefone{
+	width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_logradouro{  
+	width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_numero{  
+    width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_bairro{  
+    width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_cep{  
+	width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_rua{
+    width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_usuario{
+    width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_senha{
+    width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px;
+}
+.campo_confirmar_senha{
+   width: 450px;
+    height: 70px;
+    background-color: #FFF;
+    margin-left: 63px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #FE7101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding-left: 15px; 
+}
+.campo_msg{
+    background-color: #FFF;
+    margin-left: 130px;
+    margin-bottom: 26px;
+    border-radius: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333333;
+    padding: 10px;
+    border: solid 1px #FE7101;
+    resize: none;
+    width: 440px;
 }
 
 .imagem_parceiro{
