@@ -8,17 +8,21 @@
             <td class="dados_cliente_tit">Nº Pedido</td>
             <td class="dados_cliente_tit">Data de compra </td>
             <td class="dados_cliente_tit">Data de entrega </td>
-            <td class="dados_cliente_tit">Transportadora </td>
             <td class="dados_cliente_tit">Status </td>
+            
         </tr>
         <tr>
            <td><?php echo($p->codPedido) ?></td>
-            <td><?php echo($p->dtCompra) ?></td>
-            <td>20/11/2016</td>
-            <td>The Flash</td>
+            <td><?php echo(date('d/m/Y', strtotime($p->dtCompra))) ?></td>
+            <td><?php echo(date('d/m/Y', strtotime($p->dtEntrega))) ?></td>
             <td><?php echo($p->nomeStatus) ?></td>
-        </tr>
-           <?php }?> 
+            <td> <a class="link" href="<?php  echo PROJECTDIR; ?>home/detalhesPedido/<?php echo($p->codPedido) ?>">Detalhes</a> </td>
+        </tr>      
+    <?php }?> 
+      
+        
+    </table>
+      
         
     </table>
 </fieldset>

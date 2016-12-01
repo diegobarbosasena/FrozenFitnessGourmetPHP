@@ -59,8 +59,18 @@ require_once('models/produto_class.php');
             $p = new Pedido();
             
             $pedido = $p->selectAll();
-            
+         
             require_once('views/home/meusPedidos.php');
+        }
+        
+        public function detalhesPedido(){
+            $id = $_GET['id'];
+            
+            $p = new Pedido();
+            
+            $itens = $p->selectById($id);
+            
+            require_once('views/home/detalhesPedido.php');
         }
 
         public function produtos(){

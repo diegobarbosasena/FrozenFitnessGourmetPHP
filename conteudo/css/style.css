@@ -2049,7 +2049,10 @@ nav:hover > #menu li{
 	color:#E08A2C;
 	cursor:pointer;
 }
-
+      
+#oculto{
+	display: none;	
+}
 
 /**** menuuuu produtoooo */
 .menu_produto{

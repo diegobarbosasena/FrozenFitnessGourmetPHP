@@ -22,8 +22,8 @@
                     <input class="btn_menos_venda" type="submit" value=""> 
                 </form>
                 </div>
-                 <div class="imagem_produtos5">
-                      <img src="<?php  echo (PROJECTDIR.$c->img); ?> ">  
+                 <div>
+                      <img src="<?php  echo (PROJECTDIR.$c->img); ?> " class="imagem_produtos5">  
                 </div>
          
           
