@@ -61,7 +61,9 @@
     
             if($pedido->insert()){
                 
-                header("Location: ../boleto.php");
+                
+                
+                header("Location: ../views/boletophp/boleto_itau.php");
             }                
         }
 		

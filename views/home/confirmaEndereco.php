@@ -1,4 +1,4 @@
-    <div id="conteudo">
+<div id="conteudo">
         
         <div class="clear"></div>
         <fieldset class="perfi">
