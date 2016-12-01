@@ -67,15 +67,32 @@
 		 public function index(){
             
 			$atualizacao = 'inserir';
-			$prato=new Prato();
+			$p = new Prato();
+            
+            $pesquisa ="";
+             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$p = new Prato();
+				
 				$prato=$p->selectById($id);
-			}
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaPratos = $p->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaPratos= $p->selectAll();    
+            }
+             
+            
 			
            require_once('views/prato/index.php');
         }

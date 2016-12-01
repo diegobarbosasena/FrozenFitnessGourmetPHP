@@ -168,7 +168,7 @@
 					inner join tblCatPrato as cat
 					on (p.codPrato = cat.codPrato)
 					inner join tblCategoriaPrato as cp
-					on(cat.codCategoriaPrato = cp.codCategoriaPrato) where p.nomePrato=".$nomePrato;
+					on(cat.codCategoriaPrato = cp.codCategoriaPrato) where p.nomePrato like '%".$nomePrato."%'";
             
             
             
@@ -176,11 +176,12 @@
 			//$sql = "select * from tblprato where codPrato=".$codPrato;
 			
 			$select = mysql_query($sql);
+			 $listaPrato = array();
+            
 			
-			if($rs = mysql_fetch_array($select)){
+            while($rs = mysql_fetch_array($select)){
 				
-				$prato= new Prato();
-				  
+				  $prato = new Prato();
 				$prato->codPrato = $rs['codPrato'];
                 $prato->nomePrato = $rs['nomePrato'];
 				$prato->precoPrato = $rs['precoPrato'];
@@ -195,10 +196,12 @@
 				$prato->imagemPrato = $rs['imagemPrato'];
 				$prato->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
 				$prato->codcategoriaPrato = $rs['codCategoriaPrato'];
+                
+                $listaPrato[]= $prato;
 											
 			}
 			
-			return $prato;
+			return $listaPrato;
 		}
         
 		public function update() {

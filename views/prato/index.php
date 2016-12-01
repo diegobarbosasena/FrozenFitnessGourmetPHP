@@ -8,6 +8,8 @@
                          
                          
     }
+
+    
 </script>
 
 <div class="cadas">Consulta de Pratos Prontos</div>
@@ -17,9 +19,9 @@
         
     </form>
 	
-<form name="FrmPesquisa" method="post" action="<?php echo(PROJECTDIR)?>prato/buscarNome">
+<form name="FrmPesquisa" method="post" action="<?php echo(PROJECTDIR)?>prato/index">
     
-    <input class="pesquisarCms" type="text" name="txtPesquisa" value="" placeholder="Pesquisar...">
+    <input class="pesquisarCms" type="text" name="txtPesquisa" value="<?php echo($pesquisa)?>" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form> 
 <table class="tbl_consulta">
@@ -37,34 +39,27 @@
         </td>
 		
 		<?php
-			require_once('controllers/prato_controller.php');
-			
-			$controllerPrato = new prato_controller();
-			
-			$rs=$controllerPrato->ListarTodos();
-			
-			$cont=0;
-		
-			while ($cont < count($rs)){
+			            
+    
+            foreach ($listaPratos as $prato){			
 		?>
         
    
     <tr class="linha_consulta">
         <td class="col_consulta">
-            <?php echo ($rs[$cont]->nomePrato);?>
+            <?php echo ($prato->nomePrato);?>
         </td>
         <td class="col_consulta">
-            <?php echo ($rs[$cont]->precoPrato);?>
+            <?php echo ($prato->precoPrato);?>
         </td>
 
         <td class="col_consulta" >
-            <a href="<?php echo(PROJECTDIR)?>prato/cadastrar/<?php echo($rs[$cont]->codPrato) ?>" class="link"> Editar </a>| <a href="#" class="link" onclick="deletarPrato(<?php echo($rs[$cont]->codPrato) ?>)">Excluir </a> | <a href="<?php echo(PROJECTDIR)?>prato/detalhe/<?php echo($rs[$cont]->codPrato) ?>" class="link">Detalhes </a>
+            <a href="<?php echo(PROJECTDIR)?>prato/cadastrar/<?php echo($prato->codPrato) ?>" class="link"> Editar </a>| <a href="#" class="link" onclick="deletarPrato(<?php echo($prato->codPrato) ?>)">Excluir </a> | <a href="<?php echo(PROJECTDIR)?>prato/detalhe/<?php echo($prato->codPrato) ?>" class="link">Detalhes </a>
         </td>
         
     </tr>
 			<?php 
-                
-            $cont++; 
+      
             
             
             }
