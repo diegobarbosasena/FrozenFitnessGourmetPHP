@@ -1,3 +1,14 @@
+<script>
+    function deletarPrato(codPrato){
+                             
+        if(confirm("Deseja Excluir?")){
+            
+            location.href = "<?php echo(PROJECTDIR)?>prato/deletar/" + codPrato ;
+        }
+                         
+                         
+    }
+</script>
 
 <div class="cadas">Consulta de Pratos Prontos</div>
 
@@ -47,7 +58,7 @@
         </td>
 
         <td class="col_consulta" >
-            <a href="<?php echo(PROJECTDIR)?>prato/cadastrar/<?php echo($rs[$cont]->codPrato) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>prato/deletar/<?php echo($rs[$cont]->codPrato) ?>" class="link">Excluir </a> | <a href="<?php echo(PROJECTDIR)?>prato/detalhe/<?php echo($rs[$cont]->codPrato) ?>" class="link">Detalhes </a>
+            <a href="<?php echo(PROJECTDIR)?>prato/cadastrar/<?php echo($rs[$cont]->codPrato) ?>" class="link"> Editar </a>| <a href="#" class="link" onclick="deletarPrato(<?php echo($rs[$cont]->codPrato) ?>)">Excluir </a> | <a href="<?php echo(PROJECTDIR)?>prato/detalhe/<?php echo($rs[$cont]->codPrato) ?>" class="link">Detalhes </a>
         </td>
         
     </tr>
