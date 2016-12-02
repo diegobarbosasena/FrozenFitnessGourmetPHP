@@ -54,11 +54,11 @@
             $c = new Carrinho();
             
             $car = $c->selectAll();
-
-            foreach($car as $c){
-                $pedido->total = $pedido->total + $c->total; 
-				$_SESSION['cliente'] = $pedido->cliente->nomeCliente;
-				$_SESSION['total'] = $pedido->total;
+			
+			foreach($car as $c){
+					$pedido->total = $pedido->total + $c->total; 
+					$_SESSION['cliente'] = $pedido->cliente->nomeCliente;
+					$_SESSION['total'] = $pedido->total;
             }
     
             if($pedido->insert()){
@@ -73,6 +73,33 @@
 				
 				
 				//header("Location: ../home/index");
+            }                
+        }
+		
+		public function inserirPersonalizado() {
+            
+            $pedido = new Pedido();
+
+            $c = new Carrinho();
+            
+            $car = $c->selectAllPersonalizado();
+			
+			foreach($car as $c){
+					$pedido->total = $pedido->total + $c->total; 
+					$_SESSION['cliente'] = $pedido->cliente->nomeCliente;
+					$_SESSION['total'] = $pedido->total;
+			
+            }
+				
+            if($pedido->insert()){
+                
+			
+				echo("<script>
+					window.open('../views/boletophp/boleto_bradesco.php');
+
+					location.href = '../home/index';
+				</script>");
+	
             }                
         }
 		

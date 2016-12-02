@@ -38,8 +38,8 @@
                 $sql = "insert into tblPedido (tipoPedido,dtCompra,dtEntrega,codCliente,codStatus,total)
                 values ('web',now(), now() + INTERVAL 5 DAY,'".$_SESSION['cod']."', '1','".$this->total."')";
                 $last_id = "set @id = LAST_INSERT_ID();";       
-            
-                mysql_query($sql);
+				//echo($sql);
+               mysql_query($sql);
              
 				
             if(mysql_query($last_id)){
@@ -108,15 +108,7 @@ from tblItemPedido as i inner join tblPedido as p on p.codPedido = i.codPedido i
            
 		}
 		
-		public function delete() {
 		
-			$sql = "";
-
-			if(mysql_query($sql))
-				return true;
-			else
-				return false;							
-		}	
 	}
 
 ?>

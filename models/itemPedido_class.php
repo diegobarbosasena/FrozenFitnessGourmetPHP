@@ -24,13 +24,19 @@
 
                 $carrinho = $c->selectAll();
             
-                foreach($carrinho as $c){
-                    $sql = "insert into tblItemPedido (codPedido,codPrato,quantidade)
-                    values (".$codPedido.",'".$c->prato->codPrato."','".$c->qtd."')";
-                  
-                    mysql_query($sql);
-                }   
-            
+
+					foreach($carrinho as $c){
+						if($c->produto->codProduto == null){
+							$sql = "insert into tblItemPedido (codPedido,codPrato,quantidade)
+							values (".$codPedido.",'".$c->prato->codPrato."','".$c->qtd."')";
+						}else{
+							$sql = "insert into tblItemPedido (codPedido,codProduto,quantidade)
+							values (".$codPedido.",'".$c->produto->codProduto."','".$c->qtd."')";
+							//echo($sql);
+						}
+						mysql_query($sql);
+					}   
+				
             
                 $c->delete();      
 		}		

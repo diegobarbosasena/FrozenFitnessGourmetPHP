@@ -82,6 +82,15 @@
             $carrinho->delete();
 		}
 		
+		public function deletarItem() {
+            
+            $carrinho = new Carrinho();
+            
+            if($carrinho->deleteItem($_GET['id'])){
+				header("Location: ../../home/personalizado");
+			}
+		}
+		
 		public function inserir() {
 		
             $this->iniciaAtributos();

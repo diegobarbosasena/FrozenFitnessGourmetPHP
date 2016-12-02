@@ -8,12 +8,14 @@
         public $qtd;
         public $total;
         public $img;
+		public $produto;
         	
         public function __construct(){
             
             require_once('models/banco_dados.php');
             require_once('models/clientes_class.php');
             require_once('models/prato_class.php');
+            require_once('models/produto_class.php');
 		
             $conexao = new mysql_db();
 
@@ -21,6 +23,7 @@
             
             $this->cliente = new Cliente();
             $this->prato = new Prato();
+            $this->produto = new Produto();
         }
         		
         
@@ -133,7 +136,17 @@
 				return true;
 			else
 				return false;							
-		}	
+		}
+ 
+        public function deleteItem($id) {
+		
+			$sql = "delete from tblCarrinho where codCarrinho='".$id."'";
+			
+            if(mysql_query($sql))
+				return true;
+			else
+				return false;						
+		}		
 	}
 
 ?>

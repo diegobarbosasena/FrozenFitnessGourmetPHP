@@ -91,7 +91,7 @@
 				inner join tblCatProduto as cat
 				on (p.codProduto = cat.codProduto)
 				inner join tblCategoriaMateria as cp
-				on(cat.codCategoriaMateria = cp.codCategoriaMateria) where cp.nomeCategoriaMateria <> 'Sobremesa' and cp.nomeCategoriaMateria <> 'Suco';";
+				on(cat.codCategoriaMateria = cp.codCategoriaMateria) where cp.nomeCategoriaMateria <> 'Sobremesa' and cp.nomeCategoriaMateria <> 'Bebida';";
 					
             
 			$select = mysql_query($sql);

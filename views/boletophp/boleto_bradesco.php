@@ -49,7 +49,7 @@ $dadosboleto["data_processamento"] = date("d/m/Y"); // Data de processamento do 
 $dadosboleto["valor_boleto"] = $_SESSION['total']; 	// Valor do Boleto - REGRA: Com vírgula e sempre com duas casas depois da virgula
 
 // DADOS DO SEU CLIENTE
-$dadosboleto["sacado"] = "Nome do seu Cliente";
+$dadosboleto["sacado"] = "Julia";
 $dadosboleto["endereco1"] = "Endereço do seu Cliente";
 $dadosboleto["endereco2"] = "Cidade - Estado -  CEP: 00000-000";
 

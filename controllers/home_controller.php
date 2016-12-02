@@ -120,6 +120,15 @@ require_once('models/produto_class.php');
 
             require_once('views/home/confirmaEndereco.php');
         }
+		
+		public function confirmaEnderecoPersonalizado(){
+ 
+            $c = new Cliente();
+            
+            $cliente = $c->selectAll();
+
+            require_once('views/home/confirmaEnderecoPersonalizado.php');
+        }
         
          public function outroEnd(){
  
