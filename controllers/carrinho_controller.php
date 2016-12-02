@@ -7,6 +7,7 @@
 		public $codCarrinho;
         public $cliente;
 		public $prato;
+		public $produto;
 		public $qtd;
         public $total;
         
@@ -16,9 +17,11 @@
             require_once('models/carrinho_class.php');
             require_once('models/clientes_class.php');
             require_once('models/prato_class.php');
+            require_once('models/produto_class.php');
             
             $cliente = new Cliente();
             $prato = new Prato();
+            $produto = new Produto();
 
         }
 		
@@ -27,6 +30,7 @@
          
                 $this->cliente->codCliente = $_SESSION['cod'];   
                 $this->prato->codPrato = $_GET['id'];
+                $this->produto->codProduto = $_GET['id'];
 			
 		}
         
@@ -90,10 +94,27 @@
             
             
             if($carrinho->insert()){
-                header("Location: ../../home/produtos");
+                header("Location: ../../home/venda");
             }else{
                 
                 header("Location: ../../home/login");
+            }                                
+        }
+		
+		public function inserirPersonalizado() {
+		
+            $this->iniciaAtributos();
+            
+            $carrinho = new Carrinho();
+            
+            $carrinho->cliente->codCliente = $this->cliente->codCliente;
+            $carrinho->produto->codProduto = $_POST['cboItens'];
+        
+            if($carrinho->insertPersonalizado()){
+                header("Location: ../home/personalizado");
+            }else{
+                
+                header("Location: ../home/login");
             }                                
         }
 		

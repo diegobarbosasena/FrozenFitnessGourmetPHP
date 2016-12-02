@@ -185,10 +185,13 @@ require_once('models/produto_class.php');
             
              
             $p = new Produto();
+            $c = new Carrinho();
             
             $produto = $p->selectItens();
 			$sobremesa = $p->selectSobremesa();
 			$bebida = $p->selectBebida();
+			
+			$carrinho = $c->selectAllPersonalizado();
             
             require_once('views/home/personalizado.php');
         }

@@ -38,6 +38,22 @@
 				}
 		}		
 		
+		 
+		public function insertPersonalizado() {
+		
+                $sql = "insert into tblCarrinho (codCliente,codProduto)
+                values ('".$this->cliente->codCliente."','".$this->produto->codProduto."')";
+			
+				//echo($sql);
+			
+				if(mysql_query($sql)){
+					return true;
+				}else{
+					return false;	
+				}
+		}		
+		
+		
 		public function selectAll (){
             
 			$sql = "select car.codCarrinho,c.codCliente, c.nomeCliente, p.codPrato, p.imagemPrato, p.nomePrato, p.precoPrato, sum(p.precoPrato) as total ,count(*) as qtd from tblCarrinho as car 
@@ -60,6 +76,35 @@
 				$carrinho->qtd = $rs['qtd'];
 				$carrinho->total = $rs['total'];
 				$carrinho->img = $rs['imagemPrato'];
+               
+				$listaItens[] = $carrinho;						
+			}
+			
+			return $listaItens;
+				
+		}
+		
+		public function selectAllPersonalizado (){
+            
+			$sql = "select car.codCarrinho,c.codCliente, c.nomeCliente, p.codProduto, p.nomeProduto, p.precoProduto, sum(p.precoProduto) as total ,count(*) as qtd from tblCarrinho as car 
+            inner join tblCliente as c on (c.codCliente = car.codCliente) inner join tblProduto as p on (p.codProduto = car.codProduto)  where c.codCliente = '".$_SESSION['cod']."' group by p.codProduto";
+
+			$select = mysql_query($sql);
+            
+            $listaItens = array(); 
+            
+			
+			while($rs = mysql_fetch_array($select)){
+				
+                $carrinho = new Carrinho();
+				$carrinho->cliente->codCliente = $rs['codCliente'];
+				$carrinho->codCarrinho = $rs['codCarrinho'];
+				$carrinho->cliente->nomeCliente = $rs['nomeCliente'];
+				$carrinho->produto->codProduto = $rs['codProduto'];
+				$carrinho->produto->nomeProduto = $rs['nomeProduto'];
+				$carrinho->produto->precoProduto = $rs['precoProduto'];
+				$carrinho->qtd = $rs['qtd'];
+				$carrinho->total = $rs['total'];
                
 				$listaItens[] = $carrinho;						
 			}

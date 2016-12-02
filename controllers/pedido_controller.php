@@ -57,13 +57,22 @@
 
             foreach($car as $c){
                 $pedido->total = $pedido->total + $c->total; 
+				$_SESSION['cliente'] = $pedido->cliente->nomeCliente;
+				$_SESSION['total'] = $pedido->total;
             }
     
             if($pedido->insert()){
                 
-                
-                
-                header("Location: ../views/boletophp/boleto_itau.php");
+			
+				echo("<script>
+					window.open('../views/boletophp/boleto_bradesco.php');
+
+					location.href = '../home/index';
+				</script>");
+				
+				
+				
+				//header("Location: ../home/index");
             }                
         }
 		
