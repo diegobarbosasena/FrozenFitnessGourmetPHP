@@ -140,8 +140,8 @@
                 
 
                 <form name="FrmPesquisa" method="post" action="<?php  echo PROJECTDIR;?>home/index">
-                    <input class="button_pesquisa" type="submit" name="btnPesquisa" value=""/>
-                    <input class="pesquisar" type="text" name="lala" value="" placeholder="Pesquisar...">
+                    <input class="button_pesquisa" type="submit" name="btnPesquisa"  value="<?php echo($pesquisa)?>"/>
+                    <input class="pesquisar" type="text" name="txtPesquisa" value="" placeholder="Pesquisar...">
                 </form>
                
             </div>

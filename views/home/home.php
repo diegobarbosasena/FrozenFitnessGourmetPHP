@@ -33,6 +33,7 @@
         </div>
 
         <div class="area_mais_vendidos">
+         
 
 		<?php foreach($prato as $p){ ?>
 			<div class="pratos_mais_vendidos">
