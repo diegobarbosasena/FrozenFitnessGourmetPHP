@@ -68,6 +68,35 @@
 			
 			return $Cat;
 		}
+        
+        
+        
+         public function selectByName($nomeCategoriaMateria){
+			
+			$sql = "select * from tblCategoriaMateria where nomeCategoriaMateria like '%".$nomeCategoriaMateria."%'";
+             
+        
+            
+			
+			//$sql = "select * from tblprato where codPrato=".$codPrato;
+			//echo($sql);
+			$select = mysql_query($sql);
+			 $listaCategoriaMateria = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+                
+                $Cat= new Categoria();
+				  
+				$Cat->codCategoriaMateria = $rs['codCategoriaMateria'];
+                $Cat->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];				
+                
+                $listaCategoriaMateria[]= $Cat;
+											
+			}
+			
+			return $listaCategoriaMateria;
+		}
 		
 		public function update() {
 		

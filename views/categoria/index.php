@@ -4,7 +4,19 @@
 	$_GET ['txtCategoria'] = "";
 	
 ?>
+<script>
+    function deletarCategoriaMateria(codCategoriaMateria){
+                             
+        if(confirm("Deseja Excluir?")){
+            
+            location.href = "<?php echo(PROJECTDIR)?>categoria/deletar/" + codCategoriaMateria ;
+        }
+                         
+                         
+    }
 
+    
+</script>
 
 <div class="cadas">Consulta Categoria Materia</div>
 
@@ -13,9 +25,11 @@
         
  </form>
 
-<form name="FrmPesquisa" method="post" action="home.php">
+
+
+<form name="FrmPesquisa" method="post" action="<?php echo(PROJECTDIR)?>categoria/index">
     
-    <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
+    <input class="pesquisarCms" type="text" name="txtPesquisa" value="<?php echo($pesquisa)?>" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form> 
     
@@ -30,15 +44,7 @@
         </td>
 		
     <?php
-		require_once('controllers/categoria_controller.php');
-		
-		$controllerCategoria = new categoria_controller();
-				
-		$rs=$controllerCategoria->listarTodos();
-
-		$cont=0;
-		
-		while ($cont < count($rs)){
+		foreach ($listaCategoriaMateria as $categoria){	
             
 	?>    
         
@@ -46,18 +52,20 @@
         
         <td class="col_consulta">
            <?php 
-					echo($rs[$cont]->nomeCategoriaMateria);
+					echo($categoria->nomeCategoriaMateria);
 			?>
         </td>
         
         <td class="col_consulta">
-            <a href="<?php echo(PROJECTDIR)?>categoria/cadastrar/<?php echo($rs[$cont]->codCategoriaMateria) ?>" class="link"> Editar</a> | 
-            <a href="<?php echo(PROJECTDIR)?>categoria/deletar/<?php echo($rs[$cont]->codCategoriaMateria)?>" class="link">Excluir </a> 
+            <a href="<?php echo(PROJECTDIR)?>categoria/cadastrar/<?php echo($categoria->codCategoriaMateria) ?>" class="link"> Editar</a> | 
+            
+            <a href="#" class="link" onclick="deletarCategoriaMateria(<?php echo($categoria->codCategoriaMateria)?>)">Excluir </a> 
+          
         </td>
 		
         <?php
             
-			$cont++;
+			
 		}
 		
 		

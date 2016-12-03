@@ -42,22 +42,42 @@
 				}
 			}
         }
+ 
         
         public function index(){
             
 			$atualizacao = 'inserir';
-			$categoriaPrato = new categoriaPrato();
+			$c = new categoriaPrato();
+            
+            $pesquisa ="";
+             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new categoriaPrato();
+				
 				$categoriaPrato=$c->selectById($id);
-			}
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaCategoriaPrato = $c->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaCategoriaPrato= $c->selectAll();    
+            }
+             
+            
 			
-           require_once('views/categoriaPrato/index.php');
+            require_once('views/categoriaPrato/index.php');
         }
+        
+   
 		
 		public function cadastrar(){
 			

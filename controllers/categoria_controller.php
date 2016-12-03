@@ -21,21 +21,50 @@
             }
         }
 		
-		public function index(){
+        
+        
+         public function index(){
             
 			$atualizacao = 'inserir';
-			$categoria=new Categoria();
+			$c = new Categoria();
+            
+            $pesquisa ="";
+             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Categoria();
+				
 				$categoria=$c->selectById($id);
-			}
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaCategoriaMateria = $c->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaCategoriaMateria= $c->selectAll();    
+            }
+             
+            
 			
            require_once('views/categoria/index.php');
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 		
 		public function cadastrar(){
 			

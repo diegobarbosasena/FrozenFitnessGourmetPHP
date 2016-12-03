@@ -84,7 +84,7 @@
 					inner join tblCatMateria as cat
 					on (m.codMateria = cat.codMateria)
 					inner join tblCategoriaMateria as c
-					on(cat.codCategoriaMateria = c.codCategoriaMateria);";
+					on(cat.codCategoriaMateria = c.codCategoriaMateria) where m.codMateria=".$codMateria;
 					
 			//echo("foi".$sql);
             
@@ -106,6 +106,44 @@
 			}
 			
 			return $materiaPrima;
+		}
+        
+        
+         public function selectByName($nomeMateria){
+             
+             $sql = "select m.codMateria,m.nomeMateria, m.precoMateria, m.descricaoMateria,
+					c.nomeCategoriaMateria, c.codCategoriaMateria
+					from tblMateriaPrima as m
+					inner join tblCatMateria as cat
+					on (m.codMateria = cat.codMateria)
+					inner join tblCategoriaMateria as c
+					on(cat.codCategoriaMateria = c.codCategoriaMateria) where m.nomeMateria like '%".$nomeMateria."%'";
+			
+			//$sql = "select * from tblCategoriaPrato where nomeCategoriaPrato like '%".$nomeCategoriaPrato."%'";
+        
+            
+			
+			$select = mysql_query($sql);
+			 $listaIngrediente = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+                
+				
+				 	  
+                $materiaPrima = new MateriaPrima();
+                $materiaPrima->codMateria = $rs['codMateria'];
+                $materiaPrima->nomeMateria = $rs['nomeMateria'];
+				$materiaPrima->precoMateria = $rs['precoMateria'];
+                $materiaPrima->descricaoMateria = $rs['descricaoMateria'];
+				$materiaPrima->codCategoriaMateria = $rs['codCategoriaMateria'];
+				$materiaPrima->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];		
+                
+                $listaIngrediente[]= $materiaPrima;
+											
+			}
+			
+			return $listaIngrediente;
 		}
 		
 		public function update() {

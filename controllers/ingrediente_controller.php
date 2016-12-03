@@ -33,20 +33,38 @@
 		}
         
         
-        public function index(){
+        
+         public function index(){
             
 			$atualizacao = 'inserir';
-			$materiaPrima=new MateriaPrima();
+			$m = new MateriaPrima();
+            
+            $pesquisa ="";
+             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
-					
+				
 				$id = $_GET['id'];
-					$atualizacao = 'atualizar';
+				$atualizacao = 'atualizar';
+				
+				
+				$materiaPrima=$m->selectById($id);
+                
+			}else if(isset($_POST["txtPesquisa"])){
 					
-				$m = new MateriaPrima();
-					$materiaPrima=$m->selectById($id);
-			}
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaIngrediente = $m->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaIngrediente= $m->selectAll();    
+            }
+             
+            
 			
-           require_once('views/ingrediente/index.php');
+            require_once('views/ingrediente/index.php');
         }
         
         

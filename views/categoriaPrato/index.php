@@ -5,6 +5,20 @@
 ?>
 
 
+<script>
+    function deletarCategoria(codCategoriaPrato){
+                             
+        if(confirm("Deseja Excluir?")){
+            
+            location.href = "<?php echo(PROJECTDIR)?>categoriaPrato/deletar/" + codCategoriaPrato ;
+        }
+                         
+                         
+    }
+
+    
+</script>
+
 <div class="cadas">Consultar Categoria Prato</div>
 
  
@@ -14,9 +28,9 @@
  </form>
 
 
-<form name="FrmPesquisa" method="post" action="">
+<form name="FrmPesquisa" method="post" action="<?php echo(PROJECTDIR)?>categoriaPrato/index">
     
-    <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
+    <input class="pesquisarCms" type="text" name="txtPesquisa" value="<?php echo($pesquisa)?>" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form> 
     
@@ -38,15 +52,7 @@
         </td>
 		
     <?php
-		require_once('controllers/categoriaPrato_controller.php');
-		
-		$controllerCategoria = new categoriaPrato_controller();
-				
-		$rs=$controllerCategoria->listarTodos();
-
-		$cont=0;
-		
-		while ($cont < count($rs)){
+		 foreach ($listaCategoriaPrato as $categoriaPrato){	
             
       
 	?>    
@@ -55,13 +61,13 @@
         
         <td class="col_consulta">
            <?php 
-					echo($rs[$cont]->nomeCategoriaPrato);
+					echo($categoriaPrato->nomeCategoriaPrato);
 			?>
         </td>
 		
 		  <td class="col_consulta">
            
-                <img src="<?php  echo (PROJECTDIR.$rs[$cont]->imagemCategoriaPrato); ?>" class="imgTable" >  
+                <img src="<?php  echo (PROJECTDIR.$categoriaPrato->imagemCategoriaPrato); ?>" class="imgTable" >  
                 
 
         </td>
@@ -69,19 +75,21 @@
 		 <td class="col_consulta">
              <div class="overflow" >
            <?php 
-					echo($rs[$cont]->descricaoCategoriaPrato);
+					echo($categoriaPrato->descricaoCategoriaPrato);
 			?>
                  <div class="overflow" >
         </td>
         
         <td class="col_consulta">
-            <a href="<?php echo(PROJECTDIR)?>categoriaPrato/cadastrar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link"> Editar</a> | 
-            <a href="<?php echo(PROJECTDIR)?>categoriaPrato/deletar/<?php echo($rs[$cont]->codCategoriaPrato) ?>" class="link">Excluir </a> 
+            <a href="<?php echo(PROJECTDIR)?>categoriaPrato/cadastrar/<?php echo($categoriaPrato->codCategoriaPrato) ?>" class="link"> Editar</a> | 
+            <a href="#" class="link" onclick="deletarCategoria(<?php echo($categoriaPrato->codCategoriaPrato) ?>)">Excluir </a> 
+            
+            
         </td>
 		                
         <?php
             
-			$cont++;
+			
 		}
 		
 		

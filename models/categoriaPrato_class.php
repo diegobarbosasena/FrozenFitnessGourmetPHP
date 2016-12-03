@@ -95,6 +95,39 @@
 			
 			return $categoriaPrato;
 		}
+        
+        
+        
+        
+         public function selectByName($nomeCategoriaPrato){
+			
+			$sql = "select * from tblCategoriaPrato where nomeCategoriaPrato like '%".$nomeCategoriaPrato."%'";
+        
+            
+			
+			//$sql = "select * from tblprato where codPrato=".$codPrato;
+			
+			$select = mysql_query($sql);
+			 $listaCategoriaPrato = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+                
+                $categoriaPrato = new categoriaPrato();
+				
+				$categoriaPrato->codCategoriaPrato = $rs['codCategoriaPrato'];
+                $categoriaPrato->nomeCategoriaPrato = $rs['nomeCategoriaPrato'];
+				$categoriaPrato->imagemCategoriaPrato = $rs['imagemCategoriaPrato'];	
+				$categoriaPrato->descricaoCategoriaPrato = $rs['descricaoCategoriaPrato'];				
+                
+                $listaCategoriaPrato[]= $categoriaPrato;
+											
+			}
+			
+			return $listaCategoriaPrato;
+		}
+        
+
 		
 		public function update() {
 		
