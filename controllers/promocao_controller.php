@@ -32,24 +32,41 @@
             }
 		}
         
+
         
-        
-        public function index(){
+		 public function index(){
             
 			$atualizacao = 'inserir';
-			$promocao=new Promocao();
+			$p = new Promocao();
+            
+            $pesquisa ="";
+             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$p = new Promocao();
+				
 				$promocao=$p->selectById($id);
-			}
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaPromocao = $p->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaPromocao= $p->selectAll();    
+            }
+             
+            
 			
-           require_once('views/promocao/index.php');
+          require_once('views/promocao/index.php');
         }
-        
+		
         
 		public function cadastrar(){
 			

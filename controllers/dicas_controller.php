@@ -43,20 +43,38 @@
 			}
         }
         
-        public function index(){
+    
+		 public function index(){
             
 			$atualizacao = 'inserir';
-			$dicas = new Dicas();
+			$d = new Dicas();
+            
+            $pesquisa ="";
+             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$d = new Dicas();
+				
 				$dicas=$d->selectById($id);
-			}
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaDicas = $d->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaDicas= $d->selectAll();    
+            }
+             
+            
 			
-           require_once('views/dicas/index.php');
+            require_once('views/dicas/index.php');
         }
 		
 		public function cadastrar(){

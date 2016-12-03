@@ -58,6 +58,7 @@
 				$estoque->dtFabricacao = $rs['dtFabricacao'];
 				$estoque->quantidade = $rs['quantidade'];
                 $estoque->quantidadeMinima = $rs['quantidadeMinima'];
+                 $estoque->nomeMateria = $rs['nomeMateria'];
                               
 				$listaEstoque[] = $estoque;                              							
 			}
@@ -85,12 +86,45 @@
 				$estoque->dtFabricacao = $rs['dtFabricacao'];
 				$estoque->quantidade = $rs['quantidade'];
                 $estoque->quantidadeMinima = $rs['quantidadeMinima'];
+                 $estoque->nomeMateria = $rs['nomeMateria'];
                
 											
 			}
 			
 			return $estoque;
 		}
+        
+         public function selectByName($nomeMateria){
+             
+             $sql = "select e.codEstoque,e.dtFabricacao, e.dtValidade, e.quantidade,
+					e.quantidadeMinima, e.codMateria, m.codMateria, m.nomeMateria
+					from tblEstoque as e
+					inner join tblMateriaPrima as m
+					on (e.codMateria = m.codMateria) where m.nomeMateria like '%".$nomeMateria."%'";
+
+			$select = mysql_query($sql);
+			 $listaEstoque = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+				
+				 $estoque = new Estoque();
+				$estoque->codMateria = $rs['codMateria'];
+                $estoque->codEstoque = $rs['codEstoque'];
+                $estoque->dtValidade = $rs['dtValidade'];
+				$estoque->dtFabricacao = $rs['dtFabricacao'];
+				$estoque->quantidade = $rs['quantidade'];
+                $estoque->quantidadeMinima = $rs['quantidadeMinima'];
+                 $estoque->nomeMateria = $rs['nomeMateria'];
+
+                
+                $listaEstoque[]= $estoque;
+											
+			}
+			
+			return $listaEstoque;
+		}
+        
 		
 		public function update() {
 					

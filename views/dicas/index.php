@@ -1,4 +1,17 @@
+<script>
+    function deletarDicas(codDica){
+    
+                             
+        if(confirm("Deseja Excluir?")){
+            
+            location.href = "<?php echo(PROJECTDIR)?>dicas/deletar/" + codDica ;
+        }
+                         
+                         
+    }
 
+    
+</script>
 <div class="cadas">Consultar Dica</div>
 
  
@@ -6,14 +19,13 @@
         <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
         
  </form>
-
-
-<form name="FrmPesquisa" method="post" action="">
     
-    <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
+
+<form name="FrmPesquisa" method="post" action="<?php echo(PROJECTDIR)?>dicas/index">
+    
+    <input class="pesquisarCms" type="text" name="txtPesquisa" value="<?php echo($pesquisa)?>" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form> 
-    
 <table class="tbl_consulta">
     <tr class="linha_consulta">
         <td class="col_consulta">
@@ -32,30 +44,20 @@
         </td>
 		
     <?php
-		require_once('controllers/dicas_controller.php');
-		
-		$controllerDicas = new dicas_controller();
-				
-		$rs=$controllerDicas->listarTodos();
-
-		$cont=0;
-		
-		while ($cont < count($rs)){
-            
-            if($rs[$cont]->tituloDica != ""){   
+		 foreach ($listaDicas as $dicas){	
 	?>    
         
     <tr class="linha_consulta">
         
         <td class="col_consulta">
            <?php 
-					echo($rs[$cont]->tituloDica);
+					echo($dicas->tituloDica);
 			?>
         </td>
         <td class="col_consulta">
           
                 
-                 <img src="<?php  echo(PROJECTDIR.$rs[$cont]->imagemDica); ?>" class="imgTable" >
+                 <img src="<?php  echo(PROJECTDIR.$dicas->imagemDica); ?>" class="imgTable" >
                     
 					
 			
@@ -63,24 +65,20 @@
         <td class="col_consulta">
             <div class="overflow" >
            <?php 
-				echo($rs[$cont]->descricaoDica);
+				echo($dicas->descricaoDica);
 			?>
             </div>
         </td>
         
         <td class="col_consulta">
-            <a href="<?php echo(PROJECTDIR)?>dicas/cadastrar/<?php echo($rs[$cont]->codDica) ?>" class="link"> Editar</a> | 
-            <a href="<?php echo(PROJECTDIR)?>dicas/deletar/<?php echo($rs[$cont]->codDica) ?>" class="link">Excluir </a> 
+            <a href="<?php echo(PROJECTDIR)?>dicas/cadastrar/<?php echo($dicas->codDica) ?>" class="link"> Editar</a> | 
+            <a href="#" class="link" onclick="deletarDicas(<?php echo($dicas->codDica) ?>)">Excluir </a> 
         </td>
 		
-		<?php 
-            }else{
-                ?>
-        
                 
         <?php
-            }
-			$cont++;
+            
+			
 		}
 		
 		

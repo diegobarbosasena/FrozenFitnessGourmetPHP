@@ -35,18 +35,39 @@
 		}
         
         
-        
-        public function index(){
+		 public function index(){
             
 			$atualizacao = 'inserir';
-			$estoque =new Estoque();
-	
-			$listar = $estoque->selectAll();
-		
+			$e = new Estoque();
+            
+            $pesquisa ="";
+             
+			if(isset($_GET['id']) && $_GET['id'] != ""){
+				
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
+				
+				
+				$estoque=$e->selectById($id);
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaEstoque = $e->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaEstoque= $e->selectAll();    
+            }
+             
+            
 			
            require_once('views/estoque/index.php');
         }
-        
+		
         
 		public function cadastrar(){
 			

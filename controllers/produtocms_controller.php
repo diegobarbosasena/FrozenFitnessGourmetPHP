@@ -61,18 +61,37 @@
             }       
         }
         
-        public function index(){
+      
+        
+         public function index(){
             
 			$atualizacao = 'inserir';
-			$produto=new Produto();
+			$p = new Produto();
+            
+            $pesquisa ="";
+             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Produto();
-				$produto=$c->selectById($id);
-			}
+				
+				$produto=$p->selectById($id);
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaProdutoCms = $p->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaProdutoCms= $p->selectAll();    
+            }
+             
+            
 			
            require_once('views/produtocms/index.php');
         }

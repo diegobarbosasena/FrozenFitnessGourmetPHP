@@ -78,6 +78,32 @@
 			return $promocao;
 		}
 		
+         public function selectByName($nomePromocao){
+             
+             $sql = "select* from tblPromocao where nomePromocao like '%".$nomePromocao."%'";
+			
+			
+			$select = mysql_query($sql);
+			 $listaPromocao = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+				
+				 
+				$promocao = new Promocao();
+                $promocao->codPromocao = $rs['codPromocao'];
+                $promocao->nomePromocao = $rs['nomePromocao'];
+				$promocao->dtInicial = $rs['dtInicial'];
+                $promocao->dtFinal = $rs['dtFinal'];
+				$promocao->valorDesconto = $rs['valorDesconto'];
+                
+                $listaPromocao[]= $promocao;
+											
+			}
+			
+			return $listaPromocao;
+		}
+        
 		public function update() {
 					
 			$sql = "update tblPromocao set nomePromocao = '".$this->nomePromocao."', dtInicial = '".$this->dtInicial."', dtFinal = '".$this->dtFinal."',

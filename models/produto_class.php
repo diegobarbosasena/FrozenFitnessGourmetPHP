@@ -230,6 +230,44 @@
 			
 			return $produto;
 		}
+        
+         public function selectByName($nomeProduto){
+             
+             $sql = "select p.codProduto, p.nomeProduto, p.precoProduto, p.descricaoProduto, p.caloriaProduto, p.valorEnergeticoProduto, p.carboidratoProduto, p.proteinaProduto, 
+				p.sodioProduto, p.gordurasProduto, p.imagemProduto, cp.codCategoriaMateria, cp.nomeCategoriaMateria
+				from tblProduto as p
+				inner join tblCatProduto as cat
+				on (p.codProduto = cat.codProduto)
+				inner join tblCategoriaMateria as cp
+				on(cat.codCategoriaMateria = cp.codCategoriaMateria)where p.nomeProduto like '%".$nomeProduto."%'";
+			
+		
+			$select = mysql_query($sql);
+			 $listaProdutoCms = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+				
+				$produto = new Produto();
+                $produto->codProduto = $rs['codProduto'];
+                $produto->nomeProduto = $rs['nomeProduto'];
+				$produto->precoProduto = $rs['precoProduto'];
+                $produto->descricaoProduto = $rs['descricaoProduto'];
+				$produto->caloriaProduto = $rs['caloriaProduto'];
+                $produto->valorEnergeticoProduto = $rs['valorEnergeticoProduto'];
+				$produto->carboidratoProduto = $rs['carboidratoProduto'];
+                $produto->proteinaProduto = $rs['proteinaProduto'];
+				$produto->sodioProduto = $rs['sodioProduto'];
+                $produto->gordurasProduto = $rs['gordurasProduto'];
+				$produto->imagemProduto = $rs['imagemProduto'];
+                $produto->nomeCategoriaMateria = $rs['nomeCategoriaMateria'];
+                
+                $listaProdutoCms[]= $produto;
+											
+			}
+			
+			return $listaProdutoCms;
+		}
 		
 		public function update() {
 					

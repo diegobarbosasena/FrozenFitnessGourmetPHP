@@ -115,6 +115,33 @@
 			
 			return $sobreLoja;
 		}
+        
+        
+         public function selectByName($tituloSobreLoja){
+             $sql = "select * from tblSobreLoja  where tituloSobreLoja like '%".$tituloSobreLoja."%'";
+			
+			$select = mysql_query($sql);
+			 $listaSobre = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+				
+				 $sobreLoja = new SobreLoja();
+                $sobreLoja->codSobreLoja = $rs['codSobreLoja'];
+                $sobreLoja->imgSobreLoja = $rs['imgSobreLoja'];
+				$sobreLoja->imgSobreLoja1 = $rs['imgSobreLoja1'];
+				$sobreLoja->imgSobreLoja2 = $rs['imgSobreLoja2'];
+				$sobreLoja->imgSobreLoja3 = $rs['imgSobreLoja3'];
+				$sobreLoja->tituloSobreLoja = $rs['tituloSobreLoja'];
+                $sobreLoja->historiaSobreLoja = $rs['historiaSobreLoja'];
+                
+                $listaSobre[]= $sobreLoja;
+											
+			}
+			
+			return $listaSobre;
+		}
+        
 		
 		public function update() {
 					

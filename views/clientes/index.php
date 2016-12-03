@@ -1,4 +1,16 @@
-  
+<script>
+    function deletarCategoria(codCategoriaPrato){
+                             
+        if(confirm("Deseja Excluir?")){
+            
+            location.href = "<?php echo(PROJECTDIR)?>categoriaPrato/deletar/" + codCategoriaPrato ;
+        }
+                         
+                         
+    }
+
+    
+</script>  
 
 <div class="cadas">Consulta de Clientes</div>
 

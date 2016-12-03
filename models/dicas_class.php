@@ -75,6 +75,29 @@
 			
 			return $dicas;
 		}
+        
+         public function selectByName($tituloDica){
+			$sql = "select * from tblDica where tituloDica like '%".$tituloDica."%'";
+
+			$select = mysql_query($sql);
+			 $listaDicas = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+				
+				$dicas = new Dicas();
+				  
+				$dicas = new Dicas();
+				$dicas->codDica = $rs['codDica'];
+                $dicas->tituloDica = $rs['tituloDica'];
+				$dicas->descricaoDica = $rs['descricaoDica'];
+				$dicas->imagemDica = $rs['imagemDica'];		
+                $listaDicas[]= $dicas;
+											
+			}
+			
+			return $listaDicas;
+		}
 		
 		public function update() {
 		

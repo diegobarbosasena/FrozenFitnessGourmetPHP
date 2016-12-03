@@ -80,19 +80,40 @@
             
         }
         
-		public function index(){
+
+		 public function index(){
             
 			$atualizacao = 'inserir';
-			$sobreLoja=new SobreLoja();
-			
+			$s = new SobreLoja();
+            
+            $pesquisa ="";
+             
+			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
-
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
+				
+				
+				$sobreLoja=$s->selectById($id);
                 
-                $lista = $sobreLoja->selectAll();
-
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaSobre = $s->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaSobre= $s->selectAll();    
+            }
+             
+            
 			
            require_once('views/sobre/index.php');
         }
+		
 		
 		public function cadastrar(){
 			

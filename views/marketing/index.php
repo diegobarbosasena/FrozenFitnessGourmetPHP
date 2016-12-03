@@ -1,4 +1,16 @@
+<script>
+    function deletarSlide(codCategoriaPrato){
+                             
+        if(confirm("Deseja Excluir?")){
+            
+            location.href = "<?php echo(PROJECTDIR)?>categoriaPrato/deletar/" + codCategoriaPrato ;
+        }
+                         
+                         
+    }
 
+    
+</script>
 <div class="cadas">Conteúdo do Slider</div>
 <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>marketing/cadastrar">
     <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />

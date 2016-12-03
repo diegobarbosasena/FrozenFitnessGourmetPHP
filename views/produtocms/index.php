@@ -1,4 +1,16 @@
+<script>
+    function deletarProdutoCms(codCategoriaPrato){
+                             
+        if(confirm("Deseja Excluir?")){
+            
+            location.href = "<?php echo(PROJECTDIR)?>produtocms/deletar/" + codCategoriaPrato ;
+        }
+                         
+                         
+    }
 
+    
+</script>
 
 <div class="cadas">Consulta de Produtos</div>
 
@@ -8,11 +20,12 @@
 
 </form>
 
-<form name="FrmPesquisa" method="post" action="home.php">
+<form name="FrmPesquisa" method="post" action="<?php echo(PROJECTDIR)?>produtocms/index">
     
-    <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
+    <input class="pesquisarCms" type="text" name="txtPesquisa" value="<?php echo($pesquisa)?>" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form> 
+    
 <table class="tbl_consulta">
     <tr class="linha_consulta">
         <td class="col_consulta">
@@ -27,34 +40,25 @@
         </td>
 		
 		<?php
-			require_once('controllers/produtocms_controller.php');
-			
-			$controllerProduto = new produtocms_controller();
-			
-			$rs=$controllerProduto->ListarTodos();
-			
-			$cont=0;
-		
-			while ($cont < count($rs)){
+			foreach ($listaProdutoCms as $produtoCms){	
 		?>
         
         
     <tr class="linha_consulta">
         <td class="col_consulta">
-             <?php echo ($rs[$cont]->nomeProduto);?>
+             <?php echo ($produtoCms->nomeProduto);?>
         </td>
         <td class="col_consulta">
-            <?php echo ($rs[$cont]->precoProduto);?>
+            <?php echo ($produtoCms->precoProduto);?>
         </td>
         
         <td class="col_consulta" >
-            <a href="<?php echo(PROJECTDIR)?>produtocms/cadastrar/<?php echo($rs[$cont]->codProduto) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>produtocms/deletar/<?php echo($rs[$cont]->codProduto) ?>" class="link">Excluir </a>| <a href="<?php echo(PROJECTDIR)?>produtocms/detalhe/<?php echo($rs[$cont]->codProduto) ?>" class="link">Detalhes </a>
+            <a href="<?php echo(PROJECTDIR)?>produtocms/cadastrar/<?php echo($produtoCms->codProduto) ?>" class="link"> Editar </a>|
+            <a href="#" class="link" onclick="deletarProdutoCms(<?php echo($produtoCms->codProduto) ?>)">Excluir </a> 
+            | <a href="<?php echo(PROJECTDIR)?>produtocms/detalhe/<?php echo($rs[$cont]->codProduto) ?>" class="link">Detalhes </a>
         </td>
 		<?php 
-                
-            $cont++; 
-            
-            
+                         
             }
 		?>
         
