@@ -72,7 +72,6 @@
 				
 				
 				
-				//header("Location: ../home/index");
             }                
         }
 		

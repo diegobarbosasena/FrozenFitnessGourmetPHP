@@ -22,20 +22,20 @@
 		public function insert($codPedido) {
                 $c = new Carrinho();
 
-                $carrinho = $c->selectAll();
-            
-
-					foreach($carrinho as $c){
-						if($c->produto->codProduto == null){
+                if($c->selectAll() != null){
+					foreach($c->selectAll() as $c){
 							$sql = "insert into tblItemPedido (codPedido,codPrato,quantidade)
 							values (".$codPedido.",'".$c->prato->codPrato."','".$c->qtd."')";
-						}else{
+                      mysql_query($sql);
+                    }
+				}else{
+                    foreach($c->selectAllPersonalizado() as $c){
 							$sql = "insert into tblItemPedido (codPedido,codProduto,quantidade)
 							values (".$codPedido.",'".$c->produto->codProduto."','".$c->qtd."')";
-							//echo($sql);
-						}
-						mysql_query($sql);
-					}   
+                        mysql_query($sql);
+				    }
+						
+				}   
 				
             
                 $c->delete();      
