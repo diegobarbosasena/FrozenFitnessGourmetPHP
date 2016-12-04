@@ -40,7 +40,7 @@
 					 $this->endereco->complemento = $_POST['txtcomplemento'];
 					 $this->endereco->cidade->codCidade = $_POST['codCidade'];
 					 $this->endereco->cidade->estado->codEstado = $_POST['codEstado'];
-					 $this->objetivo->codObjetivo = $_POST['codObjetivo'];	
+					 	
 
             }     			
 		}
@@ -62,16 +62,45 @@
             }       
         }
 		
-		public function index(){
-			$parceiro=new Parceiro();
-			$end = $parceiro->endereco = new Endereco();
+	
+        
+		 public function index(){
+            
+			$atualizacao = 'inserir';
+			$p = new Parceiro();
+             
+             $end = $p->endereco = new Endereco();
 
-			$endereco=new Endereco();			
-			
-			$listaParceiros = $parceiro->selectAll();
+			$endereco=new Endereco();	
+            
+            $pesquisa ="";
+             
+			if(isset($_GET['id']) && $_GET['id'] != ""){
+				
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
+				
+				
+				$parceiro=$p->selectById($id);
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaParceiros = $p->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaParceiros= $p->selectAll();    
+            }
+             
+            
 			
            require_once('views/parceiro/index.php');
         }
+		
 		
 		public function cadastrar(){
 			

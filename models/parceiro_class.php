@@ -119,6 +119,48 @@
 			
             return $parceiro; 
 		}
+        public function selectByName($nomeParceiro){
+            
+            $sql = "select p.codParceiro, p.cnpjParceiro, p.nomeParceiro, p.imagemParceiro, p.siteParceiro, p.telefoneParceiro, p.emailParceiro,
+					e.codEndereco, e.logradouro, e.cep, e.numero, e.bairro, e.complemento, c.codCidade, c.nomeCidade, s.codEstado, s.nomeEstado, s.uf
+					from tblParceiro as p inner join tblEndereco as e on (p.codEndereco= e.codEndereco) inner join tblCidade as c 
+                    on (e.codCidade = c.codCidade)
+					inner join tblEstado as s on (c.codEstado = s.codEstado) where  p.nomeParceiro like '%".$nomeParceiro."%'";
+			
+			
+			$select = mysql_query($sql);
+			 $listaParceiros = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+				
+				 $parceiro = new Parceiro();
+				
+                $parceiro->codParceiro = $rs['codParceiro'];
+                $parceiro->nomeParceiro = $rs['nomeParceiro'];				
+				$parceiro->cnpjParceiro = $rs['cnpjParceiro'];
+                $parceiro->imagemParceiro = $rs['imagemParceiro'];
+				$parceiro->siteParceiro = $rs['siteParceiro'];
+                $parceiro->telefoneParceiro = $rs['telefoneParceiro'];
+				$parceiro->emailParceiro = $rs['emailParceiro'];				
+				$parceiro->endereco->logradouro = $rs['logradouro'];
+				$parceiro->endereco->cep = $rs['cep'];
+				$parceiro->endereco->numero = $rs['numero'];
+				$parceiro->endereco->bairro = $rs['bairro'];				
+				$parceiro->endereco->cidade->codCidade = $rs['codCidade'];
+				$parceiro->endereco->cidade->nomeCidade = $rs['nomeCidade'];
+				$parceiro->endereco->complemento = $rs['complemento'];
+				$parceiro->endereco->cidade->estado->codEstado = $rs['codEstado'];       
+				$parceiro->endereco->cidade->estado->nomeEstado = $rs['nomeEstado'];   
+                $listaParceiros[]= $parceiro;
+			}
+                
+                
+								
+			
+			return $listaParceiros;
+		}
+        
 		
 		public function update() {
 		
@@ -136,6 +178,8 @@
 			else
 				return false;		
 		}
+        
+         
 		
 		public function delete($codParceiro) {
 		

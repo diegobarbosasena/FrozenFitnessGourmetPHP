@@ -24,18 +24,38 @@
         }
 		
 	
-        public function index(){
+     
+        
+        
+		 public function index(){
             
 			$atualizacao = 'inserir';
-			$objetivo=new Objetivo();
+			$o = new Objetivo();
+            
+            $pesquisa ="";
+             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Objetivo();
-				$objetivo=$c->selectById($id);
-			}
+				
+				$objetivo=$o->selectById($id);
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaObjetivo = $o->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaObjetivo= $o->selectAll();    
+            }
+             
+            
 			
            require_once('views/objetivo/index.php');
         }

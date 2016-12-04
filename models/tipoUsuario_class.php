@@ -66,6 +66,27 @@
 			
 			return $tipoUsuario;
 		}
+        public function selectByName($nomeTipoUsuario){
+            $sql = "select * from tblTipoUsuario  where nomeTipoUsuario like '%".$nomeTipoUsuario."%'";
+            
+			
+			$select = mysql_query($sql);
+			 $listaTipoUsuario = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+				
+				  $tipoUsuario= new TipoUsuario();
+				  
+				$tipoUsuario->codTipoUsuario = $rs['codTipoUsuario'];
+                $tipoUsuario->nomeTipoUsuario = $rs['nomeTipoUsuario'];
+                
+                $listaTipoUsuario[]= $tipoUsuario;
+											
+			}
+			
+			return $listaTipoUsuario;
+		}
 		
 		public function update() {
 		

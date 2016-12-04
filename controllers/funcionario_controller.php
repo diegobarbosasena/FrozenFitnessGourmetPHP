@@ -34,21 +34,40 @@
 				}
 		 }
 		 
+        
 		 public function index(){
             
 			$atualizacao = 'inserir';
-			$funcionario=new Funcionario();
+			$f = new Funcionario();
+            
+            $pesquisa ="";
+             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Funcionario();
-				$funcionario=$c->selectById($id);
-			}
+				
+				$funcionario=$f->selectById($id);
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaFuncionario = $f->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaFuncionario= $f->selectAll();    
+            }
+             
+            
 			
-           require_once('views/usuario/index.php');
+            require_once('views/usuario/index.php');
         }
+		
 		
 		public function cadastrar(){
 			

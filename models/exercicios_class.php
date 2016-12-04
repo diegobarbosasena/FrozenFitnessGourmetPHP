@@ -76,6 +76,28 @@
 			
 			return $exercicios;
 		}
+        public function selectByName($tituloExercicio){
+            $sql = "select * from tblExercicio where tituloExercicio like '%".$tituloExercicio."%'";
+			
+			$select = mysql_query($sql);
+			 $listaExercicio = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+				
+				 $exercicios = new Exercicios();
+				  
+				$exercicios = new Exercicios();
+				$exercicios->codExercicio = $rs['codExercicio'];
+                $exercicios->tituloExercicio = $rs['tituloExercicio'];
+				$exercicios->descricaoExercicio = $rs['descricaoExercicio'];
+				$exercicios->imagemExercicio = $rs['imagemExercicio'];	
+                $listaExercicio[]= $exercicios;
+											
+			}
+			
+			return $listaExercicio;
+		}
 		
 		public function update() {
 		

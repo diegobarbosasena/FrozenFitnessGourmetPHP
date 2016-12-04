@@ -43,21 +43,41 @@
 			}
         }
         
-        public function index(){
+     
+        
+		 public function index(){
             
 			$atualizacao = 'inserir';
-			$exercicios = new Exercicios();
+			$e = new Exercicios();
+            
+            $pesquisa ="";
+             
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
 				
-				$c = new Exercicios();
-				$exercicios=$c->selectById($id);
-			}
+				
+				$exercicio=$e->selectById($id);
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaExercicio = $e->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaExercicio= $e->selectAll();    
+            }
+             
+            
 			
-           require_once('views/exercicios/index.php');
+            require_once('views/exercicios/index.php');
         }
+		
 		
 		public function cadastrar(){
 			

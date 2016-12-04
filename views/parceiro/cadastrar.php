@@ -16,7 +16,7 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">CNPJ:</td>
-                    <td><input class="caixa_frm"  name="txtCnpj" type="text"  maxlength="14" value="<?php echo($parceiro->cnpjParceiro)?>"  /></td>
+                    <td><input class="caixa_frm"  name="txtCnpj" type="text"  maxlength="14" value="<?php echo($parceiro->cnpjParceiro)?>"  onkeypress="mascara(this,'###-###-###/##')"  placeholder="111 111 111 11"/></td>
                   </tr>
                  <tr>
                     <td class="campo_frm">Imagem:</td>
@@ -44,7 +44,7 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">CEP:</td>
-                    <td><input class="caixa_frm" name="txtcep"  maxlength="14" type="text" value="<?php echo($parceiro->endereco->cep)?>"  /></td>
+                    <td><input class="caixa_frm" name="txtcep"  maxlength="9" type="text" onkeypress="mascara(this,'#####-###')"  placeholder="00000 000"value="<?php echo($parceiro->endereco->cep)?>"  /></td>
                   </tr>    
                   <tr>
                     <td class="campo_frm">Numero:</td>

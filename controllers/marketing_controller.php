@@ -42,17 +42,40 @@
 			}
         }
         
-        public function index(){
+       
+		 public function index(){
             
 			$atualizacao = 'inserir';
-			$slider=new Slider();
+			$s = new Slider();
+            
+            $pesquisa ="";
+             
+			if(isset($_GET['id']) && $_GET['id'] != ""){
+				
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
+				
+				
+                $slider=$s->selectById($id);
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaSlider = $s->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaSlider= $s->selectAll();    
+            }
+             
+            
 			
-			$listaSlider = $slider->selectAll();
-			
-			//var_dump($listaSlider);
-			
-           require_once('views/marketing/index.php');
+            require_once('views/marketing/index.php');
         }
+		
 		
 		public function cadastrar(){
 			

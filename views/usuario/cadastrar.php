@@ -20,7 +20,7 @@
                   </tr>
                   <tr>
                     <td class="campo_frm">CPF:</td>
-                    <td><input class="caixa_frm"  name="txtCpf" type="text"  value="<?php echo($funcionario->cpfFuncionarioLoja)?>" required  /></td>
+                    <td><input class="caixa_frm"  name="txtCpf" type="text"  value="<?php echo($funcionario->cpfFuncionarioLoja)?>" required   onkeypress="mascara(this,'###-###-###/##')" maxlength="14" placeholder="111 111 111 11"/></td>
                   </tr>
                   <tr>
                     <td class="campo_frm">Usuário:</td>

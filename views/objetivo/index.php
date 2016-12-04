@@ -1,3 +1,16 @@
+<script>
+    function deletarObjetivo(codObjetivo){
+                             
+        if(confirm("Deseja Excluir?")){
+            
+            location.href = "<?php echo(PROJECTDIR)?>objetivo/deletar/" + codObjetivo ;
+        }
+                         
+                         
+    }
+
+    
+</script>
 
 
 <div class="cadas">Consulta Objetivos</div>
@@ -5,9 +18,9 @@
         <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
         
  </form>
-<form name="FrmPesquisa" method="post" action="home.php">
+<form name="FrmPesquisa" method="post" action="<?php echo(PROJECTDIR)?>objetivo/index">
     
-    <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
+    <input class="pesquisarCms" type="text" name="txtPesquisa" value="<?php echo($pesquisa)?>" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
 </form> 
 <table class="tbl_consulta">
@@ -23,36 +36,28 @@
         </td>
     </tr>
     <?php
-		require_once('controllers/objetivo_controller.php');
-		
-		$controllerObjetivo = new objetivo_controller();
-				
-		$rs=$controllerObjetivo->listarTodos();
-		
-		$cont=0;
-		
-		while ($cont < count($rs)){
+		foreach ($listaObjetivo as $objetivo){	
 	
 	?>
     <tr class="linha_consulta">
         <td class="col_consulta">
-           <?php echo($rs[$cont]->nomeObjetivo); ?>
+           <?php echo($objetivo->nomeObjetivo); ?>
             
         </td>
        
         <td class="descricao">
         <div class="overflow" >
-         <?php echo($rs[$cont]->descricaoObjetivo); ?>
+         <?php echo($objetivo->descricaoObjetivo); ?>
         </div>
         </td>
         <td class="col_consulta" >
-           <a href="<?php echo(PROJECTDIR)?>objetivo/cadastrar/<?php echo($rs[$cont]->codObjetivo) ?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>objetivo/deletar/<?php echo($rs[$cont]->codObjetivo) ?>" class="link">Excluir </a>
+           <a href="<?php echo(PROJECTDIR)?>objetivo/cadastrar/<?php echo($rs[$cont]->codObjetivo) ?>" class="link"> Editar </a>| 
+            <a href="#" class="link" onclick="deletarObjetivo(<?php echo($objetivo->codObjetivo) ?>)">Excluir </a> 
         </td>
    
     <?php 
+        }
 		
-		$cont++;
-		}
 	?>
 	</tr>
 </table>

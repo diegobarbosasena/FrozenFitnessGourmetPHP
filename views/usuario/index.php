@@ -1,3 +1,16 @@
+<script>
+    function deletarFuncionario(codFuncionarioLoja){
+                             
+        if(confirm("Deseja Excluir?")){
+            
+            location.href = "<?php echo(PROJECTDIR)?>funcionario/deletar/" + codFuncionarioLoja ;
+        }
+                         
+                         
+    }
+
+    
+</script>
 
 <div class="cadas">Consulta de Usuarios</div>
 
@@ -5,10 +18,11 @@
 <form  name="frmconsulta" method="post" action="<?php echo(PROJECTDIR)?>funcionario/cadastrar">
         <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
 </form>
-<form>
-    <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
+<form name="FrmPesquisa" method="post" action="<?php echo(PROJECTDIR)?>funcionario/index">
+    
+    <input class="pesquisarCms" type="text" name="txtPesquisa" value="<?php echo($pesquisa)?>" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
-</form>
+</form> 
 
 
 <table class="tbl_consulta">
@@ -32,15 +46,7 @@
 		
 		<?php
 			
-			require_once('controllers/funcionario_controller.php');
-			
-			$controllerFuncionario = new funcionario_controller();
-					
-			$rs=$controllerFuncionario->listarTodos();
-
-			$cont=0;
-			
-			while ($cont < count($rs)){
+			 foreach ($listaFuncionario as $funcionario){	
             
 			
 		?>
@@ -48,32 +54,33 @@
     <tr class="linha_consulta">
         <td class="col_consulta">
              <?php 
-					echo($rs[$cont]->nomeFuncionarioLoja);
+					echo($funcionario->nomeFuncionarioLoja);
 			?>
         </td>
         <td class="col_consulta">
             <?php 
-					echo($rs[$cont]->cpfFuncionarioLoja);
+					echo($funcionario->cpfFuncionarioLoja);
 			?>
         </td>
         <td class="col_consulta">
             <?php 
-					echo($rs[$cont]->usuarioFuncionario);
+					echo($funcionario->usuarioFuncionario);
 			?>
         </td>
         <td class="col_consulta">
             <?php 
-					echo($rs[$cont]->nomeTipoUsuario);
+					echo($funcionario->nomeTipoUsuario);
 			?>
         </td>
 
         <td class="col_consulta" >
-            <a href="<?php echo(PROJECTDIR)?>funcionario/cadastrar/<?php echo($rs[$cont]->codFuncionarioLoja);?>" class="link"> Editar </a>| <a href="<?php echo(PROJECTDIR)?>funcionario/deletar/<?php echo($rs[$cont]->codFuncionarioLoja);?>" class="link">Excluir </a> 
+            <a href="<?php echo(PROJECTDIR)?>funcionario/cadastrar/<?php echo($funcionario->codFuncionarioLoja);?>" class="link"> Editar </a>|
+            <a href="#" class="link" onclick="deletarFuncionario(<?php echo($funcionario->codFuncionarioLoja) ?>)">Excluir </a> 
         </td>
 		
 		<?php
             
-				$cont++;
+				
 			}
 			
 		

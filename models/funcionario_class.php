@@ -78,6 +78,39 @@
 			return $funcionario;
 					 
 		}
+        public function selectByName($nomeFuncionarioLoja){
+            
+              
+			$sql = "select uc.codUsuarioFuncionarioLoja, u.codUsuario, u.usuario,u.senha,  c.codFuncionarioLoja, c.nomeFuncionarioLoja, c.cpfFuncionarioLoja,
+                    tu.codTipoUsuario, tu.nomeTipoUsuario from tblUsuarioFuncionarioLoja as uc inner join tblUsuario as u on 
+                    (uc.codUsuario = u.codUsuario) inner join tblFuncionarioLoja as c on (c.codFuncionarioLoja = uc.codFuncionarioLoja) 
+                    inner join tblTipoUsuario as tu on (tu.codTipoUsuario = u.codTipoUsuario)  where c.nomeFuncionarioLoja like '%".$nomeFuncionarioLoja."%'";
+			
+		
+			
+			$select = mysql_query($sql);
+			 $listaFuncionario = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+				
+				$funcionario = new Funcionario();
+				  
+				$funcionario->codFuncionarioLoja = $rs['codFuncionarioLoja'];
+                $funcionario->nomeFuncionarioLoja = $rs['nomeFuncionarioLoja'];
+				$funcionario->cpfFuncionarioLoja = $rs['cpfFuncionarioLoja'];
+				$funcionario->nomeTipoUsuario = $rs['nomeTipoUsuario'];
+				$funcionario->senhaFuncionario = $rs['senha'];				
+				$funcionario->usuarioFuncionario = $rs['usuario'];
+				$funcionario->codUsuario = $rs['codUsuario'];
+                
+                
+                $listaFuncionario[]= $funcionario;
+											
+			}
+			
+			return $listaFuncionario;
+		}
 		
 		public function update() {
 			$sql = "update tblFuncionarioLoja set nomeFuncionarioLoja='".$this->nomeFuncionarioLoja."', cpfFuncionarioLoja='".$this->cpfFuncionarioLoja."' where codFuncionarioLoja=".$this->codFuncionarioLoja;

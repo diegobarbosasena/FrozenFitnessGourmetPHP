@@ -70,6 +70,30 @@
 			
 			return $slider;
 		}
+        
+         public function selectByName($tituloSlider){
+             $sql = "select* from tblSlider where tituloSlider like '%".$tituloSlider."%'";
+
+			
+			$select = mysql_query($sql);
+			 $listaSlider = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+				
+				  $slider = new Slider();
+                $slider->codSlider = $rs['codSlider'];
+                $slider->tituloSlider = $rs['tituloSlider'];
+				$slider->linkImagemSlider = $rs['linkImagemSlider'];
+               
+                
+                $listaSlider[]= $slider;
+											
+			}
+			
+			return $listaSlider;
+		}
+        
 		
 		public function update() {
 					

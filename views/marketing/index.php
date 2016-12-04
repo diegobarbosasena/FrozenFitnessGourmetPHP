@@ -1,9 +1,9 @@
 <script>
-    function deletarSlide(codCategoriaPrato){
+    function deletarSlide(codSlider){
                              
         if(confirm("Deseja Excluir?")){
             
-            location.href = "<?php echo(PROJECTDIR)?>categoriaPrato/deletar/" + codCategoriaPrato ;
+            location.href = "<?php echo(PROJECTDIR)?>marketing/deletar/" + codSlider ;
         }
                          
                          
@@ -16,11 +16,11 @@
     <input class="btnConsulta" name="btnconsulta" type="submit" value="Cadastrar Dados" />
 </form>
 
-<form name="FrmPesquisa" method="post" action="home.php">
+<form name="FrmPesquisa" method="post" action="<?php echo(PROJECTDIR)?>marketing/index">
     
-    <input class="pesquisarCms" type="text" name="lala" value="" placeholder="Pesquisar...">
+    <input class="pesquisarCms" type="text" name="txtPesquisa" value="<?php echo($pesquisa)?>" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
-</form> 
+</form>  
 <table class="tbl_consulta">
     <tr class="linha_consulta">
         <td class="col_consulta">
@@ -52,7 +52,7 @@
         
         <td class="col_consulta" >
             <a href="<?php echo(PROJECTDIR)?>marketing/cadastrar/<?php echo($slider->codSlider) ?>" class="link"> Editar </a>|
-			<a href="<?php echo(PROJECTDIR)?>marketing/deletar/<?php echo($slider->codSlider) ?>" class="link">Excluir </a>
+            <a href="#" class="link" onclick="deletarSlide(<?php echo($slider->codSlider) ?>)">Excluir </a> 
         </td>
         
     </tr>

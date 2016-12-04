@@ -66,6 +66,28 @@
 			
 			return $objetivo;
 		}
+        
+        public function selectByName($nomeObjetivo){
+            $sql = "select * from tblObjetivo  where nomeObjetivo like '%".$nomeObjetivo."%'";
+			
+			
+			$select = mysql_query($sql);
+			 $listaObjetivo = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+				
+				  $objetivo = new Objetivo();
+				$objetivo->codObjetivo = $rs['codObjetivo'];
+                $objetivo->nomeObjetivo = $rs['nomeObjetivo'];
+				$objetivo->descricaoObjetivo = $rs['descricaoObjetivo'];
+                
+                $listaObjetivo[]= $objetivo;
+											
+			}
+			
+			return $listaObjetivo;
+		}
 		
 		public function update() {
 		

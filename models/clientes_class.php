@@ -175,6 +175,58 @@
 			
             return $cliente;   
 		}
+        
+        public function selectByName($nomeCliente){
+            $sql = "select uc.codUsuarioCliente, u.codUsuario, u.usuario, u.senha, c.codCliente, c.nomeCliente, c.cpfCliente, c.dtNascCliente, 
+					c.peso, c.altura, c.telefoneCliente, c.celularCliente, c.emailCliente, c.sexo,  oc.codObjetivo, o.nomeObjetivo, e.logradouro, e.numero, e.bairro, e.cep, e.complemento,  ec.codEndereco, ci.codCidade, ci.nomeCidade, s.codEstado, s.nomeEstado from tblUsuarioCliente as uc inner join tblUsuario as u on (uc.codUsuario = u.codUsuario) inner join tblCliente 
+					as c on (c.codCliente = uc.codCliente) inner join tblObjetivoCliente as oc on (oc.codCliente = c.codCliente) 
+					inner join tblObjetivo as o on (o.codObjetivo = oc.codObjetivo) inner join tblClienteEnd as ec on (ec.codCliente = c.codCliente) inner join tblEndereco as e on (e.codEndereco = ec.codEndereco) inner join tblCidade as ci on (ci.codCidade = e.codCidade)
+					inner join tblEstado as s on (s.codEstado = ci.codEstado) where c.nomeCliente like '%".$nomeCliente."%'";
+			
+			
+			
+			$select = mysql_query($sql);
+			 $listaPrato = array();
+            
+			
+            while($rs = mysql_fetch_array($select)){
+				
+				  $cliente = new Cliente();
+                $cliente->codCliente = $rs['codCliente'];
+                $cliente->nomeCliente = $rs['nomeCliente'];
+				$cliente->cpfCliente = $rs['cpfCliente'];
+                $cliente->dtNascCliente = $rs['dtNascCliente'];
+				$cliente->peso = $rs['peso'];
+                $cliente->altura = $rs['altura'];
+				$cliente->telefoneCliente = $rs['telefoneCliente'];
+                $cliente->celularCliente = $rs['celularCliente'];
+				$cliente->emailCliente = $rs['emailCliente'];
+                $cliente->usuarioCliente = $rs['usuario'];
+				$cliente->senhaCliente = $rs['senha'];
+				$cliente->codUsuarioCliente = $rs['codUsuario'];
+				$cliente->sexo =  $rs['sexo'];
+				
+
+				$cliente->endereco->logradouro = $rs['logradouro'];
+				$cliente->endereco->codEndereco = $rs['codEndereco'];
+				$cliente->endereco->cep  = $rs['cep'];
+				$cliente->endereco->numero = $rs['numero'];
+				$cliente->endereco->bairro = $rs['bairro'];
+				$cliente->endereco->complemento = $rs['complemento'];
+				$cliente->endereco->cidade->codCidade = $rs['codCidade'];
+				$cliente->endereco->cidade->nomeCidade = $rs['nomeCidade'];
+				$cliente->endereco->cidade->estado->codEstado = $rs['codEstado'];
+				$cliente->endereco->cidade->estado->nomeEstado = $rs['nomeEstado'];
+
+				$cliente->objetivo->codObjetivo = $rs['codObjetivo'];
+				$cliente->objetivo->nomeObjetivo = $rs['nomeObjetivo'];
+                
+                $listaPrato[]= $cliente;
+											
+			}
+			
+			return $listaPrato;
+		}
 		
 		public function update() {
 					

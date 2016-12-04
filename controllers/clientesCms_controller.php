@@ -31,17 +31,43 @@
 			$this->objetivo = new Objetivo;
         }
 		
-        public function index(){
-            $cliente = new Cliente();
-			$cliente->objetivo = new Objetivo();
-			$end = $cliente->endereco = new Endereco();
-			
-            $listaClientes = $cliente->selectAll();
+       
+       
+        
+		 public function index(){
+            
+			$atualizacao = 'inserir';
+			$c = new Cliente();
+             $end = $c->endereco = new Endereco();
+            
+            $pesquisa ="";
+             
+			if(isset($_GET['id']) && $_GET['id'] != ""){
+				
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
+				
+				
+				$cliente=$c->selectById($id);
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaClientes = $c->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaClientes= $c->selectAll();    
+            }
+             
             
 			
            require_once('views/clientes/index.php');
         }
-        
+		
         
 		 public function detalhe(){
              

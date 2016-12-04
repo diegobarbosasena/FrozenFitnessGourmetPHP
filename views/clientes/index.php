@@ -1,24 +1,13 @@
-<script>
-    function deletarCategoria(codCategoriaPrato){
-                             
-        if(confirm("Deseja Excluir?")){
-            
-            location.href = "<?php echo(PROJECTDIR)?>categoriaPrato/deletar/" + codCategoriaPrato ;
-        }
-                         
-                         
-    }
 
-    
-</script>  
 
 <div class="cadas">Consulta de Clientes</div>
 
   
-<form method="post" action="<?php echo(PROJECTDIR)?>clientes/<?php echo(buscar)?> " >
-    <input class="pesquisarCms" type="text" name="txtBusca" value="" placeholder="Pesquisar...">
+<form name="FrmPesquisa" method="post" action="<?php echo(PROJECTDIR)?>clientesCms/index">
+    
+    <input class="pesquisarCms" type="text" name="txtPesquisa" value="<?php echo($pesquisa)?>" placeholder="Pesquisar...">
     <input class="btnPesquisaCms" type="submit" name="btnPesquisa" value=""/>
-</form>
+</form> 
 <form name="FrmUsuario" method="post" action="">
 <table class="tbl_consulta">
     <tr class="linha_consulta">
