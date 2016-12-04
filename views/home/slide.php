@@ -4,10 +4,16 @@
                    <span class="trs next">&raquo;</span>
                    <span class="trs prev">&laquo;</span>
  
-   			<div id="slider">
+   			<!--<div id="slider">
              <a href="#" class="trs" ><img src="../conteudo/imagem/slide1.png"  /></a>
               <a href="#" class="trs"><img src="../conteudo/imagem/slide2.png"  /></a>
               <a href="#" class="trs"><img src="../conteudo/imagem/slide3.png"  /></a>   			
+             </div> -->
+                
+            <div id="slider">
+                <?php foreach($slide as $s){ ?>
+             <a href="#" class="trs" ><img src="<?php echo(PROJECTDIR.$s->linkImagemSlider); ?>"  /></a>
+              <?php } ?>  			
              </div>
  
    			<figcaption></figcaption>

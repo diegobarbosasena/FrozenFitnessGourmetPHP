@@ -4,54 +4,15 @@
         
         <div class="clear"></div>
         
-        <div class="parceiro">
-            <div class="img_parceiro">
-            </div>
-            <p class="nome_parceiro">Smart FIT </p>
-            <p class="tel_parceiro">(11)4002-8922 </p>
-            <p class="desc_parceiro">A SmartFit é uma academia inteligente sempre com os melhores planos e preços para você! </p>
-        </div>
         
-    
-         <div class="parceiro">
-            <div class="img_parceiro">
-            </div>
-            <p class="nome_parceiro">Smart FIT </p>
-            <p class="tel_parceiro">(11)4002-8922 </p>
-            <p class="desc_parceiro">A SmartFit é uma academia inteligente sempre com os melhores planos e preços para você! </p>
-        </div>
-    
-         <div class="parceiro">
-            <div class="img_parceiro">
-            </div>
-            <p class="nome_parceiro">Smart FIT </p>
-            <p class="tel_parceiro">(11)4002-8922 </p>
-            <p class="desc_parceiro">A SmartFit é uma academia inteligente sempre com os melhores planos e preços para você! </p>
-        </div>
-    
+        <?php foreach($parceiros as $p){?>
         <div class="parceiro">
-            <div class="img_parceiro">
+            <div>
+                <img src="<?php echo(PROJECTDIR.$p->imagemParceiro);?>" class="img_parceiro"/>
             </div>
-            <p class="nome_parceiro">Smart FIT </p>
-            <p class="tel_parceiro">(11)4002-8922 </p>
-            <p class="desc_parceiro">A SmartFit é uma academia inteligente sempre com os melhores planos e preços para você! </p>
+            <p class="nome_parceiro"><?php echo($p->nomeParceiro);?></p>
+            <p class="tel_parceiro"><?php echo($p->telefoneParceiro);?></p>
+            <p class="desc_parceiro"><?php echo($p->siteParceiro);?></p>
         </div>
-        
-    
-         <div class="parceiro">
-            <div class="img_parceiro">
-            </div>
-            <p class="nome_parceiro">Smart FIT </p>
-            <p class="tel_parceiro">(11)4002-8922 </p>
-            <p class="desc_parceiro">A SmartFit é uma academia inteligente sempre com os melhores planos e preços para você! </p>
-        </div>
-    
-         <div class="parceiro">
-            <div class="img_parceiro">
-            </div>
-            <p class="nome_parceiro">Smart FIT </p>
-            <p class="tel_parceiro">(11)4002-8922 </p>
-            <p class="desc_parceiro">A SmartFit é uma academia inteligente sempre com os melhores planos e preços para você! </p>
-        </div>
-   
+        <?php } ?>
 </div>

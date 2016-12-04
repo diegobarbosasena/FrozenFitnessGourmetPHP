@@ -89,7 +89,7 @@
 			$atualizar = new Slider();
 			$atualizar->tituloSlider = $this->tituloSlider;
 			$atualizar->codSlider = $this->codSlider;
-			$atualizar->linkImagemSlider = $this->linkImagemSlider;
+			$atualizar->linkImagemSlider = $this->getImg();
 					
 			if($atualizar->update()){					
 				header("location: ../marketing/index".$this->codSlider);

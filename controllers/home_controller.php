@@ -9,6 +9,8 @@ require_once('models/exercicios_class.php');
 require_once('models/categoriaPrato_class.php');
 require_once('models/sobreLoja_class.php');
 require_once('models/produto_class.php');
+require_once('models/marketing_class.php');
+require_once('models/parceiro_class.php');
 //Classe que controla as ações do site
     class home_controller{
 
@@ -25,7 +27,11 @@ require_once('models/produto_class.php');
 
 			$p = new Prato();
             
-            $prato = $p->selectAll();	
+            $prato = $p->selectAll();
+            
+            $s = new Slider();
+            
+            $slide = $s->selectAll();
 			
             require_once('views/home/home.php');
         }
@@ -186,6 +192,9 @@ require_once('models/produto_class.php');
             require_once('views/home/detalhesProduto.php');
         }
          public function parceiros(){
+             
+             $p = new Parceiro();
+             $parceiros = $p->selectAll();
             
             require_once('views/home/parceiros.php');
         }
