@@ -5,8 +5,8 @@
     
     <div class="detalhes_produto">
         <div class="deta_prod_center">
-            <div class="img_deta_prod"> 
-
+            <div> 
+                    <img src="<?php echo(PROJECTDIR.$prato->imagemPrato);?>" class="img_deta_prod"/>
             </div>
 
             <div class="titulo_preco">

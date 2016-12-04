@@ -115,6 +115,9 @@
         
         public function detalhe(){
             
+            $produto = new Produto();
+            $rs = $produto->selectById($_GET['id']);
+            
              require_once('views/produtocms/detalhe_produto.php');
             
         }

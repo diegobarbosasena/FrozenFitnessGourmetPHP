@@ -7,7 +7,7 @@
 
     <div class="area_produtos">
         
-        <?php foreach($listaPratos as $p){ ?>
+        <?php foreach($prato as $p){ ?>
         <div class="produtos">
             <div>
                 <img src="<?php  echo (PROJECTDIR.$p->imagemPrato); ?>" class="imagem_produtos1">  

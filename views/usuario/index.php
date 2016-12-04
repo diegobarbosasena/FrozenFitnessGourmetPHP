@@ -76,7 +76,7 @@
         <td class="col_consulta" >
             <a href="<?php echo(PROJECTDIR)?>funcionario/cadastrar/<?php echo($funcionario->codFuncionarioLoja);?>" class="link"> Editar </a>|
             <a href="<?php echo(PROJECTDIR)?>funcionario/deletar/<?php echo($funcionario->codFuncionarioLoja);?>" class="link"> Excluir </a>
-           <!-- <a href="#" class="link" onclick="deletarFuncionario(<?php echo($funcionario->codFuncionarioLoja) ?>)">Excluir </a> -->
+           <!-- <a href="#" class="link" onclick="deletarFuncionario(<?php //echo($funcionario->codFuncionarioLoja) ?>)">Excluir </a> -->
         </td>
 		
 		<?php

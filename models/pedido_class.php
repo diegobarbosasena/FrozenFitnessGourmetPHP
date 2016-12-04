@@ -82,7 +82,7 @@ from tblItemPedido as i inner join tblPedido as p on p.codPedido = i.codPedido i
 					$sql = "select i.codItemPedido, i.quantidade, p.codPedido, p.dtEntrega, p.dtCompra,p.total, c.codCliente,c.nomeCliente, s.codStatus, s.statusPedido, pra.codPrato, pra.nomePrato
 from tblItemPedido as i inner join tblPedido as p on p.codPedido = i.codPedido inner join tblCliente as c on c.codCliente = p.codCliente inner join tblStatus as s on s.codStatus = p.codStatus inner join tblPrato as pra on pra.codPrato = i.codPrato  where s.codStatus <> 6  and c.codCliente = '".$_SESSION['cod']."' and p.codPedido = '".$cod."'";
 
-            
+            echo($sql);
 			$select = mysql_query($sql);
             
             $listaPedidos = array(); 

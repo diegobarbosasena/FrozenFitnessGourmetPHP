@@ -123,7 +123,7 @@
  
             $funcionario=$f->selectById($id);
 			if($f->delete($funcionario)){
-                header("location: ../funcionario/index");
+                header("location: ../../funcionario/index");
             }			
 		}
 		

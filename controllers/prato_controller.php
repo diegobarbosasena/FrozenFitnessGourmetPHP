@@ -115,8 +115,8 @@
         
         public function detalhe(){
             
-            $p = new Prato();
-            $prato=$p->selectAll();
+            $prato = new Prato();
+            $p = $prato->selectById($_GET['id']);
             
             require_once('views/prato/detalhe_prato_pronto.php');
             

@@ -5,11 +5,7 @@
 <div class="cadas">Detalhes</div>
 <table class="tbl_consulta_dtl">
     
-     
-	
-			<?php foreach($prato as $p){ ?>
-
-        
+          
     
     <tr class="linha_consulta_dtl">
        
@@ -105,9 +101,6 @@
            <?php  echo ($p->caloria); ?>
         </td>
      </tr>
-		<?php 
-                
-        }
-        ?>
+	
 
 </table>

@@ -87,7 +87,19 @@
             $carrinho = new Carrinho();
             
             if($carrinho->deleteItem($_GET['id'])){
-				header("Location: ../../home/personalizado");
+        
+				    header("Location: ../../home/personalizado");
+			}
+		}
+        
+        
+        public function deletarItemCompra() {
+            
+            $carrinho = new Carrinho();
+            
+            if($carrinho->deleteItem($_GET['id'])){
+        
+				    header("Location: ../../home/venda");
 			}
 		}
 		
@@ -99,9 +111,7 @@
             
             $carrinho->cliente->codCliente = $this->cliente->codCliente;
             $carrinho->prato->codPrato = $this->prato->codPrato;
-            
-            
-            
+           
             if($carrinho->insert()){
                 header("Location: ../../home/venda");
             }else{

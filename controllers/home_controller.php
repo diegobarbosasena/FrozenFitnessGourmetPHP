@@ -100,16 +100,16 @@ require_once('models/parceiro_class.php');
 			$p = new Prato();
             
             
-             $c = new categoriaPrato();
+            $c = new categoriaPrato();
             
             $categoria = $c->selectAll();
+             
             $pesquisa ="";
              
 			if(isset($_GET['id']) && $_GET['id'] != ""){
 				
 				$id = $_GET['id'];
 				$atualizacao = 'atualizar';
-				
 				
 				$prato=$p->selectById($id);
                 
@@ -123,7 +123,7 @@ require_once('models/parceiro_class.php');
             }else{
                 
                 //
-                $listaPratos= $p->selectAll();    
+                $prato= $p->selectAll();    
             }
              
             

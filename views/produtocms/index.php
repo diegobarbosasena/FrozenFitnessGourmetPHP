@@ -55,7 +55,7 @@
         <td class="col_consulta" >
             <a href="<?php echo(PROJECTDIR)?>produtocms/cadastrar/<?php echo($produtoCms->codProduto) ?>" class="link"> Editar </a>|
             <a href="#" class="link" onclick="deletarProdutoCms(<?php echo($produtoCms->codProduto) ?>)">Excluir </a> 
-            | <a href="<?php echo(PROJECTDIR)?>produtocms/detalhe/<?php echo($rs[$cont]->codProduto) ?>" class="link">Detalhes </a>
+            | <a href="<?php echo(PROJECTDIR)?>produtocms/detalhe/<?php echo($produtoCms->codProduto) ?>" class="link">Detalhes </a>
         </td>
 		<?php 
                          

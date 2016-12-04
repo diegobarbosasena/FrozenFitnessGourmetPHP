@@ -37,10 +37,10 @@
                     <?php 
                          $totalProdutos = 0;
                         foreach($carrinho as $c){ ?> 
-                      <li class="item_lst_adc"><?php  echo ($c->prato->nomePrato); ?>
-                          <form>
-                            <input class="btn_dlt_item" type="submit" value=""> 
-                          </form>
+                      <li class="item_lst_adc"><?php  echo ($c->prato->nomePrato." ". $c->qtd); ?>
+                          <form method="post" action="<?php echo(PROJECTDIR)?>carrinho/deletarItemCompra/<?php  echo ($c->codCarrinho); ?>"> 
+                        <input class="btn_dlt_item" type="submit" value=""> 
+                        </form>
                       </li>
                       <?php
                         $totalProdutos = $totalProdutos + $c->total;                          

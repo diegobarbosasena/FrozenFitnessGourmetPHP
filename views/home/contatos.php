@@ -5,7 +5,7 @@
         <div class="clear"></div>
         
         <div class="area_contato">
-            <form id="formulario" method="post" action="../contatos/enviar"> 
+            <form id="formulario" method="post" action="../contatos/inserir"> 
                 <label>Nome:</label> <input class="campo_nome" type="text" name="txtnome">
                 <br> <label>Email:</label> <input class="campo_email" type="text" name="txtemail">
                 <br> <label>Telefone:</label> <input class="campo_telefone" type="text" name="txttelefone">

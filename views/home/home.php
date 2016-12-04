@@ -8,6 +8,7 @@
 	foreach($categoria as $c){ 
 	?>
     <div class="categoria">
+        <a href="<?php  echo (PROJECTDIR)?>produtos/categoria/<?php  echo ($c->codCategoriaPrato); ?>" class="link">
         <div>
 			<img src="<?php  echo (PROJECTDIR.$c->imagemCategoriaPrato); ?>" class="categoria1 margin">  
         </div>
@@ -17,6 +18,7 @@
         <div class="descricao_categoria1">
 			<?php  echo ($c->descricaoCategoriaPrato); ?>  
         </div>
+        </a>
     </div>
     <?php  
 	} ?>

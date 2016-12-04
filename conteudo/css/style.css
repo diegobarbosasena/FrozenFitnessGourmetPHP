@@ -1703,7 +1703,6 @@ input.btn_contato:hover{
     width: 300px;
     height: 180px;
     margin: 10px;
-    background-image: url(../imagem/prato3.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -3877,7 +3876,6 @@ input.btn_contato{
     width: 500px;
     height: 380px;
     margin-left: -30px;
-    background-image: url(../imagem/prato_cel1.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

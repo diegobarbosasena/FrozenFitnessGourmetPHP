@@ -24,7 +24,12 @@
             $sql = "insert into tblfaleconosco (nome, email, telefone, mensagem)";
             $sql = $sql . " values ('".$contato->nome."', '".$contato->email."','".$contato->telefone."','".$contato->mensagem."')";
             
-            mysql_query($sql);
+            if(mysql_query($sql))
+				return true;
+			else
+				return false;	
+            
+            
         }
         
         public function selectAll (){

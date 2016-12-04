@@ -6,14 +6,7 @@
 <table class="tbl_consulta_dtl">
     <tr class="linha_consulta_dtl">
 	
-		<?php
-			require_once('controllers/produtocms_controller.php');
-			
-			$controllerProduto = new produtocms_controller();
-			
-			$rs=$controllerProduto->buscar($_GET['id']);
-
-		?>
+		
 		
         <td class="col_consulta_dtl">
             Nome: 
@@ -92,7 +85,7 @@
             Imagem: 
         </td>
         <td class="col_consulta_dtl">
-            <img src="<?php  echo (PROJECTDIR.$rs->imagemPrato); ?>" class="imgTable">  
+            <img src="<?php  echo (PROJECTDIR.$rs->imagemProduto); ?>" class="imgTable">  
             
         </td>
      </tr>
