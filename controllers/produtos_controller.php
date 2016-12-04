@@ -18,6 +18,10 @@ require_once('models/categoriaPrato_class.php');
                 require_once('views/home/produtos.php');
                 
             }
+            
+            
+            
+            
                
 
         }

@@ -79,18 +79,59 @@ require_once('models/parceiro_class.php');
             require_once('views/home/detalhesPedido.php');
         }
 
-        public function produtos(){
+        /*public function produtos(){
             
             $p = new Prato();
             
             $prato = $p->selectAll();
             
-            $c = new categoriaPrato();
+           
+             $c = new categoriaPrato();
             
             $categoria = $c->selectAll();
 
             require_once('views/home/produtos.php');
+        }*/
+        
+        
+        
+        public function produtos(){
+            
+			$p = new Prato();
+            
+            
+             $c = new categoriaPrato();
+            
+            $categoria = $c->selectAll();
+            $pesquisa ="";
+             
+			if(isset($_GET['id']) && $_GET['id'] != ""){
+				
+				$id = $_GET['id'];
+				$atualizacao = 'atualizar';
+				
+				
+				$prato=$p->selectById($id);
+                
+			}else if(isset($_POST["txtPesquisa"])){
+					
+				$pesquisa = $_POST["txtPesquisa"];
+            
+                $listaPratos = $p->selectByName($pesquisa);
+                
+              
+            }else{
+                
+                //
+                $listaPratos= $p->selectAll();    
+            }
+             
+            
+			
+          require_once('views/home/produtos.php');
         }
+        
+        
 
         public function sobre(){
 			$loja = new SobreLoja(); 			
