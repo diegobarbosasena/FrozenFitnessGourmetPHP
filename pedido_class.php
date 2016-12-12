@@ -11,7 +11,6 @@
         public $nomeStatus;
         public $total;
         public $prato;
-        public $produto;
         public $item;
         
         public function __construct(){
@@ -20,7 +19,6 @@
             require_once('models/clientes_class.php');
             require_once('models/carrinho_class.php');
             require_once('models/prato_class.php');
-            require_once('models/produto_class.php');
 		
             $conexao = new mysql_db();
 
@@ -28,7 +26,6 @@
             
             $this->cliente = new Cliente();
             $this->prato = new Prato();
-            $this->produto = new Produto();
             
             $this->item = new ItemPedido();
         }
@@ -81,14 +78,11 @@ from tblItemPedido as i inner join tblPedido as p on p.codPedido = i.codPedido i
 				
 		}
 		
-       
-		
-        
 		public function selectById($cod){
 					$sql = "select i.codItemPedido, i.quantidade, p.codPedido, p.dtEntrega, p.dtCompra,p.total, c.codCliente,c.nomeCliente, s.codStatus, s.statusPedido, pra.codPrato, pra.nomePrato
 from tblItemPedido as i inner join tblPedido as p on p.codPedido = i.codPedido inner join tblCliente as c on c.codCliente = p.codCliente inner join tblStatus as s on s.codStatus = p.codStatus inner join tblPrato as pra on pra.codPrato = i.codPrato  where s.codStatus <> 6  and c.codCliente = '".$_SESSION['cod']."' and p.codPedido = '".$cod."'";
 
-          
+            echo($sql);
 			$select = mysql_query($sql);
             
             $listaPedidos = array(); 
@@ -114,36 +108,6 @@ from tblItemPedido as i inner join tblPedido as p on p.codPedido = i.codPedido i
            
 		}
 		
-         
-		public function selectByIdPersonalizado($cod){
-					$sql = "select i.codItemPedido, i.quantidade, p.codPedido, p.dtEntrega, p.dtCompra,p.total, c.codCliente,c.nomeCliente, s.codStatus, s.statusPedido, pra.codProduto, pra.nomeProduto
-from tblItemPedido as i inner join tblPedido as p on p.codPedido = i.codPedido inner join tblCliente as c on c.codCliente = p.codCliente inner join tblStatus as s on s.codStatus = p.codStatus inner join tblProduto as pra on pra.codProduto = i.codProduto  where s.codStatus <> 6  and c.codCliente = '".$_SESSION['cod']."' and p.codPedido = '".$cod."'";
-
-          
-			$select = mysql_query($sql);
-            
-            $listaPedidos = array(); 
-			
-			while($rs = mysql_fetch_array($select)){
-				
-                $pedido = new Pedido();
-				$pedido->codPedido = $rs['codPedido'];
-				$pedido->dtEntrega= $rs['dtEntrega'];
-				$pedido->dtCompra = $rs['dtCompra'];
-				$pedido->cliente->codCliente = $rs['codCliente'];
-				$pedido->cliente->nomeCliente = $rs['nomeCliente'];
-				$pedido->codStatus = $rs['codStatus'];
-				$pedido->nomeStatus = $rs['statusPedido'];
-				$pedido->total = $rs['total'];
-                $pedido->produto->nomeProduto = $rs['nomeProduto'];
-                $pedido->item->quantidade = $rs['quantidade'];
-               
-				$listaPedidos[] = $pedido;						
-			}
-			
-			return $listaPedidos;
-           
-		}
 		
 	}
 

@@ -13,7 +13,7 @@ require_once('models/categoriaPrato_class.php');
                 $categoria = $c->selectAll();
                 
                 $p = new Prato();
-                $prato = $p->listarPorCategoria($idCategoria);
+                $listaPratos = $p->listarPorCategoria($idCategoria);
                 
                 require_once('views/home/produtos.php');
                 

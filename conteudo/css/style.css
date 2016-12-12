@@ -2647,7 +2647,7 @@ input.btn_comprar{
 	color:#00B348;
 	background-color:#FFFFFF;
 	margin-bottom: 10px;
-	display:none;
+	display:block;
 }
 input.btn_detalhes:hover{
 	background-color:#00B348;
@@ -3081,7 +3081,7 @@ input.btn_monteja{
     margin-top: 65px;
     color: #666;
     padding-right: 12px;
-	width:25%;
+	width:45%;
     
     
 }
@@ -3302,7 +3302,7 @@ input.btn_menos_venda{
 }
 .escolher_monte{
     width: 100%;
-    min-height: 200px;
+    min-height: 215px;
     height: auto;
    
       

@@ -75,6 +75,7 @@ require_once('models/parceiro_class.php');
             $p = new Pedido();
             
             $itens = $p->selectById($id);
+            $itensPersonalizado = $p->selectByIdPersonalizado($id);
             
             require_once('views/home/detalhesPedido.php');
         }
@@ -123,7 +124,7 @@ require_once('models/parceiro_class.php');
             }else{
                 
                 //
-                $prato= $p->selectAll();    
+                $listaPratos= $p->selectAll();    
             }
              
             
